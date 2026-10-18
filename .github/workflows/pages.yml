@@ -2,10 +2,12 @@ name: Deploy to GitHub Pages
 
 # Publishes the whole repository root as a static site.
 #
-# `configure-pages` runs with `enablement: true`, so this workflow switches
-# GitHub Pages on by itself the first time it runs. That is deliberate: it
-# removes the manual Settings -> Pages step, which is easy to leave unsaved,
-# and it means the site can never drift out of step with `main`.
+# Pages must already be switched on, with Settings -> Pages -> Source set to
+# "GitHub Actions". This workflow cannot do that for you: a workflow's
+# GITHUB_TOKEN is not permitted to call the "Create a Pages site" API, so
+# `configure-pages` with `enablement: true` fails with
+# "Resource not accessible by integration". It is therefore left off, and the
+# step simply reads the Pages config that already exists.
 
 on:
   push:
@@ -33,10 +35,8 @@ jobs:
       - name: Check out the repository
         uses: actions/checkout@v4
 
-      - name: Configure Pages (enabling it if it is off)
+      - name: Configure Pages
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       - name: Upload the site
         uses: actions/upload-pages-artifact@v3
