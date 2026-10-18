@@ -1,0 +1,806 @@
+      <p>The basic components of a centrifugal pump are the same in nearly every design. What
+      changes — and what decides whether a machine is fit for its duty — is how each component
+      is constructed. This chapter works outward from the impeller.</p>
+
+      <h2>Impellers</h2>
+
+      <p>The impeller converts shaft rotation into liquid velocity. Liquid enters the
+      <strong>eye</strong>, is guided from inlet to outlet by <strong>vanes</strong>, and
+      leaves at the periphery. The vanes are normally cast integrally with a back plate (the
+      back shroud or back cover) and, in closed designs, a front plate.</p>
+
+      <p>Impellers are almost always castings; fabricated and welded impellers are rare. The
+      casting process is where impeller quality is won. Liquid-contact surfaces must be as
+      smooth as possible, so the core sand mixture and the core finish matter directly — the
+      relative smoothness of the liquid path is one of the largest determinants of pump
+      efficiency. Disk friction losses scale with roughly the <strong>fifth power of
+      diameter</strong>, so a large closed impeller with a rough surface is penalised severely.</p>
+
+      <p>After casting and surface finishing, impellers are dynamically balanced. ISO 1940
+      specifies residual unbalance limits; API imposes stricter ones. Balancing the impeller
+      alone is not sufficient — once the rotor components are ready they should be mounted
+      assembly-wise on the balancing machine and balanced as an assembly.</p>
+
+      <h3>Construction types: closed, semi-open, open</h3>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Impeller construction types compared</caption>
+          <thead>
+            <tr><th>Type</th><th>Construction</th><th>Efficiency</th><th>Axial thrust</th><th>Suits</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Closed</strong></td>
+              <td>Typically 3–7 radial vanes enclosed by two shrouds. Wear ring on the suction eye; may or may not have one on the back shroud. Those without a back ring usually carry back vanes instead.</td>
+              <td>Highest, when wear rings are fitted both sides</td>
+              <td>Lowest</td>
+              <td>Clean liquids; the default for process duty</td>
+            </tr>
+            <tr>
+              <td><strong>Semi-open</strong></td>
+              <td>Front shroud omitted; vanes run against the casing wall with a controlled clearance.</td>
+              <td>Higher than closed on disk friction (no front shroud), but clearance-sensitive</td>
+              <td>Higher than closed</td>
+              <td>Liquids with suspended particles or fibres</td>
+            </tr>
+            <tr>
+              <td><strong>Open</strong></td>
+              <td>Three sub-types by back shroud extent — see below.</td>
+              <td>Lowest for fully open</td>
+              <td>Varies by sub-type</td>
+              <td>Solids, crystals, fibres, non-clog duty</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>Open impeller sub-types</h4>
+
+      <ul>
+        <li><strong>Fully scalloped</strong> — the back shroud is almost entirely removed, so
+        hydraulic axial thrust is nearly eliminated.</li>
+        <li><strong>Partially scalloped</strong> — greater axial thrust than fully scalloped,
+        but better head and efficiency.</li>
+        <li><strong>Fully back-shrouded open</strong> — around 5% higher efficiency than fully
+        scalloped, but reduced head generation and the <em>highest</em> axial thrust of the
+        open types. Back vanes are normally added to relieve the pressure on the back shroud.</li>
+      </ul>
+
+      <p>Most open impellers in service are partially scalloped or fully back-shrouded. Fully
+      open impellers are rare because of poor efficiency and the bending load carried by
+      unsupported vanes.</p>
+
+      <h4>Non-clog and vortex impellers</h4>
+
+      <p>Where solids are large, or are crystals or fibres, a <strong>vortex (non-clog)</strong>
+      impeller is used — a fully shrouded open type that does not impart energy to the liquid
+      directly. Instead it creates a vortex, and the vortex drives the pumpage. The impeller
+      sits above the volute and therefore experiences almost no radial force, which allows
+      extended running even at closed discharge. Closed and semi-open non-clog variants
+      (two- and three-passage closed, S-shaped two-passage semi-open) also exist.</p>
+
+      <h3>Single and double suction</h3>
+
+      <p>A <strong>single-suction</strong> impeller has one eye. It is simple, but flow entering
+      from one side only leaves the impeller axially unbalanced.</p>
+
+      <p>A <strong>double-suction</strong> impeller has suction cavities on both sides. It is
+      hydraulically balanced and has a lower NPSH-r than an equivalent single-suction impeller
+      — but it is vulnerable to uneven flow split if the suction piping is poor. Flows above
+      roughly <strong>550 m³/h (153 l/s)</strong> commonly call for double suction.</p>
+
+      <div class="note">
+        <span class="note-label">Note on specific speed</span>
+        <p>When calculating <a href="hydraulics.html#specific-speed">specific speed</a>, use
+        total BEP flow with <em>no</em> correction for double suction. When calculating
+        <a href="hydraulics.html#suction-specific-speed">suction specific speed</a>, halve the
+        flow for a double-suction impeller. This asymmetry trips people up regularly.</p>
+      </div>
+
+      <h3>Flow outlet direction and specific speed</h3>
+
+      <p>The flow direction leaving the impeller — radial, mixed or axial — is set by specific
+      speed, and the geometry changes progressively with it. Low specific speed (low flow, high
+      head) calls for radial impellers; high specific speed (high flow, low head) calls for
+      axial propellers. The transition is conventionally tracked by the ratio of outlet to inlet
+      diameter:</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Impeller geometry against specific speed (US units: gpm, ft, rpm)</caption>
+          <thead>
+            <tr><th>Impeller family</th><th class="num">N<sub>s</sub> range</th><th class="num">D₂/D₁</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Radial vane</td><td class="num">500 – 1 500</td><td class="num">&gt; 4</td></tr>
+            <tr><td>Francis vane</td><td class="num">1 500 – 4 000</td><td class="num">1.5 – 2</td></tr>
+            <tr><td>Mixed flow</td><td class="num">4 000 – 9 000</td><td class="num">&lt; 1.5</td></tr>
+            <tr><td>Axial flow (propeller)</td><td class="num">&gt; 9 000</td><td class="num">≈ 1</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Impeller materials</h3>
+
+      <p>Material selection follows peripheral speed, temperature, abrasion and corrosion.</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Indicative impeller casting materials — verify against the project material specification</caption>
+          <thead>
+            <tr><th>Material</th><th>Grade</th><th>Application limit / note</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Cast iron</td>
+              <td>ASTM A48 Class 40 (min. tensile 40 000 psi ≈ 2 720 kg/cm²)</td>
+              <td>First choice for larger impellers and most duties. Max peripheral speed ≈ 55 m/s, max temperature ≈ 200 °C.</td>
+            </tr>
+            <tr>
+              <td>Carbon steel casting</td>
+              <td>ASTM A216 WCA / WCC</td>
+              <td>Recommended above 200 °C.</td>
+            </tr>
+            <tr>
+              <td>12% Cr steel</td>
+              <td>ASTM A743 CA15</td>
+              <td>Abrasive service — ash, sand, clinker.</td>
+            </tr>
+            <tr>
+              <td>Stainless steel</td>
+              <td>ASTM A744 CF8M</td>
+              <td>High corrosion resistance and low-temperature duty.</td>
+            </tr>
+            <tr>
+              <td>Ferritic steel, 3.5% Ni</td>
+              <td>ASTM A352 LC3</td>
+              <td>Low-temperature applications (to about −100 °C).</td>
+            </tr>
+            <tr>
+              <td>Austenitic stainless</td>
+              <td>ASTM A276 Type 304</td>
+              <td>Up to about 200 °C.</td>
+            </tr>
+            <tr>
+              <td>Aluminium bronze</td>
+              <td>ASTM B148 Alloy C95800</td>
+              <td>Marine and seawater service.</td>
+            </tr>
+            <tr>
+              <td>Copper bronze</td>
+              <td>ASTM B150 Alloy C63200</td>
+              <td>General bronze duty.</td>
+            </tr>
+            <tr>
+              <td>High-silicon cast iron</td>
+              <td>≈ 15% Si</td>
+              <td>Sulphuric acid at 67% concentration, 60–70 °C. Corrosivity is temperature-dependent — confirm at the actual pumping temperature.</td>
+            </tr>
+            <tr>
+              <td>Brass / bronze / plastic</td>
+              <td>—</td>
+              <td>Small clean-water impellers, where shroud and blade sections are too thin for iron.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Casings and energy recovery</h2>
+
+      <p>Liquid leaves the impeller outlet at 30–40 m/s. It must reach the discharge pipe at
+      3–7 m/s. That velocity reduction — and the conversion of kinetic energy into pressure —
+      happens in the casing, in a device generically called a <strong>recuperator</strong>.
+      Doing it with minimal loss is the whole design problem.</p>
+
+      <p>The recuperator options are: vaneless guide ring, concentric casing, volute casing,
+      vaned diffuser ring, diagonal diffuser vanes and axial diffuser vanes.</p>
+
+      <h3>Vaneless guide ring</h3>
+
+      <p>Two smooth discs with constant spacing, or spacing increasing toward the outlet.
+      Pressure recovery is proportional to the ratio of outlet to inlet diameter (D<sub>o</sub>/D<sub>i</sub>);
+      ring breadth plays little part in head generation, though constant-breadth rings prove
+      more efficient than those widening at outlet. Because high head would demand an
+      impractically large outlet diameter, vaneless guide rings are confined to low-head pumps
+      — typically mixed-flow impellers at higher specific speed with a constant-section annular
+      delivery passage, and occasionally low specific speed pumps handling solids.</p>
+
+      <h3>Concentric casing</h3>
+
+      <p>Found in single-stage pumps and in the last stage of multistage pumps. Impeller
+      diameter to casing diameter ratio is held between <strong>1.15 and 1.2</strong>. Volute
+      width accommodates the maximum impeller width; capacity at best efficiency is controlled
+      by the volute diameter. A cutwater tongue minimises recirculation in the volute and
+      significantly reduces radial load on the shaft.</p>
+
+      <p>Below N<sub>s</sub> 600 (US units) a concentric casing is <em>more</em> efficient than
+      a conventional volute; above 600 its efficiency falls away progressively. Choose a
+      concentric casing when:</p>
+
+      <ul>
+        <li>flow is low and head high, with N<sub>s</sub> in the 500–600 range;</li>
+        <li>one casing must accommodate several impeller sizes;</li>
+        <li>the casing is fabricated rather than cast;</li>
+        <li>the volute passage must be machined from a casting;</li>
+        <li>foundry limitations force a wider impeller.</li>
+      </ul>
+
+      <div class="note warn">
+        <span class="note-label">Counter-intuitive behaviour</span>
+        <p>In a concentric casing, uniform velocity and pressure distribution occurs at
+        <strong>zero flow</strong>, and uniformity is progressively lost as flow rises — so
+        radial load at BEP is considerably <em>higher</em> than at no-flow. This is the exact
+        opposite of a volute casing. See <a href="forces.html#radial-loads">Chapter 04</a>.</p>
+      </div>
+
+      <h3>Volute casing</h3>
+
+      <p>The most common design. With smooth surfaces, hydraulic losses are negligible, and
+      impeller vanes and shrouds can be trimmed with minimal efficiency penalty. Kinetic energy
+      converts to pressure only in the diffusion chamber immediately past the volute throat,
+      where the divergence angle is between <strong>7° and 13°</strong>.</p>
+
+      <p>Volute cross-sections are circular, trapezoidal (typical of single-stage pumps) or
+      rectangular. Rectangular sections are used in small single-stage and in multistage pumps;
+      they are economical because pattern cost and production time are low, and hydraulic
+      losses are minimal below N<sub>s</sub> 1100.</p>
+
+      <h4>Single versus double volute</h4>
+
+      <p>A <strong>single volute</strong> designed on constant velocity is the most efficient of
+      all casing types, easy to cast and least expensive. Its weakness is radial load: pressure
+      distribution is balanced only at BEP. At low flow, impeller surfaces nearest the discharge
+      see high pressure while those beyond the cutwater see comparatively low pressure. The
+      resulting unbalanced force can be taken as acting at a point <strong>240° from the
+      cutwater</strong>, directed toward the impeller centre, and is maximum at shut-off and
+      almost zero at BEP.</p>
+
+      <p>A <strong>double volute</strong> is two single volutes in opposed arrangement, with
+      total throat area equal to the comparable single volute. It limits radial force
+      substantially. The volute is symmetrical about its centreline, but the two passages
+      carrying liquid to the discharge flange are not, so pressure forces around the impeller
+      periphery do not cancel completely and some residual radial force remains.</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Choosing between single and double volute</caption>
+          <thead>
+            <tr><th></th><th>Single volute</th><th>Double volute</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Efficiency at BEP</strong></td><td>Marginally higher</td><td>Marginally lower</td></tr>
+            <tr><td><strong>Efficiency off BEP</strong></td><td>Lower</td><td>Higher — above and below BEP</td></tr>
+            <tr><td><strong>Radial load</strong></td><td>High away from BEP</td><td>Substantially reduced across the range</td></tr>
+            <tr><td><strong>Flow limit</strong></td><td>Used mainly on low capacity, low N<sub>s</sub> pumps; also slurry and solids duty</td><td>Not used below about 125 m³/h — hard to cast and clean in a small casing. Invariably used on large pumps.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Because double volutes hold up better across the operating range, they are preferred
+      wherever flow varies — which is most process duty above the casting size threshold.</p>
+
+      <h3>Vaned diffuser ring</h3>
+
+      <p>A ring of symmetrically placed vanes around the impeller forming gradually widening
+      passages; flow from the diffuser is collected in a volute or circular casing. The
+      narrowest section of each passage is the <strong>throat</strong>. Design parallels the
+      volute, except that a diffuser has many throats where a volute has one continuous
+      expanding section. Past the throat the channel area increases progressively, giving a
+      further slight pressure rise. A straight diffusing channel is marginally more efficient
+      but produces a larger casing.</p>
+
+      <p>Vane count convention: the number of diffuser vanes is usually <strong>one more</strong>
+      than the number of impeller vanes. Diffuser vanes should not greatly outnumber impeller
+      vanes, and the one-more rule ensures a single impeller passage does not span several
+      diffuser passages. Velocity distribution around the impeller is more uniform than in a
+      volute, so radial loads are much lower.</p>
+
+      <h3>Diagonal and axial diffuser vanes</h3>
+
+      <p><strong>Diagonal diffuser vanes</strong> serve mixed-flow impellers. They turn the
+      liquid leaving the impeller to run along the pump axis, and reduce velocity to recover
+      pressure. Vanes are disposed axially with no sudden area changes, which allows one
+      diffuser model to serve impellers of different diameters and breadths. As specific speed
+      rises, impeller and diffuser profiles approach propeller-pump shapes.</p>
+
+      <p><strong>Axial diffuser vanes</strong> sit behind the impeller of an axial flow pump,
+      serving the same two functions. They usually number 5–8, with the lower count on lower
+      specific speed pumps. Efficiency is influenced by passage shape — vane count, axial
+      length and the gap between impeller blades and diffuser vanes. Shorter vanes in greater
+      number give better efficiency for the same duty. At high enough specific speed the vanes
+      become superfluous and a simple conical diffuser replaces them.</p>
+
+      <h2>Wear rings</h2>
+
+      <p>The impeller rotates inside a stationary casing, so a running clearance is
+      unavoidable — and because there is a pressure difference across it, pumped liquid
+      recirculates through it. That leakage costs efficiency.</p>
+
+      <p>Tightening the clearance improves efficiency, reduces erosion from suction
+      recirculation, and improves rotor-dynamic stability (so the pump runs with lower
+      vibration). But it increases the risk of impeller-to-casing contact, which can scrap two
+      expensive parts. The answer is to fit sacrificial <strong>rings</strong>: an
+      <strong>impeller wear ring</strong> on the impeller eye and a <strong>case wear ring</strong>
+      in the casing. Wear is then confined to cheap, replaceable components.</p>
+
+      <p>Rings at the impeller eye are <strong>front</strong> wear rings. Rings are also fitted
+      at the back shroud, typically when the impeller carries balancing holes to reduce axial
+      thrust — see <a href="forces.html#axial-thrust">Chapter 04</a>.</p>
+
+      <h3>Wear ring materials</h3>
+
+      <p>The governing requirement is <strong>resistance to seizure on contact</strong>.
+      Materials with galling tendencies — SS&nbsp;316 notably — are therefore not used here.
+      Favoured materials include:</p>
+
+      <ul>
+        <li>Austenitic grey iron castings — ASTM A436 Type 1</li>
+        <li>Austenitic ductile iron castings — ASTM A439 Type D2</li>
+        <li>12% chrome steel — AISI 420 (hardenable)</li>
+        <li>18Cr–8Ni steel castings — AISI 304</li>
+        <li>Copper alloy sand castings (bronze) — ASTM B584 Alloy C90500</li>
+        <li>Aluminium bronze sand castings — ASTM B148 Alloy C95800</li>
+        <li>Monel K500, Nickel 200</li>
+      </ul>
+
+      <p>Hardness is deliberately mismatched so wear concentrates on the stationary part:
+      case ring at roughly <strong>225–275 BHN</strong>, impeller ring <strong>50–100 BHN
+      harder</strong>, in the <strong>325–375 BHN</strong> range.</p>
+
+      <h4>Thermoplastic composite rings</h4>
+
+      <p>Thermoplastic composites — often carbon-fibre reinforced — are increasingly used,
+      either on the stationary part alone or with a steel mating component. They are
+      non-galling, have a lower coefficient of friction, and show excellent wear resistance in
+      clean liquids. The greater hardness differential lets the thermoplastic act as the
+      sacrificial element, and the reduced galling tendency allows roughly <strong>half</strong>
+      the clearance that metal rings require — a direct efficiency gain, particularly on low
+      specific speed pumps.</p>
+
+      <p>Their limitations: maximum life is obtained only in clean fluids, and chemical
+      compatibility is narrower than metals.</p>
+
+      <h3>Minimum diametral clearance</h3>
+
+      <div class="note warn">
+        <span class="note-label">Indicative values only</span>
+        <p>The table below reflects the API 610 guidance current in the source material.
+        <strong>API 610 has been revised since; always work from the current edition and the
+        OEM manual.</strong> Clearances must also be reconciled with pumping temperature,
+        thermal expansion, ring material galling tendency and the efficiency target.</p>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Minimum diametral wear-ring clearance by rotating-member diameter at the clearance</caption>
+          <thead>
+            <tr><th class="num">Diameter (in)</th><th class="num">Clearance (in)</th><th class="num">Clearance (mm)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="num">&lt; 2.000</td><td class="num">0.010</td><td class="num">0.254</td></tr>
+            <tr><td class="num">2.000 – 2.499</td><td class="num">0.011</td><td class="num">0.28</td></tr>
+            <tr><td class="num">2.500 – 2.999</td><td class="num">0.012</td><td class="num">0.30</td></tr>
+            <tr><td class="num">3.000 – 3.499</td><td class="num">0.014</td><td class="num">0.36</td></tr>
+            <tr><td class="num">3.500 – 4.999</td><td class="num">0.016</td><td class="num">0.41</td></tr>
+            <tr><td class="num">5.000 – 5.999</td><td class="num">0.017</td><td class="num">0.43</td></tr>
+            <tr><td class="num">6.000 – 6.999</td><td class="num">0.018</td><td class="num">0.46</td></tr>
+            <tr><td class="num">7.000 – 7.999</td><td class="num">0.019</td><td class="num">0.48</td></tr>
+            <tr><td class="num">8.000 – 8.999</td><td class="num">0.020</td><td class="num">0.51</td></tr>
+            <tr><td class="num">9.000 – 9.999</td><td class="num">0.021</td><td class="num">0.53</td></tr>
+            <tr><td class="num">10.000 – 10.999</td><td class="num">0.022</td><td class="num">0.56</td></tr>
+            <tr><td class="num">12.000 – 12.999</td><td class="num">0.024</td><td class="num">0.61</td></tr>
+            <tr><td class="num">14.000 – 14.999</td><td class="num">0.026</td><td class="num">0.66</td></tr>
+            <tr><td class="num">16.000 – 16.999</td><td class="num">0.028</td><td class="num">0.71</td></tr>
+            <tr><td class="num">18.000 – 18.999</td><td class="num">0.030</td><td class="num">0.76</td></tr>
+            <tr><td class="num">20.000 – 20.999</td><td class="num">0.032</td><td class="num">0.81</td></tr>
+            <tr><td class="num">22.000 – 22.999</td><td class="num">0.034</td><td class="num">0.86</td></tr>
+            <tr><td class="num">24.000 – 24.999</td><td class="num">0.036</td><td class="num">0.91</td></tr>
+            <tr><td class="num">25.000 – 25.999</td><td class="num">0.037</td><td class="num">0.94</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Between 2 and 25 in the clearance rises by roughly 0.001 in per inch of diameter. For
+      <strong>26 in and above</strong>: 0.037 in plus 0.001 in for every additional inch of
+      diameter. So a 30 in ring diameter takes 0.037 + 0.004 = <strong>0.041 in</strong>.</p>
+
+      <p>For galling-prone materials and for pumping temperatures <strong>above 260 °C</strong>,
+      add <strong>5 mils (0.127 mm)</strong> to the tabulated diametral clearance.</p>
+
+      <h4>Ring retention</h4>
+
+      <p>API 610 does <em>not</em> recommend tack welding rings to impellers. Rings should be
+      pressed in and secured with locking pins or threaded dowels, radially or axially. In
+      practice the retention methods seen are tack welding with the bead ground off, threaded
+      rings (threaded against the direction of rotation), radial grub screws (hole diameter no
+      more than one-third of ring width), and axial grub screws at the ring/impeller interface.
+      API generally disallows the first two.</p>
+
+      <h2>Shaft and shaft sleeves</h2>
+
+      <p>The rotor assembly comprises shaft, impeller, sleeves, the rotating seal element,
+      bearings or bearing surfaces, and coupling half. The shaft is its key element and is a
+      genuinely stressed member: during operation it sees tension, compression, bending and
+      torsion, all cyclic — so <strong>fatigue is the expected failure mode</strong>.</p>
+
+      <p>Shaft design is based either on torsional shear stress at the smallest diameter or,
+      properly, on a comprehensive fatigue evaluation combining the loads, cycle count and
+      stress concentration factors — invariably by finite element analysis. Stress is not the
+      only criterion; the design must also satisfy:</p>
+
+      <ul>
+        <li>shaft deflection (see <a href="forces.html#shaft-deflection">Chapter 04</a>);</li>
+        <li>key stresses;</li>
+        <li>mounted component fits;</li>
+        <li>critical speeds — rotordynamics.</li>
+      </ul>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Shaft materials</caption>
+          <thead>
+            <tr><th>Material</th><th>Grade</th><th>Use</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Plain carbon steel</td><td>BS 970 En8</td><td>Most common pump shaft material</td></tr>
+            <tr><td>Alloy steel</td><td>BS 970 En19 / AISI 4140 / ASTM A322 Gr. 4140, quenched and tempered</td><td>Higher duty</td></tr>
+            <tr><td>Austenitic stainless</td><td>ASTM A276 Type 316, AISI 304</td><td>Corrosive service</td></tr>
+            <tr><td>Aluminium bronze</td><td>ASTM B150 Alloy C63200</td><td>Sour water (pH &lt; 7), drain water, slightly acidic non-aerated liquids, hydrocarbons with a corrosive aqueous phase</td></tr>
+            <tr><td>Monel, Hastelloy C</td><td>—</td><td>Special applications</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Shaft sleeves</h3>
+
+      <p>Mechanical seals and gland packing in contact with the shaft cause wear by friction and
+      fretting corrosion. A <strong>shaft sleeve</strong> is fitted as a sacrificial component so
+      the seal or packing runs against the sleeve, not the shaft — it is far cheaper to replace
+      a sleeve than a complete shaft.</p>
+
+      <p>Sleeve material generally mirrors the shaft, though standardisation favours SS&nbsp;316.
+      The portion exposed to the secondary seal (an O-ring or PTFE wedge) is hard coated:
+      plasma-sprayed chrome oxide, tungsten carbide or alumina, giving around
+      <strong>70–72&nbsp;HRc</strong>, then ground to finish. This is the area most prone to
+      fretting.</p>
+
+      <h2>Stuffing boxes and gland packing</h2>
+
+      <p>A stuffing box is the chamber sealing the shaft where it passes through the casing. It
+      holds 4–6 packing rings and a gland (end plate) that squeezes them down onto the shaft.
+      The narrow annulus between shaft and packing is a restrictive path: it produces the
+      pressure drop that prevents leakage, and considerable friction that heats the shaft.</p>
+
+      <div class="note field">
+        <span class="note-label">Operating practice</span>
+        <p>Tighten the gland just enough to allow a <strong>slight, deliberate leak</strong>.
+        That leakage is the packing's lubricant and coolant. A dry-tightened gland runs hot and
+        wears the shaft or sleeve rapidly. In a properly operating stuffing box, friction losses
+        run about <strong>1% of total pump power</strong>, independent of pump size and type.</p>
+        <p>Obviously this cannot be allowed on hazardous or toxic liquids — which is precisely
+        why gland packing is not used on those services.</p>
+      </div>
+
+      <h3>Stuffing box variants</h3>
+
+      <ul>
+        <li><strong>Lantern ring</strong> — a ring drilled circumferentially that replaces one
+        packing ring, positioned at the pump end or midway through the packing set. Used for
+        dirty or high-pressure liquid, it admits clean sealing liquid into the packing set.</li>
+        <li><strong>Throat (restrictive) bush</strong> — fitted at the stuffing box throat where
+        discharge pressure is high.</li>
+        <li><strong>Water jacket</strong> — integrally cast into the stuffing box for liquids
+        above about <strong>120 °C</strong>, allowing cooling water circulation to keep the
+        packing temperature down.</li>
+        <li><strong>Repeller (auxiliary impeller)</strong> — radial blades on the back shroud of
+        an auxiliary impeller that throw liquid outward and so reduce the pressure in front of
+        the packing. Used for toxic or corrosive liquids where complete sealing is necessary.
+        The pressure it generates depends on blade length and casing clearance.</li>
+        <li><strong>Back vanes</strong> — cast on the main impeller itself, serving the same
+        pressure-relief function.</li>
+      </ul>
+
+      <p>Work done against packing friction is influenced by packing quality and type, gland
+      length, shaft diameter, rotational speed, pressure acting on the gland, and the volume of
+      liquid passing through the packing.</p>
+
+      <h3>Packing materials</h3>
+
+      <p>Present-day pump packing is predominantly <strong>PTFE (Teflon) / graphite
+      filament</strong>, braided and formed into square section, chosen for heat dissipation and
+      low friction. Additional materials are braided in to handle specific conditions —
+      contaminants, acids, alkalis, temperature and speed. <strong>Aramid</strong>, for example,
+      enhances mechanical properties, resisting packing extrusion and standing up to slurries
+      and abrasives.</p>
+
+      <h2>Mechanical seals and seal housings</h2>
+
+      <p>Gland packing has three persistent disadvantages: it leaks continuously and loses
+      product if the shaft surface is not smooth; over-tightening heats the shaft or sleeve and
+      wears it rapidly; and it needs constant supervision. As a result, packing is being phased
+      out except on non-critical, low-power duties. Most applications use mechanical seals.</p>
+
+      <p>A mechanical seal comprises <strong>two perfectly lapped mating faces</strong>, one
+      stationary and one rotating. The crucial conceptual difference from packing: in packing
+      the leakage resistance acts <em>along</em> the shaft axis; in a mechanical seal it acts
+      <em>orthogonal</em> to it.</p>
+
+      <p>Seal faces cannot run against each other dry — that causes early wear, and seal damage
+      means leakage. Sealant fluid is injected into the seal housing at a specified pressure to
+      lubricate and cool the faces. Fluid escaping between the faces to atmosphere is
+      <strong>fugitive emission</strong>; where that is unacceptable, multiple seal arrangements
+      are used. Seals are precision devices and demand corresponding care during pump assembly.</p>
+
+      <h3>The three points of sealing</h3>
+
+      <p>Every mechanical seal installation has three:</p>
+
+      <ol>
+        <li>At the mating surfaces of the primary and mating rings — the <strong>primary
+        sealing face</strong>.</li>
+        <li>Between the rotating component and the shaft or sleeve — a <strong>secondary
+        seal</strong>.</li>
+        <li>Between the stationary component and the gland plate — a secondary seal.</li>
+      </ol>
+
+      <p>A seal mounted on a sleeve adds a fourth point between shaft and sleeve, and some
+      mating ring designs add a seal between gland plate and stuffing box.</p>
+
+      <p>Mating faces are normally <strong>dissimilar materials</strong>, held in contact by a
+      spring whose preload keeps the primary and mating rings together during shutdown or
+      whenever liquid pressure is absent.</p>
+
+      <h3>Why the secondary seal must be dynamic</h3>
+
+      <p>The secondary seal between shaft and sleeve must be <em>partially dynamic</em>. As the
+      faces wear, the primary ring has to creep forward. Machine vibration, shaft runout and
+      differential thermal expansion between shaft and casing all require the secondary seal to
+      move along the shaft. That flexibility comes from the secondary seal form — O-ring, wedge,
+      V-ring or bellows. Most designs fix the seal head to the sleeve or shaft and provide
+      positive drive to the primary ring.</p>
+
+      <h3>Seal arrangements</h3>
+
+      <ul>
+        <li><strong>Single seal</strong> — internally or externally mounted. A single seal
+        mounted inside the seal chamber represents at least <strong>75% of all
+        installations</strong> and is the most economical sealing system available.</li>
+        <li><strong>Dual seal</strong> — tandem seals, or double seals (externally or internally
+        pressurised).</li>
+      </ul>
+
+      <h3>Seal housings</h3>
+
+      <p>Seals are housed in seal housings the way packing is housed in stuffing boxes. Research
+      shows an <strong>enlarged bore</strong> confers distinct advantages: fluid flow within the
+      enlarged chamber increases, which aids removal of seal-generated heat. Properly selected
+      enlarged chambers help deal with:</p>
+
+      <ul>
+        <li>gas in the seal housing under start/stop conditions;</li>
+        <li>light hydrocarbons with low boiling points;</li>
+        <li>liquids carrying solid particles.</li>
+      </ul>
+
+      <h2>Bearing housings and isolators</h2>
+
+      <h3>Overhung (cantilever) impeller pumps</h3>
+
+      <p>These normally use anti-friction bearings only. The <strong>radial</strong> ball or
+      cylindrical roller bearing sits inboard, adjacent to the impeller, arranged to take radial
+      load only. The <strong>thrust</strong> bearing sits closest to the coupling — usually a
+      duplex pair of angular contact bearings or a double-row angular contact bearing.</p>
+
+      <ul>
+        <li>Ball bearing inboard → outboard is a duplex angular contact pair <strong>face to
+        face</strong>, or a double-row angular contact bearing.</li>
+        <li>Cylindrical roller bearing inboard → outboard pair mounted <strong>back to
+        back</strong> so axial thrust can be carried in either direction. This duplex pair takes
+        both the unbalanced axial thrust and radial load.</li>
+      </ul>
+
+      <h3>Impeller-between-bearings pumps</h3>
+
+      <p>Radial and thrust bearings have individual housings. The radial bearing is normally at
+      the coupling end; the ball thrust bearing is at the outboard end.</p>
+
+      <p>The thrust bearing must be secured axially on the shaft to transmit load through the
+      bearing to the housing — usually located against a shaft shoulder and locked with a
+      bearing nut. That makes the shaft diameter under the thrust bearing <em>smaller</em> than
+      under the radial bearing. Mounting the radial bearing at the inboard (coupling) end
+      therefore gives a larger shaft diameter where torque has to be transmitted from the
+      coupling to the impeller — the shaft under the outboard thrust bearing can be relatively
+      small because no torque passes through it.</p>
+
+      <p>The thrust bearing is locked axially in its housing; the radial bearing is left axially
+      loose in its housing to permit thermal growth.</p>
+
+      <p>A popular arrangement for in-between-bearing double-suction pumps is
+      <strong>journal radial bearings plus a ball thrust bearing</strong>. All radial load goes
+      to the journal bearings. The ball thrust bearing is mounted so it carries axial load only,
+      with the housing radially loose around it and a metallic strap on the outer rings locking
+      into the housing to prevent outer-ring rotation. This suits higher horsepower and higher
+      speed duty where ball radial bearings would be impractical on speed, load or lubrication
+      limits.</p>
+
+      <h3>Vertical pumps</h3>
+
+      <p>In vertical pumps the thrust bearing carries the unbalanced axial hydraulic force
+      <em>plus</em> the static weight of the rotating element. By design it may sit in the driver
+      or, more usually, at the head end within the pump casing. Bearing types range from
+      ordinary ball, angular contact and split inner race angular contact up to spherical roller
+      thrust bearings on large machines such as vertical deep well pumps.</p>
+
+      <p>These bearings are typically rated for at least <strong>three times</strong> the maximum
+      calculated thrust load, because so many factors are uncertain:</p>
+
+      <ul>
+        <li>thrust calculation is not highly accurate;</li>
+        <li>thrust increases as internal clearances increase;</li>
+        <li>thrust varies with the vertical position of the impellers in the casings;</li>
+        <li>thrust varies with flow, and may even reverse direction.</li>
+      </ul>
+
+      <p>The most severe thrust loads occur <strong>at shutdown</strong> and from impact loading
+      caused by water hammer. A reasonable margin between the driver thrust bearing rating and
+      the maximum calculated pump thrust is essential.</p>
+
+      <h3>Bearing housing protection</h3>
+
+      <p>Seal life and bearing life are coupled. Liquid leaking from a mechanical seal can fail
+      the bearings; a bearing in poor condition shortens seal life. The blunt reality:
+      <strong>only about 10% of rolling element bearings achieve their 3–5 year design
+      life.</strong></p>
+
+      <p>Rain, product leakage, debris and wash-down water entering the bearing housing
+      contaminate the lubricant, and the effect is catastrophic:</p>
+
+      <div class="specs">
+        <dl class="spec"><dt>0.002% water in oil</dt><dd>−48<small> % bearing life</small></dd></dl>
+        <dl class="spec"><dt>0.10% water in oil</dt><dd>−90<small> % bearing life</small></dd></dl>
+      </div>
+
+      <p>End seals protect the housing — but in almost every case the end seal's own life and
+      quality is far below that of the bearings it protects. <strong>Improving the end seal
+      directly extends bearing life.</strong></p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Bearing housing end seal types</caption>
+          <thead>
+            <tr><th>Type</th><th>How it works</th><th>Advantages</th><th>Limitations</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Felt</strong></td>
+              <td>Felt strip cut into a groove in the bearing cover; acts as a barrier to oil and atmospheric dust. One of the earliest isolators.</td>
+              <td>Simple, cheap</td>
+              <td>Limited sealing performance</td>
+            </tr>
+            <tr>
+              <td><strong>Lip / oil seal</strong></td>
+              <td>Elastomeric lip riding on the shaft.</td>
+              <td>Low initial cost, widely available, protects in both static and dynamic modes when new</td>
+              <td>Short protection life as the elastomer wears — as little as <strong>3 000 hours (3–4 months)</strong> against a 3–5 year bearing design life. Viton temperature range −40 to 400 °F (−42 to 203 °C).</td>
+            </tr>
+            <tr>
+              <td><strong>Labyrinth</strong></td>
+              <td>A tortuous path that discourages contaminant ingress and fluid leakage with no contact between rotating and stationary elements.</td>
+              <td>Non-wearing and self-venting; reusable through several rebuilds. Because it vents, the housing vent can be removed and the tapped hole fitted with a temperature gauge.</td>
+              <td>Higher initial cost than lip seals. The open path to atmosphere lets the housing "breathe", allowing condensate contamination in humid environments. Works less well statically than dynamically. Temperature limit set by the elastomer driving the rotor.</td>
+            </tr>
+            <tr>
+              <td><strong>Magnetic</strong></td>
+              <td>Two-piece end-face seal with optically flat faces held together by magnetic attraction.</td>
+              <td>Hermetic seal for the housing. Design life equivalent to mechanical seals and bearings, and repairable.</td>
+              <td>Higher cost; shorter life than a labyrinth's near-infinite life. Because the seal is positive, separate provision must be made for housing breathing. Upper limit about <strong>250 °F (121 °C)</strong>. Generally <em>not</em> recommended with dry-sump oil-mist lubricated housings or grease-lubricated bearings.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Couplings</h2>
+
+      <p>Pump couplings are generally <strong>general-purpose</strong> couplings: standardised,
+      less sophisticated, lower cost, with an easily inspected and replaced flexible element and
+      undemanding alignment tolerances. Special-purpose couplings for turbomachinery are covered
+      by API 671.</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Coupling types and typical power range</caption>
+          <thead>
+            <tr><th>Type</th><th>Construction</th><th>Typical rating</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Gear</strong></td>
+              <td>Two externally toothed hubs engaging internal teeth in a one- or two-piece flanged shroud. Grease packed between the meshing teeth, contained by static seals (O-rings) at the flange faces and shroud. Misalignment is accommodated by sliding between external and internal teeth.</td>
+              <td>Above about <strong>75 kW</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Grid</strong></td>
+              <td>Similar in concept to gear: two hubs, slotted, housing a flexible grid member. Grease lubricates sliding between grid and slots; a cover contains it.</td>
+              <td>Generally not used above about <strong>750 kW</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Disk (metallic element)</strong></td>
+              <td>Two hubs with a set of flexible metallic shims or elements between spacer and hub. Torque is transmitted by tensile force between alternate driving and driven bolts on a common bolt circle. Diaphragm couplings belong to this family.</td>
+              <td>Above about <strong>75 kW</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Elastomeric shear</strong></td>
+              <td>Driving and driven hubs in separate planes; the elastomeric element is stretched between them, transmitting and cushioning the force.</td>
+              <td>Below about <strong>75 kW</strong>. Tolerates the most parallel misalignment of any coupling type.</td>
+            </tr>
+            <tr>
+              <td><strong>Elastomeric compression (jaw)</strong></td>
+              <td>The element — a <strong>spider</strong> — is compressed between the jaws of mating hubs operating in the same plane.</td>
+              <td>Below about 75 kW. Higher load capacity, greater torsional stiffness, more safety and easier installation than the shear type.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note ok">
+        <span class="note-label">A useful failure mode</span>
+        <p>A jaw coupling keeps transmitting torque even if the spider breaks — the driving jaws
+        simply rotate until they contact the driven jaws directly. Operation continues, with
+        considerable noise and accelerated wear, but in some cases that prevents an expensive
+        unplanned shutdown.</p>
+      </div>
+
+      <p>Jaw couplings typically accommodate angular misalignment up to <strong>1°</strong> and
+      parallel misalignment up to <strong>0.015 in</strong>.</p>
+
+      <h3>Elastomeric element materials</h3>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Spider / element materials</caption>
+          <thead>
+            <tr><th>Material</th><th>Hardness</th><th>Temperature range</th><th>Relative torque</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>NBR</strong> (nitrile butadiene rubber, Buna&nbsp;N)</td>
+              <td>80 Shore A</td>
+              <td>−40 to +100 °C</td>
+              <td>Baseline (1×)</td>
+              <td>Most economical and most widely used. Resembles natural rubber in resilience and elasticity; resistant to oil, hydraulic fluid and most chemicals. <strong>Best damping</strong> of the elastomers.</td>
+            </tr>
+            <tr>
+              <td><strong>Urethane</strong></td>
+              <td>90 Shore A</td>
+              <td>−39 to +71 °C</td>
+              <td>1.5×</td>
+              <td>Very good chemical and oil resistance; less damping and a narrower temperature range. Good where greater torque is needed in a confined space, or for resistance to ozone, sunlight and hydrolysis in tropical conditions.</td>
+            </tr>
+            <tr>
+              <td><strong>Hytrel</strong></td>
+              <td>55 Shore D</td>
+              <td>−51 to +121 °C</td>
+              <td>3×</td>
+              <td>Excellent oil and chemical resistance, plus ozone, sunlight and hydrolysis resistance. But it <strong>halves</strong> angular misalignment capability and damping is low.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Spider configurations</h3>
+
+      <ol>
+        <li><strong>Standard solid centre</strong> — the conventional form.</li>
+        <li><strong>Open centre</strong>.</li>
+        <li><strong>Snap wrap</strong> — a flat-strip, open-end design connecting the spider legs
+        around the coupling perimeter rather than at the centre. It can be removed or installed
+        without disturbing either hub's alignment, and because there is no centre connection it
+        does not overlap into the bore, allowing shaft ends to extend at maximum bore diameter to
+        a minimal gap. It must be retained by a ring or a collar: <strong>ring-retained is limited
+        to 1750 rpm</strong>, whereas the collar configuration achieves the standard coupling's
+        full speed rating because the collar attaches to one hub.</li>
+        <li><strong>Load cushions</strong> — small separate blocks, installed and removed radially,
+        which is very helpful for maintenance on heavy-duty applications. Some models require a
+        collar to hold the cushions in place.</li>
+      </ol>

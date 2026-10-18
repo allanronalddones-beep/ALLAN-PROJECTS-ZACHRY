@@ -1,0 +1,1377 @@
+      <p>The basis of centrifugal pump maintenance is a direct function of criticality. A garden
+      water pump does not require the attention of a boiler feed water pump in a power plant or a
+      firewater pump in a refinery. So the first task is not technical — it is to classify the
+      machine.</p>
+
+      <h2>Criticality and maintenance philosophy</h2>
+
+      <p>A pump is critical where:</p>
+
+      <ul>
+        <li>failure can affect plant safety;</li>
+        <li>it is essential for plant operation and a shutdown will curtail process throughput;</li>
+        <li>there is <strong>no standby or installed spare</strong>;</li>
+        <li>it is a large horsepower pump;</li>
+        <li>capital cost is high and it is expensive to repair, or has a long repair lead time;</li>
+        <li>it is a perennial <strong>"bad actor"</strong> — a pump that wrecks on the slightest
+        provocation of an off-duty operation;</li>
+        <li>it is part of a pump train where better operation could save energy or improve yields.</li>
+      </ul>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Classification and the maintenance philosophy that follows</caption>
+          <thead>
+            <tr><th>Class</th><th>Maintenance philosophy</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Critical</strong></td><td>Predictive and proactive techniques</td></tr>
+            <tr><td><strong>Essential</strong></td><td>Preventive maintenance</td></tr>
+            <tr><td><strong>General purpose</strong></td><td>Less stringent — may be run to failure</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>In practice a mix-and-match of techniques is applied, with the prime intention of
+      maximising runtime lengths and reducing downtime and costs. Current focus for continuous
+      process plant pumps is a blend of <strong>Predictive and Preventive Maintenance
+      (PPM)</strong>.</p>
+
+      <div class="note">
+        <span class="note-label">The four pillars of a PPM programme</span>
+        <p>Individually each gives an indication of pump condition. <strong>Collectively they give
+        the complete picture.</strong> Running only one or two is the commonest reason condition
+        monitoring programmes fail to predict anything.</p>
+        <ol style="margin-bottom:0">
+          <li>Performance monitoring</li>
+          <li>Vibration monitoring</li>
+          <li>Oil and particle analysis</li>
+          <li><strong>System analysis</strong> — the one most often omitted</li>
+        </ol>
+      </div>
+
+      <h2 id="performance-monitoring">Performance monitoring</h2>
+
+      <p>Six parameters tell you how the pump is performing:</p>
+
+      <ol>
+        <li>suction pressure, P<sub>s</sub></li>
+        <li>discharge pressure, P<sub>d</sub></li>
+        <li>flow, Q</li>
+        <li>pump speed, N</li>
+        <li>pump efficiency, η</li>
+        <li>power</li>
+      </ol>
+
+      <p>With an electric motor driver, <strong>power is the easiest to measure</strong> with
+      portable instruments clipped onto the phase cables, giving amps, volts, power factor and
+      hence power. Combined with the process parameters, efficiency can be computed and
+      benchmarked against the OEM's expected values — see
+      <a href="hydraulics.html#performance-calculation-procedure">the procedure in Chapter 03</a>.</p>
+
+      <p>Suction and discharge pressures are measured using <strong>calibrated</strong> pressure
+      gauges screwed onto the fittings provided on the pipelines with isolation valves.</p>
+
+      <h3>Flow measurement in the field</h3>
+
+      <p>Normally done with obtrusive instruments — venturi tubes, orifice plates, pitot tubes.
+      Where none are installed, non-obtrusive doppler or transit-time devices can be used, and
+      these can be portable.</p>
+
+      <div class="note warn">
+        <span class="note-label">Caution on clamp-on flow meters</span>
+        <p>Each device <strong>must be calibrated</strong>, and independent testing has shown
+        these devices are <strong>sensitive to the liquid being pumped and are not precisely
+        accurate</strong>. Treat a clamp-on reading as an indication, and be careful about
+        declaring a pump degraded on its evidence alone.</p>
+      </div>
+
+      <p>Analysis of efficiency — or inefficiency — helps determine whether the losses are
+      <strong>hydraulic</strong>, <strong>internal recirculation</strong>, or
+      <strong>mechanical</strong>.</p>
+
+      <h3>Thermodynamic efficiency monitoring</h3>
+
+      <p>Direct-reading thermodynamic pump efficiency monitors (the Yates meter and similar)
+      interpret operating efficiency dynamically by measuring and computing the
+      <strong>temperature rise of the fluid — in millikelvin</strong> — as it moves from suction to
+      discharge. Highly sensitive temperature probes and pressure transducers are positioned on the
+      suction and discharge pipework, while a power meter provides the power absorbed by the motor.
+      Motor efficiency from the motor manufacturer and drive losses are factored into the software,
+      which then calculates pump operating efficiency. That reading is compared against the
+      <a href="installation.html#pump-in-operation">commissioning data</a> to determine the drop in
+      performance.</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Advantages of thermodynamic monitoring</caption>
+          <tbody>
+            <tr><td>No dismantling of the pump is necessary.</td></tr>
+            <tr><td>Cost and energy savings by increasing pump availability and reliability.</td></tr>
+            <tr><td>Maintenance timing can be <strong>predicted and planned accurately</strong>, in line with predictive and planned strategies.</td></tr>
+            <tr><td>Where a flow meter is installed, the monitor can <strong>verify the accuracy of the meter</strong> by calculating Q from the empirical power relationship.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Capital cost is high, but return on investment may be realised quickly on large-capacity
+      systems with numerous pumps. Alternatively the service can be purchased, or a provider
+      contracted to measure and report periodically as part of the PPM programme.</p>
+
+      <h2>Vibration monitoring</h2>
+
+      <p>Online or offline depending on criticality. <strong>Online</strong> measurement uses
+      proximity probes to measure shaft vibration. The most common form is <strong>offline</strong>
+      using portable data collectors measuring casing vibration.</p>
+
+      <p>Vibration is measured for <strong>both the pump and its driver</strong>, at the bearing
+      locations. Reporting requires a convention for labelling bearings, and the general
+      convention is to <strong>start labelling from where the power comes in</strong>:</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Bearing labelling convention for a motor-driven pump</caption>
+          <thead>
+            <tr><th>Label</th><th>Location</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>A</strong></td><td>Motor non-drive end bearing</td></tr>
+            <tr><td><strong>B</strong></td><td>Motor drive end bearing</td></tr>
+            <tr><td><strong>C</strong></td><td>Pump outboard bearing (next to the coupling)</td></tr>
+            <tr><td><strong>D</strong></td><td>Pump inboard bearing (away from the coupling)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Take vibrations in <strong>three Cartesian directions</strong> — vertical, horizontal and
+      axial — at each point. Machine construction is such that defects can show up in any of the
+      three planes, so all three must be measured. Reporting is typically a 4 × 3 matrix:</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Example vibration report — velocity, mm/s peak</caption>
+          <thead>
+            <tr><th>Point</th><th class="num">Vertical</th><th class="num">Horizontal</th><th class="num">Axial</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>A — motor NDE</td><td class="num">2.4</td><td class="num">1.7</td><td class="num">1.0</td></tr>
+            <tr><td>B — motor DE</td><td class="num">2.1</td><td class="num">1.9</td><td class="num">1.2</td></tr>
+            <tr><td>C — pump outboard</td><td class="num">4.3</td><td class="num">5.6</td><td class="num">2.7</td></tr>
+            <tr><td>D — pump inboard</td><td class="num">3.7</td><td class="num">4.1</td><td class="num">2.1</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Sources of error in hand-held measurement</h3>
+
+      <p>Hand-held measurements are subject to a number of errors, and personnel taking them must
+      be aware of them. Errors arise from:</p>
+
+      <ul>
+        <li><strong>position</strong> on the machine;</li>
+        <li><strong>probe angle</strong>;</li>
+        <li><strong>probe type</strong>;</li>
+        <li><strong>contact pressure</strong>.</li>
+      </ul>
+
+      <div class="note field">
+        <span class="note-label">Interpretation requires a baseline, not a limit</span>
+        <p>As established at <a href="installation.html#pump-in-operation">commissioning</a>, a
+        base reading is taken at <strong>several operating points</strong>. Vibration levels are
+        <strong>minimum at BEP</strong> and rise as the operating point moves away. Comparison
+        against the original base readings is what indicates deterioration in mechanical health.</p>
+        <p>In the <em>absence</em> of a baseline, the limits in API 610 can be used as a
+        reference — but a trend against the machine's own baseline is far more diagnostic than
+        an absolute number against a standard.</p>
+      </div>
+
+      <h3>Frequency analysis</h3>
+
+      <p>Frequency analysis determines the <em>nature</em> of the fault. The three most common
+      problems associated with pumps are easily detected:</p>
+
+      <ol>
+        <li><strong>Unbalance</strong></li>
+        <li><strong>Misalignment</strong></li>
+        <li><strong>Bearing defects</strong></li>
+      </ol>
+
+      <p>Less frequent hydraulic problems can also be detected — <strong>cavitation</strong>, and
+      <strong>improper impeller-to-volute-tongue gaps</strong> (which show at
+      <a href="forces.html#non-hydraulic-sources-of-radial-load">vane pass frequency</a>).</p>
+
+      <p><strong>Infrared thermography</strong> can be used alongside vibration analysis to
+      pinpoint a problem source by detecting an elevated temperature at the trouble spot.</p>
+
+      <h2>Oil and particle monitoring</h2>
+
+      <p>Testing the oil and the particles in it is a good indicator of both bearing condition and
+      the quality of the company's oil programme. Several tests determine bearing condition, or
+      determine <em>why</em> a bearing failed so that appropriate corrective action follows:</p>
+
+      <ul>
+        <li>spectrographic analysis;</li>
+        <li>viscosity analysis;</li>
+        <li>infrared analysis;</li>
+        <li>total acid number;</li>
+        <li>wear particle analysis and wear particle count;</li>
+        <li>moisture content.</li>
+      </ul>
+
+      <p>Most of these must be performed under laboratory conditions, though portable instruments
+      now allow some testing on site. Given that
+      <a href="construction.html#bearing-housing-protection">0.002% water costs 48% of bearing
+      life</a>, the moisture content result alone justifies the programme.</p>
+
+      <h2>System analysis</h2>
+
+      <p>System analysis determines the <a href="hydraulics.html#system-resistance">system
+      resistance curve</a> of the installed pump, which can then be used to evaluate NPSH-a in
+      the as-installed condition. A typical system analysis includes NPSH-a, NPSH-r, static head,
+      friction loss through the system, and a complete review of the piping configuration, valves
+      and fittings.</p>
+
+      <div class="note danger">
+        <span class="note-label">The pillar everyone skips, and the cost of skipping it</span>
+        <p>System analysis is <strong>often overlooked because it is assumed the system was
+        constructed and the pumps are operated in accordance with the design specification. This
+        is often not the case.</strong></p>
+        <p>It is imperative to know <em>where</em> the pumps are being operated to perform a
+        correct analysis — and that depends on the system. The process must also be understood,
+        because it ultimately dictates how the pumps are operated.</p>
+        <p><strong>All indicators may show the pump in distress when the real problem is that it
+        is being run at low or high flow, with excessive hydraulic forces inside it.</strong>
+        Overhaul that pump and it will come back in six months, because nothing about the cause
+        was addressed.</p>
+      </div>
+
+      <h2>What "failure" means</h2>
+
+      <p>Pump maintenance is not primarily about dismantling and assembling pumps. It is an
+      activity to prolong the efficient runtimes of the equipment and improve its overall
+      effectiveness. The techniques above monitor health and, on indication of distress, indicate
+      the cause and severity.</p>
+
+      <p>If a pump is in distress it should be taken up for corrective action
+      <strong>immediately</strong> — prolonging maintenance lets primary failures cascade into
+      secondary failures, increasing both downtime and cost. For non-essential pumps it may be
+      acceptable to leave the machine unmonitored until failure.</p>
+
+      <div class="note">
+        <span class="note-label">The definition that changes how you manage pumps</span>
+        <p>"Failure" does <strong>not</strong> necessarily mean a seizure or a seal blowout
+        forcing a shutdown. A pump is installed to perform a function under specified conditions.
+        <strong>When it is no longer capable of performing that function under those conditions,
+        it has failed.</strong></p>
+        <p>So if a pump must deliver a certain flow at a certain horsepower, and horsepower
+        consumption exceeds the specified limit, <strong>the pump has failed — even though it may
+        be running perfectly smoothly.</strong> That reframing is what converts energy monitoring
+        from a nice-to-have into a failure detection method.</p>
+      </div>
+
+      <h2>Breakdown, diagnosis and removal</h2>
+
+      <p>Typical failure causes in real applications:</p>
+
+      <ul>
+        <li>mechanical seal failure;</li>
+        <li>excessive vibration;</li>
+        <li>pump rubbing or seizure;</li>
+        <li>inadequate performance — flow, head or power consumption;</li>
+        <li>leaking casing.</li>
+      </ul>
+
+      <div class="note warn">
+        <span class="note-label">Diagnose before you dismantle</span>
+        <p>Before a pump is removed, <strong>establish the failure type</strong>. Once it is in
+        pieces on the workshop floor, the evidence of <em>why</em> is largely gone.</p>
+      </div>
+
+      <h3>Before removal</h3>
+
+      <ol>
+        <li>Check with the operating crew on the <strong>perceived cause of failure</strong>.</li>
+        <li>If it is safe to operate the pump, <strong>re-run it</strong> to diagnose the failure
+        by:
+          <ul>
+            <li><strong>sight, smell, noise and touch</strong>;</li>
+            <li>vibration analysis;</li>
+            <li>bearing temperature measurement;</li>
+            <li>a performance check.</li>
+          </ul>
+        </li>
+      </ol>
+
+      <p>These steps indicate the probable cause and — critically — establish whether it is
+      specific to the <strong>pump</strong> or to the <strong>process or pumping system</strong>,
+      including the suction and discharge systems.</p>
+
+      <h3>Field checks if the problem is the pump</h3>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Pre-removal field check sequence</caption>
+          <tbody>
+            <tr><td>1</td><td>Check flush and quench lines for leak, corrosion or plugging</td></tr>
+            <tr><td>2</td><td>Check the balance line, if the design includes one</td></tr>
+            <tr><td>3</td><td>Check the suction strainer for blockage and ensure all valves are open</td></tr>
+            <tr><td>4</td><td>Visually check the oil condition and the oil level</td></tr>
+            <tr><td>5</td><td>Check the coupling for wear or lack of grease</td></tr>
+            <tr><td>6</td><td>Check the condition of the gauges</td></tr>
+            <tr><td>7</td><td>Observe the condition of the baseplate and pump supports</td></tr>
+            <tr><td>8</td><td><strong>Isolate and danger-tag the pump valves and motor</strong> (padlock the motor switch)</td></tr>
+            <tr><td>9</td><td>While dismantling, <strong>notice the pipe strain on the pump</strong></td></tr>
+            <tr><td>10</td><td>Once decoupled, measure the <strong>radial and end clearance of both pump and motor</strong></td></tr>
+            <tr><td>11</td><td>Run the motor and confirm satisfactory operation. If unsatisfactory, remove the motor for repair too.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Single-stage pump strip-down</h2>
+
+      <p>Once the pump is out for overhaul, the observation process does not end — it becomes more
+      focused. <strong>Match and mark all parts before dismantling.</strong></p>
+
+      <ol>
+        <li>Open the casing bolts and separate the casing or volute.</li>
+        <li><strong>Inspect the casing</strong> for corrosion and erosion. Inspect the gasket face
+        particularly, to ensure sufficient land area and a smooth surface; repair appropriately if
+        damaged.</li>
+        <li><strong>Inspect the impeller and nut</strong> for wear, corrosion and erosion. Inspect
+        the vanes for pitting or cavities in the regions identified in
+        <a href="hydraulics.html#cavitation-and-recirculation">Chapter 03</a> — this distinguishes
+        cavitation from suction or discharge recirculation, and that distinction determines
+        whether the fix is hydraulic or operational.</li>
+        <li><strong>Inspect the impeller and casing wear rings</strong> for signs of rub or
+        detachment. A rub indicates excessive shaft deflection, improper assembly, or
+        <strong>piping strain</strong>.</li>
+        <li>Open the seal flange nuts and check the <strong>seal tension</strong>.</li>
+        <li>Remove the impeller after opening the nut. Where it has balancing holes, unplug them.
+        Inspect the backside wear rings carefully.</li>
+        <li>Pull the shaft sleeve out together with the rotary head of the seal. Dismantle
+        carefully and check for wear signs on the primary seal face and on the secondary seals —
+        O-rings and gaskets.</li>
+        <li>Check the bearings for roughness and measure the endplay.</li>
+      </ol>
+
+      <h3>The dimensional checks that decide the overhaul</h3>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Strip-down measurements, methods and limits</caption>
+          <thead>
+            <tr><th>Check</th><th>Method</th><th class="num">Limit</th><th>What exceeding it means</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Endplay / axial float</strong></td>
+              <td>Dial gauge pointer against any step on the shaft, magnetic base on the seal housing. Bump the shaft to one end, zero the gauge, move to the other end, read.</td>
+              <td class="num">0.001–0.003 in<br>(0.02–0.07 mm)</td>
+              <td>Higher float causes <strong>pitting and fretting</strong> at the contact points in the packing or mechanical seal area. Establish whether the cause is improper bearing assembly in the housing or defective bearings.</td>
+            </tr>
+            <tr>
+              <td><strong>Shaft runout</strong></td>
+              <td>Shaft on V-blocks on a flat machinist's table, dial gauge at various locations, rotate by hand. Alternatively clamp at lathe centres, zero on the journals and read elsewhere. A third method — dial gauge fixed to the housing with the pointer on the shaft OD — is <strong>only valid if the pump bearings are in good condition</strong>.</td>
+              <td class="num">0.05 mm max<br>(target ≤ 0.025 mm)</td>
+              <td>Shaft roundness combined with a permanent bow. Greatest effect is on the <strong>mechanical seal</strong>: a 3 mil (0.075 mm) runout moves the seal faces 3 mil per side — <strong>6 mil total</strong>. A bent shaft also causes vibration with a large impact on seal and bearing life. Straighten if higher. With a sleeve fitted, measure on the sleeve OD; <strong>combined runout of shaft and sleeve must be within 0.05 mm</strong>, so hold each to 0.025 mm.</td>
+            </tr>
+            <tr>
+              <td><strong>Shaft radial movement</strong></td>
+              <td>Dial gauge fixed to the housing as close as possible to the inboard bearing housing, pointer on the shaft OD. Lift the shaft lightly, press it down, read.</td>
+              <td class="num">0.07 mm max</td>
+              <td>Causes shaft whip, deflection and ultimately vibration. Usually loose bearing fits from corrosion, wear or improper machining — or defective bearings.</td>
+            </tr>
+            <tr>
+              <td><strong>Seal housing squareness</strong></td>
+              <td><strong>Magnetic base on the shaft</strong>, pointer on the face of the seal housing. Rotate the shaft and record the facial reading.</td>
+              <td class="num">0.05 mm max</td>
+              <td>A housing that does not sit square causes <strong>angularity between the seal faces</strong> and unequal face wear, shortening seal life. If higher, put the housing on a lathe and square the face with its mating face to the bearing housing. The face must be free of nicks, burrs and surface defects.</td>
+            </tr>
+            <tr>
+              <td><strong>Seal housing concentricity</strong></td>
+              <td>Dial gauge fixed to the shaft OD, pointer sweeping the inside bore of the seal housing. Clean a corroded or worn bore with sandpaper, wash and dry with solvent first.</td>
+              <td class="num">0.05 mm max</td>
+              <td><strong>Offset of the seal faces</strong>, because the housing is not concentric with the shaft axis. If higher, reposition and dowel until concentricity is achieved. <strong>On in-between-bearing pumps with two seal housings, this check is even more critical.</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Bearing removal and fits</h3>
+
+      <p>Where bearings feel rough or there is excessive radial and axial float, dismantle the
+      bearing housing to replace them. Normally the <strong>outer race has a transition fit with
+      the housing</strong> and the <strong>inner races have an interference fit on the
+      shaft</strong>, so the shaft with bearings can be drawn out of the housing with a slight tap.
+      Bearings are removed from the shaft using a <strong>hydraulic press</strong>.</p>
+
+      <p>Once the bearings are off, measure the bore and shaft OD dimensions and work out the
+      bearing fits. Check the shaft for straightness at this point — with the shaft bare, the
+      V-block method is available — then polish and keep it ready for reassembly.</p>
+
+      <div class="note warn">
+        <span class="note-label">Repairing excessive bearing fits</span>
+        <p>Housings can be <strong>re-sleeved with rings of the same material</strong>. Shaft
+        diameters can be subjected to <strong>weld build-up and re-machining</strong> — but this
+        must consider the material of construction and the section thickness. Some materials need
+        heat treatment, and <strong>a smaller-diameter shaft can warp if the weld procedure
+        produces excessive heat build-up.</strong> Do not treat a weld repair on a small shaft as
+        routine.</p>
+      </div>
+
+      <h2>Preparation for reassembly</h2>
+
+      <h3>Impellers</h3>
+
+      <p>The impeller is a rotating part subject to high velocity, and the adverse effects of poor
+      hydraulic design show up as wear and erosion. Examine the vanes for cavitation and
+      recirculation evidence — and <strong>communicate this information to operations</strong>,
+      because the cause is in how the pump is being run.</p>
+
+      <p>Treat any corrosion of the impeller seriously and review the material of construction if
+      corrosion rates are excessive. A badly worn or corroded impeller should be replaced. Where
+      the impeller is to be reused, check the fit of its bore with the shaft, and its keyway.</p>
+
+      <h4 id="wear-ring-clearance-the-highest-leverage-measurement-in-the-overhaul">Wear ring clearance — the highest-leverage measurement in the overhaul</h4>
+
+      <p>Measure the wear ring diameter and compare with its mating ring in the casing. Clearances
+      must be in line with the
+      <a href="construction.html#minimum-diametral-clearance">API 610 recommendations</a>.</p>
+
+      <div class="note ok">
+        <span class="note-label">Where restoring clearance pays best</span>
+        <p>Wear ring clearance is <strong>probably the single factor with the greatest impact on
+        pump efficiency</strong> — higher clearance means higher recirculation loss. And the
+        percentage power loss from wear clearances is <strong>much higher in low specific speed
+        pumps</strong>. Experimental data on double-suction pumps shows leakage losses as a
+        percentage of power input falling steeply as specific speed rises.</p>
+        <p><strong>So restoring clearances on low specific speed pumps gives the highest return
+        in leakage loss reduction.</strong> Those pumps deserve the most attention on wear ring
+        clearance. (After Karassik, <em>When To Maintain Centrifugal Pumps</em>, Hydrocarbon
+        Processing, April 1993.)</p>
+      </div>
+
+      <h4>Wear ring retention</h4>
+
+      <p>Wear rings are press fitted to the impeller or casing and held by one of:</p>
+
+      <ol>
+        <li>tack welding, then grinding off the excess bead;</li>
+        <li>threaded wear rings (threaded against the direction of rotation);</li>
+        <li>drill, tap and fasten with grub screws <strong>radially</strong> — hole diameter no
+        more than one-third of ring width;</li>
+        <li>drill and tap at the ring/impeller or ring/casing interface and fasten with grub screws
+        <strong>axially</strong>.</li>
+      </ol>
+
+      <p><strong>API 610 generally does not recommend the first two methods.</strong></p>
+
+      <h4>Balancing</h4>
+
+      <p>After wear rings are renewed and machined to the requisite clearance, balance the
+      impellers to the limits specified by API.</p>
+
+      <div class="note warn">
+        <span class="note-label">ISO 1940 G 6.3 is too liberal</span>
+        <p>The ISO 1940 standard recommendation of grade <strong>G 6.3</strong> for centrifugal
+        pumps is <strong>far too liberal</strong>. Use the API limits.</p>
+        <p>For pumps with long shafts, big impellers and heavier coupling halves, balance
+        <strong>after assembling the complete rotor</strong>, and use
+        <strong>two-plane rotor balancing</strong> in preference to single-plane balancing of the
+        impeller alone.</p>
+      </div>
+
+      <h3>Pump casing</h3>
+
+      <p>Measure and record all fits of the casing and mating parts. Remove, clean, inspect and
+      refit all plugs and fittings. Mounting pads must be flat and parallel to the pump
+      centreline. Clean the casing and polish the gasket area with emery paper so no old gasket
+      material adheres.</p>
+
+      <h4>Internal coating — a genuine efficiency recovery</h4>
+
+      <p>Where there are signs of corrosion or wear, consider coating the internals with a
+      resistant epoxy or equivalent. The procedure:</p>
+
+      <ol>
+        <li>Descale the internals by ash, sand or grit blasting.</li>
+        <li>For <strong>salt water</strong> applications, <strong>steam clean</strong> first to
+        ensure all salt contamination is removed, then grit blast again.</li>
+        <li>Apply the final epoxy coating.</li>
+      </ol>
+
+      <div class="note ok">
+        <span class="note-label">Why this is worth doing</span>
+        <p>Such coatings <strong>smooth the surface roughness of the liquid path</strong> and so
+        reduce hydraulic losses inside the pump. The reported impact on efficiency
+        <strong>can be as high as 10–15%</strong> on a badly pitted casing. Few overhaul
+        activities return that much.</p>
+      </div>
+
+      <p>Clean the casing bolts, arrange the correct number, and coat with anti-seize compound.</p>
+
+      <h3>Seal and bearing housings</h3>
+
+      <p><strong>Cleanliness of the seal and bearing housings is of utmost importance</strong> —
+      it has a large impact on the life of the bearings and seals.</p>
+
+      <ul>
+        <li>Where the seal housing has cooling water jackets, get them <strong>chemically
+        cleaned periodically</strong>.</li>
+        <li>Inspect and check the bearing housing mating faces with the seal housing for proper
+        fit.</li>
+        <li>Check the bearing housing cover faces for smooth surface finish. <strong>Replace the
+        oil seals</strong> or any other shaft seal.</li>
+        <li>Check the <strong>concentricity of the bearing housing bores</strong> — place the
+        housing on a horizontal boring machine with the dial gauge on the boring bar and measure
+        in the vertical and horizontal planes. Alternatively use a dummy shaft with zero clearance
+        in the housing bore.</li>
+        <li><strong>Paint the internals of the housing with oil-resistant paint.</strong> Bearing
+        housings are typically cast iron, and in high-humidity, high-rainfall areas the inner
+        surface corrodes. <strong>Corrosion dust washed around by the splashing oil acts as an
+        abrasive for the bearings.</strong> Inspect the paint condition before assembly.</li>
+        <li>Seal the housing against moisture ingress — install the bearing covers with proper
+        <a href="construction.html#bearing-housing-protection">bearing isolators</a>.</li>
+        <li>Clean the oil level gauge opening and fit a new gauge. Remove, clean and refit the
+        bearing housing vent.</li>
+      </ul>
+
+      <h3>Shaft</h3>
+
+      <p>Check for straightness, thread condition at the impeller nut location, keyway fit at
+      impeller and coupling locations, and fits for the anti-friction bearings. Dress up or repair
+      rounded shoulders and steps. Inspect the lip seal area; if damaged, repair it or compensate
+      with a sleeve of appropriate size.</p>
+
+      <h3>Mechanical seals</h3>
+
+      <p><strong>Mechanical seals are the prime cause of pump failure.</strong> Efforts to improve
+      seal reliability led to the standard <strong>API 682</strong>, which recommends the use of
+      <strong>cartridge seals</strong>. Cartridge seals eliminate the skilled workmanship required
+      to assemble a seal at the user's end — which is exactly where seal assembly errors occur.</p>
+
+      <h4>Pump shaft sleeve</h4>
+
+      <p>Seal assembly preparation begins with the sleeve condition. The sleeve area under
+      secondary seals such as O-rings or PTFE wedges is <strong>most prone to fretting</strong>. To
+      eliminate the problem, that area can be <strong>plasma sprayed</strong> with a hard ceramic
+      coating — chromium oxide, tungsten carbide or aluminium oxide — giving nearly
+      <strong>70 HRc</strong>, then ground to the exact dimension.</p>
+
+      <h4>Seal faces and flatness</h4>
+
+      <p>Seal faces should be renewed. Check the faces for flatness using an
+      <strong>interferometer and optical flat</strong>: a monochromatic light source (helium or
+      sodium) illuminates the piece through an optical flat placed on it, and the light reflects
+      back through the flat producing <strong>interference light bands</strong>.</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Reading flatness from helium light bands</caption>
+          <thead>
+            <tr><th class="num">Light bands</th><th class="num">Deviation</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="num">1</td><td class="num">0.00029 mm (0.3 µm)</td></tr>
+            <tr><td class="num">2</td><td class="num">0.00059 mm</td></tr>
+            <tr><td class="num">3</td><td class="num">0.00088 mm (0.9 µm)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Where the distance between optical flat and the measured piece is one-half the wavelength
+      of helium, or an even multiple, the band shows black. That is a <strong>helium light
+      band</strong>, measuring 0.3 microns (0.0000116 in). <strong>Concentric rings</strong>
+      indicate the surface is neither concave nor convex; when it is, the concentric rings give way
+      to <strong>arcs</strong>. The number of arcs or rings cut by a straight line across the face
+      is the number of light bands.</p>
+
+      <div class="specs">
+        <dl class="spec"><dt>Allowable flatness</dt><dd>3<small> light bands (0.9 µm)</small></dd></dl>
+      </div>
+
+      <p>That degree of flatness allows a mechanical seal to seal vacuum down to
+      <strong>one Torr</strong> (1 mm Hg), and lets the seal comfortably pass fugitive emission
+      specifications of <strong>less than 100 ppm</strong>.</p>
+
+      <div class="note warn">
+        <span class="note-label">Do not relap carbon/graphite faces</span>
+        <p>Carbon graphite faces <strong>relax after lapping</strong>. Although lapped to less than
+        one light band by the seal manufacturer, you may read as high as three light bands on
+        check. <strong>These faces return to flat once placed against a hard face that is
+        flat</strong> — so the reading is not necessarily a defect.</p>
+        <p>Carbon/graphite faces should <strong>not be relapped</strong>, because the relapping
+        procedure <strong>drives the trapped solids further into the face</strong>. Do not use
+        lapping powder or paste on carbon/graphite. Lap them <strong>dry on ceramic stones</strong>
+        of varying grit or finish.</p>
+      </div>
+
+      <h4>Rotary head and springs</h4>
+
+      <p>The rotary head housing one of the seal faces comprises a stainless steel retainer which
+      may house a single or multiple springs, and may have anti-rotation provision. Check all of it
+      is capable of performing its function. <strong>It is advisable to replace the
+      springs.</strong> Unscrew, clean and reuse the grub screws fixing the retainer to the sleeve.
+      Where <strong>bellows seals</strong> are used, inspect carefully for <strong>cracks at the
+      weld joints</strong>.</p>
+
+      <h4>Secondary seals</h4>
+
+      <p>Once the faces are checked, wrap and store them carefully in an air-conditioned,
+      dust-free room until reassembly. Secondary seals include all O-rings and gaskets used with
+      the stationary seat, rotating head and sleeve. During inspection, if any O-ring is found
+      swelled, shrunk, corroded, nicked, cut, extruded or blistered,
+      <strong>investigate the cause</strong>.</p>
+
+      <div class="note danger">
+        <span class="note-label">Never reuse a secondary seal</span>
+        <p><strong>For no reason should the secondary seals be reused. The savings will not
+        justify even a pump leaking on the test bench</strong> — let alone in service. Procure a
+        new set with confirmed dimensions and keep it with the seal faces.</p>
+      </div>
+
+      <h4>Seal plate and seal housing</h4>
+
+      <p>The seal plate housing the stationary seat must be free of corrosion. Where fitted with a
+      <strong>stop pin</strong> to prevent seat rotation, check the pin's condition and replace if
+      necessary. Clean and polish the gasket/O-ring surface.</p>
+
+      <p>The seal housing must be clean and dry; internals may be coated with an anti-rust
+      compound. The <strong>throat bush</strong> is fitted to the seal housing — confirm its
+      clearance with the sleeve OD and replace if higher. Where it has integral cooling water
+      jackets, flush and periodically chemically clean them.</p>
+
+      <h3>Bearings and coupling</h3>
+
+      <p>Leave <strong>new bearings packed</strong> until required for assembly. Confirm the
+      housing fits with the bearing where there are <strong>repeated bearing failures or high
+      bearing temperatures</strong>.</p>
+
+      <p>Inspect the coupling for wear and its fit with the shaft; if normal, grease where
+      applicable.</p>
+
+      <h3>The clearance / overhaul chart</h3>
+
+      <p>Preparation for assembly is a detailed exercise that lays the basis for a quick assembly
+      and a reliable repair. It requires acceptable clearances and accurate data so that assembly
+      is not hampered by incorrect dimensions or unclear expectations of a sub-assembly procedure.
+      The consolidated chart is on the
+      <a href="formulas.html#clearance-and-tolerance-chart">formula and data sheet</a>.</p>
+
+      <h2>Single-stage pump assembly</h2>
+
+      <h3>Bearing assembly</h3>
+
+      <ol>
+        <li>Apply oil lightly on the bearing seat of the shaft.</li>
+        <li><strong>Shielding, if any, must face the proper direction.</strong> Angular contact
+        bearings must also face the proper direction, and <strong>duplex bearings must be mounted
+        with the proper faces together</strong> — arrangements vary from model to model, so refer
+        to the OEM manual.</li>
+        <li>Press the bearing on <strong>squarely — do not cock it</strong> onto the shaft. The
+        sleeve used to press it on must be clean, cut square, and
+        <strong>contact the inner race only</strong>.</li>
+        <li>Press the bearing firmly against the shaft shoulder; the shoulder helps support and
+        square the bearing.</li>
+        <li>Where fits are tight, heat the bearings with an <strong>induction heater with a
+        de-magnetising cycle</strong>. <strong>Temperature must not exceed 110 °C.</strong></li>
+        <li>Install the snap rings with the <strong>flat side against the bearing</strong>, and
+        tighten the lock nuts.</li>
+        <li>Lubricate the bearings.</li>
+        <li><strong>Wrap the assembly in plastic</strong> while the bearing housing is made
+        ready.</li>
+        <li>Before placing the rotor in the housing, ensure the housing is
+        <strong>spotlessly clean</strong>.</li>
+        <li>In pumps where the inboard bearing (closer to the impeller) is the locating (fixed)
+        bearing, fix the bearing cover that provides the step to the outer race —
+        <strong>after applying sealing compound to the mating faces</strong>.</li>
+        <li>Smear oil on the bearing housing bores.</li>
+        <li>Tap the shaft with mounted bearings into the housing until the outer race of the
+        inboard bearing rests against the step.</li>
+        <li>Apply sealing compound to the outboard mating face for the bearing cover and tighten
+        the bolts.</li>
+      </ol>
+
+      <div class="note ok">
+        <span class="note-label">The alternative arrangement worth knowing</span>
+        <p>In another arrangement the <strong>outboard bearing is the locating bearing</strong>,
+        placed in a housing that can be <strong>screw-jacked axially</strong> after loosening the
+        clamping bolts. The advantage: <strong>the rotor can be moved axially without dismantling
+        the pump</strong>, which is particularly useful for setting the clearance between a
+        back-vaned impeller and the casing wall.</p>
+        <p>Assembly: bearings fitted on the shaft, lock nut tightened against the outboard
+        bearing, housing slid over the outer race, snap ring slipped into the slot, then the rotor
+        assembly placed in the bearing housing and the bolts tightened.</p>
+      </div>
+
+      <h3>Seal assembly and seal tension</h3>
+
+      <ol>
+        <li>Clamp the stationary seat firmly with the seals in the seal end plate.</li>
+        <li>Bolt that to the seal housing.</li>
+        <li><strong>Slide the seal housing carefully over the shaft</strong> so there is no impact
+        between the shaft surface and the stationary seat.</li>
+        <li>Bolt it to the bearing housing, <strong>observing the match marks</strong> made before
+        dismantling. This is necessary because <strong>if even a single bolthole is out of phase,
+        it may be impossible to make the sealant connections in the field.</strong></li>
+        <li>Adjust the <strong>seal tension</strong>.</li>
+      </ol>
+
+      <p>The springs have a certain effect on face pressure, so a certain seal tension must be
+      maintained. For multi-spring designs, seal tension is typically of the order of
+      <strong>3–4 mm</strong> depending on seal size; single-spring seals have a much higher seal
+      tension.</p>
+
+      <div class="formula">
+        <p class="eq"><b>Seal tension</b> = F − (S + A) = 3 mm<br>
+        with a gasket: <b>Seal tension</b> = F − (S + A + G)</p>
+        <dl>
+          <dt>F</dt><dd>free length of the assembled rotary head — from the edge of the sleeve to
+            the seal face, <strong>without compression</strong></dd>
+          <dt>A</dt><dd>distance between the shaft step and the face of the stationary seat
+            (measured directly, or using a frame of reference based on the pump construction)</dd>
+          <dt>S</dt><dd>length of the sleeve — the difference between the easily measurable
+            lengths L and M</dd>
+          <dt>G</dt><dd>gasket thickness, where the sleeve design uses a gasket rather than an
+            O-ring to seal the shaft OD / sleeve ID gap</dd>
+        </dl>
+        <p class="fnote">Where seal tension is improper, cuts can be taken on the sleeve steps.
+        <strong>Caution: ensure the step of the balance carbon and the sleeve step do not foul up
+        once the seal is under compression.</strong></p>
+      </div>
+
+      <ol start="6">
+        <li>Squirt oil from a can to lubricate the seal faces.</li>
+        <li>Insert the sleeve with the rotary head.</li>
+      </ol>
+
+      <div class="note ok">
+        <span class="note-label">Cartridge seals remove this whole step</span>
+        <p>The seal tension adjustment above can be <strong>eliminated entirely by using
+        cartridge seals</strong>, which come with pre-adjusted seal tension — tension is achieved
+        simply by releasing the setting tabs. This is why API 682 pushes cartridge construction,
+        and why it is worth specifying on any pump that will be overhauled in a site workshop.</p>
+      </div>
+
+      <h3>Impeller and casing assembly</h3>
+
+      <ol>
+        <li>With the sleeve and rotary head in place, compression is achieved by installing the
+        impeller and locking it to the shaft with the nut.</li>
+        <li>After the impeller is fixed, <strong>measure the runout of the impeller wear ring in
+        the installed condition — within 0.05 mm</strong>.</li>
+        <li>Place the casing gasket in the pump casing.</li>
+        <li>Bolt the casing to the seal housing flange, again
+        <strong>observing the match marks</strong>.</li>
+        <li>Tighten the bolts to the specified torque.</li>
+      </ol>
+
+      <div class="note danger">
+        <span class="note-label">Torque and anti-seize — the correction people forget</span>
+        <p>Correct bolting torque depends on bolt size, thread and material — and critically on
+        <strong>whether the bolt has been lubricated</strong>. If an anti-seize compound has been
+        applied, the tightening torque must be set to approximately
+        <strong>two-thirds of the torque specified for dry bolts.</strong></p>
+        <p>Apply anti-seize and then torque to the dry figure, and you have over-stressed every
+        casing bolt.</p>
+      </div>
+
+      <h3>Seal hydrotest</h3>
+
+      <p>Where the workshop can test seals, do it.</p>
+
+      <ol>
+        <li>Bolt blind flanges to the inlet and outlet nozzles.</li>
+        <li>The blind flanges should be drilled and tapped for fittings to fill the pump with
+        water and vent air from the topmost point.</li>
+        <li>Fill with water and vent all air out.</li>
+        <li>Pressurise to a minimum of <strong>1–2 kg/cm² above the shut-off discharge
+        pressure</strong>.</li>
+        <li>Once pressurised, use compressed air to <strong>dry the pump externally</strong>,
+        especially near the seal and shaft interface — otherwise you cannot tell a leak from
+        residual water.</li>
+        <li>Rotate the shaft slowly by hand and observe carefully for leaks from the seal.</li>
+        <li>Examine the casing joint too.</li>
+        <li><strong>Investigate any drop in hydrotest pressure.</strong></li>
+        <li>If satisfactory, release the pressure and drain the water.</li>
+      </ol>
+
+      <h3>Coupling, lines and fittings</h3>
+
+      <ul>
+        <li>Mount the pump coupling half on the shaft. The shaft end should
+        <strong>preferably be flush with the coupling half</strong> — but if it was not originally,
+        that should have been recorded and kept to the same arrangement.</li>
+        <li>Fit the sealant lines, oil level gauges, cooling water lines and any others.</li>
+        <li>After removing the blind flanges, <strong>cover the pump nozzles completely with
+        tape</strong>.</li>
+      </ul>
+
+      <p>The pump is ready for installation at site.</p>
+
+      <h2>Vertical pump repair</h2>
+
+      <p>A vertical pump comprises:</p>
+
+      <ul>
+        <li><strong>Head / driver assembly</strong> — an electric motor and a cast or fabricated
+        base from which the column and bowl assembly is suspended;</li>
+        <li><strong>Column and shaft assembly</strong> — the column pipe links head assembly to
+        bowl assembly and conducts the liquid from bowl to discharge. Inside it runs the pump
+        shaft transmitting power from driver to impellers. <strong>The pumped liquid generally
+        lubricates the line shaft bearings in the column.</strong></li>
+        <li><strong>Pump bowl assembly</strong> — each bowl comprises impeller, suction and
+        discharge casing.</li>
+      </ul>
+
+      <p>There are three reasons to overhaul a vertical turbine pump:</p>
+
+      <ol>
+        <li><strong>Complete breakdown</strong> leading to unexpected disruption of a critical
+        system.</li>
+        <li><strong>Reduced efficiency</strong> from increased clearances between bowls and
+        enclosed impeller skirts, increased clearance between bowl shaft and bearings, and
+        breakdown of the fluid passages. <strong>Over time, running a badly worn pump can be just
+        as costly as some system shutdowns.</strong></li>
+        <li><strong>Changed operational requirements</strong> in pressure and capacity.</li>
+      </ol>
+
+      <div class="note warn">
+        <span class="note-label">Why vertical pumps are harder</span>
+        <p>A vertical pump has far more components than a horizontal pump, and its maintenance
+        problems are different and substantially greater. <strong>The rotor is not stabilised by
+        gravity and is prone to gyroscopic effects</strong> that can damage the rotor and the
+        casing. Repair demands corresponding care.</p>
+      </div>
+
+      <h3>Dismantling</h3>
+
+      <p>The procedure is influenced by construction, and repair is much more complex than a
+      single-stage pump. <strong>It is advisable to prepare a datasheet for the pump</strong>
+      comprising all pump details, clearance and fits data, and any special remarks and
+      procedures.</p>
+
+      <ol>
+        <li><strong>Lay the pump horizontally on the floor with the discharge nozzle facing the
+        ground.</strong></li>
+        <li>Take a paintbrush and <strong>match mark all the joints</strong>. Because bowl joints
+        look similar, <strong>punch consecutive numbers</strong> on the joints — taking care these
+        are not in addition to numbers from a previous overhaul, which would cause considerable
+        confusion during assembly.</li>
+        <li>Push the pump upper shaft toward the suction and measure the distance to the motor
+        adapter face, and the adapter face configuration.</li>
+        <li>Pull the rotor outward and re-measure that distance to get the
+        <strong>total axial float of the rotor</strong>.</li>
+        <li>Open the bowls. They may be individually screwed together, bolted with a series of
+        bolts around the bowl flange (the most common design), or bolted with tie bolts extending
+        from the bottom of the pumping section to the top through the bowls. Open one section at a
+        time.</li>
+        <li>Where a <strong>split collet bushing</strong> locks the impeller on the shaft, measure
+        and record the distance between the shaft end and the impeller.</li>
+        <li><strong>Measure and record the float at each stage.</strong></li>
+        <li>As disassembly progresses, <strong>match mark the impellers, collets, keys, locking
+        pins, split keeps and keeper plates</strong>, and arrange them in an organised manner.</li>
+        <li>Match mark the line shaft couplings along the mating shaft at each end.</li>
+      </ol>
+
+      <div class="note danger">
+        <span class="note-label">Removing line shaft couplings without destroying the shaft</span>
+        <p>Remove line shaft couplings using <strong>pipe or chain tongs on the mating
+        shafts</strong>. <strong>Wrenches applied to the couplings can cause the coupling to
+        collapse and seize on the shaft.</strong> If normal methods fail, cut the coupling with a
+        thin grinding wheel. <strong>The main aim is to prevent damage to the shaft, as it is the
+        most expensive item.</strong></p>
+      </div>
+
+      <p>Check the rigid coupling halves from the motor and pump for trueness and squareness.</p>
+
+      <h3>Preparation for assembly</h3>
+
+      <h4>Bowl and impeller fluid passages</h4>
+
+      <p>Examine carefully for wear. A significant impact on efficiency results if they are
+      damaged, pitted, have particle build-up, or have eroded coatings. Coatings are normally
+      applied to the interior of the bowl assembly, mainly to enhance efficiency or protect
+      internals — but fluid velocity and suspended solids often damage the coating. Cleaning,
+      recoating or replacing the affected parts are options depending on severity.</p>
+
+      <h4>Shaft</h4>
+
+      <p>The bearing areas are susceptible to wear. If condition is good, measure the shaft
+      runout: shaft on V-blocks or knife-edge rollers at the recommended distances, dial gauge at
+      various locations, rotated a full circle by hand.</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Vertical pump shaft data</caption>
+          <tbody>
+            <tr><td><strong>Runout limit</strong></td><td><strong>3–4 mils (0.075–0.1 mm)</strong>. If higher, straighten within tolerance using a press.</td></tr>
+            <tr><td><strong>Construction</strong></td><td><strong>A single-piece shaft is recommended whenever possible.</strong> If more than one piece is used and couplings are required, provide a <strong>radial weep hole in the centre of the coupling</strong>. Screw the shaft together and check runout.</td></tr>
+            <tr><td><strong>Material</strong></td><td>Bowl shaft typically a grade of stainless steel — <strong>12% Cr steel, ASTM A581 / A582</strong>, hot rolled bar, turned, ground and polished — rather than carbon steel, for abrasion and corrosion resistance.</td></tr>
+            <tr><td><strong>Abrasive service</strong></td><td><strong>Shrunk-fitted sleeves</strong> in the wear areas, or <strong>chrome or other hard coatings</strong> at those locations.</td></tr>
+            <tr><td><strong>Lengths and straightness</strong></td><td>Shaft in lengths of <strong>20–24 in</strong> with a straightness tolerance of <strong>1.5 mils per foot</strong>.</td></tr>
+            <tr><td><strong>Surface finish</strong></td><td><strong>16 µin RMS</strong> recommended.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>Wear rings and impellers</h4>
+
+      <p>Measure and record impeller-to-bowl wear ring clearances; they should be in accordance
+      with <a href="construction.html#minimum-diametral-clearance">API 610</a>. Where the bowl has
+      no wear ring, check whether sufficient material is available to bore the bowl and/or turn the
+      impellers. Wear rings can replace the worn material and bring parts back into tolerance.</p>
+
+      <p>Where the fluid contains particularly abrasive solids, the wear rings are made of
+      materials chosen to minimise abrasive erosion. <strong>If wear rings are ordered with the
+      original unit for easy replacement later, both bowl and impeller pieces are necessary</strong>
+      to return the bowl assembly to its original tolerances.</p>
+
+      <p><strong>Balance all impellers individually to API specifications.</strong> Check all
+      bearing bores for parallelism with the shaft column.</p>
+
+      <h4>Line shaft bushings</h4>
+
+      <p>Measure all bushings in the bearing retainers for clearance with the shaft. If replaced
+      for excessive clearance, secure them properly to the retainer per their design and material.
+      These bushings generally have a <strong>spiral groove for lubrication</strong>, as clearances
+      are on the tighter side.</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Line shaft bushing materials and limits</caption>
+          <thead>
+            <tr><th>Material</th><th>Temperature range</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Bronze</strong></td>
+              <td>−30 to 90 °C</td>
+              <td><strong>Not used in corrosive, sandy or dirty water service.</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Cast iron</strong></td>
+              <td>Above 90 °C</td>
+              <td>Can withstand mild corrosive duty.</td>
+            </tr>
+            <tr>
+              <td><strong>Carbon</strong></td>
+              <td>Not below −30 °C</td>
+              <td>For corrosive service, or products of low lubricity such as hydrocarbons.</td>
+            </tr>
+            <tr>
+              <td><strong>Rubber (typically neoprene)</strong></td>
+              <td>Not for higher temperatures</td>
+              <td>Mostly used in sandy or dirty sump applications. <strong>Clearance up to 0.030 in</strong>, which makes it much more forgiving where abrasive solids are present.</td>
+            </tr>
+            <tr>
+              <td><strong>Bronze-backed rubber, Teflon, carbon composites, coke- or glass-filled</strong></td>
+              <td>—</td>
+              <td>Other options; coke- or glass-filled only after proper consideration.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="specs">
+        <dl class="spec"><dt>Typical shaft/bearing clearance</dt><dd>0.010<small> in</small></dd></dl>
+        <dl class="spec"><dt>Rubber bearings</dt><dd>0.030<small> in</small></dd></dl>
+        <dl class="spec"><dt>Enclosing tube bearings</dt><dd>0.25<small> mm (10 mils)</small></dd></dl>
+      </div>
+
+      <h4>Column pipe and tubes</h4>
+
+      <p>The pipe may be pitted, encrusted with scale, or have damaged coating. Considering the
+      degree of roughness, decide whether to reuse, recoat, clean or replace. Inspect the tube
+      faces for leakage or damage and replace the tubes where necessary. Enclosing tube bearings
+      should have approximately the same tolerances as the bowl bearings (10 mils / 0.25 mm).</p>
+
+      <p>An alternative drive shaft configuration uses a <strong>separate oil-lubricated
+      column</strong>, offering extended bearing performance at higher first cost, with payback
+      through the service life.</p>
+
+      <p><strong>Open line shaft bearings</strong> should be replaced when visibly damaged. They
+      are usually rubber, and their condition does not necessarily affect efficiency — but
+      <strong>it is vital for supporting the shaft</strong>.</p>
+
+      <h4>Discharge head and seals</h4>
+
+      <p>The discharge head generally requires the least maintenance. Most repairs are on the shaft
+      seal, whether a stuffing box or a mechanical seal. Replace packing in the stuffing box to
+      control leakage. Check stuffing box or seal-housing bearings to make sure the shaft is
+      properly supported. Mechanical seal repair is not very different from the horizontal case.</p>
+
+      <div class="note ok">
+        <span class="note-label">The strongest case for cartridge seals</span>
+        <p>In <strong>vertical pumps</strong> cartridge seals make even more sense than in
+        horizontal ones. On a horizontal overhung-impeller pump, the rotor must be dismantled to
+        reach the seal even if it is a cartridge type. But on <strong>in-between-bearing pumps and
+        vertical pumps the impeller assembly need not be touched</strong>, so
+        <strong>seal replacement can be done on site without removing the pump to a
+        shop</strong>.</p>
+        <p>And because changing seals on site is tricky and error-prone given site conditions,
+        that makes a strong case for cartridge seals in these pump types.</p>
+      </div>
+
+      <h4>Driver and thrust bearing</h4>
+
+      <p>When a vertical pump is started it has a <strong>momentary up-thrust hydraulic
+      action</strong>. Operated at high flows continuously, it is likely to have a
+      <strong>continuous upward axial force</strong>. This stresses the motor thrust bearing and
+      creates the probability of <strong>buckled line shafts, rubbing impellers and leaking
+      mechanical seals</strong>. Check the thrust bearings to ensure they are not excessively worn.</p>
+
+      <p>Motors upgraded to premium efficiency, or at least replaced or rewound, can significantly
+      increase overall pump performance.</p>
+
+      <h3>Vertical pump assembly</h3>
+
+      <ul>
+        <li><strong>Assemble the pump in the vertical position.</strong> This prevents the risk of
+        shaft or bowl assembly developing sag. Bowl bushing clearance is typically 9 mils and bowl
+        spigot fits are 2–3 mils, so <strong>in a horizontal position it is bound to touch after
+        3–4 bowl assemblies</strong>. In the vertical position those clearances are distributed.</li>
+        <li><strong>Use the jack-bolt in the suction piece</strong> to position the end of the
+        shaft and allow accurate spacing of the impellers. A load applied on previously installed
+        impellers <strong>can knock them off their collet</strong> while installing the next one —
+        and if impellers become loose, there is a grave danger of a rub on starting.</li>
+        <li>Impellers fitted with <strong>collets</strong> need much more attention than those
+        held by split rings, keys or snap rings. <strong>Excessive tightening of the collet can
+        crack the impeller in the hub area.</strong></li>
+        <li>After the bowls are assembled, <strong>check the lift and rotate the rotor by
+        hand</strong> to check for any internal rubbing.</li>
+        <li>Where the pump is long, column sections have to be assembled horizontally.
+        <strong>Rotate the assembled position 180° with the installation of every additional
+        component</strong> — this staggers the alignment clearances and fits through the column
+        length and keeps the assembly along the shaft centreline.</li>
+        <li>After the columns are fitted, install the discharge head. At this stage, compare the
+        <strong>shaft extension length</strong> against the figure taken before dismantling.
+        <strong>Deviations of 1/16 to 1/8 in are normal</strong> and can be compensated with
+        gaskets.</li>
+        <li>The shaft extension may be supported and the shaft locked before dispatch to site.
+        <strong>If the jack bolt at the suction bell is left in place, it must carry a warning tag
+        to remove it before installation.</strong></li>
+      </ul>
+
+      <h2>Multistage (barrel / double case) pump repair</h2>
+
+      <p>A barrel-type double case pump has two casings. The <strong>inner assembly</strong>
+      comprises the complex shape of the stationary hydraulic passages; it sees the external
+      differential pressure, so any bolting to hold it is minimal. It may be
+      <strong>split axially into similar halves cast from the same pattern</strong>, or be of the
+      <strong>multiple diffuser casing</strong> type. The <strong>outer casing</strong> acts as the
+      pressure boundary for the pumped liquid and is designed as a pressure vessel.</p>
+
+      <p>The rotor is either <strong>opposed impeller</strong> or <strong>in-line</strong>; the
+      latter has a <strong>balance disk</strong> to handle the much higher axial thrust. These
+      pumps serve as boiler feed water pumps, charge pumps on high-temperature high-pressure
+      hydrocarbons, water-flood pumps and pipeline pumps — all critical, all with expensive
+      downtime.</p>
+
+      <div class="note ok">
+        <span class="note-label">The spare inner assembly strategy</span>
+        <p>Some designs have a <strong>fully separable inner case subassembly including the
+        rotor</strong>, removable by taking off the outboard cover <strong>without breaking the
+        suction line joint</strong>.</p>
+        <p>Because downtime is expensive, a <strong>spare inner subassembly is usually made ready
+        and held as a spare</strong> — during a repair the inner assemblies are simply swapped. For
+        designs that include the journal and thrust bearing in the subassembly, downtime is
+        reduced further because even those adjustments are made beforehand.</p>
+      </div>
+
+      <h3>Shaft checks and balancing</h3>
+
+      <div class="specs">
+        <dl class="spec"><dt>Shaft runout</dt><dd>&lt; 1<small> mil</small></dd></dl>
+        <dl class="spec"><dt>At bearing areas</dt><dd>&lt; 0.5<small> mil</small></dd></dl>
+      </div>
+
+      <p>In some designs impellers are <strong>shrink fitted</strong> on the shaft to prevent
+      mechanical looseness, positioned axially by <strong>split rings on the suction side of each
+      impeller hub</strong>. The grooves for the split rings cause the shaft to develop runout, and
+      because of the shrink fits the <strong>shaft fits must be measured and recorded</strong>.</p>
+
+      <p>Next, <strong>balance the shaft</strong> with the half keys taped: mount on a balancing
+      machine, spin to <strong>300 rpm for about 10 minutes</strong>, measure shaft runout at
+      mid-span and mark the angular position. Achieve balance
+      <strong>by machining the face of the steps of the shaft</strong>, then re-check runout.</p>
+
+      <h3>Stacking the rotor for balancing</h3>
+
+      <ol>
+        <li>Place the shaft <strong>vertically</strong>.</li>
+        <li>Stack all rotating components sequentially — impellers, thrust collar, balance drum if
+        installed.</li>
+        <li>Since most components are shrink fit, heat them to about <strong>110–120 °C</strong>
+        depending on bore and shaft diameters.</li>
+        <li>Hold the match-marked split ring and key for the first-stage impeller in place. Mark
+        the impeller keyway with a pen if it is blind at one end.</li>
+        <li>Heat the impeller to <strong>120 °C</strong> and slip it carefully over the key to
+        position until it contacts the split rings.</li>
+        <li>Apply <strong>constant downward pressure</strong> until the impeller has firmly gripped
+        the shaft. To aid this, pass <strong>cooling air from the impeller OD to the suction
+        eye</strong> until the impeller is at ambient.</li>
+        <li>Install the other impellers the same way.</li>
+        <li>Once all impellers are firmly fixed, measure rotor runout. If within limits, tighten
+        the impeller nuts and <strong>re-check runout</strong>.</li>
+        <li>If acceptable, fit all rotating components and send for balancing.
+        <strong>If excessive runout is detected, the shaft nuts are the probable cause and their
+        faces should be rectified.</strong></li>
+      </ol>
+
+      <p>For the balancing procedure itself, see W. Edward Nelson, <em>Monitoring Repairs to Your
+      Pumps</em>, 12th International Pump Users Symposium, 1995.</p>
+
+      <h3>Final stacking with diffusers</h3>
+
+      <p>Once balanced, <strong>unstack the rotor</strong>. Place the shaft vertically again and
+      this time stack the impellers <strong>together with the diffuser elements</strong>, in the
+      same manner.</p>
+
+      <ul>
+        <li><strong>After installation of every stage, check the float.</strong> A jack may be
+        placed under the coupling end of the shaft; <strong>the required lift must be maintained
+        throughout the assembly</strong>.</li>
+        <li>Diffuser covers have a small interference fit of <strong>0.01 mm</strong> and may
+        require heat. If a cover does not fit, heat the <em>preceding</em> cover with a small torch
+        around the entire circumference for a minute, then tap the cover lightly with a hammer.</li>
+        <li>After all impellers and diffusers are installed, install the
+        <strong>balance piston</strong>. Once cool, tighten the nut to the match marks made
+        earlier.</li>
+        <li>The impeller–diffuser line-up — the axial location of the rotor to give the correct gap
+        — is adjusted by the <strong>thickness of the locator ring placed between the thrust collar
+        and the shaft step</strong>.</li>
+      </ul>
+
+      <h3>Impeller to diffuser axial overlap</h3>
+
+      <p>The relation of shroud and hub positions to the diffuser/volute and casing must be
+      verified and determined during assembly. <strong>Axially, the impeller discharge should be
+      entirely within the axial width of the diffuser.</strong> If it is not, flow from the impeller
+      discharges against the diffuser or casing walls.</p>
+
+      <p>Rotor sensitivity to impeller and diffuser alignment depends on the ratio
+      <strong>B₂/B₃</strong> — impeller exit vane width to diffuser vane width — and must be judged
+      case by case. A typical overlap of <strong>not less than half the impeller side-plate
+      (shroud/cover) thickness</strong> is preferred.</p>
+
+      <div class="note danger">
+        <span class="note-label">A balancing operation that destroys performance</span>
+        <p>During dynamic balancing, <strong>if grinding of the impeller sidewall extends to the
+        impeller OD such that it affects the overlap, pump performance will be affected.</strong>
+        The balancing shop needs to know this constraint; it will not infer it.</p>
+      </div>
+
+      <h3 id="gap-a-and-gap-b">Gap-A and Gap-B</h3>
+
+      <p>Beyond axial location, two famous dimensions must be measured, recorded and corrected
+      during overhaul. They have a pronounced impact on the hydraulic stability of any high-energy
+      pump.</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Gap-A and Gap-B — definition and recommended values</caption>
+          <thead>
+            <tr><th>Gap</th><th>Definition</th><th>Range</th><th>Preferred</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Gap-A</strong></td>
+              <td>Radial clearance between the <strong>outer diameters of the impeller side plates</strong> (hub/cover, shroud) and the <strong>inner diameter of the diffuser channel side plates</strong>.</td>
+              <td><strong>35–85 mils</strong>. Beyond 125 mils it loses its effectiveness.</td>
+              <td><strong>50 mils</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Gap-B</strong><br>(diffuser type)</td>
+              <td>Radial clearance between the <strong>impeller vanes at their outer diameter</strong> and the <strong>diffuser or volute vane inner diameter</strong>, expressed as a <strong>percentage of the impeller vane diameter</strong>.</td>
+              <td><strong>4–12%</strong></td>
+              <td><strong>6%</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Gap-B</strong><br>(volute type)</td>
+              <td>As above.</td>
+              <td><strong>6–12%</strong></td>
+              <td><strong>10%</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Where the <strong>number of impeller and diffuser vanes is even</strong>, the radial gap
+      must be <strong>larger by 4%</strong>.</p>
+
+      <div class="note ok">
+        <span class="note-label">The one correction that costs nothing and gains everything</span>
+        <p>Correct gaps <strong>eliminate vane pass vibration frequency</strong>. And critically:
+        <strong>machining the diffuser or volute vane to achieve the right Gap-B without affecting
+        Gap-A causes no loss of efficiency.</strong> In fact, the high noise level, shock and
+        vibration caused by vane pass frequency are eliminated — <em>improving</em> efficiency.</p>
+        <p>This is why the <a href="selection.html#what-to-demand-on-the-blank-pages">data sheet
+        should demand the impeller-to-cutwater clearance</a> for pumps developing more than
+        200 mlc.</p>
+      </div>
+
+      <h3>Inserting the inner assembly and final build</h3>
+
+      <ol>
+        <li>Insert the assembled inner subassembly — inner casing plus rotor — into the outer
+        casing <strong>using a guide fixture</strong>.</li>
+        <li>Install the <strong>expansion gaskets and spacers</strong> between inner casing and
+        outer head. <strong>Improper inner head gasket spacers can result in improper makeup of
+        the intermediate diffuser covers</strong>; the suction spacer and discharge diffuser spacer
+        could then allow <strong>liquid recirculation, dropping efficiency and causing
+        erosion</strong>. Spacer thickness plus gasket should achieve approximately
+        <strong>0.4–0.5 mm compression on each gasket</strong>.</li>
+        <li>Install and tighten the head. In most designs the head fit is all-metal and the
+        <strong>gap at the head should be approximately 1–1.5 mm</strong>.</li>
+        <li>Install the bearing housings with the <strong>lower half journal bearing in
+        place</strong>. Move the coupling end housing until the <strong>suction impeller is centred
+        in the wear rings within 0.025 mm</strong> — measurable with feeler gauges.</li>
+        <li>Record the dial gauge readings of the <strong>seal housing bores and faces</strong>.</li>
+        <li>Insert the locating spacer and the thrust collar.</li>
+        <li><strong>Install the seals before the bearings are placed in the housings.</strong></li>
+        <li>Insert the bearing housing dowels and bolt them.</li>
+        <li>Finally install the journal and thrust bearings.
+        <strong>The location of the thrust collar lines up the rotor axially to get the right gap
+        between impeller and diffuser.</strong></li>
+        <li>Install the coupling halves and make ready for alignment.</li>
+      </ol>
+
+      <h2 id="when-to-overhaul-the-economics">When to overhaul — the economics</h2>
+
+      <p>Pump performance deteriorates over time, and it is always a debate whether to live with
+      the problem or overhaul. Living with it means continuous loss of money through inefficient
+      operation; overhauling means incurring the maintenance cost. The question is answerable
+      arithmetically.</p>
+
+      <p>The algorithm below is the work of <strong>Ray Beebe</strong>, from
+      <em>Condition Monitoring of Pumps can save Money</em> (APMA Seminar).</p>
+
+      <h3>The two deterioration assumptions</h3>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Which assumption applies, and what follows</caption>
+          <thead>
+            <tr><th>Assumption</th><th>Method</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Deterioration is constant over time</strong></td>
+              <td>A <strong>cash flow analysis</strong> establishes whether the investment in overhaul gives the required rate of return — the same process used for any plant improvement investment.</td>
+            </tr>
+            <tr>
+              <td><strong>Deterioration rate increases with time</strong></td>
+              <td>The optimum time for overhaul is when the <strong>accumulated cost of the increased power consumption equals the cost of the overhaul</strong>.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Three operational contexts</h3>
+
+      <ol>
+        <li><strong>Deterioration limits plant throughput.</strong> The loss of production is high
+        enough to justify the overhaul cost immediately — it becomes a matter of finding an
+        opportune window.</li>
+        <li><strong>Pump operation is intermittent and does not affect throughput.</strong> Any
+        deterioration simply means longer operating duration — typically pumps loading product
+        into tankers. The additional operating time and excess power can be compared directly with
+        the overhaul cost.</li>
+        <li><strong>Deterioration is initially offset by opening a control valve or increasing
+        speed</strong>, but over time a threshold is reached and throughput begins to suffer. In
+        some cases the power requirement exceeds the motor rating, causing overload trips.</li>
+      </ol>
+
+      <p>Use the <a href="hydraulics.html#performance-calculation-procedure">performance
+      calculation procedure</a> to determine the power the pump consumes, benchmark it against
+      the performance curves, and the difference gives the
+      <strong>excess power consumption</strong> — which converts directly into lost expense.
+      Pumps consuming excess power are the primary candidates and take higher priority.</p>
+
+      <h3>Worked example</h3>
+
+      <p>Context 2 — the pump runs intermittently and loss of performance does not affect
+      throughput.</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Given data</caption>
+          <tbody>
+            <tr><td>Duration of pump operation</td><td class="num">24 months, operating 27% of the time</td></tr>
+            <tr><td>Cost of overhaul</td><td class="num">$50 000</td></tr>
+            <tr><td>Cost of power</td><td class="num">10 c/kWh</td></tr>
+            <tr><td>Excess power consumption</td><td class="num">167 kW</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Assuming the excess power consumption rate increase is <strong>linear</strong>:</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Cost of deterioration at month 24</caption>
+          <tbody>
+            <tr><td>Hours in one month</td><td class="num">30 × 24 = 720 h</td></tr>
+            <tr><td>Hours of operation at 27%</td><td class="num">720 × 0.27 = 194.4 h</td></tr>
+            <tr><td>Excess power consumed in one month</td><td class="num">167 × 194.4 = 32 464.8 kWh</td></tr>
+            <tr><td>Cost of that excess power at 10 c/kWh</td><td class="num">32 464.8 × 0.1 = <strong>$3 246.5</strong></td></tr>
+            <tr><td>Rate of cost of deterioration, spread linearly over 24 months</td><td class="num">$3 246.5 ÷ 24 = <strong>$135.3 per month per month</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>From there the process is <strong>iterative</strong> and easily solved on a spreadsheet.
+      <strong>The optimum time for overhaul is when the average cost of overhaul per month equals
+      the average cost of excess power.</strong></p>
+
+      <p>Trying 22 months:</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Iteration at 22 months</caption>
+          <tbody>
+            <tr><td>Average cost of overhaul</td><td class="num">$50 000 ÷ 22 = $2 273/month</td></tr>
+            <tr><td>Average cost of extra energy</td><td class="num">$135 × ½ × 22 = $1 488/month</td></tr>
+            <tr><td>Total average cost</td><td class="num">$3 760.7/month</td></tr>
+            <tr><td>Verdict</td><td>The two costs are <strong>not equal</strong>, so the total is not optimum. Iterate.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="specs">
+        <dl class="spec"><dt>Optimum overhaul interval</dt><dd>27.2<small> months</small></dd></dl>
+        <dl class="spec"><dt>Total cost at optimum</dt><dd>$3 678<small> /month</small></dd></dl>
+      </div>
+
+      <h3>Caveats and extensions</h3>
+
+      <div class="note warn">
+        <span class="note-label">Honest limits of the method</span>
+        <ul style="margin-bottom:0">
+          <li>The calculation is <strong>only correct if wear progresses at a uniformly increasing
+          rate with time.</strong> Information may not be available to make any other assumption,
+          but decision makers have to start somewhere.</li>
+          <li><strong>Some relatively small pumps may never justify overhaul on energy savings
+          alone</strong> — but may be justified on reduced plant production rate, where the
+          deterioration does not affect production at least initially.</li>
+        </ul>
+      </div>
+
+      <div class="note danger">
+        <span class="note-label">Variable speed pumps deteriorate much more expensively</span>
+        <p>For a pump whose speed is varied to meet its duty, the effect of wear on power required
+        is <strong>much more dramatic</strong> than for a constant-speed throttle-controlled pump
+        — <strong>because power increases in proportion to the speed ratio cubed</strong>.</p>
+        <p>Unless the pump output is limited by reaching maximum speed or the driver's highest
+        allowable power output, <strong>no production will be lost</strong> — so the deterioration
+        is invisible in production terms. But power consumed increases far more dramatically for a
+        given wear state than on a constant-speed pump. This is exactly where performance
+        monitoring tools or portable instruments earn their cost, because nothing else will tell
+        you.</p>
+      </div>
+
+      <p>The same method and calculations then find the overhaul time for minimum total cost. The
+      algorithm is general: <strong>wherever there is deterioration in performance leading to loss
+      of energy, it is a handy tool for maintenance engineers and managers managing assets to
+      provide capacity for production.</strong></p>

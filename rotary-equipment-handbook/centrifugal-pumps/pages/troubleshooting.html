@@ -1,0 +1,835 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Field Troubleshooting Guide · Centrifugal Pump Knowledge Base</title>
+<meta name="description" content="Sixteen symptoms an operator or technician actually reports, each with its credible cause list and the checks that discriminate between them. Filter by symptom group or search the ">
+<meta name="author" content="Zachry Philippines — Mechanical Engineering">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%230f4c75'/%3E%3Cpath d='M16 7a9 9 0 1 0 9 9h-9z' fill='%23fff'/%3E%3Ccircle cx='16' cy='16' r='2.6' fill='%230f4c75'/%3E%3C/svg%3E">
+
+</head>
+<body data-root="../">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <button class="header-btn nav-toggle" id="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+    <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+      <path d="M2 4h12M2 8h12M2 12h12"/>
+    </svg>
+  </button>
+
+  <a class="brand" href="../index.html">
+    <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      <circle cx="16" cy="16" r="13" stroke="currentColor" stroke-width="2"/>
+      <path d="M16 5a11 11 0 0 1 11 11H16z" fill="currentColor" opacity=".3"/>
+      <path d="M16 16 7.5 10.5M16 16l8.5-5.5M16 16v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="16" cy="16" r="2.8" fill="currentColor"/>
+    </svg>
+    <span class="brand-text">
+      <b>Centrifugal Pumps</b>
+      <span>Engineering Knowledge Base</span>
+    </span>
+  </a>
+
+  <span class="header-spacer"></span>
+
+  <button class="header-btn" id="search-open" aria-label="Search the knowledge base">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+      <circle cx="7" cy="7" r="4.5"/><path d="m10.5 10.5 4 4"/>
+    </svg>
+    <span class="label">Search</span>
+    <span class="header-spacer"></span>
+    <kbd>Ctrl K</kbd>
+  </button>
+
+  <button class="header-btn" id="theme-toggle" aria-label="Toggle theme">
+    <span class="theme-icon" aria-hidden="true">&#9790;</span>
+  </button>
+</header>
+
+<div class="layout">
+
+  <aside class="sidebar" id="sidebar">
+    <a class="up-link" href="../../index.html">
+      <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+           stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M10 3 5 8l5 5"/>
+      </svg>
+      Rotary Equipment Handbook
+    </a>
+    <nav class="nav-group" aria-label="Main">
+<p class="nav-title">Start here</p>
+<ul class="nav-list">
+<li><a href="../index.html"><span class="nav-num">⌂</span><span>Overview</span></a></li>
+</ul></nav>
+<nav class="nav-group">
+<p class="nav-title">Core reference</p>
+<ul class="nav-list">
+<li><a href="../pages/fundamentals.html"><span class="nav-num">01</span><span>Fundamentals &amp; types</span></a></li>
+<li><a href="../pages/construction.html"><span class="nav-num">02</span><span>Design &amp; construction</span></a></li>
+<li><a href="../pages/hydraulics.html"><span class="nav-num">03</span><span>Hydraulics &amp; NPSH</span></a></li>
+<li><a href="../pages/forces.html"><span class="nav-num">04</span><span>Rotor forces</span></a></li>
+<li><a href="../pages/operation.html"><span class="nav-num">05</span><span>Operation &amp; curves</span></a></li>
+</ul></nav>
+<nav class="nav-group">
+<p class="nav-title">Project lifecycle</p>
+<ul class="nav-list">
+<li><a href="../pages/selection.html"><span class="nav-num">06</span><span>Specification &amp; selection</span></a></li>
+<li><a href="../pages/testing.html"><span class="nav-num">07</span><span>Testing &amp; inspection</span></a></li>
+<li><a href="../pages/installation.html"><span class="nav-num">08</span><span>Installation &amp; commissioning</span></a></li>
+<li><a href="../pages/maintenance.html"><span class="nav-num">09</span><span>Maintenance &amp; reliability</span></a></li>
+</ul></nav>
+<nav class="nav-group">
+<p class="nav-title">Field tools</p>
+<ul class="nav-list">
+<li><a href="../pages/troubleshooting.html" class="current" aria-current="page"><span class="nav-num">10</span><span>Troubleshooting</span></a></li>
+<li><a href="../pages/calculators.html"><span class="nav-num">11</span><span>Calculators</span></a></li>
+<li><a href="../pages/formulas.html"><span class="nav-num">12</span><span>Formula &amp; data sheet</span></a></li>
+</ul></nav>
+<nav class="nav-group">
+<p class="nav-title">Reference</p>
+<ul class="nav-list">
+<li><a href="../pages/glossary.html"><span class="nav-num">13</span><span>Glossary</span></a></li>
+<li><a href="../pages/standards.html"><span class="nav-num">14</span><span>Standards &amp; sources</span></a></li>
+</ul></nav>
+  </aside>
+
+  <main class="main" id="main">
+    <article class="prose">
+      <p class="crumbs"><a href="../index.html">Knowledge base</a> &rsaquo; Field tools &rsaquo; Troubleshooting</p>
+      <p class="eyebrow">Field tool · Searchable</p>
+      <h1>Field Troubleshooting Guide</h1>
+      <p class="lede">Sixteen symptoms an operator or technician actually reports, each with its credible cause list and the checks that discriminate between them. Filter by symptom group or search the full text.</p>
+      <div class="note">
+        <span class="note-label">How to use this guide</span>
+        <p>Find the symptom as it was <strong>reported to you</strong>, not the component you
+        suspect. Each entry lists the credible causes, grouped so that the cheap, reversible
+        checks come first. Work down the list — do not jump to the expensive cause because it is
+        the interesting one.</p>
+        <p><strong>Before anything else:</strong> establish whether the problem is in the
+        <em>pump</em> or in the <em>system</em>. More pumps are stripped down for a system fault
+        than for a pump fault. See
+        <a href="maintenance.html#breakdown-diagnosis-and-removal">diagnosis before removal</a>.</p>
+      </div>
+
+      <div class="ts-filter">
+        <input type="search" id="ts-search" placeholder="Search symptoms and causes&hellip;"
+               autocomplete="off" aria-label="Search troubleshooting entries">
+        <button class="chip" data-group="flow" aria-pressed="false">No flow / low flow</button>
+        <button class="chip" data-group="perf" aria-pressed="false">Performance</button>
+        <button class="chip" data-group="mech" aria-pressed="false">Noise &amp; vibration</button>
+        <button class="chip" data-group="seal" aria-pressed="false">Seals &amp; packing</button>
+        <button class="chip" data-group="brg" aria-pressed="false">Bearings</button>
+        <button class="chip" data-group="hyd" aria-pressed="false">Hydraulic / cavitation</button>
+        <button class="chip" data-group="safe" aria-pressed="false">Safe operation</button>
+        <span class="pill" id="ts-count"></span>
+      </div>
+
+      <p id="ts-empty" class="search-empty" hidden>No symptoms match that filter.</p>
+
+      <!-- 1 -->
+      <details class="symptom" data-group="flow">
+        <summary><span class="sym-id">01</span>Pump develops no head pressure and delivers no liquid</summary>
+        <div class="sym-body">
+          <p>The pump is turning but nothing is happening at all. This is a short list because
+          only a few things produce <em>complete</em> failure, and most are mechanical
+          disconnections rather than hydraulic faults.</p>
+          <h4>Check first — no dismantling</h4>
+          <ul>
+            <li><strong>Pump not primed</strong> — not full of liquid, air locked. By far the most
+            common cause. Stop, re-prime, vent the casing, restart.</li>
+            <li><strong>Drive coupling</strong> — check it is intact and engaged.</li>
+          </ul>
+          <h4>Mechanical disconnection in the rotor</h4>
+          <ul>
+            <li><strong>Shaft sheared.</strong></li>
+            <li><strong>Impeller key sheared or omitted at assembly.</strong></li>
+            <li><strong>Impeller not installed.</strong> It happens — particularly after a rushed
+            overhaul.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- 2 -->
+      <details class="symptom" data-group="flow perf">
+        <summary><span class="sym-id">02</span>Pump delivers no liquid but develops some pressure</summary>
+        <div class="sym-body">
+          <p>Pressure at the discharge gauge but no delivery means the pump is working on
+          something — usually a trapped pocket of liquid or gas — or the system is asking for more
+          head than the pump can produce.</p>
+          <h4>Suction path blocked or air locked</h4>
+          <ul>
+            <li><strong>Air lock in the pump casing or in the pipelines.</strong></li>
+            <li><strong>Foot valve malfunctioning</strong> — frozen or clogged.</li>
+            <li><strong>Strainer restricted</strong> with a build-up of stringy matter.</li>
+            <li><strong>Strainer element restricted</strong> with solid deposits such as sand.</li>
+            <li><strong>Suction line clogged.</strong></li>
+            <li><strong>Available NPSH inadequate.</strong></li>
+            <li><strong>Excessive gas or air entrained</strong> in the pumped liquid.</li>
+          </ul>
+          <h4>The pump cannot meet the system</h4>
+          <ul>
+            <li><strong>Discharge pressure required by the system is higher than the maximum the
+            pump can develop.</strong> Compare the system curve against the pump's shut-off head.</li>
+            <li><strong>Operating speed too low.</strong></li>
+            <li><strong>Wrong direction of rotation.</strong> Check before assuming anything
+            else — a reversed pump still delivers, but at substantially reduced head and flow.</li>
+            <li><strong>Undersized impeller</strong>, or one machined down to a smaller diameter
+            than required.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- 3 -->
+      <details class="symptom" data-group="flow perf">
+        <summary><span class="sym-id">03</span>Pump output is below the manufacturer's performance curve</summary>
+        <div class="sym-body">
+          <p>The longest cause list in pump troubleshooting, because almost everything degrades
+          output. Work the groups in order — instruments first, because a measurement error costs
+          nothing to rule out and an overhaul costs a great deal.</p>
+          <h4>1 · Measurement</h4>
+          <ul>
+            <li><strong>Measuring instruments inaccurate</strong> — not properly calibrated or
+            incorrectly installed. Rule this out before anything else.</li>
+          </ul>
+          <h4>2 · Air and priming</h4>
+          <ul>
+            <li><strong>Air enters the pump during operation</strong>, or the system was not
+            de-aerated / primed properly before starting.</li>
+            <li><strong>Excessive air or gas entrained</strong> in the pumped liquid.</li>
+          </ul>
+          <h4>3 · Speed and rotation</h4>
+          <ul>
+            <li><strong>Verify pump rpm.</strong></li>
+            <li><strong>Incorrect direction of rotation.</strong></li>
+          </ul>
+          <h4>4 · The system, not the pump</h4>
+          <ul>
+            <li><strong>System resistance higher than the pump develops.</strong></li>
+            <li><strong>Pump operating too far out on the head–capacity curve</strong> — incorrect
+            selection.</li>
+            <li><strong>Obstruction to flow</strong> in suction or discharge piping.</li>
+            <li><strong>Incorrect layout of suction or discharge piping.</strong></li>
+            <li><strong>Incorrect sump suction layout.</strong></li>
+            <li><strong>Liquid level in the suction tank or sump lower than specified.</strong></li>
+            <li><strong>Foot valve clogged or jammed.</strong></li>
+            <li><strong>Suction strainer fouled</strong>, restricting flow and lowering NPSH.</li>
+            <li><strong>In a multi-pump system, operation of one pump may affect the
+            others.</strong></li>
+            <li><strong>NPSH-a too low.</strong></li>
+          </ul>
+          <h4>5 · Internal leakage — the quiet efficiency thief</h4>
+          <ul>
+            <li><strong>Excessive leakage through wear rings</strong> or other sealing faces. See
+            <a href="maintenance.html#wear-ring-clearance-the-highest-leverage-measurement-in-the-overhaul">why
+            this matters most on low specific speed pumps</a>.</li>
+            <li><strong>Excessive leakage through the stuffing box or seal.</strong></li>
+            <li><strong>Excessive liquid recirculated internally</strong> to the stuffing box
+            lantern ring or seal.</li>
+            <li><strong>Excessive leakage through the hydraulic balancing device.</strong></li>
+          </ul>
+          <h4>6 · Impeller and hydraulic passages</h4>
+          <ul>
+            <li><strong>Impeller or casing fouled</strong> — partially clogged with solid matter.</li>
+            <li><strong>Incorrectly installed impeller.</strong></li>
+            <li><strong>Fins, burrs or sharp edges</strong> in the liquid path.</li>
+            <li><strong>Viscosity of the liquid higher than the pump was designed for.</strong>
+            Apply the <a href="hydraulics.html#viscosity-corrections">viscosity corrections</a>
+            before concluding the pump is at fault.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- 4 -->
+      <details class="symptom" data-group="perf mech">
+        <summary><span class="sym-id">04</span>Pump draws higher amps than specified</summary>
+        <div class="sym-body">
+          <h4>The pump is doing more work than intended</h4>
+          <ul>
+            <li><strong>Speed too high.</strong></li>
+            <li><strong>Oversized impeller installed.</strong></li>
+            <li><strong>Process liquid of higher viscosity or specific gravity</strong> than
+            originally quoted. Power scales directly with SG — this alone can explain the whole
+            discrepancy.</li>
+            <li><strong>Total system head either higher or lower than anticipated.</strong> Lower
+            head on an overloading (low specific speed) pump pushes the duty right and raises
+            power — see <a href="operation.html#operating-above-bep">operating above BEP</a>.</li>
+            <li><strong>Wrong direction of rotation.</strong></li>
+          </ul>
+          <h4>Mechanical drag</h4>
+          <ul>
+            <li><strong>Misalignment between pump and driver.</strong></li>
+            <li><strong>Rotating parts in contact with stationary parts.</strong></li>
+            <li><strong>Worn or damaged bearings.</strong></li>
+            <li><strong>Bent shaft.</strong></li>
+            <li><strong>Uneven thermal expansion</strong> of different parts of the pumping
+            unit.</li>
+          </ul>
+          <h4>Sealing drag</h4>
+          <ul>
+            <li><strong>Packing improperly installed</strong>, or <strong>incorrect type of
+            packing</strong>.</li>
+            <li><strong>Gland too tight.</strong></li>
+            <li><strong>Mechanical seal exerting excessive pressure on the seat.</strong></li>
+          </ul>
+          <h4>Lubrication</h4>
+          <ul>
+            <li><strong>Improper lubrication of bearings</strong>, or <strong>too much
+            lubricant</strong> in them.</li>
+          </ul>
+          <h4>Instrumentation</h4>
+          <ul>
+            <li><strong>Faulty power-measuring instruments</strong>, or instruments
+            <strong>incorrectly mounted or connected</strong>.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- 5 -->
+      <details class="symptom" data-group="perf">
+        <summary><span class="sym-id">05</span>Performance compromised but nothing appears wrong with the system</summary>
+        <div class="sym-body">
+          <div class="note warn">
+            <span class="note-label">Read this before dismantling anything</span>
+            <p>This symptom is <strong>usually due to incorrect testing</strong>. When the
+            indicators disagree with each other and the machine seems healthy, suspect the
+            measurement chain — not the pump.</p>
+          </div>
+          <h4>Instrument selection and installation</h4>
+          <ul>
+            <li>Incorrect measuring instruments.</li>
+            <li>Instruments damaged during installation.</li>
+            <li>Instruments mounted in the wrong locations.</li>
+          </ul>
+          <h4>Impulse tubing</h4>
+          <ul>
+            <li>Tubing from pipelines to instruments <strong>clogged</strong>.</li>
+            <li>Tubing that should be <strong>full of liquid</strong> not completely
+            de-aerated.</li>
+            <li>Tubing that should be <strong>full of air</strong> contains some liquid
+            (manometers).</li>
+            <li><strong>Leakage</strong> in the tubing or its fittings.</li>
+            <li><strong>Burrs or fins</strong> at the mouth of connections between tubing and
+            piping.</li>
+          </ul>
+          <h4>Electrical measurement</h4>
+          <ul>
+            <li>Incorrect wiring connections to electrical instruments.</li>
+            <li>Loose connections at wire terminals.</li>
+            <li><strong>Fouled or oxidised terminals or contacts.</strong></li>
+          </ul>
+          <h4>Torque / dynamometer measurement</h4>
+          <ul>
+            <li>Dust or dirt in the torque bar; torque bar incorrectly mounted.</li>
+            <li>Misalignment or fouled bearings in a dynamometer producing false readings.</li>
+            <li>Excessive friction in the pivots or pulleys guiding the levers and cables.</li>
+            <li><strong>Weight and stiffness of the electrical cables</strong> affecting torque
+            readings.</li>
+          </ul>
+          <h4>Flow conditions at the tapping</h4>
+          <ul>
+            <li><strong>Turbulence in the pipelines</strong> where instruments are connected.</li>
+            <li><strong>Inner diameter of piping not matching the design specification.</strong></li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- 6 -->
+      <details class="symptom" data-group="flow hyd">
+        <summary><span class="sym-id">06</span>Pump starts satisfactorily, then performance deteriorates quickly</summary>
+        <div class="sym-body">
+          <p>A short, highly diagnostic list: this pattern is almost always
+          <strong>air or gas progressively accumulating</strong>, or NPSH falling away once flow
+          establishes.</p>
+          <ul>
+            <li><strong>Air leaks into the pump.</strong></li>
+            <li><strong>Pumped liquid contains a high percentage of entrained air or gas.</strong></li>
+            <li><strong>Rate of make-up liquid into the suction sump inadequate</strong>, so air is
+            drawn into the pump.</li>
+            <li><strong>An air pocket in the suction line has moved into the pump.</strong></li>
+            <li><strong>Air funnels in the sump suction — vortex formation.</strong> Check
+            submergence against the
+            <a href="installation.html#sump-submergence-and-vortexing">geometry rules</a>.</li>
+            <li><strong>Drop in NPSH.</strong></li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- 7 -->
+      <details class="symptom" data-group="mech hyd">
+        <summary><span class="sym-id">07</span>Pump operates with noise, vibration, or both</summary>
+        <div class="sym-body">
+          <p>The broadest symptom of all. A <a href="maintenance.html#frequency-analysis">frequency
+          analysis</a> will narrow it enormously — unbalance, misalignment and bearing defects each
+          have a distinct signature, and cavitation and vane-pass have their own.</p>
+          <h4>Alignment and mechanical condition</h4>
+          <ul>
+            <li>Misalignment between pump and driver.</li>
+            <li>Misalignment of pump parts.</li>
+            <li>Rotating parts rubbing against stationary parts.</li>
+            <li>Worn bearings; damaged bearings; improper installation of bearings; improper
+            lubrication of bearings.</li>
+            <li>Bent shaft.</li>
+            <li>Loose bolts.</li>
+            <li>Uneven thermal expansion.</li>
+          </ul>
+          <h4>Balance and rotor</h4>
+          <ul>
+            <li>Rotating elements not balanced.</li>
+            <li>Impeller or casing <strong>partially filled with solid matter</strong> — out of
+            balance.</li>
+            <li>Damaged impeller; impeller incorrectly mounted.</li>
+            <li><strong>Impeller bore not concentric with its outer diameter, or not square with
+            its face.</strong></li>
+            <li>Excessive radial forces on rotating parts.</li>
+            <li><strong>Pump operating at critical speed.</strong></li>
+          </ul>
+          <h4>Hydraulic — cavitation and recirculation</h4>
+          <ul>
+            <li><strong>Available NPSH too low.</strong></li>
+            <li><strong>Fins, burrs or sharp edges in the waterways causing cavitation.</strong></li>
+            <li><strong>System requirements too far out on the head–capacity curve.</strong></li>
+            <li><strong>Pump operating at very low flow rates.</strong></li>
+            <li>Total head of the system either higher or lower than expected.</li>
+            <li>Excessive air or gas entrained in the liquid.</li>
+            <li>Waterways of impeller or casing badly eroded or rough.</li>
+            <li><strong>Cavitation in the pipelines.</strong></li>
+            <li>Air enters the pump during operation.</li>
+          </ul>
+          <h4>Vane pass — the impeller / cutwater gap</h4>
+          <ul>
+            <li><strong>Too small a distance between impeller outer diameter and volute
+            tongue.</strong> This excites
+            <a href="forces.html#non-hydraulic-sources-of-radial-load">vane pass frequency</a> =
+            number of vanes × running speed. Correct it via
+            <a href="maintenance.html#gap-a-and-gap-b">Gap-B</a> — and note that machining the
+            volute vane to achieve the right Gap-B costs <em>no</em> efficiency.</li>
+            <li><strong>Faulty shape of the volute tongue.</strong></li>
+          </ul>
+          <h4>Suction system and sump</h4>
+          <ul>
+            <li>Suction strainer filled with solid matter; strainer covered with fibrous matter.</li>
+            <li>Incorrect layout of the suction sump.</li>
+            <li>Incorrect layout of suction or discharge piping.</li>
+            <li><strong>Undersized suction or discharge piping and fittings</strong> causing
+            cavitation somewhere in the system.</li>
+            <li>Obstruction to flow in suction or discharge piping.</li>
+            <li><strong>Mutual interaction of several pumps within one common system.</strong></li>
+          </ul>
+          <h4>Resonance and structure</h4>
+          <ul>
+            <li><strong>Piping imposes strain on the pump.</strong></li>
+            <li>Improperly designed baseplate or foundations.</li>
+            <li><strong>Resonance between pump speed and the natural frequency of the baseplate or
+            foundations.</strong></li>
+            <li><strong>Resonance between operating speed and the natural frequency of the
+            piping.</strong></li>
+            <li><strong>Resonance between operating speed and valve discs</strong>; loose valve
+            disc in the system.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- 8 -->
+      <details class="symptom" data-group="seal">
+        <summary><span class="sym-id">08</span>Stuffing box leaks abnormally</summary>
+        <div class="sym-body">
+          <div class="note">
+            <span class="note-label">Remember what "normal" is</span>
+            <p>A correctly adjusted gland <strong>should leak slightly</strong> — that leakage is
+            the packing's lubricant and coolant. The fault here is <em>abnormal</em> leakage.</p>
+          </div>
+          <h4>Packing itself</h4>
+          <ul>
+            <li>Improperly installed packing; incorrect type of packing.</li>
+            <li><strong>Excessive clearance at the bottom of the stuffing box</strong> — between
+            shaft and box bottom.</li>
+            <li>Seal cage improperly located.</li>
+            <li><strong>Dirt or grit in the sealing liquid.</strong></li>
+            <li>Water-seal pipe clogged.</li>
+            <li><strong>Failure to provide cooling liquid</strong> to water-cooled stuffing
+            boxes.</li>
+          </ul>
+          <h4>Shaft motion at the packing — the real root cause in most cases</h4>
+          <ul>
+            <li>Worn bearings.</li>
+            <li>Rotating element not balanced.</li>
+            <li><strong>Excessive radial forces on rotating parts</strong> — i.e. the pump is being
+            run too far from BEP.</li>
+            <li>Bent shaft; rotating parts running off-centre.</li>
+            <li>Bore of impeller not concentric with its outer diameter, or not square with its
+            face.</li>
+            <li>Misalignment of pump parts.</li>
+          </ul>
+          <h4>Shaft surface</h4>
+          <ul>
+            <li><strong>Shaft sleeve worn or scorched at the packing.</strong></li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- 9 -->
+      <details class="symptom" data-group="seal">
+        <summary><span class="sym-id">09</span>Gland packing has a short working life</summary>
+        <div class="sym-body">
+          <p>Largely the same cause set as abnormal leakage, plus the installation and lubrication
+          faults specific to short life.</p>
+          <h4>Installation and adjustment</h4>
+          <ul>
+            <li>Improperly installed packing; incorrect type of packing.</li>
+            <li><strong>Gland too tight.</strong> The classic cause — it runs the shaft hot and
+            wears the surface rapidly.</li>
+            <li><strong>Improper lubrication of the packing.</strong></li>
+            <li>Seal cage improperly located in the stuffing box, preventing sealing fluid from
+            entering.</li>
+            <li>Water-seal pipe clogged.</li>
+            <li>Failure to provide cooling liquid to a water-cooled stuffing box.</li>
+            <li>Excessive clearance at the bottom of the stuffing box.</li>
+            <li><strong>The space in the stuffing box where the packing sits is eccentric to the
+            shaft.</strong></li>
+            <li>Dirt or grit in the sealing liquid.</li>
+          </ul>
+          <h4>Shaft motion and surface</h4>
+          <ul>
+            <li>Worn bearings; rotating parts running off-centre from damaged bearings or other
+            parts.</li>
+            <li>Rotating element not balanced; excessive radial forces on rotating parts.</li>
+            <li>Bent shaft.</li>
+            <li>Impeller bore not concentric with its OD, or not square with its face.</li>
+            <li>Misalignment of pump parts.</li>
+            <li><strong>Shaft scorched where it contacts the packing.</strong></li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- 10 -->
+      <details class="symptom" data-group="seal">
+        <summary><span class="sym-id">10</span>Mechanical seal fails prematurely</summary>
+        <div class="sym-body">
+          <div class="note danger">
+            <span class="note-label">Context</span>
+            <p>Mechanical seals are the <strong>prime cause of pump failure</strong>. But note how
+            few of the causes below are the seal itself — most are rotor motion or fluid
+            condition. Replacing the seal without addressing those guarantees a repeat.</p>
+          </div>
+          <h4>Rotor motion at the seal</h4>
+          <ul>
+            <li>Worn bearings.</li>
+            <li>Rotating elements not balanced.</li>
+            <li><strong>Excessive radial forces on rotating parts.</strong></li>
+            <li>Bent shaft. Remember a 0.075 mm shaft runout moves the faces
+            <strong>0.15 mm total</strong>.</li>
+            <li>Misalignment of pump parts; rotating elements running off-centre from bearing or
+            other damage.</li>
+          </ul>
+          <h4>Geometry of the installation</h4>
+          <ul>
+            <li><strong>Sealing face not perpendicular to the pump axis.</strong> This is the
+            <a href="maintenance.html#the-dimensional-checks-that-decide-the-overhaul">seal housing
+            squareness check — limit 0.05 mm</a>.</li>
+            <li><strong>Misalignment of internal seal parts</strong> preventing proper mating
+            between seal and seat.</li>
+            <li>Mechanical seal improperly installed.</li>
+            <li>Incorrect type of mechanical seal.</li>
+          </ul>
+          <h4>Fluid at the faces</h4>
+          <ul>
+            <li><strong>Mechanical seal has been run dry.</strong></li>
+            <li><strong>Dirt or grit in the seal-flushing liquid.</strong></li>
+            <li><strong>Abrasive particles in the liquid</strong> coming into contact with the
+            seal.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- 11 -->
+      <details class="symptom" data-group="brg">
+        <summary><span class="sym-id">11</span>Bearings fail prematurely</summary>
+        <div class="sym-body">
+          <div class="note warn">
+            <span class="note-label">Baseline expectation</span>
+            <p>Only about <strong>10% of rolling element bearings reach their 3–5 year design
+            life</strong>, and lubricant contamination is the dominant reason. Check the
+            lubrication and sealing group first.</p>
+          </div>
+          <h4>Lubrication and contamination</h4>
+          <ul>
+            <li><strong>Bearings improperly lubricated</strong>; faulty lubrication system.</li>
+            <li><strong>Excessive grease in bearings.</strong></li>
+            <li><strong>Dirt ingress into the bearing housing.</strong></li>
+            <li><strong>Water has entered the bearing housing.</strong> 0.002% water in the oil
+            costs about 48% of bearing life.</li>
+            <li>Inadequate cooling of bearings, or of the lubricant, where applicable.</li>
+            <li>Source of cooling media restricted or shut off from the bearing housing.</li>
+          </ul>
+          <h4>Load — usually from how the pump is operated</h4>
+          <ul>
+            <li><strong>Excessive radial loads</strong> on rotating parts.</li>
+            <li><strong>Excessive axial loads.</strong></li>
+            <li><strong>Pump operates for prolonged time at low flow rate.</strong></li>
+            <li><strong>Excessive suction pressure.</strong></li>
+            <li><strong>Excessive wear of impeller wear rings</strong>, which adversely affects
+            support of the rotating element.</li>
+          </ul>
+          <h4>Rotor condition</h4>
+          <ul>
+            <li>Damaged impeller; impeller partially clogged.</li>
+            <li>Rotating elements not balanced.</li>
+            <li>Bent shaft.</li>
+            <li>Impeller bore not concentric with OD or not square with the hub face.</li>
+            <li>Misalignment of pump parts; misalignment between pump and driver.</li>
+            <li>Rotating parts running off-centre from damaged or misaligned parts.</li>
+          </ul>
+          <h4>Installation and housing</h4>
+          <ul>
+            <li><strong>Improper installation of bearings</strong>; improper workmanship during
+            installation.</li>
+            <li><strong>Bores of bearing housing not concentric with bores in the water
+            end.</strong></li>
+            <li>Cracked or damaged bearing housing.</li>
+            <li><strong>Too tight a fit between the line bearing and its seat</strong>, which may
+            prevent it sliding under axial load and transfer that load to the line bearing.</li>
+            <li>Improper baseplate or foundations.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- 12 -->
+      <details class="symptom" data-group="brg mech">
+        <summary><span class="sym-id">12</span>Bearings run noisily — diagnosing by the sound</summary>
+        <div class="sym-body">
+          <p>The character of the noise narrows the cause substantially. Listen before you
+          measure.</p>
+          <h4>A · Steady high-pitch tone</h4>
+          <ul>
+            <li>Excessive radial load.</li>
+            <li>Excessive axial load.</li>
+            <li>Misalignment.</li>
+            <li>Too much clearance between bearing and shaft, and/or housing.</li>
+          </ul>
+          <h4>B · Continuous or intermittent low-pitch tone</h4>
+          <ul>
+            <li><strong>Bearing brinelled</strong> — indentations in the raceway, usually from
+            impact loading during installation or transport.</li>
+            <li><strong>Pitted raceway, from dirt.</strong></li>
+            <li>Resonance with other structural pump parts.</li>
+          </ul>
+          <h4>C · Intermittent rattles, rumbles or clicks</h4>
+          <ul>
+            <li>Loose machine parts.</li>
+            <li>Dirt in the bearings.</li>
+            <li>Clearance between balls and races too large for the application.</li>
+            <li><strong>Bearings that require preloading not adequately preloaded.</strong></li>
+          </ul>
+          <h4>D · Intermittent squeal or high-pitch tone</h4>
+          <ul>
+            <li><strong>Balls skidding</strong> from excessive clearance between balls and
+            races.</li>
+            <li><strong>Balls skidding</strong> from insufficient preloading, where required.</li>
+            <li>Shaft rubbing against the housing — from improper mounting of the housing, from a
+            bent shaft, or from having been machined eccentrically.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- 13 -->
+      <details class="symptom" data-group="mech hyd">
+        <summary><span class="sym-id">13</span>Pump overheats or seizes</summary>
+        <div class="sym-body">
+          <div class="note danger">
+            <span class="note-label">Stop the pump</span>
+            <p>Overheating toward seizure is a progressive failure. Continued running turns a
+            seal-and-bearing job into a casing-and-impeller job.</p>
+          </div>
+          <h4>No liquid, or not enough of it</h4>
+          <ul>
+            <li><strong>Pump allowed to run dry.</strong></li>
+            <li><strong>Vapour or air pockets inside the pump.</strong></li>
+            <li><strong>Pump operates near shut-off.</strong> Calculate the
+            <a href="calculators.html#temperature-rise-at-low-flow">temperature rise rate</a> —
+            at closed valve the casing contents can reach flashing in minutes.</li>
+            <li><strong>Simultaneous operation of poorly matched pumps</strong> — one of them may
+            be sitting at shut-off. See
+            <a href="operation.html#parallel-operation-different-curves">parallel operation with
+            dissimilar curves</a>.</li>
+          </ul>
+          <h4>Mechanical contact</h4>
+          <ul>
+            <li><strong>Internal misalignment from too much pipe strain</strong>, poor foundations,
+            or faulty repair work.</li>
+            <li>Internal rubbing of rotating parts against stationary parts.</li>
+            <li>Worn or damaged bearings; poor lubrication.</li>
+          </ul>
+          <h4>Material selection</h4>
+          <ul>
+            <li><strong>Rotating and stationary wear rings made of identical, galling-prone
+            materials.</strong> This is why SS 316 is not used for wear rings and why the two rings
+            are deliberately given a
+            <a href="construction.html#wear-ring-materials">50–100 BHN hardness differential</a>.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- 14 -->
+      <details class="symptom" data-group="hyd">
+        <summary><span class="sym-id">14</span>Pump cavitates when NPSH-a is <em>increased</em></summary>
+        <div class="sym-body">
+          <div class="note">
+            <span class="note-label">Why this apparent paradox happens</span>
+            <p>It looks impossible and it is not. <strong>The increase in available NPSH has
+            reduced the system resistance so far that the pump now operates far out on the Q–H
+            curve.</strong> Out there, internal velocities are high, static head falls toward
+            vapour pressure, and NPSH-r rises — so the margin closes from the other end. See
+            <a href="operation.html#operating-above-bep">breakaway NPSH-r</a>.</p>
+          </div>
+          <p>The conditions that produce it:</p>
+          <ul>
+            <li><strong>Oversized impeller installed in the pump.</strong></li>
+            <li><strong>Pump operates at excessive speed.</strong></li>
+            <li><strong>Breakdown or serious leak in the discharge line.</strong></li>
+            <li><strong>Open bypass in the discharge line.</strong></li>
+            <li><strong>Extremely large clearances between impeller and casing.</strong></li>
+            <li><strong>A hole in the casing</strong> allowing liquid from the pressure side to
+            return to the suction inlet.</li>
+          </ul>
+          <p>Note that the last three are all internal short circuits — the pump is working
+          against far less head than you think it is.</p>
+        </div>
+      </details>
+
+      <!-- 15 -->
+      <details class="symptom" data-group="safe">
+        <summary><span class="sym-id">15</span>Safe operation — the do's</summary>
+        <div class="sym-body">
+          <ul>
+            <li><strong>Read the manufacturer's instructions before operation.</strong></li>
+            <li>Check that sumps and piping are clean.</li>
+            <li><strong>Prime the pump before starting.</strong></li>
+            <li>Regulate flow, if necessary, with the <strong>discharge</strong> valve.</li>
+            <li>A pump may be run up with the discharge valve closed only for a
+            <strong>limited time</strong>.</li>
+            <li>Never over-tighten packing glands.</li>
+            <li><strong>Check alignment before placing a pump in service.</strong></li>
+            <li>Operate within the manufacturer's speed recommendations.</li>
+            <li><strong>Support piping adequately to avoid stresses on pump casings.</strong></li>
+            <li>Allow the pump foundation to set firmly before bolting down the pump.</li>
+            <li><strong>Ensure NPSH-a exceeds NPSH-r by a margin</strong> — this list cites
+            0.5–1.0 m; most specifications call for
+            <a href="hydraulics.html#npsh-margin">1.0–1.5 m or the applicable ratio</a>, which is
+            the figure to work to.</li>
+            <li>Ensure proper pipe gradients and layout to avoid trapping air in suction lines —
+            air lock.</li>
+            <li><strong>Guard pump drives and all moving or high-temperature parts.</strong></li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- 16 -->
+      <details class="symptom" data-group="safe">
+        <summary><span class="sym-id">16</span>Safe operation — the don'ts</summary>
+        <div class="sym-body">
+          <ul>
+            <li>Don't fail to read the manufacturer's instructions.</li>
+            <li>Don't fail to check that sumps and piping are clean.</li>
+            <li><strong>Don't run a pump without liquid.</strong></li>
+            <li><strong>Don't regulate flow with a suction valve.</strong> Throttling the suction
+            destroys NPSH-a directly and is the fastest way to cavitate a healthy pump.</li>
+            <li><strong>Don't run a pump with a closed discharge</strong> (beyond the brief
+            start-up period).</li>
+            <li>Don't over-tighten packing glands.</li>
+            <li>Don't fail to check alignment.</li>
+            <li>Don't exceed the manufacturer's speed recommendations.</li>
+            <li><strong>Don't impose piping stresses on pump casings.</strong></li>
+            <li>Don't bolt a pump to a foundation until it is firmly set.</li>
+            <li>Don't attempt a suction lift greater than the safety margin under NPSH-a allows.</li>
+            <li>Don't trap air in suction lines.</li>
+            <li><strong>Don't allow pumps to run with unguarded moving or high-temperature
+            parts.</strong></li>
+          </ul>
+        </div>
+      </details>
+
+      <h2 data-no-toc id="quick-cause-index">Quick cause index</h2>
+
+      <p>If you have a suspected cause and want to know which symptoms it produces, this reverses
+      the lookup. These are the causes appearing in the greatest number of symptom lists — which
+      makes them the highest-value things to check on <em>any</em> pump complaint.</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Causes appearing across multiple symptoms</caption>
+          <thead>
+            <tr><th>Cause</th><th>Appears in</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Misalignment</strong> (pump/driver or internal)</td><td>04, 07, 08, 09, 10, 11, 12, 13</td></tr>
+            <tr><td><strong>Worn or damaged bearings</strong></td><td>04, 07, 08, 09, 10, 11, 12, 13</td></tr>
+            <tr><td><strong>Bent shaft</strong></td><td>04, 07, 08, 09, 10, 11, 12</td></tr>
+            <tr><td><strong>Rotor out of balance</strong></td><td>07, 08, 09, 10, 11</td></tr>
+            <tr><td><strong>Excessive radial force / running off BEP</strong></td><td>07, 08, 09, 10, 11, 13</td></tr>
+            <tr><td><strong>Pipe strain on the casing</strong></td><td>07, 13 — and it causes the misalignment in all the rows above</td></tr>
+            <tr><td><strong>Air or gas entrainment</strong></td><td>02, 03, 06, 07</td></tr>
+            <tr><td><strong>Inadequate NPSH-a</strong></td><td>02, 03, 06, 07</td></tr>
+            <tr><td><strong>Wrong direction of rotation</strong></td><td>02, 03, 04, 07</td></tr>
+            <tr><td><strong>Clogged strainer / suction obstruction</strong></td><td>02, 03, 07</td></tr>
+            <tr><td><strong>Impeller bore not concentric or not square</strong></td><td>07, 08, 09, 11</td></tr>
+            <tr><td><strong>Instrument error</strong></td><td>03, 04, 05</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note field">
+        <span class="note-label">The pattern worth noticing</span>
+        <p>Look at the top six rows. Almost every mechanically-presenting pump complaint traces
+        back to the same small cluster: <strong>misalignment, bearing condition, shaft
+        straightness, balance, and radial load from running off BEP</strong> — and
+        <strong>pipe strain causes or worsens most of them</strong>.</p>
+        <p>That is why the <a href="installation.html#associated-piping-and-fittings">flange
+        disconnection check</a> and the <a href="operation.html#the-allowable-operating-region">70–120%
+        operating band</a> deliver more reliability per unit of effort than any other two things
+        in this knowledge base.</p>
+      </div>
+
+      <nav class="pager" aria-label="Page navigation">
+<a class="prev" href="../pages/maintenance.html"><span class="dir">← Previous</span><span class="ttl">Maintenance &amp; reliability</span></a>
+<a class="next" href="../pages/calculators.html"><span class="dir">Next →</span><span class="ttl">Calculators</span></a>
+</nav>
+    </article>
+  </main>
+
+  
+
+</div>
+
+<footer class="site-footer">
+  <p><strong>Centrifugal Pump Knowledge Base</strong> — engineering reference prepared for Zachry Philippines.
+     Copyright &copy; 2026 Zachry Philippines. All rights reserved.
+     Written as original reference material; it is not a reproduction of any publication.</p>
+  <p>Technical scope and chapter structure follow <em>Practical Centrifugal Pumps: Design, Operation and Maintenance</em>
+     by P. Girdhar &amp; O. Moniz (Newnes/Elsevier, 2005), which remains the recommended full text.
+     Standards referenced (API 610, API 682, ANSI/ASME B73, ISO 5199, Hydraulic Institute) are cited for orientation only —
+     <strong>always design and verify against the current edition of the governing standard and the OEM's own data.</strong>
+     See <a href="../pages/standards.html">Standards &amp; Sources</a>.</p>
+</footer>
+
+<div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search">
+  <div class="search-box">
+    <input type="search" id="search-input" placeholder="Search for cavitation, NPSH, wear ring clearance&hellip;"
+           autocomplete="off" spellcheck="false" aria-label="Search query">
+    <div class="search-results" id="search-results">
+      <p class="search-empty">Type to search every page of the knowledge base.</p>
+    </div>
+    <div class="search-foot">
+      <span><kbd>&uarr;</kbd><kbd>&darr;</kbd> navigate</span>
+      <span><kbd>Enter</kbd> open</span>
+      <span><kbd>Esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>

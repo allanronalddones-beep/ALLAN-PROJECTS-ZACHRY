@@ -1,0 +1,847 @@
+      <p>A centrifugal pump's most attractive feature is its ability to perform across a wide
+      range of operating conditions — flow rate, suction and discharge head, speed, and liquid
+      type and properties. But it is designed for one discrete combination of flow, head and
+      speed: the Best Efficiency Point. In practice a pump is <em>rarely</em> operated at the
+      parameters it was designed for, so what matters is knowing how it responds when
+      conditions move.</p>
+
+      <p>Consider a pump discharging into the bottom of an elevated vessel. As the vessel fills,
+      the differential head the pump must generate rises, and as H rises, Q falls. If power
+      demand rises with it, the load on the motor may pull the driver speed down. Process and
+      utility duties that span a wide flow and head range may demand several pumps running
+      together in one system — where each pump's performance is affected by the others.</p>
+
+      <h2>The four characteristic curves</h2>
+
+      <p>Hydraulic properties are studied with shaft speed N held constant. The relationship
+      between differential head and flow is then obtained by throttling the discharge valve:
+      each valve position gives a flow rate and a corresponding head. That experiment produces
+      the fundamental characteristic of any centrifugal pump:</p>
+
+      <div class="formula">
+        <p class="eq">H = f(Q)&nbsp;&nbsp;·&nbsp;&nbsp;P = f(Q)&nbsp;&nbsp;·&nbsp;&nbsp;η = f(Q)&nbsp;&nbsp;·&nbsp;&nbsp;NPSH-r = f(Q)</p>
+        <p class="fnote">Flow Q on the abscissa (m³/h, m³/s, l/s, l/min, US gpm, Imp gpm); head H
+        (m, ft), power P (kW, hp) and efficiency η (% or decimal) on the ordinate. The NPSH
+        characteristic is supplementary to the other three.</p>
+      </div>
+
+      <h3 id="how-specific-speed-shapes-the-curves">How specific speed shapes the curves</h3>
+
+      <p>Specific speed has a strong influence on the character of all four curves. The shapes
+      look different between a low-N<sub>s</sub> radial pump and a high-N<sub>s</sub> propeller
+      pump, but the trends are consistent and worth committing to memory.</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Curve character against specific speed</caption>
+          <thead>
+            <tr><th>Curve</th><th>Low N<sub>s</sub> (radial)</th><th>Medium N<sub>s</sub> (mixed flow)</th><th>High N<sub>s</sub> (axial)</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>H–Q</strong></td>
+              <td>Gently drooping — relatively flat</td>
+              <td>Steeper</td>
+              <td>Steepest, with a pronounced slope toward shut-off and beyond BEP</td>
+            </tr>
+            <tr>
+              <td><strong>P–Q</strong></td>
+              <td>Rises with flow → <strong>overloading</strong></td>
+              <td>Approximately flat</td>
+              <td>Falls as flow rises → <strong>non-overloading</strong></td>
+            </tr>
+            <tr>
+              <td><strong>η–Q</strong></td>
+              <td>Gradual drop after BEP</td>
+              <td>Moderate</td>
+              <td>Sharp drop after BEP</td>
+            </tr>
+            <tr>
+              <td><strong>Start-up</strong></td>
+              <td>Start with discharge valve <strong>closed</strong></td>
+              <td>Intermediate</td>
+              <td>Start with discharge valve <strong>fully open</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note danger">
+        <span class="note-label">Start-up rule and why it exists</span>
+        <p>AC induction motors should be started with minimum load to limit starting current.
+        For a <strong>radial impeller</strong> pump the P–Q curve rises with flow, so minimum
+        power is at zero flow — start with the discharge valve closed. For a
+        <strong>propeller (axial flow)</strong> pump the power curve falls with flow, so minimum
+        power is at full flow — start with the discharge valve fully open.</p>
+        <p>There is a second reason for axial pumps: the hydraulics become unstable at
+        <strong>70–75% of BEP</strong>, and on a closed valve the torque reaches normal value
+        before full speed is obtained. Axial and mixed-flow pump flow is therefore rarely
+        throttled at all.</p>
+      </div>
+
+      <h2>Curve stability</h2>
+
+      <p>H–Q curves come in two kinds, and the distinction decides whether the pump can be used
+      in parallel.</p>
+
+      <h3>Stable H–Q curve</h3>
+
+      <p>Differential head falls progressively as flow increases. The shut-off head H<sub>SO</sub>
+      is the <strong>maximum</strong> head the pump will ever develop. One system head corresponds
+      to exactly one flow.</p>
+
+      <h3>Unstable H–Q curve</h3>
+
+      <p>Head rises from H<sub>SO</sub> to a maximum at some intermediate flow, then falls. The
+      consequence is that for one system head requirement H₁ there are <strong>two possible flow
+      rates</strong>, Q₁ and Q₂.</p>
+
+      <div class="note danger">
+        <span class="note-label">What an unstable curve does in service</span>
+        <p>With a head requirement above H<sub>SO</sub>, pump flow <strong>oscillates between
+        Q₁ and Q₂</strong>, giving a modulating flow rate and pipeline vibration. This is not a
+        theoretical concern; it is a recognisable field symptom.</p>
+      </div>
+
+      <p>Stability in a single-stage pump can be obtained by:</p>
+
+      <ul>
+        <li>reducing the number of vanes;</li>
+        <li>modifying the vane geometry;</li>
+        <li>reducing the vane outlet angle;</li>
+        <li>on multistage pumps, modifying the diffuser shape and return vanes.</li>
+      </ul>
+
+      <div class="note">
+        <span class="note-label">API 610 requirement</span>
+        <p>API 610 requires that <strong>all pumps have stable H–Q curves</strong> — head at
+        rated capacity must rise continuously until it reaches shut-off head. For
+        <strong>parallel operation</strong> of single- or double-stage pumps the head rise from
+        rated capacity to shut-off must be <strong>10–20%</strong>. For three or more stages a
+        lower percentage is permitted, because the same percentage would produce excessively high
+        shut-off heads.</p>
+      </div>
+
+      <h3>Steepness</h3>
+
+      <p>Steepness is associated with a stable curve and is defined as the percentage rise in
+      head from BEP to shut-off:</p>
+
+      <div class="formula">
+        <p class="eq"><b>Steepness %</b> = (H<sub>SO</sub> − H<sub>BEP</sub>) ⁄ H<sub>BEP</sub> × 100</p>
+        <p class="fnote">Alternatively expressed as the ratio ΔH/ΔQ. Small ΔH/ΔQ is a
+        <strong>flat</strong> characteristic; large ΔH/ΔQ is a <strong>steep</strong> one.</p>
+      </div>
+
+      <p>Steepness is set by the <strong>number of vanes and the blade outlet angle</strong>.
+      Practical industry combinations run roughly from 3 vanes at 17° through 8 vanes at 28°,
+      with the higher vane counts and angles showing droop. The application decides which is
+      wanted.</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Flat versus steep characteristics</caption>
+          <thead>
+            <tr><th></th><th>Flat curve</th><th>Steep curve</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Behaviour</strong></td><td>Relatively constant head as flow varies</td><td>Relatively constant flow as head varies</td></tr>
+            <tr><td><strong>Power characteristic</strong></td><td>—</td><td>Usually non-overloading</td></tr>
+            <tr><td><strong>Parallel operation</strong></td><td>Larger flow gain when the second pump starts</td><td>Smaller flow gain</td></tr>
+            <tr><td><strong>Classic application</strong></td><td><strong>Firewater service</strong></td><td>Where flow must be held against varying system head</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note field">
+        <span class="note-label">Why firewater pumps need flat curves</span>
+        <p>A firewater pump feeds a header serving hydrants. One or many hydrants may open at
+        once, so the required flow can increase sharply and without warning. As flow rises the
+        pressure from the pump <strong>must not drop substantially</strong>, because a drop in
+        delivered head directly reduces the height to which water can be thrown. Hence the flat
+        characteristic requirement.</p>
+      </div>
+
+      <h2>Why the curves take the shape they do</h2>
+
+      <h3>The cause of the H–Q curve: outlet velocity triangle</h3>
+
+      <p>Consider the velocity vectors at the impeller outlet. Speed is constant, so:</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Outlet velocity triangle</caption>
+          <tbody>
+            <tr><td><strong>U₂</strong></td><td>Peripheral velocity = π·N·d₂/60. <strong>Constant</strong>, because N is constant.</td></tr>
+            <tr><td><strong>β₂</strong></td><td>Blade outlet angle, between the relative velocity direction and U₂. <strong>Constant</strong> — it is cast into the impeller.</td></tr>
+            <tr><td><strong>C₂</strong></td><td>Absolute velocity</td></tr>
+            <tr><td><strong>W₂</strong></td><td>Relative velocity, directed along the vane outlet angle</td></tr>
+            <tr><td><strong>C<sub>m2</sub></strong></td><td>Meridional (radial) velocity at impeller discharge = Q / area</td></tr>
+            <tr><td><strong>C<sub>u2</sub></strong></td><td>Peripheral component of the absolute velocity — the term that generates head</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="formula">
+        <p class="eq"><b>H</b> = U₂ × C<sub>u2</sub> ⁄ g</p>
+        <p class="fnote">Theoretical differential head. U₂ and β₂ are fixed; only C<sub>u2</sub>
+        can change.</p>
+      </div>
+
+      <p>When flow changes, the relative velocity W through the impeller passages rises or falls.
+      The velocity triangle changes shape, which changes C<sub>u2</sub>. Comparing the triangles
+      directly:</p>
+
+      <ul>
+        <li><strong>Flow reduced</strong> → C<sub>u2</sub> <strong>increases</strong>,
+        C<sub>m2</sub> decreases → head rises.</li>
+        <li><strong>Flow increased</strong> → C<sub>u2</sub> <strong>decreases</strong> → head
+        falls.</li>
+      </ul>
+
+      <div class="note ok">
+        <span class="note-label">The self-regulating property</span>
+        <p>This is why the H–Q curve droops — and it gives centrifugal pumps their most valuable
+        operational characteristic. If total head rises during operation, the pump
+        <strong>automatically reduces its discharge</strong> so the impeller can overcome the
+        increased resistance. Conversely, a reduction in delivery-pipe resistance stimulates the
+        pump to increase discharge. No control system is involved; it is inherent in the velocity
+        triangles.</p>
+      </div>
+
+      <h3>The inlet velocity triangle and off-BEP losses</h3>
+
+      <p>At the inlet, U₁ = π·N·d₁/60 is constant, C<sub>m1</sub> = Q/area, and W₁ is the
+      relative velocity. When flow changes, the <strong>angle of entry β<sub>1-en</sub></strong>
+      changes relative to the fixed blade inlet angle β₁:</p>
+
+      <ul>
+        <li><strong>Q &lt; Q<sub>BEP</sub></strong> → β<sub>1-en</sub> &lt; β₁ → flow separation,
+        eddies on the <strong>inner</strong> surface of the vane;</li>
+        <li><strong>Q = Q<sub>BEP</sub></strong> → β<sub>1-en</sub> = β₁ → clean, shockless
+        entry;</li>
+        <li><strong>Q &gt; Q<sub>BEP</sub></strong> → β<sub>1-en</sub> &gt; β₁ → eddies on the
+        <strong>outer</strong> surface of the vane.</li>
+      </ul>
+
+      <p>In practice a certain pre-whirl exists, which reduces the mismatch between
+      β<sub>1-en</sub> and β₁ at off-BEP flows, so real losses are less than a straight-entry
+      assumption predicts. These off-BEP flows also cause disturbance and hydraulic loss in the
+      diffuser ring and volute casing.</p>
+
+      <div class="note warn">
+        <span class="note-label">Conflicting loss exponents in the literature</span>
+        <p>Sources describe off-BEP hydraulic losses as proportional to the <strong>square</strong>
+        of flow in one place and the <strong>cube</strong> of flow in another. The qualitative
+        point is what matters and is not in dispute: losses grow <em>rapidly and non-linearly</em>
+        as the duty moves away from BEP in either direction. Do not rely on a specific exponent
+        for a calculation.</p>
+      </div>
+
+      <h3>The cause of the efficiency curve</h3>
+
+      <p>Hydraulic losses occur at every flow other than BEP and grow as the duty moves away in
+      either direction. The other two loss groups — recirculation losses and mechanical losses —
+      are not greatly affected by flow. So there is one flow at which the <em>sum</em> of losses
+      is minimum, and efficiency is maximum there. That produces the inverted-U efficiency
+      curve.</p>
+
+      <h2>Non-dimensional characteristics</h2>
+
+      <p>Given the variety of pump types, sizes, flows, heads, powers and efficiencies, direct
+      comparison between machines is difficult. Non-dimensional characteristics solve it, and
+      they are necessary for transferring a known characteristic from one geometrically similar
+      pump to another.</p>
+
+      <h3>Individual characteristics</h3>
+
+      <p>Take the <strong>normal operating point</strong> — the point the pump is supposed to
+      operate at most of the time — and call its values Q<sub>n</sub>, H<sub>n</sub>,
+      P<sub>n</sub>, η<sub>n</sub>. Treat each as 100% and express all deviations as percentages
+      of normal. Once the normal values are known for a desired characteristic, the rest of the
+      curve follows. The P–Q comparison across specific speeds earlier in this chapter is exactly
+      this technique.</p>
+
+      <h3>Universal characteristics</h3>
+
+      <p>Derived from the similarity of centrifugal pumps:</p>
+
+      <div class="formula">
+        <p class="eq"><b>Head coefficient</b>&nbsp;&nbsp;ψ = H ⁄ (u₂² ⁄ 2g)</p>
+        <p class="eq"><b>Flow coefficient</b>&nbsp;&nbsp;φ = Q ⁄ (u₂ · A)</p>
+        <dl>
+          <dt>u₂</dt><dd>peripheral velocity at impeller outlet, m/s</dd>
+          <dt>A</dt><dd>impeller area = π/4 × d₂²</dd>
+        </dl>
+        <p class="fnote">The universal characteristic ψ = f(φ) lets you compare different
+        quantities of the same type <em>and</em> test a pump using another fluid altogether —
+        air, for instance.</p>
+      </div>
+
+      <h2>The effect of speed change</h2>
+
+      <p>Everything above assumed constant speed. With a variable speed drive, the inlet and
+      outlet velocity triangles remain <em>similar</em> and all velocities vary in proportion to
+      speed. Hence the <a href="hydraulics.html#affinity-laws">affinity laws</a>:</p>
+
+      <div class="formula">
+        <p class="eq">Q₁ ⁄ Q₂ = N₁ ⁄ N₂&nbsp;&nbsp;·&nbsp;&nbsp;H₁ ⁄ H₂ = (N₁ ⁄ N₂)²&nbsp;&nbsp;·&nbsp;&nbsp;P₁ ⁄ P₂ = (N₁ ⁄ N₂)³</p>
+        <p class="fnote">Head goes with u₂², hence with N². Power goes with Q×H, hence with N³.
+        <strong>Valid only at constant efficiency</strong>; divergence from practice becomes
+        significant beyond ±25% speed change.</p>
+      </div>
+
+      <h3>Constant specific speed curves</h3>
+
+      <p>Take a point P on the Q–H curve at normal speed N, and its homologous points P₁ and P₂
+      at speeds N₁ and N₂. Resolving the affinity relations gives:</p>
+
+      <div class="formula">
+        <p class="eq">H<sub>x</sub> = H × (Q<sub>x</sub> ⁄ Q)²</p>
+        <p class="fnote">A <strong>parabola through the origin</strong>. Every point on it has
+        the same specific speed — substitute the proportional speeds into the N<sub>s</sub>
+        equation and the result is a constant.</p>
+      </div>
+
+      <p>These are <strong>constant specific speed curves</strong>. Because efficiency is a direct
+      function of specific speed, every homologous point on one of these parabolas has the
+      <strong>same specific speed and the same efficiency</strong>. That is the geometric reason
+      iso-efficiency contours on a performance map are parabolic through the origin — and it is
+      the basis for the impeller trim construction later in this chapter.</p>
+
+      <h2>Multiple pump operation</h2>
+
+      <p>Two configurations: several pumps discharging into a common delivery pipe
+      (<strong>parallel</strong> — flows add at a common pressure), or pumps sharing the total
+      head requirement (<strong>series</strong> — heads add at a common flow).</p>
+
+      <div class="note warn">
+        <span class="note-label">Addition is never as simple as it looks</span>
+        <p>Total flow or total head is <strong>not</strong> a simple addition of individual
+        values — especially where the pumps have dissimilar curves. The actual operating point is
+        always set by where the <em>combined</em> pump curve intersects the
+        <a href="hydraulics.html#system-resistance">system resistance curve</a>.</p>
+      </div>
+
+      <h3>Parallel operation, similar curves</h3>
+
+      <p>Construct the combined curve by adding the abscissae (flows) at each head — for two
+      identical pumps, double the flow at each head while holding head constant.</p>
+
+      <p>It is tempting to assume that combined curve point is where the pair will operate. It is
+      not. The operating point depends on system resistance. A single pump intersecting the
+      resistance curve delivers Q<sub>c1</sub>. Start the second pump and the resistance curve —
+      which goes with Q² — turns upward steeply, intersecting the combined curve at
+      Q<sub>c2</sub>.</p>
+
+      <div class="note danger">
+        <span class="note-label">The parallel pumping disappointment</span>
+        <p><strong>Q<sub>c1</sub> is nowhere near half of Q<sub>c2</sub>.</strong> Because system
+        resistance rises with the square of flow, adding a second identical pump typically yields
+        far less than double the flow. One documented example: two identical pumps that would
+        each deliver 15.75 l/s produced only <strong>18.5 l/s together</strong> instead of the
+        naive 31.5 l/s, because the system pipework resistance dominated.</p>
+        <p>The remedy is on the system side: <strong>size the pipework correctly to keep flow
+        resistance low</strong>. If the resistance curve is steep, parallel pumping cannot help
+        much however many pumps you add.</p>
+      </div>
+
+      <p>Where the flow must be regulated, it is more efficient to throttle <strong>only one
+      pump</strong>. Combined efficiency for two pumps in parallel:</p>
+
+      <div class="formula">
+        <p class="eq"><b>η</b> = [H × (Q₁ + Q₂) × 100] ⁄ [K × (P₁ + P₂)]</p>
+        <dl>
+          <dt>η</dt><dd>combined efficiency, %</dd>
+          <dt>H</dt><dd>total head</dd>
+          <dt>Q₁, Q₂</dt><dd>flow from pump 1 and pump 2</dd>
+          <dt>P₁, P₂</dt><dd>brake power input to pump 1 and pump 2</dd>
+          <dt>K</dt><dd>unit conversion constant</dd>
+        </dl>
+        <p class="fnote">Combined <strong>NPSH-r</strong> for pumps in parallel is that of the
+        most limiting pump — the <strong>largest</strong> NPSH-r.</p>
+      </div>
+
+      <h3>Parallel operation, different curves</h3>
+
+      <p>With two dissimilar curves the combined characteristic has a kink. Until the operating
+      point reaches the shut-off head of the <em>higher</em>-head pump, that pump delivers no
+      flow at all — it sees shut-off conditions for itself. Only beyond that point does it begin
+      contributing.</p>
+
+      <div class="note field">
+        <span class="note-label">Starting order matters</span>
+        <p>With dissimilar curves in parallel, start the pump with the <strong>lower</strong>
+        shut-off head <em>first</em>, then the higher one. Start them in the wrong order and one
+        pump runs at shut-off, churning and heating, delivering nothing. The same trap appears
+        when curves are very <strong>flat</strong> and one pump's shut-off head is only slightly
+        lower than the other's.</p>
+      </div>
+
+      <h3>Parallel operation, flat versus steep curves</h3>
+
+      <p>Three combinations exist: both flat, both steep, one of each. Comparing the first two at
+      the same differential head, the flow gain from starting the second pump
+      (Q<sub>c</sub> − Q<sub>a</sub>) is <strong>greater for flat curves</strong> than for steep
+      ones. Pumps in parallel are therefore used wherever a flat characteristic (small dH/dQ) is
+      wanted.</p>
+
+      <h3>Series operation</h3>
+
+      <p>Construct the combined curve by doubling the head ordinate at each flow, holding flow
+      constant. For dissimilar pumps the method is the same.</p>
+
+      <p>At any instant the flow through both pumps <strong>must be the same</strong>. The total
+      heads of the two pumps are equal only if their individual head–discharge characteristics
+      are identical.</p>
+
+      <p>Series operation of single-stage pumps is seldom encountered in practice — multistage
+      centrifugal pumps are used instead.</p>
+
+      <h2>Non-standard liquids</h2>
+
+      <h3>Viscous liquids</h3>
+
+      <p>As covered under <a href="hydraulics.html#viscosity-corrections">viscosity
+      corrections</a>, higher viscosity reduces head, capacity and efficiency while increasing
+      power. Use the Hydraulic Institute coefficients to derate the clean-liquid curve.</p>
+
+      <h3>Liquids with considerable solids</h3>
+
+      <p>Suspended solids increase hydraulic resistance in proportion to their concentration in
+      the liquid. The consequences:</p>
+
+      <ul>
+        <li>flow rate and head developed are both <strong>lower</strong>;</li>
+        <li>power required is <strong>higher</strong>;</li>
+        <li>efficiency is consequently <strong>lower</strong>.</li>
+      </ul>
+
+      <p>Where the particles are fine they form a broadly homogeneous mixture and the
+      characteristic begins to resemble that of a higher-viscosity liquid — so viscosity
+      correction thinking transfers across.</p>
+
+      <div class="note warn">
+        <span class="note-label">Slurry curves must be measured</span>
+        <p>Q–H curves for mixtures of water and solids — sand, slag, sugar beet, potatoes, fish
+        — <strong>can only be determined by experiment</strong>. The practical approach is to
+        compare measured curves at various solids percentages against clear water and build a
+        nomogram, which can then predict performance for a particular mixture. There is no
+        general correction chart.</p>
+      </div>
+
+      <h2>Abnormal operation: the complete characteristic</h2>
+
+      <p>Normal operation means rotation in the direction matching the impeller's backward-curved
+      vanes, and flow from suction (lower head) to discharge (higher head). But four quadrants
+      exist, and all four are encountered during start, stop or multi-pump operation. Together
+      they form the <strong>complete characteristic</strong> of the pump.</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>The four operating quadrants</caption>
+          <thead>
+            <tr><th>Quadrant</th><th>Condition</th><th>When it happens</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>+N, +Q</strong></td>
+              <td>Normal rotation, normal flow</td>
+              <td>Design operation.</td>
+            </tr>
+            <tr>
+              <td><strong>+N, −Q</strong></td>
+              <td>Normal rotation, reverse flow</td>
+              <td>As discharge head rises, flow falls to shut-off. If head continues to rise — possible in parallel operation — liquid flows backward through the running pump. Reverse flow increases as discharge head rises above shut-off.</td>
+            </tr>
+            <tr>
+              <td><strong>−N, +Q</strong></td>
+              <td>Reverse rotation, normal flow</td>
+              <td>Common when induction motor phase terminals are swapped. The pump still delivers from suction to discharge, but head and flow are <strong>substantially lower</strong> because efficiency in reverse rotation is poor. A classic commissioning fault.</td>
+            </tr>
+            <tr>
+              <td><strong>−N, −Q</strong></td>
+              <td>Reverse rotation, reverse flow</td>
+              <td>The machine is acting as a <strong>hydraulic turbine</strong> — the head drop across the impeller converts to mechanical work. Seen when a system has no non-return valve, or a passing one, and the motor trips: liquid flows backward and the impeller spins in reverse.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note danger">
+        <span class="note-label">Runaway in the turbine quadrant</span>
+        <p>In the −N, −Q quadrant the shaft needs a <strong>brake</strong>, or the pump can reach
+        very high speeds. This is the failure sequence behind many reverse-rotation incidents: a
+        passing or missing non-return valve plus a motor trip. It is also why the
+        <a href="installation.html#pump-in-operation">shutdown procedure</a> includes watching
+        for reverse rotation to check the non-return valve.</p>
+      </div>
+
+      <h2>Speed–torque characteristics</h2>
+
+      <p>Pumps are driven machines, coupled to electric motors, IC engines, or steam or gas
+      turbines. The prime mover must be rated and matched to the pump to ensure proper start-up —
+      and that means knowing the pump's <strong>speed–torque (N–T)</strong> or mechanical
+      characteristic.</p>
+
+      <p>The N–T characteristic is plotted with torque as a percentage of nominal torque on the
+      ordinate and speed as a percentage of nominal speed on the abscissa. Theoretically it is a
+      parabola from the origin, proportional to speed squared:</p>
+
+      <div class="formula">
+        <p class="eq">T = k·N²</p>
+        <p class="fnote">In practice a certain torque is required <strong>at zero speed</strong>
+        to overcome mechanical losses in bearings, seals and packing and to accelerate the rotor
+        inertia — so the actual curve starts above the origin.</p>
+      </div>
+
+      <p>Curve shape depends on pump type and on whether the discharge valve is open or closed at
+      start. Started with the discharge valve closed, a centrifugal pump demands
+      <strong>30–50% of nominal torque</strong> after reaching full speed — the exact value a
+      function of specific speed and rotating mass. Mixed-flow pumps have more steeply falling
+      N–Q characteristics than lower specific speed pumps.</p>
+
+      <h3>Torque from the prime mover</h3>
+
+      <p>The driver must deliver <strong>more</strong> torque than the pump demands at every speed
+      from zero to full load. That excess is what accelerates the shaft to rated speed. Because a
+      pump has a slow-rising N–T characteristic, most prime movers meet this requirement
+      comfortably.</p>
+
+      <div class="formula">
+        <p class="eq"><b>T</b> = (30 × P) ⁄ (π × N)</p>
+        <dl>
+          <dt>T</dt><dd>full load torque, kN·m</dd>
+          <dt>P</dt><dd>power, kW</dd>
+          <dt>N</dt><dd>speed, rpm</dd>
+        </dl>
+        <p class="fnote">Torque varies as speed squared, so from full load torque:
+        <strong>×0.563 at 75% speed, ×0.25 at 50%, ×0.063 at 25%</strong>.</p>
+      </div>
+
+      <h3>Accelerating torque</h3>
+
+      <div class="formula">
+        <p class="eq"><b>T<sub>acc</sub></b> = (Wk² × ΔN) ⁄ (308 × Δt)</p>
+        <dl>
+          <dt>T<sub>acc</sub></dt><dd>average accelerating torque, lb·ft</dd>
+          <dt>Wk²</dt><dd>equivalent moment of inertia = W × K², lb·ft² (W = rotor weight in lb, K = radius of gyration in ft)</dd>
+          <dt>ΔN</dt><dd>change in speed, rpm</dd>
+          <dt>Δt</dt><dd>time interval for acceleration, seconds</dd>
+        </dl>
+        <p class="fnote">FPS units. Wk² for the train is the <strong>sum</strong> of the
+        individual moments of inertia.</p>
+      </div>
+
+      <p><strong>Worked example.</strong> A motor of 200 lb·ft² and a pump of 800 lb·ft² give
+      Wk²<sub>EQ</sub> = 1000 lb·ft². To accelerate to 1800 rpm in 60 s:</p>
+
+      <div class="formula">
+        <p class="eq">T<sub>acc</sub> = (1000 × 1800) ⁄ (308 × 60) = <b>97.4 lb·ft</b></p>
+      </div>
+
+      <h4>More accurate method: strip integration</h4>
+
+      <p>T<sub>acc</sub> above is an average. For a real calculation, divide the area between the
+      motor and pump speed–torque curves into vertical strips whose ends approximate straight
+      lines. Each strip is a speed increment taking place over a definite time interval, and the
+      average T<sub>acc</sub> is worked out within each band:</p>
+
+      <div class="formula">
+        <p class="eq"><b>t</b> = (Wk² ⁄ 308) × [ ΔN₁⁄T₁ + ΔN₂⁄T₂ + … ]</p>
+        <p class="fnote">At any speed, the difference between motor torque and pump torque is the
+        torque available for acceleration — and it <em>varies greatly</em> with speed. Where the
+        two curves <strong>intersect</strong>, no torque is available for acceleration: the motor
+        then drives the pump at constant speed, delivering exactly the load torque.</p>
+      </div>
+
+      <p>A worked case with Wk² of 18.26 lb·ft² (3.26 motor + 15 pump referred to the motor
+      shaft) and nine accelerating-torque strips from 46 lb·ft down to 11 lb·ft gives a total
+      acceleration time of <strong>2.75 seconds</strong> — against which the 60-second average
+      method above shows how much the answer depends on the method used.</p>
+
+      <h2>Discharge regulation</h2>
+
+      <p>A pump has to adapt to temporary and permanent changes in process demand. That variation
+      is <strong>regulation</strong>, achieved either at constant speed or by varying speed.</p>
+
+      <p>At constant speed: throttling the discharge valve, bypassing flow, changing impeller
+      diameter, adjustable guide vanes, or modifying the impeller. Where several pumps run in one
+      system, regulation may instead be achieved by <strong>stopping some of them</strong> —
+      common for boiler feed water, cooling tower and similar utility duties.</p>
+
+      <h3>Throttling</h3>
+
+      <p>The commonest method, manual or by control valve, and the simplest. But it is confined
+      mostly to <strong>radial impeller, low specific speed</strong> pumps — as specific speed
+      rises the P–Q curve flattens or droops, and throttling then saves no energy at all.</p>
+
+      <p>Throttling is inefficient for four distinct reasons:</p>
+
+      <ul>
+        <li>the increased pressure drop across the closing valve is <strong>wasted
+        energy</strong>;</li>
+        <li>introducing even a fully <em>open</em> control valve adds a dynamic head loss —
+        typically taken as <strong>10% of the other losses</strong>;</li>
+        <li>throttling shifts the system curve and moves the operating point along the Q–H curve
+        away from BEP in either direction, reducing pump efficiency;</li>
+        <li>control valve installations require bypass piping and isolation valves for valve
+        repair.</li>
+      </ul>
+
+      <p>Use throttling where regulation is <strong>temporary or continuously changing</strong>.
+      Where permanent regulation is wanted, modify the impeller instead.</p>
+
+      <h3>Bypass</h3>
+
+      <p>Divert part of the discharge back to the pump suction or to another system — in effect
+      splitting the pump flow between two systems of different resistance. Normally used on
+      <strong>high specific speed</strong> pumps and on boiler feed water pumps with large demand
+      variation.</p>
+
+      <h3>Impeller trim</h3>
+
+      <p>Trimming the impeller brings a <strong>permanent</strong> change in flow and head. When
+      outside diameter d₂ is reduced to d₂′, the outlet velocity triangle changes: peripheral
+      velocity U₂ reduces and the outlet angle β₂ <em>increases</em>. Impeller width b₂, vane
+      length and vane overlap all change too.</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Trim limits by specific speed (US units)</caption>
+          <thead>
+            <tr><th>Specific speed</th><th class="num">Minimum d₂′/d₂</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Below 2500</td><td class="num">80%</td></tr>
+            <tr><td>2500 – 4000</td><td class="num">90%</td></tr>
+            <tr><td>Above 4000</td><td class="num">Considerable efficiency drop even with slight trimming — avoid</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note warn">
+        <span class="note-label">Volute versus diffuser pumps trim differently</span>
+        <p>Paired with a <strong>volute</strong>, impellers can be trimmed along with the
+        shrouds. Paired with a <strong>diffuser ring</strong>, the gap between impeller and
+        diffuser must <em>not</em> be increased — so trim <strong>only the vanes</strong> and make
+        no cut on the shrouds. Getting this wrong permanently damages
+        <a href="maintenance.html#gap-a-and-gap-b">Gap-A</a>.</p>
+      </div>
+
+      <h4>Graphical construction for the new diameter</h4>
+
+      <p>Plot the new required operating point B on the Q–H curve. Draw line 0B from the origin
+      through B and extend it to intersect the original Q–H curve at A. Project A and B to read
+      Q<sub>A</sub>, H<sub>A</sub>, Q<sub>B</sub>, H<sub>B</sub>, then apply the affinity relations.
+      When A and B are close, constant efficiency can be assumed. For large trims, apply the
+      <a href="hydraulics.html#the-trim-correction">trim correction factor</a>.</p>
+
+      <p>For high specific speed pumps with an <strong>inclined outlet edge</strong>, the
+      calculation is based on the <strong>central streamline</strong> — the centreline of the
+      impeller passage. The trimmed outlet edge should pass through point P, the intersection of
+      the original outlet edge and the chord of the inlet edge.</p>
+
+      <h3>Adjustable guide vanes (pre-whirl)</h3>
+
+      <p>Some pumps have inlet guide vanes, much like a centrifugal fan. Adjusting them induces
+      <strong>pre-whirl</strong> in the liquid entering the impeller, which changes flow and
+      head.</p>
+
+      <ul>
+        <li><strong>Positive pre-whirl</strong> (liquid rotating with the impeller) is suitable
+        for regulation: increasing pre-whirl reduces flow and discharge head.</li>
+        <li><strong>Negative pre-whirl</strong> is unsuitable — it reduces pump efficiency.</li>
+      </ul>
+
+      <p>Effectiveness depends strongly on specific speed: pre-whirl regulation is
+      <strong>not very effective in low specific speed pumps</strong> and improves as specific
+      speed rises. Outlet guide vane designs also exist.</p>
+
+      <h3>Adjustable impeller blades</h3>
+
+      <p>In propeller pumps, variable-pitch blades change flow and head by altering the blade
+      inclination angle (β + α) without changing diameter. Reducing the angle reduces discharge
+      <strong>without an appreciable drop in efficiency</strong>, and the change in head is also
+      not substantial.</p>
+
+      <h3>Speed variation</h3>
+
+      <p>The most economical method: no throttling losses, and minimal deviation from rated
+      efficiency. The key distinction from throttling is <em>which</em> curve moves — throttling
+      shifts the <strong>system resistance curve</strong>; speed variation moves the
+      <strong>pump Q–H curve</strong> along the system resistance curve.</p>
+
+      <p>Energy supplied to the pump reduces with speed, whereas throttling and bypass supply
+      full energy even at a reduced operating point. The drawbacks:</p>
+
+      <ul>
+        <li>effectiveness depends heavily on the shape of the pump curve;</li>
+        <li>not all pump designs can be effectively speed-controlled — particularly those
+        requiring recycle control;</li>
+        <li>there is still some loss of pump efficiency, though far less than with throttling.</li>
+      </ul>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Speed variation methods</caption>
+          <thead>
+            <tr><th>Method</th><th>How it works</th><th>Assessment</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Variable frequency drive (VFD)</strong></td>
+              <td>Varies frequency and voltage to an AC motor; frequency sets speed. Also called inverter, AC drive, adjustable frequency drive.</td>
+              <td><span class="pill ok">Best</span> Energy saving broadly proportional to speed reduction. Can extend range to 120 Hz: below 60 Hz torque is constant and hp falls with speed; above 60 Hz hp is constant and torque falls to roughly 66% of maximum at 120 Hz. Motor cooling is usually not the concern — <strong>mechanical balance, rotational stress and bearing life are</strong>.</td>
+            </tr>
+            <tr>
+              <td><strong>Eddy current drive / clutch</strong></td>
+              <td>A rotating drum on the motor surrounds a cylinder on the output shaft; a magnetic field couples them and its strength sets the slip. A low-power solid-state device controls the field, consuming about 2% of rated power.</td>
+              <td>A slip device like a fluid coupling but <strong>much more efficient</strong>. Waste heat from drum and cylinder motion is the main loss, removed by air or water cooling. Slip losses grow appreciably as speed falls.</td>
+            </tr>
+            <tr>
+              <td><strong>Hydraulic / hydrostatic coupling</strong></td>
+              <td>Fluid coupling between motor and pump; output speed set by slip, controlled by adjusting the oil volume in the working circuit. Permits reduction to about 20% of normal speed, typical speed ratio 5:1.</td>
+              <td>At 50% output speed, average overall efficiency is only about <strong>40%</strong>. Functions well only when most of the duty cycle is in the upper speed range; at low speeds losses are simply too high. Now normally installed only in low-horsepower applications where it undercuts an AC drive. <strong>Including ongoing maintenance and energy cost, retrofitting an AC variable speed drive is often still more cost-effective.</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Mechanical (variable belt and sheave)</strong></td>
+              <td>Adjustable pulley diameters.</td>
+              <td>Adds friction and windage losses, plus maintenance.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note ok">
+        <span class="note-label">Regulation methods ranked by power consumed</span>
+        <p>From worst to best at reduced flow: <strong>bypass regulation</strong> →
+        <strong>valve throttling</strong> → <strong>hydraulic/hydrostatic drive</strong> →
+        <strong>mechanical drive</strong> → <strong>eddy current drive</strong> →
+        <strong>variable frequency / speed regulation</strong>.</p>
+        <p>The exception that reverses the ranking: for <strong>axial flow</strong> pumps, bypass
+        control <em>is</em> efficient and flexible, because the power curve falls with flow.</p>
+      </div>
+
+      <h2 id="the-allowable-operating-region">The allowable operating region</h2>
+
+      <p>It is almost improbable that a pump in actual service operates at BEP. Since that cannot
+      be arranged in most cases, the selection must at least place the <em>range</em> of
+      operation near BEP. Defining that range matters because outside it you get excessive
+      hydraulic thrust, temperature rise, erosion and separation cavitation — and the
+      consequences are premature bearing and seal failures from shaft deflection, plus process
+      fluid temperature rise in the casing that seizes close-tolerance parts.</p>
+
+      <div class="specs">
+        <dl class="spec"><dt>Usual allowable region</dt><dd>70–120<small> % of BEP flow</small></dd></dl>
+        <dl class="spec"><dt>Axial flow pumps</dt><dd>75–115<small> % of BEP flow</small></dd></dl>
+        <dl class="spec"><dt>N<sub>ss</sub> &gt; 11 000</dt><dd>&gt; 60–70<small> % of BEP flow</small></dd></dl>
+      </div>
+
+      <h3 id="operating-below-bep">Operating below BEP</h3>
+
+      <p>Toward shut-off, a percentage of the process fluid recirculates in the impeller eye and
+      between impeller shroud and back-plate. Evidence of minimum-flow problems is
+      <em>more</em> dramatic where NPSH-a exceeds NPSH-r by two-, three- or fourfold — which is
+      counter-intuitive and worth noting.</p>
+
+      <p>The liquid churning in the casing absorbs the pump's inefficiency. Efficiency measures
+      useful conversion of mechanical energy into head and flow; the inefficient part goes into
+      <strong>heating the liquid</strong>. That leads to vapour formation, expansion of internals
+      and seizure, or exceeding the temperature limits of the materials of construction.</p>
+
+      <h4>Calculating temperature rise</h4>
+
+      <div class="formula">
+        <p class="eq"><b>T<sub>R</sub></b> = (5.1 × HP) ⁄ (Q × S<sub>H</sub> × S<sub>G</sub>)</p>
+        <dl>
+          <dt>T<sub>R</sub></dt><dd>rate of temperature rise at closed discharge, °F/min</dd>
+          <dt>HP</dt><dd>brake horsepower at shut-off</dd>
+          <dt>Q</dt><dd>volume of liquid in the pump casing, US gallons (estimate geometrically)</dd>
+          <dt>S<sub>H</sub></dt><dd>specific heat of the liquid</dd>
+          <dt>S<sub>G</sub></dt><dd>specific gravity of the liquid</dd>
+        </dl>
+        <p class="fnote">This equation neglects heat loss through the casing, so the result is
+        <strong>conservative</strong>. Duration of safe operation at shut-off = allowable
+        temperature rise ÷ rate of rise.
+        <a href="calculators.html#temperature-rise-at-low-flow">Calculator →</a></p>
+      </div>
+
+      <p>At any other operating point:</p>
+
+      <div class="formula">
+        <p class="eq"><b>T<sub>R</sub></b> = H ⁄ (778 × S<sub>H</sub> × E)</p>
+        <dl>
+          <dt>T<sub>R</sub></dt><dd>temperature rise, °F</dd>
+          <dt>H</dt><dd>total pump head, ft</dd>
+          <dt>E</dt><dd>pump efficiency, decimal</dd>
+        </dl>
+      </div>
+
+      <p>And to find the minimum flow for a given allowable rise:</p>
+
+      <div class="formula">
+        <p class="eq"><b>Q</b> = (5 × HP) ⁄ (S<sub>H</sub> × T<sub>R</sub>)</p>
+        <dl>
+          <dt>HP</dt><dd>horsepower at shut-off</dd>
+          <dt>T<sub>R</sub></dt><dd>allowable temperature rise, °F</dd>
+        </dl>
+      </div>
+
+      <div class="note danger">
+        <span class="note-label">Allowable temperature rise limits</span>
+        <p>Limit the allowable rise to <strong>50 °F (28 °C) maximum</strong>. Use a lower value
+        if 50 °F would exceed the casing design temperature, or raise vapour pressure enough to
+        create a critical NPSH condition, or cause damaging vaporisation at the mechanical seal
+        face. For <strong>boiler feed water</strong> the rise is limited to <strong>15 °F</strong>.</p>
+        <p>And the maximum allowable temperature is not always set by flashing. A polypropylene
+        pump may have an upper limit of <strong>180 °F</strong> where the cavitation-avoidance
+        limit is 210 °F. Mechanical seals, packing, bearings and wear ring tolerances may each
+        dictate a lower ceiling. For non-Newtonian, viscous and shear-sensitive fluids where
+        temperature affects product integrity, the limit may be set by the product.</p>
+      </div>
+
+      <h4>Minimum flow for mechanical protection</h4>
+
+      <p>Separately from thermal protection, there is a minimum flow for <em>mechanical</em>
+      protection. With cool clean liquids the thermal minimum may be very small — but excessive
+      shaft deflection from unbalanced radial loads, vibration and rotating element instability
+      will still occur if the mechanical minimum is not met. These scenarios become more evident
+      as suction pressure increases further beyond NPSH-r.</p>
+
+      <h4 id="maintaining-minimum-flow">Maintaining minimum flow</h4>
+
+      <ul>
+        <li>A <strong>permanently open bypass</strong> with a fixed orifice in the line.</li>
+        <li>A bypass <strong>opened at start-up</strong> and closed once the pump is at design
+        capacity.</li>
+        <li>An <strong>automatically controlled device sensing process pressure</strong> — the
+        most practical and cost-efficient method. As pressure rises to a set point the device
+        opens, diverting bypass flow; as pressure falls it modulates, limiting bypass flow.</li>
+      </ul>
+
+      <h3>Operating above BEP</h3>
+
+      <p>The problems to the right of BEP are different. For low specific speed pumps the
+      <strong>overloading</strong> power characteristic means power demand keeps rising, which
+      ultimately trips the motor.</p>
+
+      <p>The second problem is <strong>breakaway NPSH-r</strong>. At higher flow, internal fluid
+      velocities are higher, and by Bernoulli the static head component falls — approaching
+      vapour pressure. The static pressure must therefore be supplied externally, meaning a
+      higher NPSH-r is required at higher flows.</p>
+
+      <div class="note danger">
+        <span class="note-label">The margin closes from both ends</span>
+        <p>Even where a pump has adequate NPSH margin at rated flow, at higher flows that margin
+        can be consumed <strong>very rapidly</strong> — NPSH-a falls with rising friction loss
+        while NPSH-r climbs. Beyond the breakaway point the margin can go
+        <strong>negative</strong>, and the pump cavitates. This is the mechanism behind the
+        otherwise baffling symptom of a pump that
+        <a href="troubleshooting.html">cavitates when NPSH-a is <em>increased</em></a>.</p>
+      </div>
+
+      <p>Flow at 120% of BEP is sometimes called the <strong>end of the curve</strong>. Motor
+      selection and sizing for low specific speed pumps is often done treating that as the last
+      operating point on the curve — which is the correct conservative practice, since it is the
+      maximum power the motor can be asked to deliver.</p>

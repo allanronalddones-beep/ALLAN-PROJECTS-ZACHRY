@@ -1,0 +1,524 @@
+      <div class="note">
+        <span class="note-label">Print this page</span>
+        <p>Use your browser's print function. The stylesheet strips navigation, expands all
+        content and keeps tables and formula blocks from breaking across pages. Every value is
+        indicative — <strong>verify against the current standard and the OEM data</strong> before
+        acting on it.</p>
+      </div>
+
+      <h2>Liquid properties</h2>
+
+      <div class="formula">
+        <p class="eq">Specific gravity = ρ<sub>liquid</sub> ⁄ ρ<sub>water @ 4 °C</sub>&nbsp;&nbsp;&nbsp;(ρ<sub>water</sub> = 1000 kg/m³)</p>
+        <p class="eq">Kinematic viscosity <b>ν</b> = μ ⁄ ρ&nbsp;&nbsp;&nbsp;[m²/s]</p>
+        <p class="fnote">10⁴ St = 1 m²/s. Water ≈ 1 cSt. Apply viscosity corrections above
+        about 2 cP.</p>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Viscosity conversions (SSU valid above 50 cSt)</caption>
+          <thead><tr><th>From</th><th>×</th><th>To</th></tr></thead>
+          <tbody>
+            <tr><td>Centistokes</td><td class="num">specific gravity</td><td>Centipoise</td></tr>
+            <tr><td>SSU</td><td class="num">0.2198</td><td>Centistokes</td></tr>
+            <tr><td>Degrees Engler</td><td class="num">7.45</td><td>Centistokes</td></tr>
+            <tr><td>Seconds Redwood</td><td class="num">0.2469</td><td>Centistokes</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Head, flow and power</h2>
+
+      <div class="formula">
+        <p class="eq">Differential head <b>H</b> = (P<sub>d</sub> − P<sub>s</sub>) × 10 ⁄ ρ&nbsp;&nbsp;&nbsp;[m; P in kg/cm², ρ = SG]</p>
+        <p class="eq">Suction / discharge head <b>h</b> = P × 10 ⁄ ρ&nbsp;&nbsp;&nbsp;[m]</p>
+        <p class="eq">Volumetric flow <b>Q</b> = M ⁄ δ&nbsp;&nbsp;&nbsp;[m³/h; M in kg/h, δ in kg/m³]</p>
+        <p class="eq">Hydraulic power <b>P<sub>H</sub></b> = (Q × ρ × g × H) ⁄ (3.6 × 10⁶)&nbsp;&nbsp;&nbsp;[kW; Q in m³/h, ρ in kg/m³]</p>
+        <p class="eq">Shaft power <b>P<sub>S</sub></b> = P<sub>H</sub> ⁄ η<sub>p</sub></p>
+        <p class="eq">Motor power at coupling <b>P<sub>M</sub></b> = (√3 × V × I × cos φ × η<sub>e</sub>) ⁄ 1000&nbsp;&nbsp;&nbsp;[kW]</p>
+        <p class="eq">Pump efficiency <b>η<sub>p</sub></b> = P<sub>H</sub> ⁄ P<sub>M</sub></p>
+        <p class="fnote">η<sub>p</sub> = hydraulic × volumetric × mechanical efficiency.
+        <a href="calculators.html#power-and-motor-sizing">Calculator →</a></p>
+      </div>
+
+      <h2>System resistance</h2>
+
+      <div class="formula">
+        <p class="eq"><b>H<sub>t</sub></b> = H<sub>st</sub> + k·Q²&nbsp;&nbsp;&nbsp;k = H<sub>f,design</sub> ⁄ Q<sub>design</sub>²</p>
+        <p class="eq">Velocity <b>v</b> = Q ⁄ A&nbsp;&nbsp;·&nbsp;&nbsp;A = π D² ⁄ 4&nbsp;&nbsp;·&nbsp;&nbsp;velocity head = v² ⁄ 2g</p>
+        <p class="fnote">Static head is flow-independent; friction head goes with Q².
+        <a href="calculators.html#system-head-curve">Calculator →</a></p>
+      </div>
+
+      <h2>Affinity laws and corrections</h2>
+
+      <div class="formula">
+        <p class="eq">Q₂ = Q₁ × (N₂⁄N₁)&nbsp;&nbsp;·&nbsp;&nbsp;H₂ = H₁ × (N₂⁄N₁)²&nbsp;&nbsp;·&nbsp;&nbsp;P₂ = P₁ × (N₂⁄N₁)³</p>
+        <p class="eq">By analogy for diameter: Q₂ = Q₁ × (D₂⁄D₁)&nbsp;&nbsp;·&nbsp;&nbsp;H₂ = H₁ × (D₂⁄D₁)²&nbsp;&nbsp;·&nbsp;&nbsp;P₂ = P₁ × (D₂⁄D₁)³</p>
+        <p class="eq">Trim correction: <b>A</b> = 16.2 + 0.838 × C&nbsp;&nbsp;&nbsp;[%, A = actual, C = calculated]</p>
+        <p class="eq">KSB approximation: D₂⁄D₁ ≈ √(Q₂⁄Q₁) ≈ √(H₂⁄H₁)</p>
+        <p class="eq">Viscosity: Q<sub>vis</sub> = C<sub>Q</sub>Q<sub>w</sub>&nbsp;·&nbsp;H<sub>vis</sub> = C<sub>H</sub>H<sub>w</sub>&nbsp;·&nbsp;η<sub>vis</sub> = C<sub>η</sub>η<sub>w</sub></p>
+        <p class="fnote"><strong>Valid only at constant efficiency.</strong> Divergence becomes
+        significant beyond ±25% speed change. C coefficients from the Hydraulic Institute chart.
+        <a href="calculators.html#affinity-law-scaling">Calculator →</a></p>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Impeller trim limits by specific speed (US units)</caption>
+          <thead><tr><th>N<sub>s</sub></th><th class="num">Min. d₂′/d₂</th></tr></thead>
+          <tbody>
+            <tr><td>Below 2 500</td><td class="num">80%</td></tr>
+            <tr><td>2 500 – 4 000</td><td class="num">90%</td></tr>
+            <tr><td>Above 4 000</td><td class="num">Avoid trimming</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Specific speed</h2>
+
+      <div class="formula">
+        <p class="eq"><b>N<sub>s</sub></b> = N√Q ⁄ H<sup>3/4</sup>&nbsp;&nbsp;&nbsp;(H per stage; <strong>no</strong> double-suction correction)</p>
+        <p class="eq"><b>N<sub>ss</sub></b> = N√Q ⁄ (NPSH-r)<sup>3/4</sup>&nbsp;&nbsp;&nbsp;(Q <strong>halved</strong> for double suction)</p>
+        <p class="eq">Head coefficient <b>ψ</b> = H ⁄ (u₂²⁄2g)&nbsp;&nbsp;·&nbsp;&nbsp;Flow coefficient <b>φ</b> = Q ⁄ (u₂A)</p>
+        <p class="eq">Constant specific speed parabola: H<sub>x</sub> = H × (Q<sub>x</sub>⁄Q)²</p>
+        <p class="fnote">US units throughout: gpm, ft, rpm.
+        <a href="calculators.html#specific-and-suction-specific-speed">Calculator →</a></p>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Unit conversions for specific speed</caption>
+          <tbody>
+            <tr><td>1 US gpm</td><td class="num">0.2271 m³/h</td></tr>
+            <tr><td>1 British gpm</td><td class="num">0.2728 m³/h</td></tr>
+            <tr><td>1 ft</td><td class="num">0.3048 m</td></tr>
+            <tr><td>N<sub>s</sub>(US)</td><td class="num">1.63 × N<sub>s</sub>(metric)</td></tr>
+            <tr><td>N<sub>s</sub>(metric)</td><td class="num">0.614 × N<sub>s</sub>(US)</td></tr>
+            <tr><td>N<sub>s</sub>(British)</td><td class="num">1.5 × N<sub>s</sub>(metric)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Impeller geometry and curve character against specific speed (US units)</caption>
+          <thead>
+            <tr><th>Family</th><th class="num">N<sub>s</sub></th><th class="num">D₂/D₁</th><th>H–Q</th><th>P–Q</th><th>Start valve</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Radial vane</td><td class="num">500 – 1 500</td><td class="num">&gt; 4</td><td>Flat / gently drooping</td><td>Overloading (rises)</td><td>Closed</td></tr>
+            <tr><td>Francis vane</td><td class="num">1 500 – 4 000</td><td class="num">1.5 – 2</td><td>Steeper</td><td>Rising</td><td>Closed</td></tr>
+            <tr><td>Mixed flow</td><td class="num">4 000 – 9 000</td><td class="num">&lt; 1.5</td><td>Steep</td><td>≈ Flat</td><td>Intermediate</td></tr>
+            <tr><td>Axial (propeller)</td><td class="num">&gt; 9 000</td><td class="num">≈ 1</td><td>Steepest</td><td>Non-overloading (falls)</td><td><strong>Open</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>NPSH and cavitation</h2>
+
+      <div class="formula">
+        <p class="eq"><b>NPSH-a</b> = H<sub>a</sub> + H<sub>g</sub> ± H<sub>st</sub> − H<sub>f</sub> − H<sub>vap</sub>&nbsp;&nbsp;&nbsp;[m]</p>
+        <p class="eq">Head from pressure: H = P ⁄ (ρ × g)&nbsp;&nbsp;·&nbsp;&nbsp;H<sub>a</sub> ≈ 10.33 ⁄ SG&nbsp;&nbsp;·&nbsp;&nbsp;H<sub>vac</sub> = −(mm Hg ⁄ 1000) × 13.6 ⁄ SG</p>
+        <p class="eq"><b>NPSH-r</b> = K₁·C<sub>M1</sub>²⁄2g + K₂·W₁²⁄2g</p>
+        <p class="fnote">First term = friction and acceleration losses (dominant at low suction
+        energy); second = blade entry losses (dominant at high suction energy). By convention
+        NPSH-a already includes the vapour pressure correction, so the requirement is simply
+        NPSH-a &gt; NPSH-r. <a href="calculators.html#npsh-available-and-margin">Calculator →</a></p>
+      </div>
+
+      <div class="specs">
+        <dl class="spec"><dt>NPSH-r definition</dt><dd>3<small> % head drop (HI)</small></dd></dl>
+        <dl class="spec"><dt>For 100% head</dt><dd>1.05–2.5<small> × NPSH-r₃</small></dd></dl>
+        <dl class="spec"><dt>To suppress all cavitation</dt><dd>4–5<small> × (range 2–20)</small></dd></dl>
+        <dl class="spec"><dt>Minimum margin</dt><dd>1.0–1.5<small> m</small></dd></dl>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Minimum NPSH margin ratio (NPSH-a / NPSH-r) — Hydraulic Institute</caption>
+          <thead>
+            <tr><th>Application</th><th class="num">Low SE</th><th class="num">Medium SE</th><th class="num">High SE</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Petroleum · Chemical · Pulp &amp; paper · Building services</td><td class="num">1.1 <sup>a</sup></td><td class="num">1.3 <sup>c</sup></td><td class="num">—</td></tr>
+            <tr><td>Electrical power</td><td class="num">1.1 <sup>a</sup></td><td class="num">1.5 <sup>c</sup></td><td class="num">2.0 <sup>c</sup></td></tr>
+            <tr><td>Nuclear power</td><td class="num">1.5 <sup>b</sup></td><td class="num">2.0 <sup>c</sup></td><td class="num">2.5 <sup>c</sup></td></tr>
+            <tr><td>Cooling towers</td><td class="num">1.3 <sup>b</sup></td><td class="num">1.5 <sup>c</sup></td><td class="num">2.0 <sup>c</sup></td></tr>
+            <tr><td>Water / wastewater</td><td class="num">1.1 <sup>a</sup></td><td class="num">1.3 <sup>c</sup></td><td class="num">2.0 <sup>c</sup></td></tr>
+            <tr><td>General industry</td><td class="num">1.1 <sup>a</sup></td><td class="num">1.2 <sup>b</sup></td><td class="num">—</td></tr>
+            <tr><td>Slurry</td><td class="num">1.1 <sup>a</sup></td><td class="num">—</td><td class="num">—</td></tr>
+            <tr><td>Pipeline</td><td class="num">1.3 <sup>b</sup></td><td class="num">1.7 <sup>c</sup></td><td class="num">2.0 <sup>c</sup></td></tr>
+            <tr><td>Water flood</td><td class="num">1.2 <sup>b</sup></td><td class="num">1.5 <sup>c</sup></td><td class="num">2.0 <sup>c</sup></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><sup>a</sup> or 0.6 m (2 ft), whichever greater · <sup>b</sup> or 0.9 m (3 ft) ·
+         <sup>c</sup> or 1.5 m (5 ft)</p>
+
+      <div class="specs">
+        <dl class="spec"><dt>N<sub>ss</sub> preferred band</dt><dd>8 000–11 000</dd></dl>
+        <dl class="spec"><dt>HI speed basis</dt><dd>8 500</dd></dl>
+        <dl class="spec"><dt>Failure rate climbs</dt><dd>&gt; 10 000<small>, sharply at 11 000</small></dd></dl>
+        <dl class="spec"><dt>If N<sub>ss</sub> &gt; 11 000</dt><dd>&gt; 60–70<small> % BEP flow</small></dd></dl>
+      </div>
+
+      <h2>Operating region and low-flow limits</h2>
+
+      <div class="specs">
+        <dl class="spec"><dt>Allowable region</dt><dd>70–120<small> % BEP</small></dd></dl>
+        <dl class="spec"><dt>Axial flow pumps</dt><dd>75–115<small> % BEP</small></dd></dl>
+        <dl class="spec"><dt>Axial instability</dt><dd>70–75<small> % BEP</small></dd></dl>
+        <dl class="spec"><dt>End of curve</dt><dd>120<small> % BEP</small></dd></dl>
+      </div>
+
+      <div class="formula">
+        <p class="eq">Rate at shut-off: <b>T<sub>R</sub></b> = (5.1 × HP) ⁄ (Q<sub>gal</sub> × S<sub>H</sub> × S<sub>G</sub>)&nbsp;&nbsp;&nbsp;[°F/min]</p>
+        <p class="eq">At any point: <b>T<sub>R</sub></b> = H ⁄ (778 × S<sub>H</sub> × E)&nbsp;&nbsp;&nbsp;[°F; H in ft]</p>
+        <p class="eq">Minimum flow: <b>Q</b> = (5 × HP) ⁄ (S<sub>H</sub> × T<sub>R</sub>)</p>
+        <p class="fnote">Neglects casing heat loss — conservative. Safe duration at shut-off =
+        allowable rise ÷ rate of rise.
+        <a href="calculators.html#temperature-rise-at-low-flow">Calculator →</a></p>
+      </div>
+
+      <div class="specs">
+        <dl class="spec"><dt>Max allowable rise</dt><dd>50<small> °F (28 °C)</small></dd></dl>
+        <dl class="spec"><dt>Boiler feed water</dt><dd>15<small> °F (8 °C)</small></dd></dl>
+      </div>
+
+      <h2>Curve stability and steepness</h2>
+
+      <div class="formula">
+        <p class="eq"><b>Steepness %</b> = (H<sub>SO</sub> − H<sub>BEP</sub>) ⁄ H<sub>BEP</sub> × 100</p>
+        <p class="eq">Combined parallel efficiency: <b>η</b> = [H(Q₁+Q₂) × 100] ⁄ [K(P₁+P₂)]</p>
+        <p class="fnote">Small ΔH/ΔQ = flat (firewater duty); large ΔH/ΔQ = steep. Combined
+        <strong>NPSH-r in parallel = the largest</strong> of the pumps.</p>
+      </div>
+
+      <div class="specs">
+        <dl class="spec"><dt>API head rise to shut-off</dt><dd>10–20<small> % (1–2 stage, parallel)</small></dd></dl>
+        <dl class="spec"><dt>API minimum rise</dt><dd>≥ 10<small> % single pump</small></dd></dl>
+      </div>
+
+      <h2>Speed, torque and acceleration</h2>
+
+      <div class="formula">
+        <p class="eq">Pump N–T characteristic: <b>T</b> = k·N²</p>
+        <p class="eq">Full load torque <b>T</b> = (30 × P) ⁄ (π × N)&nbsp;&nbsp;&nbsp;[kN·m; P in kW, N in rpm]</p>
+        <p class="eq">Accelerating torque <b>T<sub>acc</sub></b> = (Wk² × ΔN) ⁄ (308 × Δt)&nbsp;&nbsp;&nbsp;[lb·ft, FPS units]</p>
+        <p class="eq">Acceleration time <b>t</b> = (Wk² ⁄ 308) × [ΔN₁⁄T₁ + ΔN₂⁄T₂ + …]</p>
+        <p class="fnote">Torque multipliers from full load: ×0.563 at 75% speed, ×0.25 at 50%,
+        ×0.063 at 25%. Closed-valve torque at full speed: <strong>30–50% of nominal</strong>.
+        Wk²<sub>EQ</sub> is the sum of the train's moments of inertia.</p>
+      </div>
+
+      <h2>Rotor forces</h2>
+
+      <div class="formula">
+        <p class="eq">Momentum force <b>F<sub>X</sub></b> = ρ × Q² ⁄ A<sub>E</sub>&nbsp;&nbsp;&nbsp;[N; Q in m³/s, A in m²]</p>
+        <p class="eq">Peripheral velocity <b>U</b> = π × D × N ⁄ 60&nbsp;&nbsp;&nbsp;[m/s]</p>
+        <p class="eq">Radial thrust at shut-off <b>R<sub>SO</sub></b> = K<sub>SO</sub> × (H<sub>SO</sub> × ρ ⁄ 2.31) × D₂ × B₂&nbsp;&nbsp;&nbsp;[lb]</p>
+        <p class="eq">At other points <b>R</b> = R<sub>SO</sub> × (K⁄K<sub>SO</sub>) × (H⁄H<sub>SO</sub>),&nbsp;&nbsp;K = K<sub>SO</sub>[1 − (Q⁄Q<sub>BEP</sub>)<sup>x</sup>]</p>
+        <p class="eq">Approximate: <b>R</b> = K × (H × ρ ⁄ 2.31) × D₂ × B₂,&nbsp;&nbsp;K = 0.36[1 − (Q⁄Q<sub>BEP</sub>)²]</p>
+        <p class="eq">Bearing reactions: R<sub>B</sub> = F<sub>r</sub>(A+B)⁄B&nbsp;·&nbsp;R<sub>A</sub> = F<sub>r</sub> − R<sub>B</sub>&nbsp;·&nbsp;P<sub>B</sub> = X·R<sub>B</sub> + Y·F<sub>ax</sub></p>
+        <p class="fnote">FPS for the radial thrust formulae: H in ft, D₂ and B₂ in inches, Q in gpm.
+        Exponent x: 0.7 at N<sub>s</sub> 500 rising linearly to 3.3 at N<sub>s</sub> 3500.
+        K<sub>SO</sub> from the chart against N<sub>s</sub>, differing for open and closed impellers.</p>
+      </div>
+
+      <div class="formula">
+        <p class="eq">Shaft deflection <b>δ</b> ∝ L³ ⁄ D⁴</p>
+        <p class="eq">Pressure on shrouds assumed = ¾ × P<sub>D</sub>&nbsp;&nbsp;·&nbsp;&nbsp;Area A = πD²⁄4</p>
+        <p class="eq">Vane pass frequency = number of impeller vanes × running speed</p>
+        <p class="fnote"><strong>Do not use L³/D⁴ to compare pumps between vendors</strong> — ask
+        for the OEM's actual deflection values at the most severe flow condition. Balancing hole
+        pressure relief: region under the back ring falls to about
+        <strong>2–10% of differential pressure</strong>.</p>
+      </div>
+
+      <h2 id="clearance-and-tolerance-chart">Clearance and tolerance chart</h2>
+
+      <div class="note warn">
+        <span class="note-label">Indicative values</span>
+        <p>Consolidated from the source material's single-stage and multistage charts, which
+        reflect API 610 7th Edition practice. <strong>Work from the current standard and the OEM
+        manual.</strong> Positive values in the fit rows denote interference.</p>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Single-stage centrifugal pump — all values in mm unless stated</caption>
+          <thead>
+            <tr><th>Item</th><th class="num">Min</th><th class="num">Max</th><th>Remarks</th></tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="4"><strong>Bearing assembly</strong></td></tr>
+            <tr><td>Shaft runout</td><td class="num">—</td><td class="num">0.025</td><td>Target; combined shaft + sleeve ≤ 0.05</td></tr>
+            <tr><td>Bearing ID fit</td><td class="num">−0.003</td><td class="num">0.02</td><td>Positive = interference</td></tr>
+            <tr><td>Bearing OD fit — under 2″</td><td class="num">−0.0017</td><td class="num">0.0016</td><td>Positive = interference</td></tr>
+            <tr><td>Bearing OD fit — over 2″</td><td class="num">−0.02</td><td class="num">0.03</td><td>Positive = interference</td></tr>
+            <tr><td>Bearing housing runout — radial</td><td class="num">—</td><td class="num">0.05</td><td></td></tr>
+            <tr><td>Bearing housing runout — facial</td><td class="num">—</td><td class="num">0.05</td><td></td></tr>
+            <tr><td>Shaft axial float</td><td class="num">0.01</td><td class="num">0.03</td><td>Source also quotes 0.02–0.07 (0.001–0.003 in)</td></tr>
+            <tr><td>Sleeve runout</td><td class="num">—</td><td class="num">0.05</td><td>Shaft-to-sleeve clearance 0.07–0.1</td></tr>
+            <tr><td>Impeller wear ring runout — front</td><td class="num">—</td><td class="num">0.07</td><td>Shaft-to-impeller clearance 0.02–0.03</td></tr>
+            <tr><td>Impeller wear ring runout — back</td><td class="num">—</td><td class="num">0.07</td><td></td></tr>
+            <tr><td colspan="4"><strong>Seal housing assembly</strong></td></tr>
+            <tr><td>Bearing housing spigot / seal housing clearance</td><td class="num">—</td><td class="num">0.1</td><td></td></tr>
+            <tr><td>Case wear ring runout</td><td class="num">—</td><td class="num">0.07</td><td></td></tr>
+            <tr><td>Seal cavity concentricity with shaft</td><td class="num">—</td><td class="num">0.1</td><td>Strip-down check limit quoted as 0.05</td></tr>
+            <tr><td>Throat bush clearance</td><td class="num">0.15</td><td class="num">0.2</td><td></td></tr>
+            <tr><td colspan="4"><strong>Seal assembly</strong></td></tr>
+            <tr><td>Rotating face flatness</td><td class="num">1.0</td><td class="num">3.0</td><td>Light bands. Seal retainer / sleeve clearance fit 0.07–0.1</td></tr>
+            <tr><td>Stationary face flatness</td><td class="num">1.0</td><td class="num">3.0</td><td>Light bands (3 bands = 0.9 µm)</td></tr>
+            <tr><td>Seal tension — multi-spring</td><td class="num">3</td><td class="num">4</td><td>F − (S + A + G)</td></tr>
+            <tr><td colspan="4"><strong>Casing assembly</strong></td></tr>
+            <tr><td>Impeller wear ring clearance — under 4″ dia</td><td colspan="2" class="num">[(dia in inches ⁄ 1000) + 10] mils</td><td>Add 5 mils for galling materials and product temperature above 260 °C</td></tr>
+            <tr><td>Impeller wear ring clearance — 4″ and above</td><td colspan="2" class="num">[(dia in inches ⁄ 1000) + 12] mils</td><td>As above</td></tr>
+            <tr><td>Back vane clearance</td><td class="num">0.8</td><td class="num">1.0</td><td>Source also quotes 0.4–1.0 for the vane-to-casing gap</td></tr>
+            <tr><td colspan="4"><strong>Coupling assembly</strong></td></tr>
+            <tr><td>Coupling (keyed) to shaft fit</td><td class="num">−0.01</td><td class="num">0.01</td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Additional fits for multistage pumps — mm</caption>
+          <thead>
+            <tr><th>Item</th><th class="num">Min</th><th class="num">Max</th><th>Remarks</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Shaft runout</td><td class="num">—</td><td class="num">0.07</td><td>Barrel pumps: &lt; 1 mil overall, &lt; 0.5 mil at bearings</td></tr>
+            <tr><td>Shaft and bottom sleeve</td><td class="num">0</td><td class="num">−0.02</td><td>Interference</td></tr>
+            <tr><td>Shaft and spacer sleeve</td><td class="num">0.02</td><td class="num">0.03</td><td></td></tr>
+            <tr><td>Bottom and intermediate bush with body</td><td class="num">0</td><td class="num">−0.03</td><td></td></tr>
+            <tr><td>Bottom bush and sleeve</td><td class="num">0.1</td><td class="num">0.15</td><td></td></tr>
+            <tr><td>Intermediate bush and sleeve</td><td class="num">0.7 × WRC</td><td class="num">0.8 × WRC</td><td>Rule of thumb</td></tr>
+            <tr><td>Throat bush and sleeve</td><td class="num">0.25</td><td class="num">0.3</td><td></td></tr>
+            <tr><td>Shaft and bearing sleeve</td><td class="num">0.02</td><td class="num">0.04</td><td></td></tr>
+            <tr><td>Diffuser face and drum spigot</td><td class="num">0.2</td><td class="num">0.5</td><td></td></tr>
+            <tr><td>Drum spigot diameter clearance</td><td class="num">0.07</td><td class="num">0.1</td><td></td></tr>
+            <tr><td>Diffuser cover interference fit</td><td colspan="2" class="num">0.01</td><td>May require heat for installation</td></tr>
+            <tr><td>Impeller / wear ring centring</td><td colspan="2" class="num">0.025</td><td>Suction impeller centred in wear rings</td></tr>
+            <tr><td>Head gap (all-metal fit)</td><td class="num">1.0</td><td class="num">1.5</td><td></td></tr>
+            <tr><td>Expansion gasket compression</td><td class="num">0.4</td><td class="num">0.5</td><td>Per gasket</td></tr>
+            <tr><td>Impeller wear ring / case wear ring / intermediate sleeve runouts</td><td class="num">—</td><td class="num">0.07</td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Gap-A and Gap-B</caption>
+          <thead><tr><th>Gap</th><th class="num">Range</th><th class="num">Preferred</th></tr></thead>
+          <tbody>
+            <tr><td>Gap-A (radial, side plates to diffuser side plates)</td><td class="num">35–85 mils</td><td class="num">50 mils</td></tr>
+            <tr><td>Gap-B — diffuser type (% of impeller vane dia)</td><td class="num">4–12%</td><td class="num">6%</td></tr>
+            <tr><td>Gap-B — volute type (% of impeller vane dia)</td><td class="num">6–12%</td><td class="num">10%</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Beyond <strong>125 mils</strong> Gap-A loses effectiveness. Where the number of impeller
+      and diffuser vanes is <strong>even</strong>, make the radial gap <strong>4% larger</strong>.</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Minimum diametral wear-ring clearance (API 610, indicative)</caption>
+          <thead><tr><th class="num">Rotating member dia (in)</th><th class="num">in</th><th class="num">mm</th></tr></thead>
+          <tbody>
+            <tr><td class="num">&lt; 2.000</td><td class="num">0.010</td><td class="num">0.254</td></tr>
+            <tr><td class="num">2.000 – 2.499</td><td class="num">0.011</td><td class="num">0.28</td></tr>
+            <tr><td class="num">2.500 – 2.999</td><td class="num">0.012</td><td class="num">0.30</td></tr>
+            <tr><td class="num">3.000 – 3.499</td><td class="num">0.014</td><td class="num">0.36</td></tr>
+            <tr><td class="num">3.500 – 4.999</td><td class="num">0.016</td><td class="num">0.41</td></tr>
+            <tr><td class="num">5.000 – 5.999</td><td class="num">0.017</td><td class="num">0.43</td></tr>
+            <tr><td class="num">6.000 – 6.999</td><td class="num">0.018</td><td class="num">0.46</td></tr>
+            <tr><td class="num">7.000 – 7.999</td><td class="num">0.019</td><td class="num">0.48</td></tr>
+            <tr><td class="num">8.000 – 8.999</td><td class="num">0.020</td><td class="num">0.51</td></tr>
+            <tr><td class="num">9.000 – 9.999</td><td class="num">0.021</td><td class="num">0.53</td></tr>
+            <tr><td class="num">10.000 – 10.999</td><td class="num">0.022</td><td class="num">0.56</td></tr>
+            <tr><td class="num">12.000 – 12.999</td><td class="num">0.024</td><td class="num">0.61</td></tr>
+            <tr><td class="num">14.000 – 14.999</td><td class="num">0.026</td><td class="num">0.66</td></tr>
+            <tr><td class="num">16.000 – 16.999</td><td class="num">0.028</td><td class="num">0.71</td></tr>
+            <tr><td class="num">18.000 – 18.999</td><td class="num">0.030</td><td class="num">0.76</td></tr>
+            <tr><td class="num">20.000 – 20.999</td><td class="num">0.032</td><td class="num">0.81</td></tr>
+            <tr><td class="num">22.000 – 22.999</td><td class="num">0.034</td><td class="num">0.86</td></tr>
+            <tr><td class="num">24.000 – 24.999</td><td class="num">0.036</td><td class="num">0.91</td></tr>
+            <tr><td class="num">25.000 – 25.999</td><td class="num">0.037</td><td class="num">0.94</td></tr>
+            <tr><td class="num">26.000 and above</td><td colspan="2" class="num">0.037 in + 0.001 in per additional inch of diameter</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Add <strong>5 mils (0.127 mm)</strong> for galling-prone materials and pumping
+      temperatures above <strong>260 °C</strong>. Case ring hardness <strong>225–275 BHN</strong>;
+      impeller ring <strong>50–100 BHN harder, 325–375 BHN</strong>.</p>
+
+      <h2>Vertical pump data</h2>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Vertical turbine pump values</caption>
+          <tbody>
+            <tr><td>Shaft runout</td><td class="num">3–4 mils (0.075–0.1 mm)</td></tr>
+            <tr><td>Shaft straightness tolerance</td><td class="num">1.5 mils per foot (per 300 mm)</td></tr>
+            <tr><td>Shaft section length</td><td class="num">20–24 in</td></tr>
+            <tr><td>Shaft surface finish</td><td class="num">16 µin RMS</td></tr>
+            <tr><td>Typical shaft / bearing clearance</td><td class="num">0.010 in</td></tr>
+            <tr><td>Rubber bearing clearance</td><td class="num">up to 0.030 in</td></tr>
+            <tr><td>Bowl bushing clearance</td><td class="num">≈ 9 mils</td></tr>
+            <tr><td>Bowl spigot fits</td><td class="num">2–3 mils</td></tr>
+            <tr><td>Enclosing tube bearing tolerance</td><td class="num">10 mils (0.25 mm)</td></tr>
+            <tr><td>Acceptable shaft extension deviation</td><td class="num">1/16 – 1/8 in (compensate with gaskets)</td></tr>
+            <tr><td>Bronze bushing temperature range</td><td class="num">−30 to 90 °C</td></tr>
+            <tr><td>Carbon bushing lower limit</td><td class="num">−30 °C</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Installation limits</h2>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Foundation, grout and alignment</caption>
+          <tbody>
+            <tr><td>Foundation mass</td><td class="num">≥ 3 × weight of supported equipment</td></tr>
+            <tr><td>Foundation geometry</td><td class="num">Width &gt; spread of two lines at 30° from pump centre</td></tr>
+            <tr><td>Concrete grade</td><td class="num">≥ 3000 psi, steel reinforced</td></tr>
+            <tr><td>Baseplate to foundation edge — under 500 hp</td><td class="num">≥ 3 in all round</td></tr>
+            <tr><td>Baseplate to foundation edge — over 500 hp</td><td class="num">≥ 6 in all round</td></tr>
+            <tr><td>Anchor bolt length</td><td class="num">10–15 × bolt diameter</td></tr>
+            <tr><td>Baseplate level tolerance</td><td class="num">0.002 in per foot, all three directions</td></tr>
+            <tr><td>Minimum shim under driver</td><td class="num">1/8 in</td></tr>
+            <tr><td>Machined surface overhang beyond feet</td><td class="num">0.1 in all sides</td></tr>
+            <tr><td>Soft foot limit</td><td class="num">1 mil (0.025 mm)</td></tr>
+            <tr><td>Baseplate corner radius</td><td class="num">20 in</td></tr>
+            <tr><td>Grout opening density</td><td class="num">1 per bulkhead and/or per 12 ft² of base</td></tr>
+            <tr><td>Vent hole diameter</td><td class="num">½ in, at bulkhead corners</td></tr>
+            <tr><td>Epoxy grout temperature window</td><td class="num">10–35 °C</td></tr>
+            <tr><td>Epoxy mixing time after adding hardener</td><td class="num">3–5 min</td></tr>
+            <tr><td>Mixer blade speed limit</td><td class="num">15 rpm</td></tr>
+            <tr><td>Epoxy weight vs concrete</td><td class="num">≈ 2.5 ×</td></tr>
+            <tr><td>Concrete cure — standard (5-bag) mix</td><td class="num">28 days</td></tr>
+            <tr><td>Concrete cure — quick set (6–7 bag)</td><td class="num">7 days</td></tr>
+            <tr><td>Epoxy cure</td><td class="num">24 h</td></tr>
+            <tr><td>Jackscrew relief after pour</td><td class="num">3 days</td></tr>
+            <tr><td>Laitance removal depth</td><td class="num">½ – 1 in</td></tr>
+            <tr><td>Foundation edge chamfer</td><td class="num">2–4 in at 45°</td></tr>
+            <tr><td>Thermal growth of turbine centreline</td><td class="num">1.2 mils per inch of height per 100 °C (= 1.2 mm/m per 100 °C)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Piping rules</caption>
+          <tbody>
+            <tr><td>Suction straight run before nozzle</td><td class="num">3–6 pipe diameters from upstream elbow</td></tr>
+            <tr><td>Suction and discharge pipe size</td><td class="num">≥ 1 commercial size larger than the pump nozzle</td></tr>
+            <tr><td>Suction reducer</td><td class="num"><strong>Eccentric</strong>, flat side up; 2 pipe dia straight after</td></tr>
+            <tr><td>Discharge reducer</td><td class="num"><strong>Concentric</strong></td></tr>
+            <tr><td>Suction liquid velocity</td><td class="num">≤ 2–3 m/s</td></tr>
+            <tr><td>Suction line slope (negative suction)</td><td class="num">Continuous rise, min 6 mm per 100 mm</td></tr>
+            <tr><td>Strainer submergence</td><td class="num">≥ 3 pipe dia from upper row of holes</td></tr>
+            <tr><td>Strainer to sump floor</td><td class="num">2 pipe dia</td></tr>
+            <tr><td>Bellmouth (D = 2d) rim to sump bottom</td><td class="num">≈ 0.5 d</td></tr>
+            <tr><td>Minimum submergence</td><td class="num">≥ 2 d</td></tr>
+            <tr><td>Suction strainer area</td><td class="num">≥ 4 × suction pipe area</td></tr>
+            <tr><td>Impeller outlet velocity</td><td class="num">30–40 m/s, reduced to 3–7 m/s in the discharge pipe</td></tr>
+            <tr><td>Volute diffusion divergence angle</td><td class="num">7–13°</td></tr>
+            <tr><td>Concentric casing dia ratio</td><td class="num">casing/impeller 1.15–1.2</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Testing and acceptance</h2>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Hydrostatic and performance test</caption>
+          <tbody>
+            <tr><td>Hydrotest pressure</td><td class="num">1.5 × max allowable pressure</td></tr>
+            <tr><td>Cooling jacket test</td><td class="num">7.9 bar g</td></tr>
+            <tr><td>Chloride limit in test water (SS pumps)</td><td class="num">&lt; 50 ppm</td></tr>
+            <tr><td>Hold time — API 610 / ANSI / HI</td><td class="num">30 / 10 / 3–10 min</td></tr>
+            <tr><td>Test points</td><td class="num">5–7, from near shut-off to 120% rated; must include normal and rated</td></tr>
+            <tr><td>NPSH test readings</td><td class="num">5–12 per flow, at 1–4 flow rates</td></tr>
+            <tr><td>Retest trigger</td><td class="num">Impeller diameter reduction &gt; 5% of original</td></tr>
+            <tr><td>NPSH test on ANSI pumps recommended when</td><td class="num">NPSH-a − NPSH-r &lt; 1.8 m</td></tr>
+            <tr><td>High-energy pump definition (API 610 6th Ed.)</td><td class="num">&gt; 650 ft (198 m) head and &gt; 300 hp (224 kW) per stage</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Performance tolerances — API 610 (7th Ed.)</caption>
+          <thead><tr><th>Rated head</th><th class="num">Rated point</th><th class="num">Shut-off</th></tr></thead>
+          <tbody>
+            <tr><td>Under 200 ft</td><td class="num">+5 / −0 %</td><td class="num">+5 / −3 %</td></tr>
+            <tr><td>200 – 500 ft</td><td class="num">+5 / 0 %</td><td class="num">+5 / 0 %</td></tr>
+            <tr><td>500 ft and over</td><td class="num">+3 / 0 %</td><td class="num">+3 / 0 %</td></tr>
+            <tr><td>Efficiency</td><td class="num">−0.5 %</td><td class="num">—</td></tr>
+            <tr><td>Rated power</td><td class="num">+4 %</td><td class="num">—</td></tr>
+            <tr><td>NPSH-r</td><td class="num">+0 m</td><td class="num">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Commissioning acceptance of system resistance evaluation</caption>
+          <tbody>
+            <tr><td>Within ±2.5% of design point</td><td>Good</td></tr>
+            <tr><td>Within ±5%</td><td>Satisfactory</td></tr>
+            <tr><td>Greater than 5%</td><td>Check the system</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Operating and commissioning limits</h2>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Field acceptance values</caption>
+          <tbody>
+            <tr><td>Bearing temperature above ambient</td><td class="num">10–20 °C max</td></tr>
+            <tr><td>Normal pump speeds</td><td class="num">1500/1800 and 3000/3600 rpm; high-speed designs 5000–25 000</td></tr>
+            <tr><td>Centreline support required above</td><td class="num">177 °C (350 °F) — API 610</td></tr>
+            <tr><td>Stuffing box water jacket above</td><td class="num">120 °C</td></tr>
+            <tr><td>Double suction impeller typically above</td><td class="num">550 m³/h (153 l/s)</td></tr>
+            <tr><td>Double volute not used below</td><td class="num">125 m³/h</td></tr>
+            <tr><td>Packing friction loss</td><td class="num">≈ 1% of total pump power</td></tr>
+            <tr><td>Sealant supply above casing pressure (double seals)</td><td class="num">1–1.5 kg/cm²</td></tr>
+            <tr><td>Seal hydrotest pressure</td><td class="num">1–2 kg/cm² above shut-off discharge pressure</td></tr>
+            <tr><td>Oil mist system running before start-up</td><td class="num">≈ 12 h</td></tr>
+            <tr><td>Multistage warm-up rotor turn</td><td class="num">180° every 30 min</td></tr>
+            <tr><td>Bearing heating limit (induction heater)</td><td class="num">110 °C</td></tr>
+            <tr><td>Shrink-fit impeller heating</td><td class="num">110–120 °C</td></tr>
+            <tr><td>Anti-seize torque correction</td><td class="num">≈ ⅔ of the dry-bolt torque</td></tr>
+            <tr><td>Lip seal service life</td><td class="num">≈ 3 000 h (3–4 months)</td></tr>
+            <tr><td>Magnetic seal upper temperature</td><td class="num">250 °F (121 °C)</td></tr>
+            <tr><td>Water in oil — life penalty</td><td class="num">0.002% → −48%; 0.10% → −90%</td></tr>
+            <tr><td>Bearings reaching design life</td><td class="num">≈ 10%</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Overhaul economics</h2>
+
+      <div class="formula">
+        <p class="eq">Monthly excess energy cost = excess kW × (hours per month × duty fraction) × unit cost</p>
+        <p class="eq">Linear deterioration rate = (cost at month n) ⁄ n&nbsp;&nbsp;&nbsp;[$ per month per month]</p>
+        <p class="eq">Optimum: average overhaul cost per month = average excess energy cost per month</p>
+        <p class="eq">Average overhaul cost = C<sub>overhaul</sub> ⁄ t&nbsp;&nbsp;·&nbsp;&nbsp;Average excess energy = rate × ½ × t</p>
+        <p class="fnote">Solve iteratively for t. Valid only if wear progresses at a uniformly
+        increasing rate. For <strong>variable speed</strong> pumps the power penalty scales with
+        the <strong>cube</strong> of the speed ratio, so deterioration is far more expensive and
+        invisible in production terms. Worked example in
+        <a href="maintenance.html#when-to-overhaul-the-economics">Chapter 09</a>.</p>
+      </div>

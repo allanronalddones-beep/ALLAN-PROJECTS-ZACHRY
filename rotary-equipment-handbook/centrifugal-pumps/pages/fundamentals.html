@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pump Fundamentals and Classification · Centrifugal Pump Knowledge Base</title>
+<meta name="description" content="How pumps are classified, where the centrifugal machine sits among them, the construction families you will meet on a plant, and the design standards that govern them.">
+<meta name="author" content="Zachry Philippines — Mechanical Engineering">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%230f4c75'/%3E%3Cpath d='M16 7a9 9 0 1 0 9 9h-9z' fill='%23fff'/%3E%3Ccircle cx='16' cy='16' r='2.6' fill='%230f4c75'/%3E%3C/svg%3E">
+
+</head>
+<body data-root="../">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <button class="header-btn nav-toggle" id="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+    <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+      <path d="M2 4h12M2 8h12M2 12h12"/>
+    </svg>
+  </button>
+
+  <a class="brand" href="../index.html">
+    <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      <circle cx="16" cy="16" r="13" stroke="currentColor" stroke-width="2"/>
+      <path d="M16 5a11 11 0 0 1 11 11H16z" fill="currentColor" opacity=".3"/>
+      <path d="M16 16 7.5 10.5M16 16l8.5-5.5M16 16v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="16" cy="16" r="2.8" fill="currentColor"/>
+    </svg>
+    <span class="brand-text">
+      <b>Centrifugal Pumps</b>
+      <span>Engineering Knowledge Base</span>
+    </span>
+  </a>
+
+  <span class="header-spacer"></span>
+
+  <button class="header-btn" id="search-open" aria-label="Search the knowledge base">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+      <circle cx="7" cy="7" r="4.5"/><path d="m10.5 10.5 4 4"/>
+    </svg>
+    <span class="label">Search</span>
+    <span class="header-spacer"></span>
+    <kbd>Ctrl K</kbd>
+  </button>
+
+  <button class="header-btn" id="theme-toggle" aria-label="Toggle theme">
+    <span class="theme-icon" aria-hidden="true">&#9790;</span>
+  </button>
+</header>
+
+<div class="layout has-toc">
+
+  <aside class="sidebar" id="sidebar">
+    <a class="up-link" href="../../index.html">
+      <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+           stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M10 3 5 8l5 5"/>
+      </svg>
+      Rotary Equipment Handbook
+    </a>
+    <nav class="nav-group" aria-label="Main">
+<p class="nav-title">Start here</p>
+<ul class="nav-list">
+<li><a href="../index.html"><span class="nav-num">⌂</span><span>Overview</span></a></li>
+</ul></nav>
+<nav class="nav-group">
+<p class="nav-title">Core reference</p>
+<ul class="nav-list">
+<li><a href="../pages/fundamentals.html" class="current" aria-current="page"><span class="nav-num">01</span><span>Fundamentals &amp; types</span></a></li>
+<li><a href="../pages/construction.html"><span class="nav-num">02</span><span>Design &amp; construction</span></a></li>
+<li><a href="../pages/hydraulics.html"><span class="nav-num">03</span><span>Hydraulics &amp; NPSH</span></a></li>
+<li><a href="../pages/forces.html"><span class="nav-num">04</span><span>Rotor forces</span></a></li>
+<li><a href="../pages/operation.html"><span class="nav-num">05</span><span>Operation &amp; curves</span></a></li>
+</ul></nav>
+<nav class="nav-group">
+<p class="nav-title">Project lifecycle</p>
+<ul class="nav-list">
+<li><a href="../pages/selection.html"><span class="nav-num">06</span><span>Specification &amp; selection</span></a></li>
+<li><a href="../pages/testing.html"><span class="nav-num">07</span><span>Testing &amp; inspection</span></a></li>
+<li><a href="../pages/installation.html"><span class="nav-num">08</span><span>Installation &amp; commissioning</span></a></li>
+<li><a href="../pages/maintenance.html"><span class="nav-num">09</span><span>Maintenance &amp; reliability</span></a></li>
+</ul></nav>
+<nav class="nav-group">
+<p class="nav-title">Field tools</p>
+<ul class="nav-list">
+<li><a href="../pages/troubleshooting.html"><span class="nav-num">10</span><span>Troubleshooting</span></a></li>
+<li><a href="../pages/calculators.html"><span class="nav-num">11</span><span>Calculators</span></a></li>
+<li><a href="../pages/formulas.html"><span class="nav-num">12</span><span>Formula &amp; data sheet</span></a></li>
+</ul></nav>
+<nav class="nav-group">
+<p class="nav-title">Reference</p>
+<ul class="nav-list">
+<li><a href="../pages/glossary.html"><span class="nav-num">13</span><span>Glossary</span></a></li>
+<li><a href="../pages/standards.html"><span class="nav-num">14</span><span>Standards &amp; sources</span></a></li>
+</ul></nav>
+  </aside>
+
+  <main class="main" id="main">
+    <article class="prose">
+      <p class="crumbs"><a href="../index.html">Knowledge base</a> &rsaquo; Core reference &rsaquo; Fundamentals</p>
+      <p class="eyebrow">Chapter 01 · Core reference</p>
+      <h1>Pump Fundamentals and Classification</h1>
+      <p class="lede">How pumps are classified, where the centrifugal machine sits among them, the construction families you will meet on a plant, and the design standards that govern them.</p>
+      <h2 id="what-a-pump-does-and-the-two-ways-of-doing-it">What a pump does, and the two ways of doing it</h2>
+
+      <p>Every pump spends energy to raise, move or pressurise a liquid. There are only two
+      fundamentally different ways to achieve it, and the distinction governs almost
+      everything else about the machine's behaviour.</p>
+
+      <p>A <strong>positive displacement</strong> pump traps a fixed volume of liquid and
+      pushes it out mechanically. Flow is set by geometry and speed, essentially independent
+      of the pressure it is working against, so the machine will keep raising pressure until
+      something gives. Positive displacement pumps are self-priming, handle high viscosity
+      well, and need relief protection on the discharge.</p>
+
+      <p>A <strong>roto-dynamic</strong> pump — the centrifugal family — adds velocity energy
+      to the liquid with a rotating impeller, then converts that velocity into pressure in a
+      stationary collector. Because the energy transfer depends on the velocity triangles at
+      the impeller, flow and head are coupled: increase the head the pump works against and
+      flow falls away on its own. That self-regulating characteristic is why a centrifugal
+      pump can be safely throttled and why it dominates process plant.</p>
+
+      <div class="note">
+        <span class="note-label">Why this matters in practice</span>
+        <p>A centrifugal pump cannot generate more than its shut-off head, so a closed
+        discharge valve produces no flow rather than a burst pipe — although the liquid
+        churning in the casing will heat up fast. A positive displacement pump in the same
+        situation will keep building pressure. Protection philosophy differs accordingly.</p>
+      </div>
+
+      <h3 id="positive-displacement-families">Positive displacement families</h3>
+
+      <p><strong>Reciprocating.</strong> A plunger or piston reciprocating in a cylinder, with
+      suction and discharge valves in the head. Gland packing contains the pressurised fluid.
+      Plungers are commonly driven in pairs or threes off a common crankshaft (duplex,
+      triplex) to smooth the delivery.</p>
+
+      <p><strong>Diaphragm.</strong> Fundamentally a plunger pump in which the plunger
+      pressurises hydraulic oil, and the oil flexes a diaphragm that does the actual pumping.
+      The process liquid never touches the drive, which is why diaphragm pumps are the default
+      for hazardous and toxic duties. Critical services use a double diaphragm with a thin
+      water film between the two and a pressure sensor in that gap: normally the gap pressure
+      is zero, and when either diaphragm ruptures the sensor immediately sees full process
+      discharge pressure. The process liquid still has not reached atmosphere.</p>
+
+      <p><strong>Rotary.</strong> Gear (external and internal), lobe, vane, progressive cavity,
+      peripheral and screw. Each traps liquid in a cavity formed between rotating elements and
+      the casing and carries it from suction to discharge.</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Rotary positive displacement types and where each suits</caption>
+          <thead>
+            <tr><th>Type</th><th>Working principle</th><th>Suits</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>External gear</strong></td>
+              <td>Two identical meshing gears, each on its own bearing-supported shaft. Liquid is carried in the tooth pockets and expelled as the teeth re-mesh.</td>
+              <td>High-pressure hydraulics. Support on both sides of each gear keeps noise low.</td>
+            </tr>
+            <tr>
+              <td><strong>Internal gear</strong></td>
+              <td>A gear-within-a-gear: an outer rotor and an inner idler, with a crescent dividing suction from discharge. Only two moving parts.</td>
+              <td>Very low to very high viscosity, smooth non-pulsating flow. Self-priming and can run dry. Reversible.</td>
+            </tr>
+            <tr>
+              <td><strong>Lobe</strong></td>
+              <td>Like an external gear pump, but each lobe is driven by external timing gears so the lobes never touch. Bearings sit outside the pumped liquid.</td>
+              <td>Food and solids-laden duties — handles the largest particle size of any PD type without damaging the product.</td>
+            </tr>
+            <tr>
+              <td><strong>Vane</strong></td>
+              <td>A slotted rotor eccentric in a cycloidal cam; vanes are thrown out against the cam wall by centrifugal force, hydraulic pressure or pushrods.</td>
+              <td>Low-viscosity, non-lubricating liquids. Excellent suction characteristics from the tight vane/rotor/cam seal.</td>
+            </tr>
+            <tr>
+              <td><strong>Progressive cavity</strong></td>
+              <td>A single metal rotor turning inside an elastomer-lined stator; chambers form and travel axially toward the discharge.</td>
+              <td>Wastewater, waste processing, pulp and paper, mining, cosmetics — fluids carrying non-abrasive inclusions.</td>
+            </tr>
+            <tr>
+              <td><strong>Peripheral (regenerative)</strong></td>
+              <td>Many small radial vanes on both impeller faces running in a concentric casing; a vortex between vanes and casing transfers the energy.</td>
+              <td>Low flow at high pressure with clean liquids. Tolerates entrained gas well, but inefficient and a poor self-primer.</td>
+            </tr>
+            <tr>
+              <td><strong>Screw (two or three spindle)</strong></td>
+              <td>Intermeshing screws in a close-fitting casing move liquid axially.</td>
+              <td>Marine and offshore fuel, burner, lube and hydraulic service. Self-priming, efficient, quiet, pulsation-free, good with high viscosity.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 id="roto-dynamic-centrifugal-families">Roto-dynamic (centrifugal) families</h3>
+
+      <p>Centrifugal pumps are divided by the direction the liquid leaves the impeller, which
+      in turn is set by <a href="hydraulics.html#specific-speed">specific speed</a>:</p>
+
+      <ul>
+        <li><strong>Radial flow</strong> — the plain centrifugal pump, usually with a volute
+        casing. Liquid enters at the impeller eye and is thrown radially outward. Low flow,
+        high head.</li>
+        <li><strong>Mixed flow</strong> — the discharge direction lies between radial and
+        axial.</li>
+        <li><strong>Axial flow</strong> — the rotor is a propeller and flow runs parallel to
+        the shaft. High flow, low head.</li>
+      </ul>
+
+      <p>Other kinetic machines exist — electromagnetic, jet, gas-lift and hydraulic ram
+      pumps — but they are outside the scope of this reference.</p>
+
+      <h2 id="why-centrifugal-pumps-dominate">Why centrifugal pumps dominate</h2>
+
+      <p>In a typical petroleum plant, 80–90% of all installed pumps are centrifugal. The
+      reasons are structural rather than historical: simple construction, good efficiency over
+      a wide flow and head range, smooth flow, and straightforward operation and maintenance.
+      The basic machine is a volute and an impeller on a shaft carried by bearings in a bearing
+      housing, with a coupling at the free end and a seal where the shaft passes through the
+      casing.</p>
+
+      <p>The modern centrifugal impeller traces to Denis Papin in 1689, who understood that
+      vanes inside a spiral casing could create a forced vortex, though his vanes were
+      straight. Combs published on curved vanes in 1838; Andrews introduced a proper volute
+      casing in 1839 and a fully shrouded impeller in 1846. John Appold's systematic
+      experiments culminated in his 1851 curved-blade pump, which reached 68% efficiency — a
+      threefold improvement that established blade curvature as the key variable. The
+      centrifugal pump only displaced positive displacement machines broadly once electric
+      motors, steam turbines and internal combustion engines gave it a suitable high-speed
+      driver.</p>
+
+      <p>Normal operating speeds are 1500/1800 rpm and 3000/3600 rpm, corresponding to four-
+      and two-pole motors on 50 and 60 Hz supplies. Specialised high-speed designs run from
+      5000 up to 25 000 rpm.</p>
+
+      <h2 id="classifying-centrifugal-pumps-by-construction">Classifying centrifugal pumps by construction</h2>
+
+      <p>Pump data sheets, standards and vendor catalogues all describe a machine along the
+      same handful of construction axes. Knowing them lets you read a bid or an API 610
+      designation without a catalogue.</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Construction classification axes</caption>
+          <thead>
+            <tr><th>Axis</th><th>Options</th><th>Engineering consequence</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Shaft axis</strong></td>
+              <td>Horizontal or vertical</td>
+              <td>Vertical rotors are not gravity-stabilised and are prone to gyroscopic effects; thrust bearings must carry rotor weight as well as hydraulic load.</td>
+            </tr>
+            <tr>
+              <td><strong>Number of stages</strong></td>
+              <td>Single, two, multistage</td>
+              <td>Each stage adds head. Specific speed is calculated on head <em>per stage</em>, not total head.</td>
+            </tr>
+            <tr>
+              <td><strong>Suction orientation</strong></td>
+              <td>End (horizontal nozzle) or top (vertical nozzle)</td>
+              <td>Determines piping layout and the straight-run requirement ahead of the nozzle.</td>
+            </tr>
+            <tr>
+              <td><strong>Casing split</strong></td>
+              <td>Radial (perpendicular to shaft) or axial (through the shaft axis)</td>
+              <td>Axially split casings open like a book for rotor access without breaking the piping; radially split casings suit higher pressure.</td>
+            </tr>
+            <tr>
+              <td><strong>Bearing support</strong></td>
+              <td>Overhung (cantilever) or impeller-between-bearings</td>
+              <td>The dominant influence on shaft deflection and therefore on seal life. See <a href="forces.html#shaft-deflection">Chapter 04</a>.</td>
+            </tr>
+            <tr>
+              <td><strong>Casing support</strong></td>
+              <td>Centreline or foot mounted</td>
+              <td>Centreline support keeps the shaft axis fixed as the casing grows thermally. API 610 calls for it above 177&nbsp;°C (350&nbsp;°F).</td>
+            </tr>
+            <tr>
+              <td><strong>Shaft connection</strong></td>
+              <td>Separately coupled or close-coupled</td>
+              <td>Close-coupled pumps mount the impeller directly on an extended motor shaft — no coupling, no alignment, but motor removal to reach the impeller.</td>
+            </tr>
+            <tr>
+              <td><strong>Shaft sealing</strong></td>
+              <td>Packed, mechanically sealed or sealless</td>
+              <td>Governs fugitive emission performance and the whole auxiliary piping plan.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><strong>In-line (monobloc) pumps</strong> deserve separate mention: suction and
+      discharge flanges lie on one axis so the pump mounts directly between pipe runs,
+      needing no baseplate of its own.</p>
+
+      <h3 id="sealless-pumps">Sealless pumps</h3>
+
+      <p>Every seal is a potential leak path, which is unacceptable for some liquids at any
+      leak rate. Sealless designs eliminate the dynamic seal entirely by containing the whole
+      rotor inside a pressure boundary.</p>
+
+      <p><strong>Canned motor pumps</strong> put the impeller, shaft and motor rotor inside the
+      pump casing and a containment shell. The stator sits outside the shell and its rotating
+      flux passes through the shell to drive the rotor. The hazardous liquid is confined by the
+      shell and casing and also serves as the rotor coolant and bearing lubricant.</p>
+
+      <p><strong>Magnetic drive pumps</strong> keep the impeller, shaft and a set of driven
+      magnets inside the containment shell. Drive magnets on a separate shaft outside the
+      shell, coupled to the prime mover, turn the driven set through the shell wall.</p>
+
+      <div class="note field">
+        <span class="note-label">Field consideration</span>
+        <p>Both sealless types depend on the pumped liquid for internal cooling and lubrication.
+        Dry running, or operation at very low flow where the internal circulation collapses,
+        destroys them quickly. They also tolerate solids and entrained gas poorly. The
+        containment shell is the last pressure boundary, so its integrity monitoring matters
+        as much as a seal plan does on a conventional pump.</p>
+      </div>
+
+      <h2 id="design-standards-and-which-one-to-call-for">Design standards and which one to call for</h2>
+
+      <p>Standards exist to give a common floor for design, dimensions and testing. Service
+      criticality normally decides which one applies.</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Principal centrifugal pump standards</caption>
+          <thead>
+            <tr><th>Standard</th><th>Covers</th><th>Typical application</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>API 610</strong></td>
+              <td>Design, construction, materials, testing and documentation for heavy-duty service. The most demanding of the common standards.</td>
+              <td>Refinery and petrochemical pumps on hazardous hydrocarbons; any genuinely critical duty. Carries a real cost premium.</td>
+            </tr>
+            <tr>
+              <td><strong>ANSI/ASME B73.1</strong> (horizontal)<br><strong>B73.2</strong> (vertical)</td>
+              <td>Dimensional interchangeability plus basic construction for chemical process pumps.</td>
+              <td>Ordinary chemical and general process duty. Its real advantage: same-size pumps are dimensionally interchangeable between brands — something API pumps do not offer.</td>
+            </tr>
+            <tr>
+              <td><strong>ISO 5199</strong></td>
+              <td>Design and construction requirements (the ISO counterpart to the design content of API 610 / B73).</td>
+              <td>Where an ISO basis is specified. This is the ISO standard that addresses design, not merely envelope.</td>
+            </tr>
+            <tr>
+              <td><strong>ISO 2858</strong></td>
+              <td>Dimensions only — mounting, nozzle positions, shaft heights. No construction requirements.</td>
+              <td>Pair with ISO 5199 when both envelope and design need fixing.</td>
+            </tr>
+            <tr>
+              <td><strong>API 682</strong></td>
+              <td>Mechanical seals and sealing systems for centrifugal and rotary pumps; promotes cartridge seals.</td>
+              <td>Any API-class pump. Cartridge construction removes the skilled seal-setting step from site work.</td>
+            </tr>
+            <tr>
+              <td><strong>NFPA 20</strong> <span class="pill warn">verify</span></td>
+              <td>Stationary fire pump installations.</td>
+              <td>Firewater service. Note: some older texts cite "NFPA-21"; the fire pump standard is NFPA 20 — confirm against the current edition.</td>
+            </tr>
+            <tr>
+              <td><strong>DIN 24256</strong>, <strong>BS 5257</strong>, <strong>NF E 44.121</strong>, <strong>AS 2417</strong></td>
+              <td>National standards, broadly parallel in intent.</td>
+              <td>Where national or client practice calls for them. AS 2417 is commonly cited for performance test classes.</td>
+            </tr>
+            <tr>
+              <td><strong>Hydraulic Institute (HI) standards</strong></td>
+              <td>Definitions, test procedures, acceptance tolerances, NPSH margin guidance, viscosity corrections.</td>
+              <td>The reference for test methodology and for the 3%-head-drop NPSH-r definition used industry-wide.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note warn">
+        <span class="note-label">Do not over-specify</span>
+        <p>Calling for API 610 on a duty that does not need it buys cost, lead time and spares
+        complexity without buying reliability. Conversely, a B73.1 pump on a hazardous
+        high-energy hydrocarbon service is a false economy. The specification decision follows
+        from the <a href="selection.html#criticality-of-service">criticality assessment</a>,
+        not from habit.</p>
+      </div>
+
+      <h2 id="application-driven-variants">Application-driven variants</h2>
+
+      <p>Beyond the construction axes, pumps are built differently for the service they will
+      see. The common application families are petroleum and chemical process, electric and
+      nuclear power, water and wastewater, cooling tower, pulp and paper, slurry, pipeline and
+      water-flood (injection), and high-speed pumps. Each brings its own material selection,
+      impeller type, seal plan and testing expectations — the detail of which runs through the
+      rest of this knowledge base.</p>
+
+      <h2 id="where-pumps-are-used">Where pumps are used</h2>
+
+      <p>For context on how broad the field is: water supply, drainage, sewage, irrigation,
+      chemical and petroleum processing, pharmaceutical and medical (including the artificial
+      heart), steel mills, construction dewatering and bypass pumping, and mining — tailings,
+      dust control, groundwater control and site dewatering. Pumps also move whole potatoes,
+      peel hazelnuts in chocolate manufacture, and drive waterjet cutting where a flame torch
+      would be unsafe.</p>
+
+      <nav class="pager" aria-label="Page navigation">
+<a class="next" href="../pages/construction.html"><span class="dir">Next →</span><span class="ttl">Design &amp; construction</span></a>
+</nav>
+    </article>
+  </main>
+
+  <aside class="toc"><h2>On this page</h2></aside>
+
+</div>
+
+<footer class="site-footer">
+  <p><strong>Centrifugal Pump Knowledge Base</strong> — engineering reference prepared for Zachry Philippines.
+     Copyright &copy; 2026 Zachry Philippines. All rights reserved.
+     Written as original reference material; it is not a reproduction of any publication.</p>
+  <p>Technical scope and chapter structure follow <em>Practical Centrifugal Pumps: Design, Operation and Maintenance</em>
+     by P. Girdhar &amp; O. Moniz (Newnes/Elsevier, 2005), which remains the recommended full text.
+     Standards referenced (API 610, API 682, ANSI/ASME B73, ISO 5199, Hydraulic Institute) are cited for orientation only —
+     <strong>always design and verify against the current edition of the governing standard and the OEM's own data.</strong>
+     See <a href="../pages/standards.html">Standards &amp; Sources</a>.</p>
+</footer>
+
+<div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search">
+  <div class="search-box">
+    <input type="search" id="search-input" placeholder="Search for cavitation, NPSH, wear ring clearance&hellip;"
+           autocomplete="off" spellcheck="false" aria-label="Search query">
+    <div class="search-results" id="search-results">
+      <p class="search-empty">Type to search every page of the knowledge base.</p>
+    </div>
+    <div class="search-foot">
+      <span><kbd>&uarr;</kbd><kbd>&darr;</kbd> navigate</span>
+      <span><kbd>Enter</kbd> open</span>
+      <span><kbd>Esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>

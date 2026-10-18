@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Specification and Selection · Centrifugal Pump Knowledge Base</title>
+<meta name="description" content="System analysis through to award: establishing boundary conditions and flow requirements, specifying the fluid and the criticality, writing the data sheet, issuing the bid request ">
+<meta name="author" content="Zachry Philippines — Mechanical Engineering">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%230f4c75'/%3E%3Cpath d='M16 7a9 9 0 1 0 9 9h-9z' fill='%23fff'/%3E%3Ccircle cx='16' cy='16' r='2.6' fill='%230f4c75'/%3E%3C/svg%3E">
+
+</head>
+<body data-root="../">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <button class="header-btn nav-toggle" id="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+    <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+      <path d="M2 4h12M2 8h12M2 12h12"/>
+    </svg>
+  </button>
+
+  <a class="brand" href="../index.html">
+    <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      <circle cx="16" cy="16" r="13" stroke="currentColor" stroke-width="2"/>
+      <path d="M16 5a11 11 0 0 1 11 11H16z" fill="currentColor" opacity=".3"/>
+      <path d="M16 16 7.5 10.5M16 16l8.5-5.5M16 16v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="16" cy="16" r="2.8" fill="currentColor"/>
+    </svg>
+    <span class="brand-text">
+      <b>Centrifugal Pumps</b>
+      <span>Engineering Knowledge Base</span>
+    </span>
+  </a>
+
+  <span class="header-spacer"></span>
+
+  <button class="header-btn" id="search-open" aria-label="Search the knowledge base">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+      <circle cx="7" cy="7" r="4.5"/><path d="m10.5 10.5 4 4"/>
+    </svg>
+    <span class="label">Search</span>
+    <span class="header-spacer"></span>
+    <kbd>Ctrl K</kbd>
+  </button>
+
+  <button class="header-btn" id="theme-toggle" aria-label="Toggle theme">
+    <span class="theme-icon" aria-hidden="true">&#9790;</span>
+  </button>
+</header>
+
+<div class="layout has-toc">
+
+  <aside class="sidebar" id="sidebar">
+    <a class="up-link" href="../../index.html">
+      <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+           stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M10 3 5 8l5 5"/>
+      </svg>
+      Rotary Equipment Handbook
+    </a>
+    <nav class="nav-group" aria-label="Main">
+<p class="nav-title">Start here</p>
+<ul class="nav-list">
+<li><a href="../index.html"><span class="nav-num">⌂</span><span>Overview</span></a></li>
+</ul></nav>
+<nav class="nav-group">
+<p class="nav-title">Core reference</p>
+<ul class="nav-list">
+<li><a href="../pages/fundamentals.html"><span class="nav-num">01</span><span>Fundamentals &amp; types</span></a></li>
+<li><a href="../pages/construction.html"><span class="nav-num">02</span><span>Design &amp; construction</span></a></li>
+<li><a href="../pages/hydraulics.html"><span class="nav-num">03</span><span>Hydraulics &amp; NPSH</span></a></li>
+<li><a href="../pages/forces.html"><span class="nav-num">04</span><span>Rotor forces</span></a></li>
+<li><a href="../pages/operation.html"><span class="nav-num">05</span><span>Operation &amp; curves</span></a></li>
+</ul></nav>
+<nav class="nav-group">
+<p class="nav-title">Project lifecycle</p>
+<ul class="nav-list">
+<li><a href="../pages/selection.html" class="current" aria-current="page"><span class="nav-num">06</span><span>Specification &amp; selection</span></a></li>
+<li><a href="../pages/testing.html"><span class="nav-num">07</span><span>Testing &amp; inspection</span></a></li>
+<li><a href="../pages/installation.html"><span class="nav-num">08</span><span>Installation &amp; commissioning</span></a></li>
+<li><a href="../pages/maintenance.html"><span class="nav-num">09</span><span>Maintenance &amp; reliability</span></a></li>
+</ul></nav>
+<nav class="nav-group">
+<p class="nav-title">Field tools</p>
+<ul class="nav-list">
+<li><a href="../pages/troubleshooting.html"><span class="nav-num">10</span><span>Troubleshooting</span></a></li>
+<li><a href="../pages/calculators.html"><span class="nav-num">11</span><span>Calculators</span></a></li>
+<li><a href="../pages/formulas.html"><span class="nav-num">12</span><span>Formula &amp; data sheet</span></a></li>
+</ul></nav>
+<nav class="nav-group">
+<p class="nav-title">Reference</p>
+<ul class="nav-list">
+<li><a href="../pages/glossary.html"><span class="nav-num">13</span><span>Glossary</span></a></li>
+<li><a href="../pages/standards.html"><span class="nav-num">14</span><span>Standards &amp; sources</span></a></li>
+</ul></nav>
+  </aside>
+
+  <main class="main" id="main">
+    <article class="prose">
+      <p class="crumbs"><a href="../index.html">Knowledge base</a> &rsaquo; Project lifecycle &rsaquo; Selection</p>
+      <p class="eyebrow">Chapter 06 · Project lifecycle</p>
+      <h1>Specification and Selection</h1>
+      <p class="lede">System analysis through to award: establishing boundary conditions and flow requirements, specifying the fluid and the criticality, writing the data sheet, issuing the bid request and scoring the bids.</p>
+      <p>For some duties it is enough to buy a pump off the shelf on the horsepower rating of
+      its motor or its overall dimensions. The fit to the application will not be ideal, but the
+      penalty for a mismatch is small.</p>
+
+      <p>In process industries that calculus reverses. Pumps perform vital functions
+      continuously, in difficult environments, and the penalties attached to downtime and
+      maintenance are significant. It becomes necessary to specify the process and its
+      requirements properly, so that the selected pump is designed and manufactured to operate
+      under the specified conditions reliably, efficiently and cost-effectively.</p>
+
+      <div class="note">
+        <span class="note-label">Why the specification is the highest-leverage document</span>
+        <p>A good pump specification is the <strong>foundation of pump reliability</strong> across
+        its entire service life. It is the first document a user prepares for a pump, and it is
+        often the most important. Failure to define or specify the pump completely for the
+        anticipated process conditions consistently results in poor operating experience and
+        high maintenance costs.</p>
+        <p>Omissions and ambiguity at this stage prove very expensive later — and the cost is
+        paid in operating budget for twenty years, not in the capital estimate where it would be
+        noticed.</p>
+      </div>
+
+      <p>Preparing a specification is a multidisciplinary effort involving process engineers,
+      mechanical engineers, contractors and pump vendors. It is preceded by a
+      <strong>system analysis</strong> covering the hydraulic aspects, and a statement of
+      <strong>mechanical requirements</strong>. Once laid out, it is followed by a bid request, a
+      bid analysis, and finally selection.</p>
+
+      <p>In any pump specification these process requirements are of prime importance:</p>
+
+      <ul>
+        <li>maximum differential head at the specified flow rates;</li>
+        <li>available Net Positive Suction Head, NPSH-a;</li>
+        <li>anticipated flow range, or the required flow flexibility;</li>
+        <li>liquid properties — hazard potential, specific gravity, vapour pressure and viscosity
+        across the range of pumping temperatures, composition, and the possibility and properties
+        of solids;</li>
+        <li>anticipated transient conditions.</li>
+      </ul>
+
+      <p>These drive the detailed system analysis, and often dictate mechanical requirements
+      directly. A liquid generating carcinogenic vapours, for instance, may demand a
+      <a href="fundamentals.html#sealless-pumps">sealless pump</a> rather than one with
+      mechanical seals.</p>
+
+      <div class="note warn">
+        <span class="note-label">The opposite failure mode</span>
+        <p>It is equally important <strong>not to be over-conservative</strong>. Excessive
+        conservatism selects pumps that both mismatch the process and cost more through
+        oversizing. Padding every allowance does not produce a safe design; it produces a pump
+        that spends its life throttled, far right of BEP, carrying high radial load.</p>
+      </div>
+
+      <h2 id="system-analysis">System analysis</h2>
+
+      <p>The first step. It comprises four evaluations: pump boundary conditions, flow
+      requirements, fluid specification, and criticality of service.</p>
+
+      <h2 id="pump-boundary-conditions">Pump boundary conditions</h2>
+
+      <h3 id="npsh-available-and-margin">NPSH available and margin</h3>
+
+      <p>The first boundary condition concerns the suction. From
+      <a href="hydraulics.html#net-positive-suction-head">Chapter 03</a>, NPSH-a depends on:</p>
+
+      <ul>
+        <li>vapour pressure of the liquid;</li>
+        <li>pipe losses;</li>
+        <li>pressure in the suction vessel;</li>
+        <li>gradient height;</li>
+        <li>absolute (atmospheric) pressure.</li>
+      </ul>
+
+      <h4>Location matters more than people expect</h4>
+
+      <p>Absolute pressure is constant for a location — which means you <strong>must know where
+      the pump will be installed</strong>. This is a live issue when process and pump
+      specifications are prepared for plants erected elsewhere in the world. Elevation above mean
+      sea level determines the absolute pressure available; ambient temperature range and annual
+      rainfall also determine some pump features.</p>
+
+      <h4>Suction line heat gain</h4>
+
+      <p>On pumps with a long suction pipe, heat added by heat-tracing lines and by ambient
+      conditions raises the pumping temperature — and with it the vapour pressure of the liquid.
+      Higher vapour pressure <strong>reduces NPSH-a</strong>. It may therefore be prudent to
+      specify <strong>insulation on the suction piping</strong>, which is a specification decision,
+      not a construction one.</p>
+
+      <h4>Fouling</h4>
+
+      <p>Long suction pipelines bring pipe losses, which are easy to compute. But some
+      applications must also anticipate <strong>fouling</strong> of pipes, fittings and strainers.
+      The extent of fouling before a cleanout must be estimated and accounted for — it both
+      raises system resistance and <strong>drops NPSH-a</strong>.</p>
+
+      <div class="note danger">
+        <span class="note-label">Fouling and Q<sub>max</sub></span>
+        <p>Fouling in the suction header steepens the droop in the NPSH-a curve, which
+        <strong>reduces Q<sub>max</sub></strong> — the maximum flow at which a positive NPSH
+        margin still exists. Always evaluate NPSH-a at <strong>Q<sub>max</sub></strong>, because
+        frictional pipe losses are at their maximum there, and at the <strong>minimum suction
+        vessel level</strong>, because that gives the minimum suction column height.</p>
+        <p>The minimum level to use is the level at which an alarm is placed, or the height at
+        which the suction pipe draws off from the vessel — whichever applies. Structural design
+        and process operational limits both bear on this; the limiting guideline is the
+        <em>minimum level at which the maximum flow rate is expected</em>.</p>
+      </div>
+
+      <p>Once NPSH-a is known across the operating range, compute the margin against the
+      <a href="hydraulics.html#npsh-margin">margin ratio guidelines</a>. Remember that the HI
+      definition of NPSH-r does not adequately cover high suction energy pumps — the
+      <strong>damage-free NPSH-r could be 2 to 20 times</strong> the 3% head-drop value.</p>
+
+      <h3 id="suction-specific-speed">Suction specific speed</h3>
+
+      <p>Where only minimal NPSH-a is available, note it clearly so that vendors offer pumps with
+      low NPSH-r. But when they do, <strong>evaluate the suction specific speed</strong> of what
+      is offered. A vendor can always buy you NPSH-r by enlarging the impeller inlet — and sell
+      you a pump that cannot be turned down.</p>
+
+      <p>As covered in <a href="hydraulics.html#suction-specific-speed">Chapter 03</a>,
+      N<sub>ss</sub> above 11 000 brings hydraulic and mechanical problems, especially at flows
+      away from BEP. The basis is a statistical study of 480 refinery pumps over five years,
+      presented by Jerry L. Hallam in 1982.</p>
+
+      <div class="note warn">
+        <span class="note-label">The honest state of the N<sub>ss</sub> debate</span>
+        <p>At the 13th International Pump Users Symposium (Texas A&amp;M, 1996), Bernd Stoffel
+        and Ralf Jaeger presented <em>Experimental Investigations in Respect to the Relevance of
+        Suction Specific Speed for the Performance and Reliability of Centrifugal Pumps</em>.
+        Three standard pumps of different specific speeds and sizes, from three German
+        manufacturers, were each fitted alternately with a high-N<sub>ss</sub> impeller and one
+        below the 11 000 limit.</p>
+        <p>The measured quantities serving as indicators for dynamic loading of bearings and
+        seals <strong>did not show trends or cause effects</strong> in the high-N<sub>ss</sub>
+        pumps that would indicate higher failure probability. So a genuine debate exists over
+        rejecting pumps above 11 000.</p>
+        <p><strong>Until there is a clear consensus, it is advisable to be conservative and stay
+        within the recommended limit</strong> — but know that the limit is a strong empirical
+        heuristic, not a settled physical law, and be prepared to discuss it with a vendor on
+        those terms.</p>
+      </div>
+
+      <h3 id="system-resistance-and-differential-head">System resistance and differential head</h3>
+
+      <p>NPSH-a evaluation more or less settles the suction side. The discharge side must be
+      worked out the same way, considering:</p>
+
+      <ul>
+        <li>static head at the discharge — downstream pressure in the discharge vessel;</li>
+        <li>the height that must be overcome to reach the discharge vessel;</li>
+        <li>the <strong>rate of increase</strong> of system resistance with flow.</li>
+      </ul>
+
+      <p>That third item is easy to overlook and consequential. A <strong>quickly rising system
+      resistance curve may preclude a maximum flow rate that is required
+      occasionally</strong> — particularly where the maximum flow is far above the normal flow.</p>
+
+      <h4>Control valve sizing interacts with the pump</h4>
+
+      <p>Control valve sizing is based on the rate of rise of the system resistance curve as well
+      as the pump size. The valve must provide the artificial head loss at the rated and minimum
+      flow rates, and the <strong>minimum loss at the maximum flow rate</strong>.</p>
+
+      <p>One way to flatten the system resistance curve is simply to <strong>install a larger
+      pipe size</strong> — a decision that has to be made at specification stage, because nobody
+      re-pipes a system to recover pump margin later.</p>
+
+      <p>Evaluating suction and discharge resistance together gives the
+      <strong>differential head required from the pump</strong>.</p>
+
+      <h2 id="flow-requirements">Flow requirements</h2>
+
+      <p>Flow is determined by process demand. A specification normally states
+      <strong>two</strong> flow rates:</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Normal versus rated flow</caption>
+          <thead>
+            <tr><th></th><th>Definition</th><th>Typical relationship</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Normal flow rate</strong></td>
+              <td>The flow at which the pump will usually operate.</td>
+              <td>Baseline</td>
+            </tr>
+            <tr>
+              <td><strong>Rated flow rate</strong></td>
+              <td>The flow guaranteed by the vendor for the specified operating conditions.</td>
+              <td><strong>10%</strong> above normal for low to medium flows; <strong>5%</strong>
+              above normal for higher flows</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Rated flow should reflect the maximum the system can envisage under current
+      consideration, and should account for any anticipated future increase in process
+      throughput.</p>
+
+      <p>The <strong>minimum</strong> flow requirement may conflict with the rated flow. Where it
+      does, make provision for <strong>recycle</strong> of the process liquid. Where possible,
+      state the <em>periods</em> for which the pump will operate at minimum, maximum and rated
+      flows — a long period at low flow implies higher radial loads, which greatly affects
+      bearing life.</p>
+
+      <p>Beyond minimum and maximum, the pump may be physically or hydraulically
+      <strong>shut off</strong> at the discharge under certain operating conditions. Where that
+      is the case, consider the
+      <a href="operation.html#maintaining-minimum-flow">minimum flow provisions</a> from
+      Chapter 05.</p>
+
+      <div class="note danger">
+        <span class="note-label">Parallel operation deserves special care</span>
+        <p>If the pump is required to operate in parallel with another, take great care to ensure
+        minimum stable flows — especially where the Q–H curves are
+        <a href="operation.html#parallel-operation-different-curves">dissimilar</a>. Below a
+        certain flow, the pump with the lower shut-off head will begin operating at shut-off.
+        The same happens when curves are very flat and one pump's shut-off head is slightly lower
+        than the other's.</p>
+        <p>This is why API 610 specifies that pumps of one or two stages operating in parallel
+        must have <strong>rising Q–H curves with a 10–20% head rise from rated capacity to
+        shut-off</strong>. For three or more stages a slightly lesser rise is allowed, since the
+        same percentage would give excessively high shut-off heads.</p>
+      </div>
+
+      <p>Flow requirement is probably the single factor demanding the most team effort to settle
+      definitively. It determines pump sizing and reliability, and <strong>pumps specified with
+      flow rates that match actual operation closely have lower life cycle costs</strong>.</p>
+
+      <h2 id="fluid-specification">Fluid specification</h2>
+
+      <p>Provide as much information about the liquid as possible. Liquid properties determine the
+      pump's:</p>
+
+      <ul>
+        <li>material of construction;</li>
+        <li>design features such as support type and cooling water jackets;</li>
+        <li>impeller design;</li>
+        <li>mechanical seal, sealant and piping plan;</li>
+        <li>construction features such as wear plates and hard coatings;</li>
+        <li>driver horsepower.</li>
+      </ul>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Fluid characteristics and the specification decisions they force</caption>
+          <thead>
+            <tr><th>Characteristic</th><th>Consequence for the specification</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Hazard and toxicity</strong> — flammability, acidity/alkalinity, health hazard, carcinogenic potential</td>
+              <td>Where no leak is acceptable under any condition, specify a <strong>sealless pump</strong>. Otherwise it drives the seal arrangement and piping plan.</td>
+            </tr>
+            <tr>
+              <td><strong>Corrosivity</strong></td>
+              <td>Corrosive liquids chemically attack or oxidise pump materials. Sulphuric acid at 65–70% concentration above 70 °C may require <strong>high-silicon iron (13–15% Si)</strong>. Materials selection must also consider <strong>electrolytic reaction</strong>, particularly in seawater. <strong>Corrosivity is a function of temperature</strong> — confirm material adequacy at the actual pumping temperature, not at ambient.</td>
+            </tr>
+            <tr>
+              <td><strong>Abrasive particles</strong></td>
+              <td>Cause considerable erosion of wetted parts and performance deterioration. Larger particles may require a <strong>semi-open or open impeller</strong>. The abrasive nature may necessitate <strong>hard coatings or wear plates</strong>.</td>
+            </tr>
+            <tr>
+              <td><strong>Cold water</strong></td>
+              <td>Has the maximum cavitation damage potential of the common liquids — evaluate the NPSH margin and ratio with particular care.</td>
+            </tr>
+            <tr>
+              <td><strong>Dissolved gases</strong></td>
+              <td>Potassium carbonate solution, for example, can evolve CO₂ at certain pumping temperatures. Gas evolution causes cavitation and affects the pump's ability to build pressure. A <strong>suction vent joining an upstream vessel</strong> can help.</td>
+            </tr>
+            <tr>
+              <td><strong>Pumping temperature</strong></td>
+              <td>Affects viscosity and vapour pressure, so affects performance and NPSH-a. Above <strong>177 °C (350 °F)</strong> API 610 recommends horizontal pumps with <strong>centreline support</strong>. The seal housing, and sometimes the bearing housing, may need <strong>cooling water jackets</strong>.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="criticality-of-service">Criticality of service</h2>
+
+      <p>Criticality determines both the governing standard and the maintenance philosophy later.
+      A pump is critical where any of the following apply:</p>
+
+      <ul>
+        <li>failure can affect plant safety and there is <strong>no standby</strong>;</li>
+        <li>the pump is vital for plant operation and its shutdown will curtail the process;</li>
+        <li>it is part of a large horsepower train, where better operation can save energy or
+        improve yields;</li>
+        <li>capital cost is high, and it is very expensive to repair or has a long repair lead
+        time;</li>
+        <li>it is a perennial <strong>"bad actor"</strong> — a machine that wrecks on the
+        slightest provocation of an off-duty operation.</li>
+      </ul>
+
+      <p>In most such cases a standby pump is specified, for a critical process on continuous
+      operation.</p>
+
+      <div class="note ok">
+        <span class="note-label">A specification trick worth knowing</span>
+        <p>Sometimes the pump and its standby are specified with <strong>different types of
+        driver</strong> — one on a steam turbine, the other on an electric motor. Process steam
+        can then be utilised and power conserved, <em>and</em> the scheme ensures continued
+        operation even on loss of power supply. Two benefits from one decision.</p>
+      </div>
+
+      <h2 id="the-data-sheet">The data sheet</h2>
+
+      <p>The data sheet is the pump specification document: an organised format presenting the
+      information from the studies above to the contractor or vendor, with notes covering various
+      aspects and the compulsory or optional features desired. A blank format for centrifugal
+      pumps is available in API 610, and users commonly modify it to suit their own practice.</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Data sheet sections</caption>
+          <thead>
+            <tr><th>Group</th><th>Content</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Project</strong></td><td>Project information</td></tr>
+            <tr><td><strong>Process</strong></td><td>Operating (liquid) data; pumping (system) data; site conditions; design operating conditions</td></tr>
+            <tr><td><strong>Machine</strong></td><td>Pump design; pump driver information; mechanical seal information; bearings and lubrication; material of construction; weight; cooling requirements; piping connections; accessories</td></tr>
+            <tr><td><strong>Quality</strong></td><td>Inspection and test requirements; pump drawings, design and data documents</td></tr>
+            <tr><td><strong>Open</strong></td><td>Additional information — notes and comments (the blank pages)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 id="what-to-demand-on-the-blank-pages">What to demand on the blank pages</h3>
+
+      <p>The additional-information pages are where a specification earns its keep. Use them to
+      require the vendor to:</p>
+
+      <ul>
+        <li>declare any <strong>deviations from the specified standard</strong>;</li>
+        <li>state start-up and minimum spares requirements;</li>
+        <li><strong>quote the pump minimum flow and its basis</strong> — not just a number;</li>
+        <li>specify the <strong>impeller to volute cutwater clearance</strong> for pumps developing
+        more than <strong>200 mlc</strong> (this is <a href="maintenance.html#gap-a-and-gap-b">Gap-B</a>,
+        and it determines whether the pump will have vane-pass vibration for its whole life);</li>
+        <li>state requirements for any special seals and bearings, and their manufacturers;</li>
+        <li>specify <strong>noise limits</strong>;</li>
+        <li>state requirements for <strong>rotordynamic studies</strong> — lateral analysis, or
+        torsional vibration analysis of the full train;</li>
+        <li>provide <strong>mill reports</strong> for specified materials;</li>
+        <li>submit any special welding and attachment procedures;</li>
+        <li>state wear plate or hard coat requirements;</li>
+        <li>state painting and packaging requirements;</li>
+        <li>confirm shipment details;</li>
+        <li>supply pump information in both soft and hard copy.</li>
+      </ul>
+
+      <h2 id="bid-request">Bid request</h2>
+
+      <p>The bid request sends the data sheet to vendors for a quote. Guidelines:</p>
+
+      <ul>
+        <li>Send to <strong>three to five qualified vendors</strong>. Where the pump falls within
+        standard offerings, <strong>three bids</strong> are sufficient. For specialised pumps,
+        three to six.</li>
+        <li>Enclose a <strong>covering form listing the mandatory and optional documents and
+        their order</strong>. This acts as a checklist for the vendor and directly assists the
+        bid evaluation that follows.</li>
+        <li>Consider the user's <strong>existing inventory of pump spares</strong> when selecting
+        vendors — similar pumps may be quoted that demand no additional spares.</li>
+        <li>Conversely, a vendor may be excluded purely on <strong>poor follow-up and spares
+        delivery</strong>. That is a legitimate commercial criterion.</li>
+      </ul>
+
+      <div class="note">
+        <span class="note-label">Professional courtesy that is also self-interest</span>
+        <p>Preparing a bid consumes time, effort and money for the vendor, and reviewing it costs
+        the user. Forward the bid request <strong>only to vendors whose bids will be seriously
+        considered</strong> if their pumps meet the requirements. Padding the bid list to look
+        diligent wastes everyone's budget and degrades the quality of the responses you get.</p>
+      </div>
+
+      <h2 id="bid-review-and-analysis">Bid review and analysis</h2>
+
+      <p>A clear, comprehensive specification is what lets a purchaser compare bids on an equal
+      basis. Exceptions taken by vendors must be weighed and factored against the desired
+      features and the prices offered. An analytical approach demands a
+      <strong>tabulation</strong> of bids.</p>
+
+      <h3 id="hydraulic-performance">Hydraulic performance</h3>
+
+      <ul>
+        <li>percentage of rated flow to the flow at BEP;</li>
+        <li>pump numbers — specific speed and suction specific speed;</li>
+        <li>NPSH-r, and NPSH-a margin at <strong>rated and maximum</strong> flows;</li>
+        <li>percentage head rise from rated flow to shut-off;</li>
+        <li>pump efficiency at rated <strong>and normal</strong> flow rates;</li>
+        <li>minimum continuous / stable flow;</li>
+        <li>maximum hydraulic power;</li>
+        <li>noise levels.</li>
+      </ul>
+
+      <h3 id="construction">Construction</h3>
+
+      <ul>
+        <li>pump type;</li>
+        <li>orientation of suction flange and its rating;</li>
+        <li>cooling water jackets for seal housing, bearing housing or pedestals;</li>
+        <li>impeller size, and the <strong>minimum and maximum sizes possible in the volute
+        casing</strong> — this is your future headroom for re-rating;</li>
+        <li>single or double volute;</li>
+        <li>material compliance;</li>
+        <li>mechanical seal type and materials offered;</li>
+        <li>bearing types and lubrication;</li>
+        <li>coupling type;</li>
+        <li>maximum thrust load;</li>
+        <li>baseplate grouting facilities.</li>
+      </ul>
+
+      <h3 id="driver">Driver</h3>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Driver comparison items</caption>
+          <thead>
+            <tr><th>Steam turbine</th><th>Electric motor</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <ul style="margin:0;padding-left:18px">
+                  <li>steam rate (kW·h/kg)</li>
+                  <li>direction of rotation</li>
+                  <li>maximum horsepower at worst steam conditions</li>
+                  <li>governor type</li>
+                  <li>bearing type and lubrication</li>
+                  <li>sealing arrangement</li>
+                  <li>trip and throttle valve</li>
+                  <li>materials of construction</li>
+                </ul>
+              </td>
+              <td>
+                <ul style="margin:0;padding-left:18px">
+                  <li>horsepower rating</li>
+                  <li>type of enclosure</li>
+                  <li>service factor</li>
+                  <li>voltage, speed</li>
+                  <li><strong>efficiency versus motor load</strong></li>
+                  <li>frame and frame size</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 id="price">Price</h3>
+
+      <p>Tabulate separately: price of pump; price of turbine or motor; price of spare parts
+      offered; price of inspection and testing; installation and commissioning charges.</p>
+
+      <h3 id="weighting-and-the-decision">Weighting and the decision</h3>
+
+      <p>Bid analysis almost never produces a clear winner. Some pumps have an advantage in
+      certain features and a disadvantage in others. The approach is to give
+      <strong>weightage</strong> to all the factors and arrive at the pump scoring the most
+      marks. Factorial weighting itself depends on many things — and
+      <strong>a correct system analysis provides the sound basis for the weighting
+      factors</strong>. Standard computer bid-analysis spreadsheets make the comparison
+      convenient and accurate.</p>
+
+      <div class="note field">
+        <span class="note-label">Practical sequence</span>
+        <ol style="margin-bottom:0">
+          <li>System analysis — boundary conditions, flow, fluid, criticality.</li>
+          <li>Decide the governing standard from the criticality assessment.</li>
+          <li>Complete the data sheet, including the blank-page demands.</li>
+          <li>Issue to three to five vendors with a document checklist.</li>
+          <li>Tabulate hydraulic, construction, driver and price comparisons.</li>
+          <li>Apply weightings justified by the system analysis, and award.</li>
+          <li>Carry the specification forward into the
+          <a href="testing.html">inspection and test plan</a> — the specification is what you
+          will hold the vendor to.</li>
+        </ol>
+      </div>
+
+      <p>A clear understanding of the pump's operating and system requirements leads to selection
+      of a pump that will be efficient and reliable. <strong>To lower pump life cycle costs it is
+      essential to specify and select correctly.</strong></p>
+
+      <nav class="pager" aria-label="Page navigation">
+<a class="prev" href="../pages/operation.html"><span class="dir">← Previous</span><span class="ttl">Operation &amp; curves</span></a>
+<a class="next" href="../pages/testing.html"><span class="dir">Next →</span><span class="ttl">Testing &amp; inspection</span></a>
+</nav>
+    </article>
+  </main>
+
+  <aside class="toc"><h2>On this page</h2></aside>
+
+</div>
+
+<footer class="site-footer">
+  <p><strong>Centrifugal Pump Knowledge Base</strong> — engineering reference prepared for Zachry Philippines.
+     Copyright &copy; 2026 Zachry Philippines. All rights reserved.
+     Written as original reference material; it is not a reproduction of any publication.</p>
+  <p>Technical scope and chapter structure follow <em>Practical Centrifugal Pumps: Design, Operation and Maintenance</em>
+     by P. Girdhar &amp; O. Moniz (Newnes/Elsevier, 2005), which remains the recommended full text.
+     Standards referenced (API 610, API 682, ANSI/ASME B73, ISO 5199, Hydraulic Institute) are cited for orientation only —
+     <strong>always design and verify against the current edition of the governing standard and the OEM's own data.</strong>
+     See <a href="../pages/standards.html">Standards &amp; Sources</a>.</p>
+</footer>
+
+<div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search">
+  <div class="search-box">
+    <input type="search" id="search-input" placeholder="Search for cavitation, NPSH, wear ring clearance&hellip;"
+           autocomplete="off" spellcheck="false" aria-label="Search query">
+    <div class="search-results" id="search-results">
+      <p class="search-empty">Type to search every page of the knowledge base.</p>
+    </div>
+    <div class="search-foot">
+      <span><kbd>&uarr;</kbd><kbd>&darr;</kbd> navigate</span>
+      <span><kbd>Enter</kbd> open</span>
+      <span><kbd>Esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+{
+  "groups": [
+    { "id": "core",      "title": "Core reference" },
+    { "id": "lifecycle", "title": "Project lifecycle" },
+    { "id": "field",     "title": "Field tools" },
+    { "id": "back",      "title": "Reference" }
+  ],
+
+  "home": {
+    "slug": "index",
+    "num": "⌂",
+    "nav": "Overview",
+    "title": "Centrifugal Pump Knowledge Base",
+    "eyebrow": "Zachry Philippines · Mechanical Engineering",
+    "lede": "A working reference for engineers who specify, inspect, commission, operate and overhaul centrifugal pumps — covering hydraulics, construction, rotor forces, selection, testing, installation, maintenance and field troubleshooting.",
+    "content": "index.html",
+    "no_toc": true
+  },
+
+  "pages": [
+    {
+      "slug": "fundamentals",
+      "num": "01",
+      "group": "core",
+      "nav": "Fundamentals & types",
+      "title": "Pump Fundamentals and Classification",
+      "eyebrow": "Chapter 01 · Core reference",
+      "crumbs": "<p class=\"crumbs\"><a href=\"../index.html\">Knowledge base</a> &rsaquo; Core reference &rsaquo; Fundamentals</p>",
+      "lede": "How pumps are classified, where the centrifugal machine sits among them, the construction families you will meet on a plant, and the design standards that govern them.",
+      "content": "01-fundamentals.html"
+    },
+    {
+      "slug": "construction",
+      "num": "02",
+      "group": "core",
+      "nav": "Design & construction",
+      "title": "Design and Construction",
+      "eyebrow": "Chapter 02 · Core reference",
+      "crumbs": "<p class=\"crumbs\"><a href=\"../index.html\">Knowledge base</a> &rsaquo; Core reference &rsaquo; Construction</p>",
+      "lede": "The parts that decide how a pump performs and how long it lasts: impellers, casings and diffusers, wear rings, shafts and sleeves, packing, mechanical seals, bearing housings and couplings.",
+      "content": "02-construction.html"
+    },
+    {
+      "slug": "hydraulics",
+      "num": "03",
+      "group": "core",
+      "nav": "Hydraulics & NPSH",
+      "title": "Pump Hydraulics, Cavitation and NPSH",
+      "eyebrow": "Chapter 03 · Core reference",
+      "crumbs": "<p class=\"crumbs\"><a href=\"../index.html\">Knowledge base</a> &rsaquo; Core reference &rsaquo; Hydraulics</p>",
+      "lede": "The quantitative core of pump engineering — head, flow and system resistance, efficiency and power, the characteristic curve and its corrections, specific speed, and the cavitation, recirculation and NPSH behaviour that destroys more impellers than anything else.",
+      "content": "03-hydraulics.html"
+    },
+    {
+      "slug": "forces",
+      "num": "04",
+      "group": "core",
+      "nav": "Rotor forces",
+      "title": "Forces in Centrifugal Pumps",
+      "eyebrow": "Chapter 04 · Core reference",
+      "crumbs": "<p class=\"crumbs\"><a href=\"../index.html\">Knowledge base</a> &rsaquo; Core reference &rsaquo; Forces</p>",
+      "lede": "Axial thrust and radial load — where they come from, how each impeller and casing arrangement manages them, and how shaft deflection translates them into seal and bearing failures.",
+      "content": "04-forces.html"
+    },
+    {
+      "slug": "operation",
+      "num": "05",
+      "group": "core",
+      "nav": "Operation & curves",
+      "title": "Operation and Characteristic Curves",
+      "eyebrow": "Chapter 05 · Core reference",
+      "crumbs": "<p class=\"crumbs\"><a href=\"../index.html\">Knowledge base</a> &rsaquo; Core reference &rsaquo; Operation</p>",
+      "lede": "Reading and using the four characteristic curves: curve stability and steepness, why the H–Q and P–Q curves take the shape they do, parallel and series operation, speed–torque at start-up, flow regulation, and the limits of the allowable operating region.",
+      "content": "05-operation.html"
+    },
+    {
+      "slug": "selection",
+      "num": "06",
+      "group": "lifecycle",
+      "nav": "Specification & selection",
+      "title": "Specification and Selection",
+      "eyebrow": "Chapter 06 · Project lifecycle",
+      "crumbs": "<p class=\"crumbs\"><a href=\"../index.html\">Knowledge base</a> &rsaquo; Project lifecycle &rsaquo; Selection</p>",
+      "lede": "System analysis through to award: establishing boundary conditions and flow requirements, specifying the fluid and the criticality, writing the data sheet, issuing the bid request and scoring the bids.",
+      "content": "06-selection.html"
+    },
+    {
+      "slug": "testing",
+      "num": "07",
+      "group": "lifecycle",
+      "nav": "Testing & inspection",
+      "title": "Testing and Inspection",
+      "eyebrow": "Chapter 07 · Project lifecycle",
+      "crumbs": "<p class=\"crumbs\"><a href=\"../index.html\">Knowledge base</a> &rsaquo; Project lifecycle &rsaquo; Testing</p>",
+      "lede": "Holding the vendor to the data sheet: material and casting inspection, NDE methods and acceptance codes, hydrostatic and shop performance tests, tolerance tables, the NPSH test, and what to do when a test fails.",
+      "content": "07-testing.html"
+    },
+    {
+      "slug": "installation",
+      "num": "08",
+      "group": "lifecycle",
+      "nav": "Installation & commissioning",
+      "title": "Installation and Commissioning",
+      "eyebrow": "Chapter 08 · Project lifecycle",
+      "crumbs": "<p class=\"crumbs\"><a href=\"../index.html\">Knowledge base</a> &rsaquo; Project lifecycle &rsaquo; Installation</p>",
+      "lede": "Siting, foundation design, grouting, alignment, suction and discharge piping rules, pre-operational checks and the start-up sequence — the stage where most of a pump's service life is won or lost.",
+      "content": "08-installation.html"
+    },
+    {
+      "slug": "maintenance",
+      "num": "09",
+      "group": "lifecycle",
+      "nav": "Maintenance & reliability",
+      "title": "Maintenance and Reliability",
+      "eyebrow": "Chapter 09 · Project lifecycle",
+      "crumbs": "<p class=\"crumbs\"><a href=\"../index.html\">Knowledge base</a> &rsaquo; Project lifecycle &rsaquo; Maintenance</p>",
+      "lede": "Condition monitoring and overhaul: the four-pillar predictive programme, failure diagnosis before strip-down, the dimensional checks that matter, reassembly of single-stage, vertical and multistage pumps, and the economics of when to overhaul.",
+      "content": "09-maintenance.html"
+    },
+    {
+      "slug": "troubleshooting",
+      "num": "10",
+      "group": "field",
+      "nav": "Troubleshooting",
+      "title": "Field Troubleshooting Guide",
+      "eyebrow": "Field tool · Searchable",
+      "crumbs": "<p class=\"crumbs\"><a href=\"../index.html\">Knowledge base</a> &rsaquo; Field tools &rsaquo; Troubleshooting</p>",
+      "lede": "Sixteen symptoms an operator or technician actually reports, each with its credible cause list and the checks that discriminate between them. Filter by symptom group or search the full text.",
+      "content": "10-troubleshooting.html",
+      "no_toc": true
+    },
+    {
+      "slug": "calculators",
+      "num": "11",
+      "group": "field",
+      "nav": "Calculators",
+      "title": "Engineering Calculators",
+      "eyebrow": "Field tool · Works offline",
+      "crumbs": "<p class=\"crumbs\"><a href=\"../index.html\">Knowledge base</a> &rsaquo; Field tools &rsaquo; Calculators</p>",
+      "lede": "Six calculations engineers reach for constantly — NPSH available and margin, affinity-law scaling, specific and suction specific speed, power and motor sizing, low-flow temperature rise, and system head. All run in your browser; nothing is sent anywhere.",
+      "content": "11-calculators.html"
+    },
+    {
+      "slug": "formulas",
+      "num": "12",
+      "group": "field",
+      "nav": "Formula & data sheet",
+      "title": "Formula and Data Sheet",
+      "eyebrow": "Field tool · Print-friendly",
+      "crumbs": "<p class=\"crumbs\"><a href=\"../index.html\">Knowledge base</a> &rsaquo; Field tools &rsaquo; Formulas</p>",
+      "lede": "Every equation, limit, clearance and tolerance in this knowledge base on one page, with units stated. Formatted to print cleanly for a site folder or a toolbox.",
+      "content": "12-formulas.html"
+    },
+    {
+      "slug": "glossary",
+      "num": "13",
+      "group": "back",
+      "nav": "Glossary",
+      "title": "Glossary of Pump Terminology",
+      "eyebrow": "Reference",
+      "crumbs": "<p class=\"crumbs\"><a href=\"../index.html\">Knowledge base</a> &rsaquo; Reference &rsaquo; Glossary</p>",
+      "lede": "The vocabulary used across the knowledge base, defined for engineers who need the working meaning rather than the textbook derivation.",
+      "content": "13-glossary.html"
+    },
+    {
+      "slug": "standards",
+      "num": "14",
+      "group": "back",
+      "nav": "Standards & sources",
+      "title": "Standards, Sources and Scope",
+      "eyebrow": "Reference",
+      "crumbs": "<p class=\"crumbs\"><a href=\"../index.html\">Knowledge base</a> &rsaquo; Reference &rsaquo; Standards</p>",
+      "lede": "Which standard governs which decision, how to choose between API, ANSI/ASME and ISO for a given service, the sources this knowledge base draws on, and an honest statement of what it does and does not cover.",
+      "content": "14-standards.html"
+    }
+  ]
+}

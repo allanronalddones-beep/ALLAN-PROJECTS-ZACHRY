@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{PAGE_TITLE}}</title>
+<meta name="description" content="{{DESCRIPTION}}">
+<meta name="author" content="Zachry Philippines — Mechanical Engineering">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="{{ROOT}}assets/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%230f4c75'/%3E%3Cpath d='M16 7a9 9 0 1 0 9 9h-9z' fill='%23fff'/%3E%3Ccircle cx='16' cy='16' r='2.6' fill='%230f4c75'/%3E%3C/svg%3E">
+{{HEAD_EXTRA}}
+</head>
+<body data-root="{{ROOT}}">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <button class="header-btn nav-toggle" id="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+    <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+      <path d="M2 4h12M2 8h12M2 12h12"/>
+    </svg>
+  </button>
+
+  <a class="brand" href="{{ROOT}}index.html">
+    <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      <circle cx="16" cy="16" r="13" stroke="currentColor" stroke-width="2"/>
+      <path d="M16 5a11 11 0 0 1 11 11H16z" fill="currentColor" opacity=".3"/>
+      <path d="M16 16 7.5 10.5M16 16l8.5-5.5M16 16v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="16" cy="16" r="2.8" fill="currentColor"/>
+    </svg>
+    <span class="brand-text">
+      <b>Centrifugal Pumps</b>
+      <span>Engineering Knowledge Base</span>
+    </span>
+  </a>
+
+  <span class="header-spacer"></span>
+
+  <button class="header-btn" id="search-open" aria-label="Search the knowledge base">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+      <circle cx="7" cy="7" r="4.5"/><path d="m10.5 10.5 4 4"/>
+    </svg>
+    <span class="label">Search</span>
+    <span class="header-spacer"></span>
+    <kbd>Ctrl K</kbd>
+  </button>
+
+  <button class="header-btn" id="theme-toggle" aria-label="Toggle theme">
+    <span class="theme-icon" aria-hidden="true">&#9790;</span>
+  </button>
+</header>
+
+<div class="layout{{TOC_CLASS}}">
+
+  <aside class="sidebar" id="sidebar">
+    <a class="up-link" href="{{ROOT}}../index.html">
+      <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+           stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M10 3 5 8l5 5"/>
+      </svg>
+      Rotary Equipment Handbook
+    </a>
+    {{NAV}}
+  </aside>
+
+  <main class="main" id="main">
+    <article class="prose">
+      {{CRUMBS}}
+      {{EYEBROW}}
+      <h1>{{H1}}</h1>
+      {{LEDE}}
+{{BODY}}
+      {{PAGER}}
+    </article>
+  </main>
+
+  {{TOC}}
+
+</div>
+
+<footer class="site-footer">
+  <p><strong>Centrifugal Pump Knowledge Base</strong> — engineering reference prepared for Zachry Philippines.
+     Copyright &copy; 2026 Zachry Philippines. All rights reserved.
+     Written as original reference material; it is not a reproduction of any publication.</p>
+  <p>Technical scope and chapter structure follow <em>Practical Centrifugal Pumps: Design, Operation and Maintenance</em>
+     by P. Girdhar &amp; O. Moniz (Newnes/Elsevier, 2005), which remains the recommended full text.
+     Standards referenced (API 610, API 682, ANSI/ASME B73, ISO 5199, Hydraulic Institute) are cited for orientation only —
+     <strong>always design and verify against the current edition of the governing standard and the OEM's own data.</strong>
+     See <a href="{{ROOT}}pages/standards.html">Standards &amp; Sources</a>.</p>
+</footer>
+
+<div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search">
+  <div class="search-box">
+    <input type="search" id="search-input" placeholder="Search for cavitation, NPSH, wear ring clearance&hellip;"
+           autocomplete="off" spellcheck="false" aria-label="Search query">
+    <div class="search-results" id="search-results">
+      <p class="search-empty">Type to search every page of the knowledge base.</p>
+    </div>
+    <div class="search-foot">
+      <span><kbd>&uarr;</kbd><kbd>&darr;</kbd> navigate</span>
+      <span><kbd>Enter</kbd> open</span>
+      <span><kbd>Esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+<script src="{{ROOT}}assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,1052 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pump Hydraulics, Cavitation and NPSH · Centrifugal Pump Knowledge Base</title>
+<meta name="description" content="The quantitative core of pump engineering — head, flow and system resistance, efficiency and power, the characteristic curve and its corrections, specific speed, and the cavitation">
+<meta name="author" content="Zachry Philippines — Mechanical Engineering">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%230f4c75'/%3E%3Cpath d='M16 7a9 9 0 1 0 9 9h-9z' fill='%23fff'/%3E%3Ccircle cx='16' cy='16' r='2.6' fill='%230f4c75'/%3E%3C/svg%3E">
+
+</head>
+<body data-root="../">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <button class="header-btn nav-toggle" id="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+    <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+      <path d="M2 4h12M2 8h12M2 12h12"/>
+    </svg>
+  </button>
+
+  <a class="brand" href="../index.html">
+    <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      <circle cx="16" cy="16" r="13" stroke="currentColor" stroke-width="2"/>
+      <path d="M16 5a11 11 0 0 1 11 11H16z" fill="currentColor" opacity=".3"/>
+      <path d="M16 16 7.5 10.5M16 16l8.5-5.5M16 16v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="16" cy="16" r="2.8" fill="currentColor"/>
+    </svg>
+    <span class="brand-text">
+      <b>Centrifugal Pumps</b>
+      <span>Engineering Knowledge Base</span>
+    </span>
+  </a>
+
+  <span class="header-spacer"></span>
+
+  <button class="header-btn" id="search-open" aria-label="Search the knowledge base">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+      <circle cx="7" cy="7" r="4.5"/><path d="m10.5 10.5 4 4"/>
+    </svg>
+    <span class="label">Search</span>
+    <span class="header-spacer"></span>
+    <kbd>Ctrl K</kbd>
+  </button>
+
+  <button class="header-btn" id="theme-toggle" aria-label="Toggle theme">
+    <span class="theme-icon" aria-hidden="true">&#9790;</span>
+  </button>
+</header>
+
+<div class="layout has-toc">
+
+  <aside class="sidebar" id="sidebar">
+    <a class="up-link" href="../../index.html">
+      <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+           stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M10 3 5 8l5 5"/>
+      </svg>
+      Rotary Equipment Handbook
+    </a>
+    <nav class="nav-group" aria-label="Main">
+<p class="nav-title">Start here</p>
+<ul class="nav-list">
+<li><a href="../index.html"><span class="nav-num">⌂</span><span>Overview</span></a></li>
+</ul></nav>
+<nav class="nav-group">
+<p class="nav-title">Core reference</p>
+<ul class="nav-list">
+<li><a href="../pages/fundamentals.html"><span class="nav-num">01</span><span>Fundamentals &amp; types</span></a></li>
+<li><a href="../pages/construction.html"><span class="nav-num">02</span><span>Design &amp; construction</span></a></li>
+<li><a href="../pages/hydraulics.html" class="current" aria-current="page"><span class="nav-num">03</span><span>Hydraulics &amp; NPSH</span></a></li>
+<li><a href="../pages/forces.html"><span class="nav-num">04</span><span>Rotor forces</span></a></li>
+<li><a href="../pages/operation.html"><span class="nav-num">05</span><span>Operation &amp; curves</span></a></li>
+</ul></nav>
+<nav class="nav-group">
+<p class="nav-title">Project lifecycle</p>
+<ul class="nav-list">
+<li><a href="../pages/selection.html"><span class="nav-num">06</span><span>Specification &amp; selection</span></a></li>
+<li><a href="../pages/testing.html"><span class="nav-num">07</span><span>Testing &amp; inspection</span></a></li>
+<li><a href="../pages/installation.html"><span class="nav-num">08</span><span>Installation &amp; commissioning</span></a></li>
+<li><a href="../pages/maintenance.html"><span class="nav-num">09</span><span>Maintenance &amp; reliability</span></a></li>
+</ul></nav>
+<nav class="nav-group">
+<p class="nav-title">Field tools</p>
+<ul class="nav-list">
+<li><a href="../pages/troubleshooting.html"><span class="nav-num">10</span><span>Troubleshooting</span></a></li>
+<li><a href="../pages/calculators.html"><span class="nav-num">11</span><span>Calculators</span></a></li>
+<li><a href="../pages/formulas.html"><span class="nav-num">12</span><span>Formula &amp; data sheet</span></a></li>
+</ul></nav>
+<nav class="nav-group">
+<p class="nav-title">Reference</p>
+<ul class="nav-list">
+<li><a href="../pages/glossary.html"><span class="nav-num">13</span><span>Glossary</span></a></li>
+<li><a href="../pages/standards.html"><span class="nav-num">14</span><span>Standards &amp; sources</span></a></li>
+</ul></nav>
+  </aside>
+
+  <main class="main" id="main">
+    <article class="prose">
+      <p class="crumbs"><a href="../index.html">Knowledge base</a> &rsaquo; Core reference &rsaquo; Hydraulics</p>
+      <p class="eyebrow">Chapter 03 · Core reference</p>
+      <h1>Pump Hydraulics, Cavitation and NPSH</h1>
+      <p class="lede">The quantitative core of pump engineering — head, flow and system resistance, efficiency and power, the characteristic curve and its corrections, specific speed, and the cavitation, recirculation and NPSH behaviour that destroys more impellers than anything else.</p>
+      <p>A centrifugal pump energises a liquid and delivers whatever flow the system will
+      accept at the head it can generate. Understanding that exchange means being fluent in a
+      small set of liquid properties and pump parameters. This chapter covers them, then builds
+      to the single most consequential topic in pump engineering: suction conditions.</p>
+
+      <h2 id="liquid-properties-that-matter">Liquid properties that matter</h2>
+
+      <h3 id="specific-gravity">Specific gravity</h3>
+
+      <p>The ratio of the liquid's density to the density of water at 4 °C (1.000 kg/l).
+      Dimensionless. Divide density in kg/m³ by 1000, or density in g/mm³ by 1. Below 1.0 the
+      liquid floats on water; above 1.0 it sinks.</p>
+
+      <h3 id="viscosity">Viscosity</h3>
+
+      <p>A measure of a fluid's resistance to flow — its internal friction. In
+      <strong>Newtonian</strong> fluids the shear stress causing flow is directly proportional
+      to the shear strain (rate of deformation), and the ratio of the two is constant at a given
+      temperature. That constant is the <strong>dynamic (absolute) viscosity</strong>, μ, with
+      units of N·s/m². Viscosity of liquids falls rapidly as temperature rises, which is why
+      heating makes a liquid flow more easily.</p>
+
+      <div class="formula">
+        <p class="eq"><b>ν</b> = μ ⁄ ρ</p>
+        <dl>
+          <dt>ν</dt><dd>kinematic viscosity, m²/s</dd>
+          <dt>μ</dt><dd>dynamic (absolute) viscosity, N·s/m²</dd>
+          <dt>ρ</dt><dd>mass density, kg/m³</dd>
+        </dl>
+        <p class="fnote">Kinematic viscosity is often quoted in stokes (10⁴ St = 1 m²/s), but
+        <strong>centistokes (cSt)</strong> is the common working unit. Water is about 1 cSt.</p>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Viscosity unit conversions (approximate; SSU conversions valid above 50 cSt)</caption>
+          <thead>
+            <tr><th>From</th><th>Operation</th><th>To</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Centistokes</td><td>× specific gravity</td><td>Centipoise</td></tr>
+            <tr><td>SSU (Saybolt Universal seconds)</td><td>× 0.2198</td><td>Centistokes</td></tr>
+            <tr><td>Degrees Engler</td><td>× 7.45</td><td>Centistokes</td></tr>
+            <tr><td>Seconds Redwood</td><td>× 0.2469</td><td>Centistokes</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 id="vapour-pressure">Vapour pressure</h3>
+
+      <p>The pressure exerted by molecules that have escaped the liquid to form a separate
+      vapour phase above it. For a pure liquid it depends on temperature alone. Vapour pressure
+      is the quantity that makes cavitation possible, so it belongs at the centre of every
+      suction calculation.</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Vapour pressure reference points</caption>
+          <thead>
+            <tr><th>Liquid</th><th>Condition</th><th class="num">Vapour pressure</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Water</td><td>100 °C</td><td class="num">1 atm</td></tr>
+            <tr><td>Ethyl alcohol</td><td>78.5 °C</td><td class="num">1 atm</td></tr>
+            <tr><td>Octane</td><td>125.7 °C</td><td class="num">1 atm</td></tr>
+            <tr><td>Water</td><td>20 °C</td><td class="num">0.023 atm (17.5 mm Hg)</td></tr>
+            <tr><td>Isopropyl alcohol</td><td>20 °C</td><td class="num">0.043 atm (33 mm Hg)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>In a liquid solution the component with the higher vapour pressure is the
+      <strong>light</strong> component (vaporises more readily); the lower is the
+      <strong>heavy</strong> component.</p>
+
+      <h2 id="flow-and-head-the-two-things-that-do-not-change-with-liquid">Flow and head: the two things that do not change with liquid</h2>
+
+      <div class="note">
+        <span class="note-label">The single most useful idea in this chapter</span>
+        <p>A centrifugal pump is a <strong>volumetric</strong> machine. At one point of
+        operation it delivers the same <strong>volume flow rate</strong> and generates the same
+        <strong>head in metres of liquid column</strong> for <em>any</em> liquid — hydrocarbon,
+        water, anything. What changes with density is the <strong>mass flow</strong>, the
+        <strong>pressure gauge reading</strong> and the <strong>power</strong>.</p>
+        <p>A 20 m³/h pump moves 20 t/h of water, but only 16 t/h of a hydrocarbon at
+        SG&nbsp;0.8 — same volume, same metres of head, 80% of the mass and 80% of the power.</p>
+      </div>
+
+      <p>Flow is measured in m³/h, l/s or gpm (US or Imperial). Head is expressed in metres (or
+      feet) of liquid column, mlc. The difference between discharge head and suction head is the
+      <strong>differential head</strong> — what the pump actually produces.</p>
+
+      <div class="formula">
+        <p class="eq"><b>H</b> = (P<sub>d</sub> − P<sub>s</sub>) × 10 ⁄ ρ</p>
+        <dl>
+          <dt>H</dt><dd>differential head, m of liquid column</dd>
+          <dt>P<sub>d</sub></dt><dd>discharge pressure, kg/cm²</dd>
+          <dt>P<sub>s</sub></dt><dd>suction pressure, kg/cm²</dd>
+          <dt>ρ</dt><dd>specific gravity of the liquid (dimensionless)</dd>
+        </dl>
+      </div>
+
+      <h2 id="system-resistance">System resistance</h2>
+
+      <p>Flow delivered by a centrifugal pump is set by the total head the system imposes on it.
+      That head has exactly two components:</p>
+
+      <ol>
+        <li>A <strong>static component</strong>, H<sub>st</sub> in metres — independent of flow.
+        If liquid must be raised from one level to another, this is the difference in level, plus
+        any pressure difference between the vessels.</li>
+        <li>A <strong>friction component</strong>, H<sub>f</sub> in metres — proportional to the
+        <strong>square</strong> of flow. This is the sum of losses as liquid passes through pipes
+        and equipment such as heat exchangers.</li>
+      </ol>
+
+      <div class="formula">
+        <p class="eq"><b>H<sub>t</sub></b> = H<sub>st</sub> + k·Q²&nbsp;&nbsp;&nbsp;where&nbsp;&nbsp;k = H<sub>f,design</sub> ⁄ Q<sub>design</sub>²</p>
+        <dl>
+          <dt>H<sub>t</sub></dt><dd>total system head at flow Q, m</dd>
+          <dt>H<sub>st</sub></dt><dd>static head, m (flow-independent)</dd>
+          <dt>k</dt><dd>system loss coefficient, from one known design point</dd>
+        </dl>
+        <p class="fnote">One design point fixes k, and k gives you the whole resistance curve.
+        <a href="calculators.html#system-head-curve">Calculator →</a></p>
+      </div>
+
+      <h3 id="working-out-the-resistance-equivalent-length-method">Working out the resistance: equivalent length method</h3>
+
+      <p>The whole flow path from suction vessel to discharge vessel is accounted for. Where the
+      path has many fittings — elbows, reducers, valves, orifices — the losses are higher. To
+      make this tractable, each fitting is converted to an <strong>equivalent length</strong>:
+      the length of straight pipe that would produce the same loss at that flow. Nomograms of
+      equivalent length for valves and fittings are standard; a second nomogram or friction table
+      then converts total equivalent length and flow into head loss.</p>
+
+      <div class="note field">
+        <span class="note-label">Always evaluate suction and discharge separately</span>
+        <p>Suction-side losses must be totalled on their own to establish that
+        <strong>NPSH-a exceeds NPSH-r</strong>. Only then are both sides combined, with the
+        static lift, to give total system resistance. Treating the system as one lump hides the
+        cavitation risk.</p>
+      </div>
+
+      <h4>Worked example</h4>
+
+      <p>Water at 100 m³/h (27.8 l/s) through steel pipe. Suction: atmospheric vessel, 2 m
+      static lift, 12 m of 6″ (152.4 mm) pipe, one 6″ gate valve fully open, one 6″×4″ eccentric
+      reducer, plus entry loss. Discharge: vessel at 30 m head, 62 m static height, 39 m of
+      3.5″ (90.1 mm) pipe, two gate valves, one 90° bend.</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Worked system resistance — suction side</caption>
+          <tbody>
+            <tr><td>Velocity in 6″ pipe</td><td class="num">(100/3600) ÷ (π/4 × 0.1524²) = <strong>1.52 m/s</strong></td></tr>
+            <tr><td>Atmospheric head, h<sub>a</sub></td><td class="num">10.34 m</td></tr>
+            <tr><td>Suction height, H<sub>s</sub></td><td class="num">2 m</td></tr>
+            <tr><td>Equivalent length: pipe 12 m + gate valve 1 m + eccentric reducer 1.4 m + entry 6 m</td><td class="num">= 20.4 m</td></tr>
+            <tr><td>Friction loss at 1.33 m per 100 m</td><td class="num">0.31 m</td></tr>
+            <tr><td><strong>Total suction head</strong> = 10.34 + 2 − 0.31</td><td class="num"><strong>12.03 m</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Worked system resistance — discharge side</caption>
+          <tbody>
+            <tr><td>Velocity in 3.5″ pipe</td><td class="num">(100/3600) ÷ (π/4 × 0.0901²) = <strong>4.35 m/s</strong></td></tr>
+            <tr><td>Vessel head, h<sub>d</sub></td><td class="num">30 m</td></tr>
+            <tr><td>Discharge height, H<sub>d</sub></td><td class="num">62 m</td></tr>
+            <tr><td>Equivalent length: pipe 39 m + 2 gate valves 1 m + 90° bend 1 m</td><td class="num">= 40 m</td></tr>
+            <tr><td>Friction loss: 20.4 × 1.33/100 (150 mm) + 41 × 20.06/100 (90 mm)</td><td class="num">0.271 + 8.23 = 8.5 m</td></tr>
+            <tr><td><strong>Total discharge head</strong> = 30 + 62 + 8.5</td><td class="num"><strong>100.5 m</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="specs">
+        <dl class="spec"><dt>System resistance</dt><dd>88.47<small> m (100.5 − 12.03)</small></dd></dl>
+      </div>
+
+      <div class="note warn">
+        <span class="note-label">Note the velocity</span>
+        <p>4.35 m/s in the discharge line produces 8.23 m of friction loss in 41 m of pipe —
+        almost 10% of the total head, in one short run, because loss goes with velocity squared.
+        Going up one pipe size is almost always cheaper than paying for that head for twenty
+        years. The same arithmetic on the suction side is not optional: it directly consumes
+        NPSH.</p>
+      </div>
+
+      <h2 id="efficiency-and-power">Efficiency and power</h2>
+
+      <p>Not all the kinetic energy becomes pressure. Pump efficiency accounts for three loss
+      groups, and is the <em>product</em> of three efficiencies:</p>
+
+      <ol>
+        <li><strong>Hydraulic efficiency</strong> — chiefly disk friction (liquid against the
+        impeller shrouds), a function of speed and impeller geometry, plus shock losses from
+        rapid direction changes through impeller and volute.</li>
+        <li><strong>Volumetric efficiency</strong> — recirculation losses at wear rings,
+        interstage bushes and similar leakage paths.</li>
+        <li><strong>Mechanical efficiency</strong> — friction at the seal or gland packing and
+        at the bearings.</li>
+      </ol>
+
+      <p>The product of the first two is sometimes called <strong>internal efficiency</strong>.
+      Every pump is designed for one flow and one corresponding head; efficiency is maximum
+      there and that point is the <strong>Best Efficiency Point (BEP)</strong>. Efficiency falls
+      away at every other flow.</p>
+
+      <div class="formula">
+        <p class="eq"><b>P<sub>H</sub></b> = (Q × ρ × g × H) ⁄ (3.6 × 10⁶)</p>
+        <p class="eq"><b>P<sub>S</sub></b> = P<sub>H</sub> ⁄ η<sub>p</sub></p>
+        <dl>
+          <dt>P<sub>H</sub></dt><dd>hydraulic power, kW</dd>
+          <dt>P<sub>S</sub></dt><dd>shaft power, kW</dd>
+          <dt>Q</dt><dd>capacity, m³/h</dd>
+          <dt>ρ</dt><dd>density at pumping temperature, kg/m³</dd>
+          <dt>g</dt><dd>9.81 m/s²</dd>
+          <dt>H</dt><dd>differential head, m of liquid column</dd>
+          <dt>η<sub>p</sub></dt><dd>pump efficiency, decimal</dd>
+        </dl>
+        <p class="fnote">Hydraulic power is the absolute minimum — the power an ideal 100%
+        efficient machine would need. <a href="calculators.html#power-and-motor-sizing">Calculator →</a></p>
+      </div>
+
+      <h2 id="the-characteristic-curve">The characteristic curve</h2>
+
+      <p>Every manufacturer supplies a characteristic curve. It is four curves on one sheet,
+      all plotted against capacity Q:</p>
+
+      <ol>
+        <li><strong>Q vs H</strong> — capacity against differential head</li>
+        <li><strong>Q vs η</strong> — capacity against efficiency</li>
+        <li><strong>Q vs P</strong> — capacity against shaft power</li>
+        <li><strong>Q vs NPSH-r</strong> — capacity against required suction head</li>
+      </ol>
+
+      <h3 id="reading-the-qh-curve">Reading the Q–H curve</h3>
+
+      <p>The Q–H curve droops continuously from shut-off (no flow) to BEP and beyond. API
+      recommends the curve rise by <strong>at least 10%</strong> from BEP to shut-off for
+      single-stage, single-pump operation.</p>
+
+      <p>Any pump model can be assembled with <strong>trimmed</strong> impellers — usually not
+      smaller than 20% below the maximum possible diameter. Trimmed-impeller Q–H curves run
+      parallel to and below the maximum-diameter curve within the operating range. A curve sheet
+      covering all available impeller diameters shows efficiency as
+      <strong>iso-efficiency</strong> contours across the Q–H field.</p>
+
+      <p>A small <strong>triangle</strong> on the curve marks the <strong>rated point</strong> —
+      the flow and head the manufacturer guarantees. The rated flow is usually 5–10% above the
+      <strong>normal operating point</strong>, which is the flow the process actually demands
+      most of the time.</p>
+
+      <p><strong>Shut-off head</strong> is the head at zero flow, with the discharge valve
+      closed and the liquid churning in the casing. Radial-impeller pumps are started this way,
+      but run time in that condition must be minimised — see
+      <a href="operation.html#operating-below-bep">temperature rise</a>.</p>
+
+      <h3 id="reading-the-other-three">Reading the other three</h3>
+
+      <p><strong>Q vs η</strong> is an inverted U: zero at no flow, rising to a maximum at BEP,
+      then dropping. Flows above and below BEP produce higher hydraulic losses and therefore
+      lower efficiency.</p>
+
+      <p><strong>Q vs P</strong> is obtained by test on cold water. Because volume flow in m³/h,
+      head in metres and efficiency are all independent of the liquid, the test result is valid
+      for every service liquid — the power simply scales by specific gravity.</p>
+
+      <p><strong>Q vs NPSH-r</strong> is the measured suction head at which throttling the
+      suction produces a <strong>3% drop in differential head</strong> at that flow. NPSH-r
+      depends on the service liquid, but cold water is the most damaging of the commonly pumped
+      liquids, so NPSH-r measured on cold water can be safely applied to hydrocarbons and hot
+      water.</p>
+
+      <h2 id="curve-corrections">Curve corrections</h2>
+
+      <p>Curves are generated on cold water at one speed and one impeller diameter. Real service
+      changes at least one of those. Factors let you predict performance without retesting.</p>
+
+      <h3 id="affinity-laws">Affinity laws</h3>
+
+      <div class="formula">
+        <p class="eq">Q₂ = Q₁ × (N₂ ⁄ N₁)<br>
+        H₂ = H₁ × (N₂ ⁄ N₁)²<br>
+        P₂ = P₁ × (N₂ ⁄ N₁)³</p>
+        <dl>
+          <dt>1, 2</dt><dd>initial and new condition</dd>
+          <dt>N</dt><dd>pump speed, rpm</dd>
+        </dl>
+        <p class="fnote"><strong>The affinity laws are valid only at constant efficiency.</strong>
+        Divergence grows and becomes serious beyond about ±25% speed change.
+        <a href="calculators.html#affinity-law-scaling">Calculator →</a></p>
+      </div>
+
+      <p>The same relationships are <em>applied by analogy</em> to impeller diameter at constant
+      speed — substituting D for N. This is approximate rather than a true similarity law:</p>
+
+      <div class="formula">
+        <p class="eq">Q₂ = Q₁ × (D₂ ⁄ D₁)&nbsp;&nbsp;·&nbsp;&nbsp;H₂ = H₁ × (D₂ ⁄ D₁)²&nbsp;&nbsp;·&nbsp;&nbsp;P₂ = P₁ × (D₂ ⁄ D₁)³</p>
+      </div>
+
+      <h4 id="the-trim-correction">The trim correction</h4>
+
+      <p>Because efficiency does not in fact stay constant, there is a discrepancy between the
+      calculated trim diameter and the performance achieved — and the error grows with the depth
+      of cut. The empirical correction:</p>
+
+      <div class="formula">
+        <p class="eq"><b>A</b> = 16.2 + 0.838 × C</p>
+        <dl>
+          <dt>A</dt><dd>actual required diameter, % of original</dd>
+          <dt>C</dt><dd>calculated required diameter, % of original</dd>
+        </dl>
+        <p class="fnote">Example: affinity laws say trim to 84% → actually cut only to 86.6%.
+        Cut less than the arithmetic suggests, then re-test.</p>
+      </div>
+
+      <p>KSB's <em>Centrifugal Pump Design</em> gives an alternative approximate relation based
+      on the square-root ratios:</p>
+
+      <div class="formula">
+        <p class="eq">D₂ ⁄ D₁ ≈ √(Q₂ ⁄ Q₁) ≈ √(H₂ ⁄ H₁)</p>
+        <p class="fnote">In all cases, proceed with caution — material removed cannot be put back.</p>
+      </div>
+
+      <h3 id="viscosity-corrections">Viscosity corrections</h3>
+
+      <p>Higher viscosity increases hydrodynamic losses through the pump. The consequences are
+      consistent:</p>
+
+      <ul>
+        <li>brake horsepower requirement <strong>increases</strong>;</li>
+        <li>head generated <strong>reduces</strong>;</li>
+        <li>capacity <strong>reduces</strong> at moderate and high viscosities;</li>
+        <li>efficiency <strong>decreases</strong>.</li>
+      </ul>
+
+      <p>The effect is more pronounced in smaller pumps, which is why larger pumps are preferred
+      for high-viscosity duty. The Hydraulic Institute viscosity correction chart gives
+      coefficients for flow, head and efficiency:</p>
+
+      <div class="formula">
+        <p class="eq">Q<sub>vis</sub> = C<sub>Q</sub> × Q<sub>w</sub>&nbsp;&nbsp;·&nbsp;&nbsp;H<sub>vis</sub> = C<sub>H</sub> × H<sub>w</sub>&nbsp;&nbsp;·&nbsp;&nbsp;η<sub>vis</sub> = C<sub>η</sub> × η<sub>w</sub></p>
+        <p class="fnote">Subscript w = water performance from the curve; vis = corrected
+        viscous performance. Apply correction for fluids above about <strong>2 centipoise</strong>.</p>
+      </div>
+
+      <h2 id="specific-speed">Specific speed</h2>
+
+      <p>Specific speed is the number that characterises impeller <em>type</em> uniquely and
+      coherently. It is, by far, the most important single number describing a pump model.</p>
+
+      <div class="formula">
+        <p class="eq"><b>N<sub>s</sub></b> = N√Q ⁄ H<sup>3/4</sup></p>
+        <dl>
+          <dt>N</dt><dd>pump speed, rpm</dd>
+          <dt>Q</dt><dd>flow at BEP at maximum impeller diameter — <strong>no</strong> correction for double suction</dd>
+          <dt>H</dt><dd>head <strong>per stage</strong> at BEP at maximum impeller diameter
+            (= total head ÷ number of stages)</dd>
+        </dl>
+        <p class="fnote">Specific speed describes an <em>impeller</em>, so for multistage pumps
+        only the first impeller is considered.
+        <a href="calculators.html#specific-and-suction-specific-speed">Calculator →</a></p>
+      </div>
+
+      <div class="note warn">
+        <span class="note-label">Units — the perennial trap</span>
+        <p>Specific speed is conventionally quoted in <strong>US units: gpm, ft, rpm</strong>,
+        because so much empirical work exists on that basis. This knowledge base follows that
+        convention, as does most literature and most vendor data. Always confirm which system a
+        quoted N<sub>s</sub> uses.</p>
+        <ul style="margin-bottom:0">
+          <li>1 US gpm = 0.2271 m³/h &nbsp;·&nbsp; 1 British gpm = 0.2728 m³/h &nbsp;·&nbsp; 1 ft = 0.3048 m</li>
+          <li>N<sub>s</sub>(US) = 1.63 × N<sub>s</sub>(metric) &nbsp;·&nbsp; N<sub>s</sub>(metric) = 0.614 × N<sub>s</sub>(US)</li>
+          <li>N<sub>s</sub>(British) = 1.5 × N<sub>s</sub>(metric)</li>
+        </ul>
+      </div>
+
+      <p>Formally, N<sub>s</sub> is the speed at which a pump, sufficiently reduced in size,
+      would deliver 1 gpm at 1 ft of head — a definition of little practical use. What matters
+      is what N<sub>s</sub> <em>indexes</em>:</p>
+
+      <ul>
+        <li><strong>Geometric similarity.</strong> Pumps of the same N<sub>s</sub> but different
+        sizes are geometrically similar, one being a scale factor of the other.</li>
+        <li><strong>Impeller and volute geometry</strong>, including the radial-to-axial
+        progression in <a href="construction.html#flow-outlet-direction-and-specific-speed">Chapter 02</a>.</li>
+        <li><strong>Attainable efficiency.</strong> Wislicenus plotted N<sub>s</sub> against
+        efficiency in 1947 from commercial pump data; Sabini and Fraser refined it in 1986.</li>
+        <li><strong>Curve shape</strong> — the H–Q, P–Q and η–Q curves all change character with
+        N<sub>s</sub> (see <a href="operation.html#how-specific-speed-shapes-the-curves">Chapter 05</a>).</li>
+        <li><strong>Performance chart layout.</strong> The BEPs of a family of pump models are
+        lined up along the same specific speed, with size factored upward for higher flows and
+        heads.</li>
+      </ul>
+
+      <h3 id="specific-speed-and-attainable-efficiency">Specific speed and attainable efficiency</h3>
+
+      <p>The Sabini and Fraser curves (1986 Pump Users Symposium) assumed:</p>
+
+      <ul>
+        <li>single-stage pumps only;</li>
+        <li>finish and dimensional tolerance within ±1% for vanes and hydraulic passages;</li>
+        <li>wetted surface finish of 2 × 10⁻⁶ per inch of impeller diameter or better;</li>
+        <li>wear ring clearance of 0.0015 in per inch of ring diameter;</li>
+        <li>suction specific speed not exceeding 8500 (US units);</li>
+        <li>discharge recirculation within 80–90%;</li>
+        <li>uniform velocity profile at impeller inlet;</li>
+        <li>clean water at 150 °F or below;</li>
+        <li>efficiency based on maximum impeller diameter;</li>
+        <li>wet-pit efficiencies based on impellers without back rings or balancing holes.</li>
+      </ul>
+
+      <p>Lobanoff and Ross studied pumps of six stages or fewer at 3560 rpm and found efficiency
+      rising very rapidly to N<sub>s</sub> ≈ 2000, holding roughly constant to about 3500, then
+      tapering. The explanation is structural: hydraulic friction and shock losses are a greater
+      share of total head in high-N<sub>s</sub> pumps, while mechanical losses barely change
+      across the range and so dominate the power budget at low N<sub>s</sub>.</p>
+
+      <h3 id="the-modelling-law">The modelling law</h3>
+
+      <p>A related index used for very large pumps in hydroelectric work: two geometrically
+      similar pumps working against the same head will have similar flow conditions — the same
+      velocities at all sections — if they run at speeds <strong>inversely proportional to their
+      size</strong>. Capacity then varies as the square of the size.</p>
+
+      <h2 id="cavitation-and-recirculation">Cavitation and recirculation</h2>
+
+      <h3 id="classical-cavitation">Classical cavitation</h3>
+
+      <p>As liquid is drawn into the pump inlet, the pressure acting on it falls. When the
+      reduced pressure approaches the liquid's <strong>vapour pressure at that
+      temperature</strong>, the liquid vaporises. Those vapour bubbles travel into the impeller,
+      where pressure rises again and they <strong>collapse — implode</strong>. That implosion is
+      cavitation.</p>
+
+      <p>Damage ranges from minor pitting to catastrophic failure, depending on fluid
+      characteristics, energy level and duration. It occurs mostly within the impeller,
+      specifically on the <strong>leading face of the non-pressure side of the vanes</strong>,
+      where bubbles begin to collapse and release their energy. The signature is a pockmarked,
+      rough surface and severe thinning of the vanes by metal erosion.</p>
+
+      <h3 id="recirculation-a-different-mechanism-often-misdiagnosed">Recirculation — a different mechanism, often misdiagnosed</h3>
+
+      <p><strong>Recirculation is flow reversal at the inlet or outlet tips of the impeller
+      vanes.</strong> Cavitation-type damage on the inlet vanes that is <em>not</em> associated
+      with inadequate NPSH can be traced directly to operation in the suction recirculation
+      zone; similar damage at the discharge vane tips to the discharge recirculation zone.</p>
+
+      <p>The capacities at which suction and discharge recirculation begin are set by the
+      impeller inlet and outlet design respectively. The casing influences the <em>intensity</em>
+      of discharge recirculation but not its <em>inception</em>. Research shows that when the
+      impeller inlet-to-outlet diameter ratio equals or exceeds 0.5, the suction recirculation
+      capacity is effectively also the discharge recirculation capacity.</p>
+
+      <h4>How suction recirculation becomes cavitation</h4>
+
+      <p>Operating left of BEP, eddy currents form at the impeller eye. Flow rate through the
+      pump has not dropped — but the eddies effectively reduce the flow channel area. Same flow
+      through a smaller area means higher velocity; higher velocity means a larger friction
+      pressure drop; and when that drop takes the local pressure below vapour pressure, the pump
+      experiences <strong>classical cavitation initiated by recirculation</strong>.</p>
+
+      <p>A second explanation: as fluid flows over a vane the near-surface pressure falls and
+      flow tends to separate. Separation occurs once the <strong>incidence angle</strong> — the
+      difference between flow angle and vane inlet angle — exceeds a critical value. The stalled
+      region contains vapour surrounded by turbulent liquid at above vapour pressure; it fills
+      with liquid from the downstream end, the vapour pocket collapses, and the vane surface is
+      damaged. This can happen <strong>200–300 times per second</strong>.</p>
+
+      <div class="note danger">
+        <span class="note-label">Why diagnosis goes wrong</span>
+        <p>Recirculation produces noise, vibration and pressure pulsations that imitate
+        classical cavitation, so it is routinely misdiagnosed as cavitation — and then
+        "corrected" by raising NPSH-a, which does nothing. The physical tell is
+        <strong>location</strong>: recirculation damages the <em>opposite</em> side of the vane
+        from classical cavitation.</p>
+        <p>The fix for recirculation is <strong>operating closer to BEP</strong>, or a pump
+        designed for lower suction specific speed — not more suction head.</p>
+      </div>
+
+      <p>It is often assumed only high-energy pumps are affected. (API 610 6th edition defined
+      high-energy as head above 650 ft / 198 m and more than 300 hp / 224 kW per stage.) But a
+      cast iron or bronze impeller can erode badly at much lower energy levels. Most pumps
+      operate in continuous or intermittent suction or discharge recirculation, especially those
+      designed with high suction specific speed — above roughly 11 000.</p>
+
+      <p>Internal recirculation shows up as cavitation noise and erosion damage, rotor
+      oscillation, shaft breakage, or surging, in varying degrees. Much of it is avoidable by
+      designing for lower N<sub>ss</sub> and limiting operation to capacities above the
+      recirculation point.</p>
+
+      <h2 id="net-positive-suction-head">Net Positive Suction Head</h2>
+
+      <p>Two quantities, constantly confused:</p>
+
+      <ul>
+        <li><strong>NPSH-r</strong> — Net Positive Suction Head <em>required</em> by the pump to
+        prevent the inception of cavitation and give safe, reliable operation. A property of the
+        pump.</li>
+        <li><strong>NPSH-a</strong> — Net Positive Suction Head <em>available</em> from the
+        suction system. A property of the installation.</li>
+      </ul>
+
+      <p>This field is still, as the literature frankly admits, misunderstood, misapplied and
+      misused — producing either costly over-design of new systems or unreliable operation of
+      existing ones.</p>
+
+      <h3 id="npsh-r-what-the-number-actually-means">NPSH-r: what the number actually means</h3>
+
+      <p>The Hydraulic Institute defines NPSH-r as the NPSH that causes total head (first-stage
+      head on a multistage pump) to be reduced by <strong>3%</strong> due to flow blockage from
+      cavitation vapour in the impeller vanes. It is a practical, repeatable test definition.</p>
+
+      <div class="note danger">
+        <span class="note-label">The most important caveat in pump engineering</span>
+        <p><strong>NPSH-r by the 3% definition is not the point at which cavitation
+        starts.</strong> That level is <em>incipient cavitation</em>, and the NPSH at incipient
+        cavitation can be <strong>2 to 20 times</strong> the 3% NPSH-r value depending on pump
+        design — the higher ratios on high-suction-energy pumps or pumps with large impeller
+        inlet areas.</p>
+        <p>If NPSH-a merely equals NPSH-r, the pump does not make rated head: it makes 3% less,
+        and it is cavitating.</p>
+      </div>
+
+      <p>Suction energy level rises with:</p>
+
+      <ul>
+        <li>casing suction nozzle size;</li>
+        <li>pump speed;</li>
+        <li>suction specific speed;</li>
+        <li>specific gravity of the pumped liquid.</li>
+      </ul>
+
+      <p>Anything that increases velocity in the impeller eye, the pump's flow rate, or specific
+      gravity increases suction energy. Most standard <strong>low</strong>-suction-energy pumps
+      can operate with little or no margin above NPSH-r without seriously affecting service
+      life. High-suction-energy pumps cannot.</p>
+
+      <h4>Theoretical, cavitation-free NPSH-r</h4>
+
+      <p>A theoretical NPSH-r that genuinely indicates cavitation inception is built from three
+      loss groups: head loss due to friction, head drop due to fluid acceleration, and head loss
+      due to improper fluid entry into the impeller blade.</p>
+
+      <div class="formula">
+        <p class="eq"><b>NPSH-r</b> = K₁·C<sub>M1</sub>² ⁄ 2g &nbsp;+&nbsp; K₂·W₁² ⁄ 2g</p>
+        <dl>
+          <dt>K₁·C<sub>M1</sub>²/2g</dt><dd>friction and acceleration losses — dominant in <strong>low</strong> suction energy pumps. K₁ is influenced chiefly by the suction nozzle approaching the impeller eye.</dd>
+          <dt>K₂·W₁²/2g</dt><dd>blade entry losses — dominant in <strong>high</strong> suction energy pumps. K₂ is governed by the incidence angle α = (β − θ).</dd>
+          <dt>C<sub>M1</sub></dt><dd>meridional velocity at blade inlet, m/s = Q ⁄ A</dd>
+          <dt>W₁</dt><dd>relative velocity of liquid just before entering the vanes, m/s</dd>
+        </dl>
+        <p class="fnote">In words: NPSH-r is the sum of the losses in the critical region between
+        the suction nozzle and the leading edge of the first-stage impeller blades.</p>
+      </div>
+
+      <h4>The inlet velocity triangle</h4>
+
+      <p>The vectors at the impeller inlet explain the equation above:</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Inlet velocity triangle notation</caption>
+          <tbody>
+            <tr><td><strong>C<sub>M1</sub></strong></td><td>Average meridional velocity at blade inlet, m/s = Q/A. Measured relative to the casing, lying in the meridional plane through the shaft centreline. (Standing in the suction nozzle facing the impeller, C<sub>M1</sub> hits you squarely in the back.)</td></tr>
+            <tr><td><strong>U<sub>t</sub></strong></td><td>Peripheral blade velocity, m/s = π·D·N/60, where D is impeller eye diameter and N is rpm</td></tr>
+            <tr><td><strong>W₁</strong></td><td>Relative velocity (relative to the impeller), m/s</td></tr>
+            <tr><td><strong>C₁</strong></td><td>Absolute velocity of flow, m/s</td></tr>
+            <tr><td><strong>β</strong></td><td>Blade angle at the outer radius of the impeller eye, measured in a plane tangent to the shroud surface where the vane joins the front shroud</td></tr>
+            <tr><td><strong>θ</strong></td><td>Angle of flow approaching the impeller</td></tr>
+            <tr><td><strong>α</strong></td><td>Pre-rotation angle — usually not more than 30°</td></tr>
+            <tr><td><strong>ψ</strong></td><td>Incidence angle = (β − θ)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>At the condition of <strong>no pre-rotation / no pre-swirl / shockless entry</strong>,
+      θ = β and the incidence angle is zero. The blade angle β is determined from C<sub>M1</sub>
+      multiplied by a factor R₁ that allows for recirculated flow Q<sub>L</sub> and non-uniform
+      velocity distribution.</p>
+
+      <div class="note field">
+        <span class="note-label">Why worn wear rings raise NPSH-r</span>
+        <p>Q<sub>L</sub> — the leakage flow — varies with wear: enlarged wear-ring clearances and
+        multistage balance lines both increase it. In lower specific speed pumps leakage is a
+        larger <em>percentage</em> of total flow, so wear has a correspondingly greater impact on
+        NPSH-r. A pump that was fine at commissioning can become NPSH-limited purely through
+        clearance wear.</p>
+      </div>
+
+      <h3 id="why-cold-water-is-the-worst-case">Why cold water is the worst case</h3>
+
+      <p>Vapour formation during cavitation or recirculation is a <em>thermal</em> process and
+      depends on liquid properties: pressure, temperature, specific heat and latent heat of
+      vaporisation. For liquid to boil, the latent heat must come out of the liquid flow. The
+      extent of cavitation depends on the proportion of vapour released, how fast it is
+      liberated, and the vapour's specific volume. This is captured in a gas-to-liquid ratio
+      factor C<sub>b</sub> (Vlaming, ASME 81-WA/FE-32).</p>
+
+      <p>The conclusion: <strong>cold water has the greatest potential to cause cavitation
+      damage of the commonly pumped liquids</strong>, and cold water is worse than hot water —
+      the specific volume of vapour falls rapidly as pressure and temperature rise. Field
+      experience agrees: pumps on hydrocarbons or hot water operate satisfactorily at lower
+      NPSH-a than cold water demands. Which is convenient, because it means pumps tested on cold
+      water are good enough for those services.</p>
+
+      <h3 id="what-the-research-actually-says-about-npsh">What the research actually says about NPSH</h3>
+
+      <p>Terry Henshaw compiled the findings of many investigators in <em>Predicting NPSH for
+      Centrifugal Pumps</em>. The practical conclusions:</p>
+
+      <ul>
+        <li>The industry standard defines NPSH-r as NPSH-a with cool water that creates enough
+        cavitation in the impeller eye to drop one-stage head by 3%.</li>
+        <li>Because of the 3% definition, a pump with a <strong>larger</strong> diameter impeller
+        requires <strong>less</strong> NPSH than the same pump with a smaller one.</li>
+        <li>NPSH required to achieve <strong>100%</strong> head is typically
+        <strong>1.05–2.5×</strong> the 3% NPSH-r.</li>
+        <li>NPSH required to <strong>suppress all cavitation</strong> is typically
+        <strong>4–5×</strong> the 3% NPSH-r, though the ratio can range from 2 to 20.</li>
+        <li>"Incipient" cavitation causes minimal impeller damage.</li>
+        <li>The <strong>peak erosion rate occurs between</strong> the 3% NPSH-r value and the
+        incipient-cavitation value — not at either end.</li>
+        <li>For cool-water service, the 3% head-drop NPSH is <strong>not sufficient</strong> to
+        prevent cavitation erosion of the impeller.</li>
+        <li>At BEP, NPSH-r does not vary with speed to the exponent 2 — the exponent is more
+        typically <strong>1.5</strong>. Consequently N<sub>ss</sub> at BEP <em>increases</em> as
+        speed increases.</li>
+        <li>NPSH-r curve shape varies with the percentage head drop used. The 3% curve
+        <em>decreases</em> as flow decreases, reaching a minimum at or below 40% of BEP; the
+        1% and 0% curves <em>increase</em> as flow falls below BEP.</li>
+        <li>Field experience shows pump failure rates rising when N<sub>ss</sub> (at BEP, US
+        units) exceeds about <strong>10 000</strong>, with a pronounced increase at
+        <strong>11 000</strong>. HI uses 8500 as the basis for its maximum speed
+        recommendations.</li>
+        <li>At the no-pre-rotation flow rate, NPSH-a for incipient cavitation equals the 3%
+        NPSH-a plus the peripheral velocity head U₁²/2g.</li>
+        <li>To reduce NPSH-r₃ at BEP, impellers are typically designed with
+        P<sub>s1</sub>/C<sub>M1</sub> &gt; 1, usually about <strong>1.25</strong> — so the
+        no-pre-rotation flow is typically about 25% above BEP flow.</li>
+      </ul>
+
+      <h3 id="npsh-available">NPSH available</h3>
+
+      <p>Every pump has an inlet system — vessel, pipes, valves, strainers, fittings. The liquid
+      arrives with some pressure and loses head travelling through that system. The net inlet
+      pressure in absolute terms, after losses, is NPSH-a.</p>
+
+      <div class="note">
+        <span class="note-label">The convention that saves confusion</span>
+        <p>Strictly, the difference between NPSH-a and NPSH-r must exceed the vapour pressure to
+        avoid vaporisation. By universal convention, the vapour pressure is instead
+        <strong>subtracted from NPSH-a</strong> — so in pump terminology <strong>NPSH-a already
+        includes the vapour pressure correction</strong>. Then all you need ensure is
+        NPSH-a &gt; NPSH-r, and the difference is genuinely a <em>net positive</em> suction head.</p>
+      </div>
+
+      <div class="formula">
+        <p class="eq"><b>NPSH-a</b> = H<sub>a</sub> + H<sub>g</sub> ± H<sub>st</sub> − H<sub>f</sub> − H<sub>vap</sub></p>
+        <dl>
+          <dt>H<sub>a</sub></dt><dd>atmospheric pressure as head, m = 10.33 ⁄ SG (for standard atmosphere)</dd>
+          <dt>H<sub>g</sub></dt><dd>vessel gauge pressure as head, m = P<sub>g</sub> × 10.2 ⁄ SG (P<sub>g</sub> in kg/cm²); <strong>negative</strong> under vacuum</dd>
+          <dt>H<sub>st</sub></dt><dd>static suction head, m — <strong>positive</strong> for flooded suction, <strong>negative</strong> for suction lift</dd>
+          <dt>H<sub>f</sub></dt><dd>suction pipe and fitting friction losses, m</dd>
+          <dt>H<sub>vap</sub></dt><dd>vapour pressure as head at the pumping temperature, m</dd>
+        </dl>
+        <p class="fnote"><a href="calculators.html#npsh-available-and-margin">Calculator →</a></p>
+      </div>
+
+      <h4>Four worked NPSH-a cases</h4>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Case 1 — pressurised flooded suction. SG 0.8, vessel 0.5 kg/cm²g, 0.2 m flooded, H<sub>f</sub> 1.5 m, P<sub>vap</sub> 0.45 kg/cm²</caption>
+          <tbody>
+            <tr><td>Atmospheric head</td><td class="num">10.325 ⁄ 0.8 = 12.9 m</td></tr>
+            <tr><td>Gauge pressure head</td><td class="num">0.5 × 10.2 ⁄ 0.8 = 6.4 m</td></tr>
+            <tr><td>Static head</td><td class="num">+0.2 m</td></tr>
+            <tr><td>Friction</td><td class="num">−1.5 m</td></tr>
+            <tr><td>Vapour pressure head</td><td class="num">0.45 × 10 ⁄ 0.8 = −5.7 m</td></tr>
+            <tr><td><strong>NPSH-a</strong></td><td class="num"><strong>12.3 m</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Case 2 — atmospheric flooded suction. SG 0.8, vessel at atmosphere, 4 m flooded, H<sub>f</sub> 1.5 m, P<sub>vap</sub> 0.45 kg/cm²</caption>
+          <tbody>
+            <tr><td>Atmospheric head</td><td class="num">12.9 m</td></tr>
+            <tr><td>Gauge pressure head</td><td class="num">0 m</td></tr>
+            <tr><td>Static head</td><td class="num">+4 m</td></tr>
+            <tr><td>Friction</td><td class="num">−1.5 m</td></tr>
+            <tr><td>Vapour pressure head</td><td class="num">−5.7 m</td></tr>
+            <tr><td><strong>NPSH-a</strong></td><td class="num"><strong>9.7 m</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Case 3 — vacuum flooded suction. SG 0.9, vessel at 600 mm Hg vacuum, 10.2 m flooded, H<sub>f</sub> 1.5 m, P<sub>vap</sub> 0.45 kg/cm²</caption>
+          <tbody>
+            <tr><td>Atmospheric head</td><td class="num">1.033 × 10 ⁄ 0.9 = 11.5 m</td></tr>
+            <tr><td>Vacuum as head</td><td class="num">−(600/1000) × 13.6 ⁄ 0.9 = −9.1 m</td></tr>
+            <tr><td>Static head</td><td class="num">+10.2 m</td></tr>
+            <tr><td>Friction</td><td class="num">−1.5 m</td></tr>
+            <tr><td>Vapour pressure head</td><td class="num">0.45 × 10 ⁄ 0.9 = −5.1 m</td></tr>
+            <tr><td><strong>NPSH-a</strong></td><td class="num"><strong>6.0 m</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Case 4 — negative suction (suction lift). SG 0.8, atmospheric, 3 m lift, H<sub>f</sub> 1.5 m, P<sub>vap</sub> 0.45 kg/cm²</caption>
+          <tbody>
+            <tr><td>Atmospheric head</td><td class="num">12.9 m</td></tr>
+            <tr><td>Gauge pressure head</td><td class="num">0 m</td></tr>
+            <tr><td>Static head (lift)</td><td class="num">−3 m</td></tr>
+            <tr><td>Friction</td><td class="num">−1.5 m</td></tr>
+            <tr><td>Vapour pressure head</td><td class="num">−5.7 m</td></tr>
+            <tr><td><strong>NPSH-a</strong></td><td class="num"><strong>2.7 m</strong> — satisfactory only if NPSH-r is well below it</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 id="npsh-margin">NPSH margin</h3>
+
+      <p>The simple approach is the arithmetic difference between available and required. The
+      requirement is that <strong>NPSH-a ≥ NPSH-r</strong>, and most specifications quote a
+      margin of not less than <strong>1.0 to 1.5 m over the entire range of pump
+      operation</strong>. Where the difference is less than the stated margin, the NPSH-r must
+      be established exactly by witnessed NPSH test.</p>
+
+      <p>The better approach uses a <strong>ratio</strong>, NPSH-a / NPSH-r, which scales with
+      suction energy:</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Minimum NPSH margin ratio guidelines (NPSH-a / NPSH-r) within the allowable operating region, standard materials of construction — source: Hydraulic Institute (pumps.org)</caption>
+          <thead>
+            <tr><th>Application</th><th class="num">Low suction energy</th><th class="num">Medium</th><th class="num">High</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Petroleum</td><td class="num">1.1 <sup>a</sup></td><td class="num">1.3 <sup>c</sup></td><td class="num">—</td></tr>
+            <tr><td>Chemical</td><td class="num">1.1 <sup>a</sup></td><td class="num">1.3 <sup>c</sup></td><td class="num">—</td></tr>
+            <tr><td>Electrical power</td><td class="num">1.1 <sup>a</sup></td><td class="num">1.5 <sup>c</sup></td><td class="num">2.0 <sup>c</sup></td></tr>
+            <tr><td>Nuclear power</td><td class="num">1.5 <sup>b</sup></td><td class="num">2.0 <sup>c</sup></td><td class="num">2.5 <sup>c</sup></td></tr>
+            <tr><td>Cooling towers</td><td class="num">1.3 <sup>b</sup></td><td class="num">1.5 <sup>c</sup></td><td class="num">2.0 <sup>c</sup></td></tr>
+            <tr><td>Water / wastewater</td><td class="num">1.1 <sup>a</sup></td><td class="num">1.3 <sup>c</sup></td><td class="num">2.0 <sup>c</sup></td></tr>
+            <tr><td>General industry</td><td class="num">1.1 <sup>a</sup></td><td class="num">1.2 <sup>b</sup></td><td class="num">—</td></tr>
+            <tr><td>Pulp and paper</td><td class="num">1.1 <sup>a</sup></td><td class="num">1.3 <sup>c</sup></td><td class="num">—</td></tr>
+            <tr><td>Building services</td><td class="num">1.1 <sup>a</sup></td><td class="num">1.3 <sup>c</sup></td><td class="num">—</td></tr>
+            <tr><td>Slurry</td><td class="num">1.1 <sup>a</sup></td><td class="num">—</td><td class="num">—</td></tr>
+            <tr><td>Pipeline</td><td class="num">1.3 <sup>b</sup></td><td class="num">1.7 <sup>c</sup></td><td class="num">2.0 <sup>c</sup></td></tr>
+            <tr><td>Water flood (injection)</td><td class="num">1.2 <sup>b</sup></td><td class="num">1.5 <sup>c</sup></td><td class="num">2.0 <sup>c</sup></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><sup>a</sup> or 0.6 m (2 ft), whichever is greater &nbsp;·&nbsp;
+         <sup>b</sup> or 0.9 m (3 ft), whichever is greater &nbsp;·&nbsp;
+         <sup>c</sup> or 1.5 m (5 ft), whichever is greater</p>
+
+      <p>Vertical turbine pumps often operate without NPSH margin and without damage, at slightly
+      reduced discharge head — they are generally low suction energy and cavitation noise is
+      normally not an issue. Even so, NPSH-a must equal or exceed NPSH-r across the allowable
+      operating region <em>including at low water level</em>.</p>
+
+      <p>High and very high suction energy pumps operating at the tabulated margins will have
+      acceptable bearing and seal life, but may still suffer impeller erosion and elevated noise.</p>
+
+      <h4>Additional suction head requirements beyond the table</h4>
+
+      <ul>
+        <li><strong>Wear ring clearance growth</strong> — increases leakage flow to the impeller
+        eye and disturbs the inlet flow pattern.</li>
+        <li><strong>Gas content</strong> in the liquid.</li>
+        <li><strong>Poorly designed inlet piping or casing</strong> producing non-uniform suction
+        flow or turbulence.</li>
+        <li><strong>Operation far right of BEP</strong> — in that region NPSH-a falls <em>and</em>
+        NPSH-r rises, closing the margin from both ends.</li>
+      </ul>
+
+      <h2 id="suction-specific-speed">Suction specific speed</h2>
+
+      <div class="formula">
+        <p class="eq"><b>N<sub>ss</sub></b> = N√Q ⁄ (NPSH-r)<sup>3/4</sup></p>
+        <dl>
+          <dt>N</dt><dd>pump speed, rpm</dd>
+          <dt>Q</dt><dd>capacity at BEP at maximum impeller diameter — <strong>halved</strong> for a double-suction impeller</dd>
+          <dt>NPSH-r</dt><dd>NPSH required at BEP at maximum impeller diameter</dd>
+        </dl>
+        <p class="fnote">US units: Q in US gpm, N in rpm, NPSH-r in feet.
+        <a href="calculators.html#specific-and-suction-specific-speed">Calculator →</a></p>
+      </div>
+
+      <p>Empirically, pump models with <strong>N<sub>ss</sub> below 11 000</strong> operate more
+      stably and prove more reliable. N<sub>ss</sub> is therefore used as the basis for
+      estimating the safe operating capacity range: <strong>the higher the N<sub>ss</sub>, the
+      narrower the safe band around BEP.</strong> Most users prefer N<sub>ss</sub> in the
+      <strong>8 000–11 000</strong> range.</p>
+
+      <p>Pumps with N<sub>ss</sub> above 11 000 should generally not be operated below
+      <strong>60–70% of BEP flow</strong>. Below that they may experience:</p>
+
+      <ul>
+        <li>impeller and casing erosion;</li>
+        <li>shaft deflection and stress;</li>
+        <li>radial and thrust bearing failures;</li>
+        <li>seal problems.</li>
+      </ul>
+
+      <p>The mechanism is inlet recirculation. Liquid is designed to enter the impeller at a
+      particular angle, correct at BEP. At lower flows it arrives at a very different angle,
+      cannot make a clean entry, and is forced back into the suction pipe, where it recirculates
+      in front of the impeller.</p>
+
+      <div class="note field">
+        <span class="note-label">Field evidence of inlet recirculation</span>
+        <ul style="margin-bottom:0">
+          <li>suction pressure gauge fluctuation;</li>
+          <li>noisy operation;</li>
+          <li>high vibration specifically <strong>at low flow rates</strong>.</li>
+        </ul>
+      </div>
+
+      <p>Where a high-N<sub>ss</sub> model is the only offer, experienced users prefer to buy the
+      slower, more expensive pump instead.</p>
+
+      <h2 id="performance-calculation-procedure">Performance calculation procedure</h2>
+
+      <p>Field performance calculation has one aim: determine actual pump efficiency, so that
+      deviation from the rated value quantifies <strong>performance degradation</strong>.</p>
+
+      <h3 id="step-1-flow">Step 1 — flow</h3>
+
+      <p>Read from an installed flow device if fitted; otherwise use a non-invasive ultrasonic
+      meter. Flows are often indicated as mass flow; convert to volume flow.</p>
+
+      <div class="formula">
+        <p class="eq"><b>Q</b> = M ⁄ δ</p>
+        <dl>
+          <dt>Q</dt><dd>volumetric flow, m³/h</dd>
+          <dt>M</dt><dd>mass flow, kg/h</dd>
+          <dt>δ</dt><dd>density at pumping temperature, kg/m³</dd>
+        </dl>
+      </div>
+
+      <h3 id="step-2-differential-head">Step 2 — differential head</h3>
+
+      <div class="formula">
+        <p class="eq">h<sub>s</sub> = P<sub>s</sub> × 10 ⁄ ρ&nbsp;&nbsp;·&nbsp;&nbsp;h<sub>d</sub> = P<sub>d</sub> × 10 ⁄ ρ&nbsp;&nbsp;·&nbsp;&nbsp;<b>H</b> = h<sub>d</sub> − h<sub>s</sub></p>
+        <dl>
+          <dt>P<sub>s</sub>, P<sub>d</sub></dt><dd>suction and discharge pressure, kg/cm²</dd>
+          <dt>ρ</dt><dd>specific gravity at pumping temperature</dd>
+        </dl>
+      </div>
+
+      <h3 id="step-3-hydraulic-power">Step 3 — hydraulic power</h3>
+
+      <div class="formula">
+        <p class="eq"><b>P<sub>H</sub></b> = (Q × δ × g × H) ⁄ (3.6 × 10⁶)&nbsp;&nbsp;&nbsp;g = 9.81 m/s²</p>
+      </div>
+
+      <h3 id="step-4-motor-power-at-the-coupling">Step 4 — motor power at the coupling</h3>
+
+      <p>Electrical power is fed to the motor terminals, but what matters is power delivered at
+      the coupling — so motor efficiency enters. Motor efficiency is <em>not</em> a fixed number:
+      part-load efficiency is much lower than full-load. Use the manufacturer's
+      efficiency-versus-load table.</p>
+
+      <div class="formula">
+        <p class="eq"><b>P<sub>M</sub></b> = (√3 × V × I × cos φ × η<sub>e</sub>) ⁄ 1000</p>
+        <dl>
+          <dt>P<sub>M</sub></dt><dd>motor power at the coupling, kW</dd>
+          <dt>V</dt><dd>measured voltage, V</dd>
+          <dt>I</dt><dd>measured current, A</dd>
+          <dt>cos φ</dt><dd>measured power factor</dd>
+          <dt>η<sub>e</sub></dt><dd>motor efficiency at the measured load</dd>
+        </dl>
+      </div>
+
+      <h3 id="step-5-pump-efficiency">Step 5 — pump efficiency</h3>
+
+      <div class="formula">
+        <p class="eq"><b>η<sub>p</sub></b> = P<sub>H</sub> ⁄ P<sub>M</sub></p>
+        <p class="fnote">Compare against the OEM curve at the same flow. The gap is your
+        degradation — and the input to the
+        <a href="maintenance.html#when-to-overhaul-the-economics">overhaul timing calculation</a>.</p>
+      </div>
+
+      <div class="note ok">
+        <span class="note-label">Non-intrusive alternative</span>
+        <p>Direct-reading thermodynamic efficiency monitors (the Yates meter and similar) compute
+        operating efficiency dynamically from the <strong>temperature rise of the fluid</strong>
+        between suction and discharge — measured in millikelvin — together with pressure
+        transducers and a power meter. No dismantling, and the pump can be monitored while
+        running. See <a href="maintenance.html#performance-monitoring">Chapter 09</a>.</p>
+      </div>
+
+      <nav class="pager" aria-label="Page navigation">
+<a class="prev" href="../pages/construction.html"><span class="dir">← Previous</span><span class="ttl">Design &amp; construction</span></a>
+<a class="next" href="../pages/forces.html"><span class="dir">Next →</span><span class="ttl">Rotor forces</span></a>
+</nav>
+    </article>
+  </main>
+
+  <aside class="toc"><h2>On this page</h2></aside>
+
+</div>
+
+<footer class="site-footer">
+  <p><strong>Centrifugal Pump Knowledge Base</strong> — engineering reference prepared for Zachry Philippines.
+     Copyright &copy; 2026 Zachry Philippines. All rights reserved.
+     Written as original reference material; it is not a reproduction of any publication.</p>
+  <p>Technical scope and chapter structure follow <em>Practical Centrifugal Pumps: Design, Operation and Maintenance</em>
+     by P. Girdhar &amp; O. Moniz (Newnes/Elsevier, 2005), which remains the recommended full text.
+     Standards referenced (API 610, API 682, ANSI/ASME B73, ISO 5199, Hydraulic Institute) are cited for orientation only —
+     <strong>always design and verify against the current edition of the governing standard and the OEM's own data.</strong>
+     See <a href="../pages/standards.html">Standards &amp; Sources</a>.</p>
+</footer>
+
+<div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search">
+  <div class="search-box">
+    <input type="search" id="search-input" placeholder="Search for cavitation, NPSH, wear ring clearance&hellip;"
+           autocomplete="off" spellcheck="false" aria-label="Search query">
+    <div class="search-results" id="search-results">
+      <p class="search-empty">Type to search every page of the knowledge base.</p>
+    </div>
+    <div class="search-foot">
+      <span><kbd>&uarr;</kbd><kbd>&darr;</kbd> navigate</span>
+      <span><kbd>Enter</kbd> open</span>
+      <span><kbd>Esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>

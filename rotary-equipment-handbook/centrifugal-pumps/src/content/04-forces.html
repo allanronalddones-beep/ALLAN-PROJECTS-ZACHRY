@@ -1,0 +1,409 @@
+      <p>A centrifugal pump delivers a wide range of flows and heads. The operating point on
+      the curve, and the internal pressures that result, produce axial and radial forces on the
+      rotor. Those forces select the bearings, size the shaft, and — through shaft deflection —
+      determine how long the seals last. This chapter covers where they come from and how each
+      construction manages them.</p>
+
+      <h2 id="axial-thrust">Axial thrust</h2>
+
+      <p>Axial thrust arises from internal pressures acting on the exposed areas of the rotating
+      element. It looks like it should be simply the net of discharge and suction pressure times
+      the exposed impeller area — and that is indeed the basis — but several variables are not
+      captured by that approach:</p>
+
+      <ul>
+        <li>location of the impeller relative to the casing wall;</li>
+        <li>impeller shroud symmetry;</li>
+        <li>surface roughness of the walls;</li>
+        <li>wear ring clearance;</li>
+        <li>geometry of the balancing holes.</li>
+      </ul>
+
+      <div class="note warn">
+        <span class="note-label">Calculated thrust is approximate</span>
+        <p>Many of these variables are indeterminate, so calculated axial forces are at best
+        approximate. In critical applications, during prototype testing, or when troubleshooting
+        repeated thrust bearing failures, install <strong>thrust-measuring devices</strong> and
+        record internal pressures directly. If the measured results are unacceptable, the design
+        needs modification — not a bigger bearing.</p>
+      </div>
+
+      <h3>Assumptions behind the approximate method</h3>
+
+      <ul>
+        <li>The impeller profile is symmetrical.</li>
+        <li>The impeller centreline coincides reasonably with the volute centreline — within
+        <strong>0.8 mm</strong>.</li>
+        <li>Pressure on the front cover and back shroud is equal and constant from the impeller
+        OD down to the wear ring diameter.</li>
+        <li>The parabolic pressure reduction across the shrouds is ignored; the average pressure
+        acting on the shrouds is taken as <strong>¾ of discharge pressure</strong>.</li>
+      </ul>
+
+      <h3>The momentum term</h3>
+
+      <p>Every case includes F<sub>X</sub>, the axial force from the change in fluid momentum
+      between inlet and outlet:</p>
+
+      <div class="formula">
+        <p class="eq"><b>F<sub>X</sub></b> = ρ × Q² ⁄ A<sub>E</sub></p>
+        <dl>
+          <dt>F<sub>X</sub></dt><dd>momentum force, N</dd>
+          <dt>ρ</dt><dd>density, kg/m³</dd>
+          <dt>Q</dt><dd>flow, m³/s</dd>
+          <dt>A<sub>E</sub></dt><dd>impeller eye area, m²</dd>
+        </dl>
+        <p class="fnote">All areas throughout this chapter are A = πD²/4 using the respective
+        diameter.</p>
+      </div>
+
+      <h3>Single-stage overhung impeller pumps</h3>
+
+      <p>These "simple" pumps are the most complex to analyse because of the number of impeller
+      and mating-component variants. The convention below follows the source: <strong>NA</strong>
+      denotes thrust on the non-pressure (suction) side and <strong>A</strong> the thrust on the
+      pressure side; the <strong>net axial thrust is the difference between the two</strong>.</p>
+
+      <h4>Closed impeller, front wear ring only</h4>
+
+      <p>With perfect impeller symmetry, axial forces above diameter D₁ are balanced — pressure
+      is assumed equal on both sides. The net thrust comes from the pressure difference acting
+      on the annulus between the front wear ring and the shaft.</p>
+
+      <div class="formula">
+        <p class="eq">NA = A<sub>S</sub> × P<sub>S</sub> + F<sub>X</sub><br>
+        A = ¾ × P<sub>D</sub> × (A₁ − A<sub>S</sub>)</p>
+        <dl>
+          <dt>D₁</dt><dd>front wear ring diameter</dd>
+          <dt>D<sub>E</sub></dt><dd>impeller eye diameter</dd>
+          <dt>D<sub>S</sub></dt><dd>pump shaft diameter</dd>
+          <dt>P<sub>S</sub>, P<sub>D</sub></dt><dd>suction and discharge pressure</dd>
+        </dl>
+      </div>
+
+      <h4>Closed impeller, wear rings both sides, with balancing holes</h4>
+
+      <p>Balancing holes drilled through the back shroud reduce the pressure in the region under
+      the back wear ring to approximately suction pressure. In practice studies indicate the
+      pressure there is <strong>2–10% of the differential pressure</strong>, depending on hole
+      diameter. The equations below assume total balancing hole area is <strong>eight times</strong>
+      the area between the wear rings.</p>
+
+      <div class="formula">
+        <p class="eq">When D₁ = D₂:<br>
+        Axial thrust = A<sub>S</sub> × P<sub>S</sub> − [0.03 × P<sub>D</sub> × (A₁ − A<sub>S</sub>)] + F<sub>X</sub></p>
+        <p class="eq">When D₁ ≠ D₂:<br>
+        NA = A<sub>S</sub> × P<sub>S</sub> − [0.03 × P<sub>D</sub> × (A₁ − A<sub>S</sub>)] + F<sub>X</sub><br>
+        A = ¾ × P<sub>D</sub> × (A₁ − A₂)</p>
+        <dl>
+          <dt>D₁, D₂</dt><dd>wear ring diameters on front cover and back shroud respectively</dd>
+        </dl>
+      </div>
+
+      <h4>Closed impeller with back vanes, no back wear ring</h4>
+
+      <p>Where a back wear ring is not wanted, back vanes are cast integrally on the back
+      shroud. Rotating with the impeller, they act as a small impeller themselves, expelling
+      liquid from inner to outer diameter and so reducing the pressure behind the impeller.</p>
+
+      <div class="formula">
+        <p class="eq">NA = A<sub>S</sub> × P<sub>S</sub> + [0.00253 × (A<sub>R</sub> − A<sub>S</sub>) × ρ × (U<sub>R</sub>² − U<sub>S</sub>²)] + F<sub>X</sub><br>
+        A = ¾ × P<sub>D</sub> × (A<sub>I</sub> − A<sub>S</sub>)</p>
+        <dl>
+          <dt>U<sub>R</sub>, U<sub>S</sub></dt><dd>peripheral velocities = π·D<sub>R</sub>·N/60 and π·D<sub>S</sub>·N/60</dd>
+          <dt>D<sub>R</sub></dt><dd>back vane outer diameter</dd>
+        </dl>
+      </div>
+
+      <div class="note danger">
+        <span class="note-label">The weakness of back vanes</span>
+        <p>Back vane performance depends entirely on the clearance between the vane tip and the
+        casing (dimension <em>a − h</em>), normally held at <strong>0.4 to 1.0 mm</strong>. As
+        that gap opens up in service, pressure on the back shroud rises and axial thrust
+        increases — so the method is <strong>unreliable</strong> over time. It is also less
+        efficient than back wear rings: back vanes can cost as much as <strong>3% of pump
+        efficiency</strong>.</p>
+      </div>
+
+      <h4>Open / semi-open impeller with front wear ring</h4>
+
+      <div class="formula">
+        <p class="eq">NA = P<sub>D</sub> × [A<sub>S</sub> + 2(P<sub>S</sub> − A₃) ⁄ 3] + F<sub>X</sub> <span style="color:var(--text-faint)">(form per source)</span><br>
+        A = ¾ × P<sub>D</sub> × (A₃ − A<sub>S</sub>)</p>
+        <dl>
+          <dt>A₃</dt><dd>area of the impeller</dd>
+        </dl>
+        <p class="fnote">With back vanes added, the term
+        [0.00253 × (A<sub>R</sub> − A<sub>S</sub>) × ρ × (U<sub>R</sub>² − U<sub>S</sub>²)]
+        enters as in the closed-impeller-with-back-vanes case.</p>
+      </div>
+
+      <p>Because the front cover is absent, the clearance between impeller vanes and casing is
+      critical; where back vanes are also present, the back clearance matters too. Two
+      critical clearances in one assembly compounds the assembly problem considerably.</p>
+
+      <h3>Double suction impellers</h3>
+
+      <p>Theoretically a double-suction impeller develops almost no axial thrust, by symmetry.
+      In practice construction is never perfectly symmetrical, so some thrust always exists and
+      a simple thrust bearing absorbs it.</p>
+
+      <div class="note warn">
+        <span class="note-label">Alignment is not optional here</span>
+        <p>The symmetry that gives the double-suction impeller its balance <strong>requires the
+        impeller outlet to stay aligned with the volute centre</strong>. Violate that and
+        substantial thrust is generated — <strong>proportional to the axial
+        displacement</strong>. This is a direct assembly and overhaul check item.</p>
+      </div>
+
+      <h3>Multistage pumps — stacked (in-line) impellers</h3>
+
+      <p>With all impellers stacked facing the same direction, the axial thrust pushing the rotor
+      toward the suction can be very high. Such designs carry a <strong>balancing drum or
+      piston</strong>: a rotating disk running against a stationary disk or ring at close
+      clearance. The liquid pressure drops across that labyrinth passage, and the leakage is
+      piped back to the pump suction.</p>
+
+      <p>Pressure difference across the drum equals the net of discharge and suction pressure,
+      and the resulting force opposes the thrust on the rotor. The arrangement also reduces the
+      pressure acting on the stuffing box. The cost is efficiency: liquid recirculating through
+      the balance line is lost work.</p>
+
+      <h3>Multistage pumps — back-to-back impellers</h3>
+
+      <p>Arranging impellers back to back simplifies axial balance for odd or even stage counts.
+      Two locations on the rotor each break down half the total pump head: the <strong>centre
+      bushing</strong> between the back-to-back impellers, and the <strong>throat bush</strong>
+      in the high-pressure stuffing box. Sleeve diameters at those two locations can be sized to
+      balance any number of stages.</p>
+
+      <p>Practical rules for this arrangement:</p>
+
+      <ul>
+        <li>It is preferable to leave <strong>some residual axial thrust</strong> so the bearing
+        stays lightly loaded and the rotor is held in one place rather than allowed to float.</li>
+        <li>An increase in wear ring or bush clearance does <strong>not</strong> affect axial
+        thrust in this design — a genuine reliability advantage over the stacked arrangement.</li>
+        <li>All impeller rings should be the <strong>same diameter</strong>.</li>
+        <li>On even-stage pumps, the centre sleeve diameter should equal the sleeve diameters in
+        each stuffing box.</li>
+        <li>To balance an <strong>odd</strong> number of stages, the simplest solution is to
+        change only the centre sleeve diameter.</li>
+      </ul>
+
+      <h2 id="radial-loads">Radial loads</h2>
+
+      <p>In an end-suction pump with an overhung impeller, hydraulic radial load comes from
+      <strong>non-uniform liquid velocity within the casing</strong>, which produces a
+      non-uniform pressure distribution around the impeller circumference.</p>
+
+      <p>The volute design is the dominant influence. The volute is sized for flow at BEP, and at
+      that flow velocity and pressure distribution in the casing are uniform, so radial thrust is
+      negligible. The small residual load at BEP comes from the <strong>cutwater</strong>, which
+      necessarily disturbs the pressure distribution; that force is directed toward the cutwater.</p>
+
+      <p>At flows above or below BEP the magnitude of the radial force increases — and its
+      <strong>direction also changes</strong>.</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Radial load behaviour by casing type</caption>
+          <thead>
+            <tr><th>Casing</th><th>Uniform at</th><th>Radial load character</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Single volute</strong></td>
+              <td>BEP</td>
+              <td>Near zero at BEP, maximum at shut-off. Unbalanced force can be taken as acting 240° from the cutwater, toward the impeller centre.</td>
+            </tr>
+            <tr>
+              <td><strong>Double volute</strong></td>
+              <td>Broadly across the range</td>
+              <td>Substantially reduced everywhere — the rib creates a second cutwater and near-symmetry around the impeller. Some residual remains because the two discharge passages are not symmetrical.</td>
+            </tr>
+            <tr>
+              <td><strong>Concentric casing</strong></td>
+              <td><strong>Zero flow</strong></td>
+              <td>Uniformity is progressively lost as flow rises; non-uniformity at BEP is much <em>higher</em> than at no-flow. The opposite of a volute.</td>
+            </tr>
+            <tr>
+              <td><strong>Vaned diffuser</strong></td>
+              <td>Broadly across the range</td>
+              <td>Velocity distribution around the impeller is more uniform, so radial loads are much lower.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Calculating radial load</h3>
+
+      <p>At shut-off, for an end-suction single-volute pump:</p>
+
+      <div class="formula">
+        <p class="eq"><b>R<sub>SO</sub></b> = K<sub>SO</sub> × (H<sub>SO</sub> × ρ ⁄ 2.31) × D₂ × B₂</p>
+        <dl>
+          <dt>R<sub>SO</sub></dt><dd>radial thrust at shut-off, lb</dd>
+          <dt>K<sub>SO</sub></dt><dd>thrust factor at shut-off, read from the K<sub>SO</sub> vs N<sub>s</sub> chart (differs for open and closed impellers)</dd>
+          <dt>H<sub>SO</sub></dt><dd>total head at shut-off, ft</dd>
+          <dt>ρ</dt><dd>specific gravity</dd>
+          <dt>D₂</dt><dd>impeller diameter, in</dd>
+          <dt>B₂</dt><dd>impeller width at discharge including shrouds, in</dd>
+        </dl>
+      </div>
+
+      <p>At other operating points:</p>
+
+      <div class="formula">
+        <p class="eq"><b>R</b> = R<sub>SO</sub> × (K ⁄ K<sub>SO</sub>) × (H ⁄ H<sub>SO</sub>)<br>
+        where K = K<sub>SO</sub> × [1 − (Q ⁄ Q<sub>BEP</sub>)<sup>x</sup>]</p>
+        <dl>
+          <dt>x</dt><dd>exponent from <strong>0.7 to 3.3</strong>, established by test. A linear
+            relationship may be safely assumed between 0.7 at N<sub>s</sub> 500 and 3.3 at
+            N<sub>s</sub> 3500.</dd>
+          <dt>Q, Q<sub>BEP</sub></dt><dd>capacity at operating conditions and at BEP, gpm</dd>
+          <dt>H</dt><dd>total head at operating conditions, ft</dd>
+        </dl>
+      </div>
+
+      <p>A simpler approximate variant:</p>
+
+      <div class="formula">
+        <p class="eq"><b>R</b> = K × (H × ρ ⁄ 2.31) × D₂ × B₂&nbsp;&nbsp;&nbsp;where K = 0.36 × [1 − (Q ⁄ Q<sub>BEP</sub>)²]</p>
+        <p class="fnote">Units as above. Note the <strong>squared</strong> flow ratio and the
+        fixed 0.36 coefficient — this version hides the specific-speed dependency, so prefer the
+        full form where N<sub>s</sub> is known.</p>
+      </div>
+
+      <h3>Non-hydraulic sources of radial load</h3>
+
+      <ul>
+        <li><strong>Vane pass excitation.</strong> A fluctuating radial load arises when the
+        clearance between impeller vane tips and the volute cutwater is too small. The resulting
+        vibration occurs at the <strong>vane pass frequency</strong> = number of impeller vanes
+        × pump running speed. This is a diagnostic signature, and the cure is a correct
+        <a href="maintenance.html#gap-a-and-gap-b">Gap-B</a>.</li>
+        <li><strong>Mechanical imbalance</strong> of the rotor generates a radial force at
+        running speed.</li>
+        <li><strong>Uneven flow</strong> through the impeller can itself cause impeller
+        imbalance.</li>
+        <li><strong>Cavitation</strong>, and <strong>misaligned belts or couplings</strong>, also
+        contribute radial load to the shaft.</li>
+      </ul>
+
+      <h2 id="shaft-deflection">Shaft deflection</h2>
+
+      <p>A radial load — hydraulic or from mechanical imbalance — bends the shaft downward in
+      one position. Rotate the shaft 180° and it still bends downward in the same way. That
+      bending under a constant unidirectional load is <strong>deflection</strong>: the deflected
+      shaft rotates about its own centreline even though that centreline is not straight.</p>
+
+      <p>The consequence is a <strong>reversal of stress in the shaft on every
+      revolution</strong>, which leads to fatigue cracking and eventual shaft breakage.</p>
+
+      <div class="note">
+        <span class="note-label">Deflection versus whip</span>
+        <p><strong>Shaft whip</strong> is a different motion: the shaft end orbits, generating a
+        cone, and the shaft centreline itself shifts 180° for every 180° of shaft rotation. Whip
+        comes from rotordynamic problems; radial load contributes little to it. The two are
+        regularly confused, and they have different cures.</p>
+      </div>
+
+      <h3>Why deflection must be limited</h3>
+
+      <p><strong>Rubbing contact.</strong> Rotating parts may touch stationary parts. Stainless
+      steel parts gall as soon as rubbing contact is made, which shows up as motor overload.
+      Galling tends to get progressively worse and can end in complete seizure of the rotating
+      element. The first surfaces to touch are the wear rings — whose clearance is deliberately
+      minimised to maximise the pressure drop across them — or, on pumps without wear rings, the
+      shaft against the stuffing box throat bush.</p>
+
+      <p><strong>Packing leakage.</strong> Conventional packing adjusted for the deflection at
+      one operating condition will not readjust when the deflection changes. Set the packing at
+      the high-capacity end of the curve, then throttle the discharge: the shaft moves from one
+      extreme position to the other, leaving a gap between packing and shaft. That gap plus the
+      elevated stuffing box pressure near shut-off produces excessive leakage.</p>
+
+      <p><strong>Seal face misalignment.</strong> On a mechanically sealed pump, deflection causes
+      facial misalignment of the seal faces. The faces either open up or mate unevenly, producing
+      uneven and early wear and then leakage.</p>
+
+      <div class="specs">
+        <dl class="spec"><dt>Deflection limit at seal faces</dt><dd>0.05<small> mm max</small></dd></dl>
+      </div>
+
+      <h3>Calculating deflection</h3>
+
+      <p>Deflection is calculated by treating the shaft as a cantilever beam, using an expanded
+      beam formula. For a shaft with three major diameters in the overhung section:</p>
+
+      <div class="formula">
+        <p class="eq"><b>δ</b> = (P ⁄ 3E) × [ A³⁄I<sub>A</sub> + (B³−A³)⁄I<sub>B</sub> + (C³−B³)⁄I<sub>C</sub> + (L³−C³)⁄I<sub>L</sub> ]</p>
+        <dl>
+          <dt>δ</dt><dd>shaft deflection</dd>
+          <dt>P</dt><dd>radial resultant force</dd>
+          <dt>E</dt><dd>Young's modulus — modulus of elasticity of the shaft material</dd>
+          <dt>A, B, C, L</dt><dd>distances from the impeller to each diameter change</dd>
+          <dt>I<sub>A…L</sub></dt><dd>moments of inertia at the respective diameters</dd>
+        </dl>
+        <p class="fnote">Consistent units throughout. The form above is the general expanded
+        cantilever expression; confirm the exact grouping against your own reference before using
+        it for a design calculation.</p>
+      </div>
+
+      <h3>The L³/D⁴ ratio — and why not to trust it</h3>
+
+      <p>The formula reduces to the statement that deflection δ is proportional to
+      <strong>L³/D⁴</strong>, where L is shaft length and D is shaft diameter. Pumps with a lower
+      L³/D⁴ exhibit lower deflection than those with a higher ratio.</p>
+
+      <div class="note warn">
+        <span class="note-label">Do not use L³/D⁴ to compare vendors</span>
+        <p>It is widely quoted in bid comparisons and it is a poor basis for one.
+        <strong>L³/D⁴ should not be used as a yardstick to compare the reliability of one pump
+        against another.</strong> Ask instead for the <strong>actual shaft deflection values</strong>
+        computed by the OEM at the most severe flow conditions, and compare those.</p>
+      </div>
+
+      <h2>From forces to bearing selection</h2>
+
+      <p>Hydraulic loads depend on impeller type and size, casing type, operating point, and
+      suction and discharge pressures. Magnitude and direction both vary greatly with any of
+      those. A complete shaft analysis considers axial and radial forces together and resolves
+      them into reaction forces at the bearing locations.</p>
+
+      <div class="formula">
+        <p class="eq">R<sub>B</sub> = F<sub>r</sub> × (A + B) ⁄ B&nbsp;&nbsp;·&nbsp;&nbsp;R<sub>A</sub> = F<sub>r</sub> − R<sub>B</sub></p>
+        <dl>
+          <dt>F<sub>r</sub></dt><dd>radial force at the impeller</dd>
+          <dt>A, B</dt><dd>distances from the impeller to bearing A, and between bearings</dd>
+        </dl>
+      </div>
+
+      <p>At location <strong>A</strong> there is only a radial bearing, so it carries
+      P<sub>A</sub> = R<sub>A</sub>.</p>
+
+      <p>At location <strong>B</strong> double-row angular contact bearings carry radial and
+      axial load together, so the equivalent load uses the bearing manufacturer's X and Y
+      factors:</p>
+
+      <div class="formula">
+        <p class="eq"><b>P<sub>B</sub></b> = X·R<sub>B</sub> + Y·F<sub>ax</sub></p>
+        <dl>
+          <dt>X, Y</dt><dd>radial and axial load factors from the bearing catalogue for that bearing type and arrangement</dd>
+          <dt>F<sub>ax</sub></dt><dd>net axial thrust</dd>
+        </dl>
+      </div>
+
+      <p>Only once the forces on each bearing are known can the bearings be selected properly —
+      and bearing selection is what converts the hydraulic design into achievable availability.</p>
+
+      <div class="note field">
+        <span class="note-label">What this chapter means on the plant</span>
+        <p>Nearly every force discussed here is minimised at BEP and grows as the duty moves
+        away from it. Radial load, shaft deflection, seal face misalignment, bearing load and
+        recirculation all worsen together in the same direction. That is why
+        <a href="operation.html#the-allowable-operating-region">the allowable operating
+        region</a> is not a bureaucratic restriction: it is the envelope within which the rotor
+        forces stay inside what the shaft, seal and bearings were designed to carry.</p>
+      </div>

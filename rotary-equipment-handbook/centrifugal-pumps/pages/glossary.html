@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glossary of Pump Terminology · Centrifugal Pump Knowledge Base</title>
+<meta name="description" content="The vocabulary used across the knowledge base, defined for engineers who need the working meaning rather than the textbook derivation.">
+<meta name="author" content="Zachry Philippines — Mechanical Engineering">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%230f4c75'/%3E%3Cpath d='M16 7a9 9 0 1 0 9 9h-9z' fill='%23fff'/%3E%3Ccircle cx='16' cy='16' r='2.6' fill='%230f4c75'/%3E%3C/svg%3E">
+
+</head>
+<body data-root="../">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <button class="header-btn nav-toggle" id="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+    <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+      <path d="M2 4h12M2 8h12M2 12h12"/>
+    </svg>
+  </button>
+
+  <a class="brand" href="../index.html">
+    <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      <circle cx="16" cy="16" r="13" stroke="currentColor" stroke-width="2"/>
+      <path d="M16 5a11 11 0 0 1 11 11H16z" fill="currentColor" opacity=".3"/>
+      <path d="M16 16 7.5 10.5M16 16l8.5-5.5M16 16v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="16" cy="16" r="2.8" fill="currentColor"/>
+    </svg>
+    <span class="brand-text">
+      <b>Centrifugal Pumps</b>
+      <span>Engineering Knowledge Base</span>
+    </span>
+  </a>
+
+  <span class="header-spacer"></span>
+
+  <button class="header-btn" id="search-open" aria-label="Search the knowledge base">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+      <circle cx="7" cy="7" r="4.5"/><path d="m10.5 10.5 4 4"/>
+    </svg>
+    <span class="label">Search</span>
+    <span class="header-spacer"></span>
+    <kbd>Ctrl K</kbd>
+  </button>
+
+  <button class="header-btn" id="theme-toggle" aria-label="Toggle theme">
+    <span class="theme-icon" aria-hidden="true">&#9790;</span>
+  </button>
+</header>
+
+<div class="layout has-toc">
+
+  <aside class="sidebar" id="sidebar">
+    <a class="up-link" href="../../index.html">
+      <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+           stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M10 3 5 8l5 5"/>
+      </svg>
+      Rotary Equipment Handbook
+    </a>
+    <nav class="nav-group" aria-label="Main">
+<p class="nav-title">Start here</p>
+<ul class="nav-list">
+<li><a href="../index.html"><span class="nav-num">⌂</span><span>Overview</span></a></li>
+</ul></nav>
+<nav class="nav-group">
+<p class="nav-title">Core reference</p>
+<ul class="nav-list">
+<li><a href="../pages/fundamentals.html"><span class="nav-num">01</span><span>Fundamentals &amp; types</span></a></li>
+<li><a href="../pages/construction.html"><span class="nav-num">02</span><span>Design &amp; construction</span></a></li>
+<li><a href="../pages/hydraulics.html"><span class="nav-num">03</span><span>Hydraulics &amp; NPSH</span></a></li>
+<li><a href="../pages/forces.html"><span class="nav-num">04</span><span>Rotor forces</span></a></li>
+<li><a href="../pages/operation.html"><span class="nav-num">05</span><span>Operation &amp; curves</span></a></li>
+</ul></nav>
+<nav class="nav-group">
+<p class="nav-title">Project lifecycle</p>
+<ul class="nav-list">
+<li><a href="../pages/selection.html"><span class="nav-num">06</span><span>Specification &amp; selection</span></a></li>
+<li><a href="../pages/testing.html"><span class="nav-num">07</span><span>Testing &amp; inspection</span></a></li>
+<li><a href="../pages/installation.html"><span class="nav-num">08</span><span>Installation &amp; commissioning</span></a></li>
+<li><a href="../pages/maintenance.html"><span class="nav-num">09</span><span>Maintenance &amp; reliability</span></a></li>
+</ul></nav>
+<nav class="nav-group">
+<p class="nav-title">Field tools</p>
+<ul class="nav-list">
+<li><a href="../pages/troubleshooting.html"><span class="nav-num">10</span><span>Troubleshooting</span></a></li>
+<li><a href="../pages/calculators.html"><span class="nav-num">11</span><span>Calculators</span></a></li>
+<li><a href="../pages/formulas.html"><span class="nav-num">12</span><span>Formula &amp; data sheet</span></a></li>
+</ul></nav>
+<nav class="nav-group">
+<p class="nav-title">Reference</p>
+<ul class="nav-list">
+<li><a href="../pages/glossary.html" class="current" aria-current="page"><span class="nav-num">13</span><span>Glossary</span></a></li>
+<li><a href="../pages/standards.html"><span class="nav-num">14</span><span>Standards &amp; sources</span></a></li>
+</ul></nav>
+  </aside>
+
+  <main class="main" id="main">
+    <article class="prose">
+      <p class="crumbs"><a href="../index.html">Knowledge base</a> &rsaquo; Reference &rsaquo; Glossary</p>
+      <p class="eyebrow">Reference</p>
+      <h1>Glossary of Pump Terminology</h1>
+      <p class="lede">The vocabulary used across the knowledge base, defined for engineers who need the working meaning rather than the textbook derivation.</p>
+      <h2 id="hydraulic-terms">Hydraulic terms</h2>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Flow, head and performance</caption>
+          <tbody>
+            <tr>
+              <td><strong>BEP</strong><br>Best Efficiency Point</td>
+              <td>The one flow and head combination the pump was designed for, where total losses
+              are minimum and efficiency maximum. Nearly every force and failure mode in a
+              centrifugal pump is minimised at BEP and grows as the duty moves away from it.</td>
+            </tr>
+            <tr>
+              <td><strong>Differential head</strong></td>
+              <td>Discharge head minus suction head — what the pump actually produces. Expressed in
+              metres of liquid column, and <strong>independent of the liquid</strong> at a given
+              operating point.</td>
+            </tr>
+            <tr>
+              <td><strong>Shut-off head</strong>, H<sub>SO</sub></td>
+              <td>Head developed at zero flow with the discharge valve closed. For a pump with a
+              <em>stable</em> curve, the maximum head it can ever develop.</td>
+            </tr>
+            <tr>
+              <td><strong>Rated point</strong></td>
+              <td>The flow and head the vendor guarantees, marked by a small triangle on the curve.
+              Usually 5–10% above the normal operating point.</td>
+            </tr>
+            <tr>
+              <td><strong>Normal operating point</strong></td>
+              <td>The flow the process actually demands most of the time. The point that should
+              drive selection — specifying only a rated point invites oversizing.</td>
+            </tr>
+            <tr>
+              <td><strong>End of the curve</strong></td>
+              <td>Around 120% of BEP flow. The point a low specific speed pump's driver should be
+              sized on, because its power characteristic is overloading.</td>
+            </tr>
+            <tr>
+              <td><strong>Static head</strong>, H<sub>st</sub></td>
+              <td>The flow-independent component of system head — level difference plus any vessel
+              pressure difference.</td>
+            </tr>
+            <tr>
+              <td><strong>Friction head</strong>, H<sub>f</sub></td>
+              <td>The flow-dependent component, proportional to Q². Dominating this term is what
+              makes parallel pumping disappoint.</td>
+            </tr>
+            <tr>
+              <td><strong>System resistance curve</strong></td>
+              <td>H<sub>st</sub> + kQ². The pump's operating point is always where this curve
+              crosses the pump curve — never where you wish it were.</td>
+            </tr>
+            <tr>
+              <td><strong>Equivalent length</strong></td>
+              <td>The length of straight pipe producing the same loss at a given flow as a fitting
+              does. The practical way to total up valve, bend and reducer losses.</td>
+            </tr>
+            <tr>
+              <td><strong>Iso-efficiency curves</strong></td>
+              <td>Contours of constant efficiency plotted on the Q–H field across the range of
+              available impeller diameters. Parabolic through the origin, because constant
+              specific speed means constant efficiency.</td>
+            </tr>
+            <tr>
+              <td><strong>Steepness</strong></td>
+              <td>(H<sub>SO</sub> − H<sub>BEP</sub>) / H<sub>BEP</sub> × 100. Low ΔH/ΔQ is a
+              <em>flat</em> curve (wanted for firewater); high ΔH/ΔQ is <em>steep</em>.</td>
+            </tr>
+            <tr>
+              <td><strong>Stable / unstable curve</strong></td>
+              <td>A <em>stable</em> Q–H curve droops continuously, so one head gives one flow. An
+              <em>unstable</em> curve rises to a maximum then falls, so one head gives two
+              possible flows — and the pump oscillates between them.</td>
+            </tr>
+            <tr>
+              <td><strong>Overloading / non-overloading</strong></td>
+              <td>Describes the P–Q curve. <em>Overloading</em> (low specific speed) means power
+              rises with flow, so the motor can trip when system resistance drops.
+              <em>Non-overloading</em> (high specific speed) means power is flat or falls.</td>
+            </tr>
+            <tr>
+              <td><strong>Affinity laws</strong></td>
+              <td>Q ∝ N, H ∝ N², P ∝ N³. True similarity laws for speed <strong>at constant
+              efficiency</strong>; applied to diameter only by analogy and approximately.</td>
+            </tr>
+            <tr>
+              <td><strong>Allowable operating region</strong></td>
+              <td>The flow band within which rotor forces, temperature rise and recirculation stay
+              inside design limits. Typically 70–120% of BEP.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="suction-conditions-and-cavitation">Suction conditions and cavitation</h2>
+
+      <div class="table-wrap">
+        <table>
+          <caption>NPSH and the phenomena it governs</caption>
+          <tbody>
+            <tr>
+              <td><strong>NPSH-a</strong><br>available</td>
+              <td>Net inlet pressure in absolute terms after suction system losses, expressed as
+              head. A property of the <em>installation</em>. By convention it already has the
+              vapour pressure subtracted.</td>
+            </tr>
+            <tr>
+              <td><strong>NPSH-r</strong><br>required</td>
+              <td>The NPSH the pump needs. A property of the <em>pump</em>. Industry-standard
+              definition: the NPSH at which first-stage head drops by <strong>3%</strong>.</td>
+            </tr>
+            <tr>
+              <td><strong>NPSH margin</strong></td>
+              <td>NPSH-a − NPSH-r, normally required to be at least 1.0–1.5 m. Better expressed as
+              a <strong>ratio</strong> scaled to suction energy.</td>
+            </tr>
+            <tr>
+              <td><strong>Cavitation</strong></td>
+              <td>Vapour bubbles forming where local pressure falls to vapour pressure, then
+              <em>imploding</em> as pressure recovers. Damage appears on the
+              <strong>leading face of the non-pressure side</strong> of the vanes as pockmarking
+              and vane thinning.</td>
+            </tr>
+            <tr>
+              <td><strong>Incipient cavitation</strong></td>
+              <td>The actual onset of cavitation — at an NPSH <strong>2 to 20 times</strong> the
+              3% NPSH-r. Causes minimal damage itself; the <em>peak erosion rate</em> sits between
+              the 3% value and the incipient value.</td>
+            </tr>
+            <tr>
+              <td><strong>Recirculation</strong></td>
+              <td>Flow reversal at the inlet or outlet tips of the impeller vanes. Produces noise
+              and vibration that <em>imitate</em> cavitation and is routinely misdiagnosed as it.
+              Damages the <strong>opposite side</strong> of the vane. Cured by operating closer to
+              BEP — not by adding suction head.</td>
+            </tr>
+            <tr>
+              <td><strong>Suction energy</strong></td>
+              <td>A qualitative measure rising with suction nozzle size, pump speed, suction
+              specific speed and specific gravity. Low suction energy pumps tolerate thin margins;
+              high suction energy pumps do not.</td>
+            </tr>
+            <tr>
+              <td><strong>Breakaway NPSH-r</strong></td>
+              <td>The sharp rise in NPSH-r at high flow, where internal velocities raise losses and
+              static head falls toward vapour pressure. The mechanism behind a pump that cavitates
+              when NPSH-a is <em>increased</em>.</td>
+            </tr>
+            <tr>
+              <td><strong>Vapour pressure</strong></td>
+              <td>Pressure exerted by molecules escaping the liquid to form a vapour phase. For a
+              pure liquid it depends on temperature alone — which is why suction line heat gain
+              consumes NPSH-a.</td>
+            </tr>
+            <tr>
+              <td><strong>Pre-rotation / pre-whirl</strong></td>
+              <td>Rotation of liquid entering the impeller. Reduces the mismatch between flow angle
+              and blade angle at off-BEP flows. Positive pre-whirl is usable for regulation;
+              negative pre-whirl costs efficiency.</td>
+            </tr>
+            <tr>
+              <td><strong>Shockless entry</strong></td>
+              <td>The condition where flow angle θ equals blade inlet angle β, so incidence angle
+              is zero. Occurs at BEP.</td>
+            </tr>
+            <tr>
+              <td><strong>Incidence angle</strong></td>
+              <td>ψ = β − θ. Once it exceeds a critical value, flow separates from the vane and a
+              stalled region forms.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="pump-numbers">Pump numbers</h2>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Dimensionless and quasi-dimensionless indices</caption>
+          <tbody>
+            <tr>
+              <td><strong>Specific speed</strong>, N<sub>s</sub></td>
+              <td>N√Q / H<sup>3/4</sup>, with head <strong>per stage</strong> and no double-suction
+              correction. Indexes impeller type, geometric similarity, attainable efficiency and
+              curve shape. Conventionally in US units (gpm, ft, rpm).</td>
+            </tr>
+            <tr>
+              <td><strong>Suction specific speed</strong>, N<sub>ss</sub></td>
+              <td>N√Q / (NPSH-r)<sup>3/4</sup>, with Q <strong>halved</strong> for a double-suction
+              impeller. The higher it is, the narrower the stable operating band. Preferred range
+              8 000–11 000.</td>
+            </tr>
+            <tr>
+              <td><strong>Head coefficient</strong>, ψ</td>
+              <td>H / (u₂²/2g). Used with the flow coefficient to build universal characteristics
+              that allow comparison between dissimilar machines — and testing on another fluid.</td>
+            </tr>
+            <tr>
+              <td><strong>Flow coefficient</strong>, φ</td>
+              <td>Q / (u₂A), where A = πd₂²/4.</td>
+            </tr>
+            <tr>
+              <td><strong>L³/D⁴</strong></td>
+              <td>The shaft slenderness proxy to which deflection is proportional. Widely quoted in
+              bid comparisons and <strong>not a valid basis for comparing reliability between
+              pumps</strong> — ask for actual deflection values instead.</td>
+            </tr>
+            <tr>
+              <td><strong>Modelling law</strong></td>
+              <td>Two geometrically similar pumps against the same head have similar flow
+              conditions if speeds are inversely proportional to size; capacity then varies as the
+              square of size. Used for very large hydroelectric pumps.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="construction">Construction</h2>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Components and configurations</caption>
+          <tbody>
+            <tr>
+              <td><strong>Impeller eye</strong></td>
+              <td>The inlet opening through which liquid enters the impeller. Single-suction has
+              one; double-suction has two.</td>
+            </tr>
+            <tr>
+              <td><strong>Shroud</strong></td>
+              <td>The disc enclosing the impeller vanes. A closed impeller has front and back
+              shrouds; semi-open omits the front; open designs reduce or omit the back shroud too.</td>
+            </tr>
+            <tr>
+              <td><strong>Scalloped impeller</strong></td>
+              <td>An open impeller with the back shroud partially (<em>partially scalloped</em>) or
+              almost entirely (<em>fully scalloped</em>) removed to reduce axial thrust.</td>
+            </tr>
+            <tr>
+              <td><strong>Vortex / non-clog impeller</strong></td>
+              <td>A fully shrouded open impeller located above the volute that does not energise the
+              liquid directly — it creates a vortex which does. Experiences almost no radial force,
+              so it tolerates extended closed-discharge running.</td>
+            </tr>
+            <tr>
+              <td><strong>Recuperator</strong></td>
+              <td>Generic term for whatever converts impeller outlet velocity into pressure —
+              vaneless guide ring, concentric casing, volute, vaned diffuser, diagonal or axial
+              diffuser vanes.</td>
+            </tr>
+            <tr>
+              <td><strong>Volute</strong></td>
+              <td>The spiral casing collecting flow from the impeller. <em>Single</em> volutes are
+              most efficient at BEP but carry high radial load away from it; <em>double</em> volutes
+              reduce radial load across the range.</td>
+            </tr>
+            <tr>
+              <td><strong>Cutwater / volute tongue</strong></td>
+              <td>The dividing edge where the volute passage begins. Minimises recirculation and
+              reduces radial load — and its clearance to the impeller sets vane pass vibration.</td>
+            </tr>
+            <tr>
+              <td><strong>Throat</strong></td>
+              <td>The narrowest section of a volute or diffuser passage, where kinetic energy begins
+              converting to pressure.</td>
+            </tr>
+            <tr>
+              <td><strong>Wear ring</strong></td>
+              <td>Sacrificial ring fitted at the impeller eye (<em>impeller ring</em>) and in the
+              casing (<em>case ring</em>) so that running clearance wear and any contact damage is
+              confined to cheap replaceable parts. Deliberately given a hardness differential.</td>
+            </tr>
+            <tr>
+              <td><strong>Balancing hole</strong></td>
+              <td>Hole through the impeller back shroud reducing the pressure behind the impeller to
+              near suction pressure, cutting axial thrust. Normally used with a back wear ring.</td>
+            </tr>
+            <tr>
+              <td><strong>Back vanes</strong></td>
+              <td>Vanes cast on the impeller back shroud that pump liquid outward, relieving back
+              pressure and axial thrust. Clearance-dependent, so <strong>unreliable as it
+              wears</strong>, and costs up to 3% efficiency.</td>
+            </tr>
+            <tr>
+              <td><strong>Balancing drum / piston</strong></td>
+              <td>A rotating disk running at close clearance against a stationary ring in a
+              stacked-impeller multistage pump, with the leakage piped back to suction. Opposes
+              axial thrust at the cost of recirculation loss.</td>
+            </tr>
+            <tr>
+              <td><strong>Repeller</strong></td>
+              <td>An auxiliary impeller with radial blades on its back shroud that reduces the
+              pressure in front of the packing. Used for toxic or corrosive service.</td>
+            </tr>
+            <tr>
+              <td><strong>Lantern ring</strong></td>
+              <td>A circumferentially drilled ring replacing one packing ring, admitting clean
+              sealing liquid into the packing set. Used for dirty or high-pressure liquid.</td>
+            </tr>
+            <tr>
+              <td><strong>Throat bush</strong></td>
+              <td>A restrictive bush at the bottom of the stuffing box or seal housing, used where
+              discharge pressure is high. Often the first thing a deflecting shaft contacts on a
+              pump without wear rings.</td>
+            </tr>
+            <tr>
+              <td><strong>Shaft sleeve</strong></td>
+              <td>Sacrificial sleeve fitted over the shaft so packing or seals wear the sleeve, not
+              the shaft. The secondary-seal area is hard coated against fretting.</td>
+            </tr>
+            <tr>
+              <td><strong>Primary / secondary seal</strong></td>
+              <td>In a mechanical seal, the <em>primary</em> seal is the pair of lapped mating faces.
+              The <em>secondary</em> seals (O-ring, wedge, V-ring, bellows) seal the static joints
+              and must be partially dynamic so the primary ring can creep forward as faces wear.</td>
+            </tr>
+            <tr>
+              <td><strong>Cartridge seal</strong></td>
+              <td>A pre-assembled mechanical seal with factory-set seal tension, released by tabs on
+              installation. Removes the skilled seal-setting step from site work — which is why
+              API 682 promotes it.</td>
+            </tr>
+            <tr>
+              <td><strong>Seal tension</strong></td>
+              <td>The spring compression setting the face load: F − (S + A + G), typically 3–4 mm on
+              a multi-spring seal.</td>
+            </tr>
+            <tr>
+              <td><strong>Light band</strong></td>
+              <td>An interference fringe used to measure seal face flatness. One helium light band
+              = 0.3 µm. Allowable flatness is 3 bands (0.9 µm).</td>
+            </tr>
+            <tr>
+              <td><strong>Bearing isolator</strong></td>
+              <td>The end seal protecting the bearing housing from contamination — felt, lip seal,
+              labyrinth or magnetic. Usually the weakest link in bearing life.</td>
+            </tr>
+            <tr>
+              <td><strong>Overhung / in-between bearings</strong></td>
+              <td>Rotor support configuration. <em>Overhung</em> cantilevers the impeller beyond the
+              bearings; <em>in-between</em> supports the impellers from both sides. The dominant
+              influence on shaft deflection.</td>
+            </tr>
+            <tr>
+              <td><strong>Centreline support</strong></td>
+              <td>Casing support at the shaft axis, so the shaft centreline stays put as the casing
+              grows thermally. API 610 requires it above 177 °C.</td>
+            </tr>
+            <tr>
+              <td><strong>Close-coupled / monobloc</strong></td>
+              <td>No coupling: the impeller mounts on an extended motor shaft. No alignment to do,
+              but the motor must come off to reach the impeller.</td>
+            </tr>
+            <tr>
+              <td><strong>Sealless pump</strong></td>
+              <td>Canned motor or magnetic drive construction with no dynamic shaft seal — the rotor
+              runs inside a containment shell. Depends on the pumped liquid for cooling and
+              lubrication, so dry running destroys it.</td>
+            </tr>
+            <tr>
+              <td><strong>Barrel / double case pump</strong></td>
+              <td>Multistage construction with an inner assembly carrying the hydraulic passages
+              inside an outer pressure-vessel casing. Often supplied with a spare inner subassembly
+              to minimise downtime.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="forces-assembly-and-condition">Forces, assembly and condition</h2>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Rotor behaviour and overhaul terms</caption>
+          <tbody>
+            <tr>
+              <td><strong>Axial thrust</strong></td>
+              <td>Net axial force from internal pressures on the exposed areas of the rotating
+              element, plus a momentum term. Several governing variables are indeterminate, so
+              calculated values are approximate.</td>
+            </tr>
+            <tr>
+              <td><strong>Radial load</strong></td>
+              <td>Force from non-uniform pressure distribution around the impeller. Near zero at BEP
+              in a volute pump, maximum at shut-off — and reversed in sense in a concentric casing.</td>
+            </tr>
+            <tr>
+              <td><strong>Shaft deflection</strong></td>
+              <td>Bending under a constant unidirectional load. The deflected shaft rotates about its
+              own bent centreline, reversing stress every revolution → fatigue. Limit at seal faces
+              is 0.05 mm.</td>
+            </tr>
+            <tr>
+              <td><strong>Shaft whip</strong></td>
+              <td>A different motion: the shaft end orbits, generating a cone, with the centreline
+              shifting 180° for every 180° of rotation. A rotordynamic problem, not a radial load
+              problem — commonly confused with deflection.</td>
+            </tr>
+            <tr>
+              <td><strong>Vane pass frequency</strong></td>
+              <td>Number of impeller vanes × running speed. Excited by too small a gap between
+              impeller OD and cutwater; corrected via Gap-B at no efficiency cost.</td>
+            </tr>
+            <tr>
+              <td><strong>Gap-A</strong></td>
+              <td>Radial clearance between impeller side plate ODs and the diffuser channel side
+              plate IDs. Range 35–85 mils, preferred 50; ineffective beyond 125.</td>
+            </tr>
+            <tr>
+              <td><strong>Gap-B</strong></td>
+              <td>Radial clearance between impeller vane OD and diffuser or volute vane ID, as a
+              percentage of impeller vane diameter. 4–12% (preferred 6%) for diffuser types,
+              6–12% (preferred 10%) for volutes; add 4% if both vane counts are even.</td>
+            </tr>
+            <tr>
+              <td><strong>Endplay / axial float</strong></td>
+              <td>Axial shaft movement measured with a dial gauge. 0.02–0.07 mm; excess causes
+              pitting and fretting at the packing or seal contact.</td>
+            </tr>
+            <tr>
+              <td><strong>Runout</strong></td>
+              <td>Shaft roundness combined with permanent bow, measured on V-blocks. Max 0.05 mm —
+              and because a seal sees it on both sides, 0.075 mm of runout moves the faces 0.15 mm
+              in total.</td>
+            </tr>
+            <tr>
+              <td><strong>Soft foot</strong></td>
+              <td>Movement at a machine foot when its hold-down bolt is released, indicating the
+              machine is not sitting flat. Limit 1 mil (0.025 mm).</td>
+            </tr>
+            <tr>
+              <td><strong>DBSE</strong></td>
+              <td>Distance Between Shaft Ends. Set with shafts pulled toward each other, or with a
+              sleeve-bearing motor shaft at its magnetic centre.</td>
+            </tr>
+            <tr>
+              <td><strong>Laitance</strong></td>
+              <td>The weak, cement-rich surface layer formed when concrete is cast. Must be chipped
+              or blasted off before grouting, or the grout has nothing sound to bond to.</td>
+            </tr>
+            <tr>
+              <td><strong>Grout</strong></td>
+              <td>Hardenable material — epoxy or cement-based — placed under and around the
+              baseplate to give a uniform load-bearing surface and damp vibration.</td>
+            </tr>
+            <tr>
+              <td><strong>Brinelling</strong></td>
+              <td>Indentation of a bearing raceway from impact loading, typically during
+              installation or transport. Presents as a low-pitch bearing noise.</td>
+            </tr>
+            <tr>
+              <td><strong>Galling</strong></td>
+              <td>Adhesive wear between like metals on contact, progressing rapidly toward seizure.
+              The reason wear rings are given a hardness differential and why SS 316 is avoided for
+              them.</td>
+            </tr>
+            <tr>
+              <td><strong>Fretting</strong></td>
+              <td>Surface damage from small-amplitude relative motion, typically under a secondary
+              seal on the shaft sleeve. Countered by hard coating that area.</td>
+            </tr>
+            <tr>
+              <td><strong>Fugitive emission</strong></td>
+              <td>Process fluid escaping between mechanical seal faces to atmosphere. Where
+              unacceptable, dual seal arrangements are used; a seal at 3 light bands of flatness
+              passes a &lt; 100 ppm specification.</td>
+            </tr>
+            <tr>
+              <td><strong>PPM</strong></td>
+              <td>Predictive and Preventive Maintenance — here, the four-pillar programme of
+              performance, vibration, oil/particle and system analysis.</td>
+            </tr>
+            <tr>
+              <td><strong>Bad actor</strong></td>
+              <td>A machine that fails repeatedly on the slightest off-duty provocation. Classified
+              as critical regardless of its process duty, because its failure rate makes it one.</td>
+            </tr>
+            <tr>
+              <td><strong>Witnessed / observed test</strong></td>
+              <td>API 610 contractual terms. <em>Witnessed</em> applies a hold to production until
+              the purchaser attends. <em>Observed</em> proceeds on schedule, but the vendor may not
+              move to the next step if the purchaser is absent.</td>
+            </tr>
+            <tr>
+              <td><strong>Failure</strong></td>
+              <td>Not necessarily a seizure or blowout. A pump has failed when it is
+              <strong>no longer capable of performing its specified function under the specified
+              conditions</strong> — including drawing more power than specified while running
+              perfectly smoothly.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <nav class="pager" aria-label="Page navigation">
+<a class="prev" href="../pages/formulas.html"><span class="dir">← Previous</span><span class="ttl">Formula &amp; data sheet</span></a>
+<a class="next" href="../pages/standards.html"><span class="dir">Next →</span><span class="ttl">Standards &amp; sources</span></a>
+</nav>
+    </article>
+  </main>
+
+  <aside class="toc"><h2>On this page</h2></aside>
+
+</div>
+
+<footer class="site-footer">
+  <p><strong>Centrifugal Pump Knowledge Base</strong> — engineering reference prepared for Zachry Philippines.
+     Copyright &copy; 2026 Zachry Philippines. All rights reserved.
+     Written as original reference material; it is not a reproduction of any publication.</p>
+  <p>Technical scope and chapter structure follow <em>Practical Centrifugal Pumps: Design, Operation and Maintenance</em>
+     by P. Girdhar &amp; O. Moniz (Newnes/Elsevier, 2005), which remains the recommended full text.
+     Standards referenced (API 610, API 682, ANSI/ASME B73, ISO 5199, Hydraulic Institute) are cited for orientation only —
+     <strong>always design and verify against the current edition of the governing standard and the OEM's own data.</strong>
+     See <a href="../pages/standards.html">Standards &amp; Sources</a>.</p>
+</footer>
+
+<div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search">
+  <div class="search-box">
+    <input type="search" id="search-input" placeholder="Search for cavitation, NPSH, wear ring clearance&hellip;"
+           autocomplete="off" spellcheck="false" aria-label="Search query">
+    <div class="search-results" id="search-results">
+      <p class="search-empty">Type to search every page of the knowledge base.</p>
+    </div>
+    <div class="search-foot">
+      <span><kbd>&uarr;</kbd><kbd>&darr;</kbd> navigate</span>
+      <span><kbd>Enter</kbd> open</span>
+      <span><kbd>Esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>

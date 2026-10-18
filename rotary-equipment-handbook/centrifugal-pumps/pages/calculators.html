@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Engineering Calculators · Centrifugal Pump Knowledge Base</title>
+<meta name="description" content="Six calculations engineers reach for constantly — NPSH available and margin, affinity-law scaling, specific and suction specific speed, power and motor sizing, low-flow temperature">
+<meta name="author" content="Zachry Philippines — Mechanical Engineering">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%230f4c75'/%3E%3Cpath d='M16 7a9 9 0 1 0 9 9h-9z' fill='%23fff'/%3E%3Ccircle cx='16' cy='16' r='2.6' fill='%230f4c75'/%3E%3C/svg%3E">
+
+</head>
+<body data-root="../">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <button class="header-btn nav-toggle" id="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+    <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+      <path d="M2 4h12M2 8h12M2 12h12"/>
+    </svg>
+  </button>
+
+  <a class="brand" href="../index.html">
+    <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      <circle cx="16" cy="16" r="13" stroke="currentColor" stroke-width="2"/>
+      <path d="M16 5a11 11 0 0 1 11 11H16z" fill="currentColor" opacity=".3"/>
+      <path d="M16 16 7.5 10.5M16 16l8.5-5.5M16 16v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="16" cy="16" r="2.8" fill="currentColor"/>
+    </svg>
+    <span class="brand-text">
+      <b>Centrifugal Pumps</b>
+      <span>Engineering Knowledge Base</span>
+    </span>
+  </a>
+
+  <span class="header-spacer"></span>
+
+  <button class="header-btn" id="search-open" aria-label="Search the knowledge base">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+      <circle cx="7" cy="7" r="4.5"/><path d="m10.5 10.5 4 4"/>
+    </svg>
+    <span class="label">Search</span>
+    <span class="header-spacer"></span>
+    <kbd>Ctrl K</kbd>
+  </button>
+
+  <button class="header-btn" id="theme-toggle" aria-label="Toggle theme">
+    <span class="theme-icon" aria-hidden="true">&#9790;</span>
+  </button>
+</header>
+
+<div class="layout has-toc">
+
+  <aside class="sidebar" id="sidebar">
+    <a class="up-link" href="../../index.html">
+      <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+           stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M10 3 5 8l5 5"/>
+      </svg>
+      Rotary Equipment Handbook
+    </a>
+    <nav class="nav-group" aria-label="Main">
+<p class="nav-title">Start here</p>
+<ul class="nav-list">
+<li><a href="../index.html"><span class="nav-num">⌂</span><span>Overview</span></a></li>
+</ul></nav>
+<nav class="nav-group">
+<p class="nav-title">Core reference</p>
+<ul class="nav-list">
+<li><a href="../pages/fundamentals.html"><span class="nav-num">01</span><span>Fundamentals &amp; types</span></a></li>
+<li><a href="../pages/construction.html"><span class="nav-num">02</span><span>Design &amp; construction</span></a></li>
+<li><a href="../pages/hydraulics.html"><span class="nav-num">03</span><span>Hydraulics &amp; NPSH</span></a></li>
+<li><a href="../pages/forces.html"><span class="nav-num">04</span><span>Rotor forces</span></a></li>
+<li><a href="../pages/operation.html"><span class="nav-num">05</span><span>Operation &amp; curves</span></a></li>
+</ul></nav>
+<nav class="nav-group">
+<p class="nav-title">Project lifecycle</p>
+<ul class="nav-list">
+<li><a href="../pages/selection.html"><span class="nav-num">06</span><span>Specification &amp; selection</span></a></li>
+<li><a href="../pages/testing.html"><span class="nav-num">07</span><span>Testing &amp; inspection</span></a></li>
+<li><a href="../pages/installation.html"><span class="nav-num">08</span><span>Installation &amp; commissioning</span></a></li>
+<li><a href="../pages/maintenance.html"><span class="nav-num">09</span><span>Maintenance &amp; reliability</span></a></li>
+</ul></nav>
+<nav class="nav-group">
+<p class="nav-title">Field tools</p>
+<ul class="nav-list">
+<li><a href="../pages/troubleshooting.html"><span class="nav-num">10</span><span>Troubleshooting</span></a></li>
+<li><a href="../pages/calculators.html" class="current" aria-current="page"><span class="nav-num">11</span><span>Calculators</span></a></li>
+<li><a href="../pages/formulas.html"><span class="nav-num">12</span><span>Formula &amp; data sheet</span></a></li>
+</ul></nav>
+<nav class="nav-group">
+<p class="nav-title">Reference</p>
+<ul class="nav-list">
+<li><a href="../pages/glossary.html"><span class="nav-num">13</span><span>Glossary</span></a></li>
+<li><a href="../pages/standards.html"><span class="nav-num">14</span><span>Standards &amp; sources</span></a></li>
+</ul></nav>
+  </aside>
+
+  <main class="main" id="main">
+    <article class="prose">
+      <p class="crumbs"><a href="../index.html">Knowledge base</a> &rsaquo; Field tools &rsaquo; Calculators</p>
+      <p class="eyebrow">Field tool · Works offline</p>
+      <h1>Engineering Calculators</h1>
+      <p class="lede">Six calculations engineers reach for constantly — NPSH available and margin, affinity-law scaling, specific and suction specific speed, power and motor sizing, low-flow temperature rise, and system head. All run in your browser; nothing is sent anywhere.</p>
+      <div class="note">
+        <span class="note-label">About these calculators</span>
+        <p>Everything here runs in your browser with JavaScript — no network request is made and
+        nothing you type leaves the machine. The page works from a local copy or a USB stick, which
+        is the point: they are meant to be usable in a plant office with no connectivity.</p>
+        <p>Each calculator states its units explicitly and carries the derivation it uses. They
+        are <strong>engineering aids for checking and screening, not a substitute for the vendor's
+        own calculation</strong> — and several of them encode empirical relationships whose
+        limitations are set out in the chapters they link to.</p>
+      </div>
+
+      <h2 id="npsh-available-and-margin">NPSH available and margin</h2>
+
+      <p>The calculation that prevents more pump damage than any other. Enter the suction
+      conditions at the <strong>worst case</strong> — maximum flow, minimum vessel level, strainer
+      fouled — not at the rated point.</p>
+
+      <div class="calc" data-calc="npsha">
+        <div class="calc-head"><h3 id="npsh-a-margin-and-ratio">NPSH-a, margin and ratio</h3><span class="pill brand">metric</span></div>
+        <div class="calc-body">
+          <div class="calc-grid">
+            <div class="field">
+              <label for="npsh-pa">Absolute pressure on liquid surface <span class="u">kPa a</span></label>
+              <input type="number" id="npsh-pa" value="101.33" step="any">
+            </div>
+            <div class="field">
+              <label for="npsh-sg">Specific gravity <span class="u">–</span></label>
+              <input type="number" id="npsh-sg" value="1.0" step="any">
+            </div>
+            <div class="field">
+              <label for="npsh-z">Static suction head <span class="u">m, − for lift</span></label>
+              <input type="number" id="npsh-z" value="2.0" step="any">
+            </div>
+            <div class="field">
+              <label for="npsh-hf">Suction friction + fitting loss <span class="u">m</span></label>
+              <input type="number" id="npsh-hf" value="1.5" step="any">
+            </div>
+            <div class="field">
+              <label for="npsh-pv">Vapour pressure at pumping temp <span class="u">kPa a</span></label>
+              <input type="number" id="npsh-pv" value="2.34" step="any">
+            </div>
+            <div class="field">
+              <label for="npsh-nr">NPSH required (from curve) <span class="u">m</span></label>
+              <input type="number" id="npsh-nr" value="3.0" step="any">
+            </div>
+          </div>
+          <div class="calc-out">
+            <div><div class="o-label">Atmospheric head</div><div class="o-value" id="npsh-out-ha">—</div></div>
+            <div><div class="o-label">Vapour pressure head</div><div class="o-value" id="npsh-out-hv">—</div></div>
+            <div><div class="o-label">NPSH available</div><div class="o-value" id="npsh-out-a">—</div></div>
+            <div><div class="o-label">Margin</div><div class="o-value" id="npsh-out-margin">—</div></div>
+            <div><div class="o-label">Ratio a/r</div><div class="o-value" id="npsh-out-ratio">—</div></div>
+            <p class="calc-verdict" id="npsh-verdict"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="formula">
+        <p class="eq"><b>NPSH-a</b> = (P<sub>a</sub> ⁄ ρg) ± H<sub>st</sub> − H<sub>f</sub> − (P<sub>v</sub> ⁄ ρg)</p>
+        <p class="fnote">By convention NPSH-a already includes the vapour pressure correction, so
+        you only need NPSH-a &gt; NPSH-r. Note the absolute pressure field: use
+        <strong>101.33 kPa a</strong> for an open vessel at sea level, add gauge pressure for a
+        pressurised vessel, or enter the absolute pressure directly for a vacuum vessel. For a
+        <strong>saturated (boiling) liquid</strong>, vessel pressure and vapour pressure cancel —
+        NPSH-a reduces to static head minus friction. Full derivation and four worked cases in
+        <a href="hydraulics.html#net-positive-suction-head">Chapter 03</a>; margin ratio
+        requirements by service in the
+        <a href="hydraulics.html#npsh-margin">HI margin table</a>.</p>
+      </div>
+
+      <div class="note danger">
+        <span class="note-label">The 3% trap</span>
+        <p>The NPSH-r read from a curve is the <strong>3% head-drop</strong> value. It is not the
+        onset of cavitation and it is <strong>not a damage-free value</strong> — the NPSH needed to
+        suppress all cavitation is typically 4–5× it, and can range from 2 to 20×. A pump passing
+        the margin check above can still erode its impeller, particularly on cold water and on
+        high suction energy duty.</p>
+      </div>
+
+      <h2 id="affinity-law-scaling">Affinity law scaling</h2>
+
+      <p>Predicts flow, head and power when speed or impeller diameter changes. Change
+      <em>one</em> of them at a time for a clean answer; the calculator applies both ratios
+      together if you change both.</p>
+
+      <div class="calc" data-calc="affinity">
+        <div class="calc-head"><h3 id="speed-and-diameter-scaling">Speed and diameter scaling</h3><span class="pill warn">constant η assumed</span></div>
+        <div class="calc-body">
+          <div class="calc-grid">
+            <div class="field">
+              <label for="aff-q1">Known flow Q₁ <span class="u">m³/h</span></label>
+              <input type="number" id="aff-q1" value="100" step="any">
+            </div>
+            <div class="field">
+              <label for="aff-h1">Known head H₁ <span class="u">m</span></label>
+              <input type="number" id="aff-h1" value="50" step="any">
+            </div>
+            <div class="field">
+              <label for="aff-p1">Known power P₁ <span class="u">kW</span></label>
+              <input type="number" id="aff-p1" value="20" step="any">
+            </div>
+            <div class="field">
+              <label for="aff-n1">Speed N₁ <span class="u">rpm</span></label>
+              <input type="number" id="aff-n1" value="2950" step="any">
+            </div>
+            <div class="field">
+              <label for="aff-n2">New speed N₂ <span class="u">rpm</span></label>
+              <input type="number" id="aff-n2" value="2950" step="any">
+            </div>
+            <div class="field">
+              <label for="aff-d1">Diameter D₁ <span class="u">mm</span></label>
+              <input type="number" id="aff-d1" value="268" step="any">
+            </div>
+            <div class="field">
+              <label for="aff-d2">New diameter D₂ <span class="u">mm</span></label>
+              <input type="number" id="aff-d2" value="257" step="any">
+            </div>
+          </div>
+          <div class="calc-out">
+            <div><div class="o-label">New flow</div><div class="o-value" id="aff-out-q">—</div></div>
+            <div><div class="o-label">New head</div><div class="o-value" id="aff-out-h">—</div></div>
+            <div><div class="o-label">New power</div><div class="o-value" id="aff-out-p">—</div></div>
+            <p class="calc-verdict" id="aff-verdict"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="formula">
+        <p class="eq">Q ∝ r&nbsp;&nbsp;·&nbsp;&nbsp;H ∝ r²&nbsp;&nbsp;·&nbsp;&nbsp;P ∝ r³&nbsp;&nbsp;&nbsp;where r = (N₂⁄N₁) × (D₂⁄D₁)</p>
+        <p class="eq">Trim correction: <b>A</b> = 16.2 + 0.838 × C</p>
+        <p class="fnote">Speed scaling is a true similarity law at constant efficiency. Diameter
+        scaling is applied <strong>by analogy</strong> and is approximate — the error grows with
+        the depth of cut, hence the correction factor, which tells you to cut
+        <em>less</em> than the arithmetic suggests. Trim limits by specific speed, and the volute
+        versus diffuser distinction, are in
+        <a href="operation.html#impeller-trim">Chapter 05</a>.</p>
+      </div>
+
+      <h2 id="specific-and-suction-specific-speed">Specific and suction specific speed</h2>
+
+      <p>Enter metric values; the calculator converts and reports in the conventional
+      <strong>US units (gpm, ft, rpm)</strong> because that is the basis of all the empirical
+      limits.</p>
+
+      <div class="calc" data-calc="nspeed">
+        <div class="calc-head"><h3 id="ns-and-nss">N<sub>s</sub> and N<sub>ss</sub></h3><span class="pill brand">metric in, US out</span></div>
+        <div class="calc-body">
+          <div class="calc-grid">
+            <div class="field">
+              <label for="ns-n">Pump speed <span class="u">rpm</span></label>
+              <input type="number" id="ns-n" value="2950" step="any">
+            </div>
+            <div class="field">
+              <label for="ns-q">Flow at BEP <span class="u">m³/h</span></label>
+              <input type="number" id="ns-q" value="100" step="any">
+            </div>
+            <div class="field">
+              <label for="ns-h">Total head at BEP <span class="u">m</span></label>
+              <input type="number" id="ns-h" value="50" step="any">
+            </div>
+            <div class="field">
+              <label for="ns-stages">Number of stages <span class="u">–</span></label>
+              <input type="number" id="ns-stages" value="1" min="1" step="1">
+            </div>
+            <div class="field">
+              <label for="ns-npshr">NPSH-r at BEP <span class="u">m</span></label>
+              <input type="number" id="ns-npshr" value="3.0" step="any">
+            </div>
+            <div class="field">
+              <label for="ns-double">Double suction impeller?</label>
+              <select id="ns-double">
+                <option value="no" selected>No — single suction</option>
+                <option value="yes">Yes — halve Q for N<sub>ss</sub></option>
+              </select>
+            </div>
+          </div>
+          <div class="calc-out">
+            <div><div class="o-label">N<sub>s</sub> (US)</div><div class="o-value" id="ns-out-ns">—</div></div>
+            <div><div class="o-label">N<sub>s</sub> (metric)</div><div class="o-value" id="ns-out-nsm">—</div></div>
+            <div><div class="o-label">N<sub>ss</sub> (US)</div><div class="o-value" id="ns-out-nss">—</div></div>
+            <p class="calc-verdict" id="ns-verdict"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="formula">
+        <p class="eq"><b>N<sub>s</sub></b> = N√Q ⁄ H<sup>3/4</sup>&nbsp;&nbsp;&nbsp;(H per stage, <strong>no</strong> correction for double suction)</p>
+        <p class="eq"><b>N<sub>ss</sub></b> = N√Q ⁄ (NPSH-r)<sup>3/4</sup>&nbsp;&nbsp;&nbsp;(Q <strong>halved</strong> for double suction)</p>
+        <p class="fnote">The asymmetry is deliberate and catches people out. Conversions used:
+        1 US gpm = 0.2271 m³/h, 1 ft = 0.3048 m, N<sub>s</sub>(metric) = 0.614 × N<sub>s</sub>(US).
+        Significance of each number in
+        <a href="hydraulics.html#specific-speed">Chapter 03</a>; the honest state of the
+        N<sub>ss</sub> 11 000 debate in
+        <a href="selection.html#suction-specific-speed">Chapter 06</a>.</p>
+      </div>
+
+      <h2 id="power-and-motor-sizing">Power and motor sizing</h2>
+
+      <div class="calc" data-calc="power">
+        <div class="calc-head"><h3 id="hydraulic-shaft-and-motor-power">Hydraulic, shaft and motor power</h3><span class="pill brand">metric</span></div>
+        <div class="calc-body">
+          <div class="calc-grid">
+            <div class="field">
+              <label for="pw-q">Flow <span class="u">m³/h</span></label>
+              <input type="number" id="pw-q" value="100" step="any">
+            </div>
+            <div class="field">
+              <label for="pw-h">Differential head <span class="u">m</span></label>
+              <input type="number" id="pw-h" value="50" step="any">
+            </div>
+            <div class="field">
+              <label for="pw-sg">Specific gravity <span class="u">–</span></label>
+              <input type="number" id="pw-sg" value="1.0" step="any">
+            </div>
+            <div class="field">
+              <label for="pw-eta">Pump efficiency <span class="u">%</span></label>
+              <input type="number" id="pw-eta" value="72" step="any">
+            </div>
+            <div class="field">
+              <label for="pw-etam">Motor efficiency <span class="u">%</span></label>
+              <input type="number" id="pw-etam" value="91" step="any">
+            </div>
+          </div>
+          <div class="calc-out">
+            <div><div class="o-label">Hydraulic power</div><div class="o-value" id="pw-out-ph">—</div></div>
+            <div><div class="o-label">Shaft power</div><div class="o-value" id="pw-out-ps">—</div></div>
+            <div><div class="o-label">Motor input</div><div class="o-value" id="pw-out-pm">—</div></div>
+            <div><div class="o-label">Next IEC frame</div><div class="o-value" id="pw-out-motor">—</div></div>
+            <p class="calc-verdict" id="pw-verdict"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="formula">
+        <p class="eq"><b>P<sub>H</sub></b> = (Q × ρ × g × H) ⁄ (3.6 × 10⁶)&nbsp;&nbsp;·&nbsp;&nbsp;<b>P<sub>S</sub></b> = P<sub>H</sub> ⁄ η<sub>p</sub>&nbsp;&nbsp;·&nbsp;&nbsp;<b>P<sub>M</sub></b> = P<sub>S</sub> ⁄ η<sub>m</sub></p>
+        <p class="fnote">Q in m³/h, ρ in kg/m³ (= SG × 1000), g = 9.81 m/s², H in metres of liquid
+        column. <strong>Motor efficiency is not a fixed number</strong> — part-load efficiency is
+        much lower than full-load, so use the manufacturer's efficiency-versus-load table for the
+        actual operating point.</p>
+      </div>
+
+      <div class="note warn">
+        <span class="note-label">Size the driver on the end of the curve</span>
+        <p>The "next IEC frame" suggestion above adds only 10% to the <em>entered</em> duty. For a
+        low specific speed pump with an <strong>overloading P–Q characteristic</strong>, power
+        keeps rising as flow rises — so the driver must be sized on the power at the
+        <strong>end of the curve, around 120% of BEP flow</strong>, not at the rated point.
+        Otherwise the first time the system resistance drops, the motor trips. See
+        <a href="operation.html#operating-above-bep">Chapter 05</a>.</p>
+      </div>
+
+      <h2 id="temperature-rise-at-low-flow">Temperature rise at low flow</h2>
+
+      <p>How long a pump can safely run at closed discharge — which is what sets your minimum-flow
+      bypass requirement and your low-flow trip setting.</p>
+
+      <div class="calc" data-calc="temprise">
+        <div class="calc-head"><h3 id="closed-discharge-temperature-rise">Closed-discharge temperature rise</h3><span class="pill warn">conservative</span></div>
+        <div class="calc-body">
+          <div class="calc-grid">
+            <div class="field">
+              <label for="tr-hp">Shaft power at shut-off <span class="u">kW</span></label>
+              <input type="number" id="tr-hp" value="25" step="any">
+            </div>
+            <div class="field">
+              <label for="tr-vol">Liquid volume in casing <span class="u">litres</span></label>
+              <input type="number" id="tr-vol" value="30" step="any">
+            </div>
+            <div class="field">
+              <label for="tr-cp">Specific heat of liquid <span class="u">–, water = 1.0</span></label>
+              <input type="number" id="tr-cp" value="1.0" step="any">
+            </div>
+            <div class="field">
+              <label for="tr-sg">Specific gravity <span class="u">–</span></label>
+              <input type="number" id="tr-sg" value="1.0" step="any">
+            </div>
+            <div class="field">
+              <label for="tr-allow">Allowable temperature rise <span class="u">°C</span></label>
+              <input type="number" id="tr-allow" value="28" step="any">
+            </div>
+          </div>
+          <div class="calc-out">
+            <div><div class="o-label">Rate of rise</div><div class="o-value" id="tr-out-rate">—</div></div>
+            <div><div class="o-label">Rate of rise</div><div class="o-value" id="tr-out-ratef">—</div></div>
+            <div><div class="o-label">Time to limit</div><div class="o-value" id="tr-out-time">—</div></div>
+            <p class="calc-verdict" id="tr-verdict"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="formula">
+        <p class="eq"><b>T<sub>R</sub></b> = (5.1 × HP) ⁄ (Q<sub>gal</sub> × S<sub>H</sub> × S<sub>G</sub>)&nbsp;&nbsp;&nbsp;[°F/min]</p>
+        <p class="fnote">The underlying relation is in FPS units: HP is brake horsepower at
+        shut-off and Q<sub>gal</sub> is casing volume in US gallons; the calculator converts from
+        the kW and litres you enter. Estimate casing volume geometrically. The equation
+        <strong>neglects heat loss through the casing, so the result is conservative</strong>.</p>
+      </div>
+
+      <div class="note danger">
+        <span class="note-label">Choosing the allowable rise</span>
+        <p><strong>50 °F (28 °C) is the usual maximum.</strong> Use less if that would exceed the
+        casing design temperature, raise vapour pressure into a critical NPSH condition, or cause
+        damaging vaporisation at the seal face. <strong>Boiler feed water is limited to
+        15 °F (8 °C).</strong></p>
+        <p>And the material may set a lower ceiling than flashing does — a polypropylene pump may
+        be limited to 180 °F where the cavitation limit is 210 °F. Mechanical seals, packing,
+        bearings and wear ring tolerances can each dictate a lower figure. Full treatment in
+        <a href="operation.html#operating-below-bep">Chapter 05</a>.</p>
+      </div>
+
+      <h2 id="system-head-curve">System head curve</h2>
+
+      <p>One known design point fixes the loss coefficient, which gives you the whole resistance
+      curve — and tells you whether the system is static- or friction-dominated. That single
+      distinction decides whether variable speed control will save you anything.</p>
+
+      <div class="calc" data-calc="syshead">
+        <div class="calc-head"><h3 id="total-head-at-any-flow">Total head at any flow</h3><span class="pill brand">metric</span></div>
+        <div class="calc-body">
+          <div class="calc-grid">
+            <div class="field">
+              <label for="sh-hst">Static head <span class="u">m</span></label>
+              <input type="number" id="sh-hst" value="30" step="any">
+            </div>
+            <div class="field">
+              <label for="sh-hf">Friction head at design flow <span class="u">m</span></label>
+              <input type="number" id="sh-hf" value="20" step="any">
+            </div>
+            <div class="field">
+              <label for="sh-qd">Design flow <span class="u">m³/h</span></label>
+              <input type="number" id="sh-qd" value="100" step="any">
+            </div>
+            <div class="field">
+              <label for="sh-q">Flow to evaluate <span class="u">m³/h</span></label>
+              <input type="number" id="sh-q" value="120" step="any">
+            </div>
+          </div>
+          <div class="calc-out">
+            <div><div class="o-label">Loss coefficient k</div><div class="o-value" id="sh-out-k">—</div></div>
+            <div><div class="o-label">Friction head</div><div class="o-value" id="sh-out-hf">—</div></div>
+            <div><div class="o-label">Total head</div><div class="o-value" id="sh-out-ht">—</div></div>
+            <p class="calc-verdict" id="sh-verdict"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="formula">
+        <p class="eq"><b>H<sub>t</sub></b> = H<sub>st</sub> + k·Q²&nbsp;&nbsp;&nbsp;where k = H<sub>f,design</sub> ⁄ Q<sub>design</sub>²</p>
+        <p class="fnote">Static head is flow-independent — level difference plus any vessel
+        pressure difference. Friction head goes with the <strong>square</strong> of flow, which is
+        why the curve turns up so sharply and why
+        <a href="operation.html#parallel-operation-similar-curves">parallel pumping disappoints</a>.
+        Equivalent-length method and a full worked example in
+        <a href="hydraulics.html#system-resistance">Chapter 03</a>.</p>
+      </div>
+
+      <h2 id="what-these-calculators-deliberately-do-not-do">What these calculators deliberately do not do</h2>
+
+      <div class="note warn">
+        <span class="note-label">Known limitations — stated plainly</span>
+        <ul style="margin-bottom:0">
+          <li><strong>No viscosity correction.</strong> The Hydraulic Institute correction chart is
+          a graphical lookup of C<sub>Q</sub>, C<sub>H</sub> and C<sub>η</sub> that cannot be
+          reduced to a reliable formula. For fluids above about 2 cP, read the coefficients from
+          the chart and apply them — see
+          <a href="hydraulics.html#viscosity-corrections">Chapter 03</a>.</li>
+          <li><strong>No slurry correction.</strong> Q–H curves for solids-laden liquids
+          <a href="operation.html#liquids-with-considerable-solids">can only be determined by
+          experiment</a>. There is no general chart.</li>
+          <li><strong>No axial thrust or radial load calculation.</strong> Those depend on
+          impeller and casing geometry that only the OEM has, several of the governing variables
+          are indeterminate, and the results would be <a href="forces.html#axial-thrust">approximate
+          at best</a>. Where accurate values matter, they are <em>measured</em>.</li>
+          <li><strong>No friction loss calculation from pipe geometry.</strong> Enter the friction
+          head you have computed from pipe friction tables and equivalent-length nomograms; the
+          system head calculator takes it as an input rather than pretending to derive it.</li>
+          <li><strong>No K<sub>SO</sub> thrust factor lookup.</strong> That is a chart read against
+          specific speed, differing for open and closed impellers.</li>
+        </ul>
+      </div>
+
+      <p>Where a calculation is not here, it is because reducing it to a formula would give a
+      number with false authority. The <a href="formulas.html">formula and data sheet</a> carries
+      every equation in this knowledge base, including those that need a chart or a vendor input
+      to complete.</p>
+
+      <nav class="pager" aria-label="Page navigation">
+<a class="prev" href="../pages/troubleshooting.html"><span class="dir">← Previous</span><span class="ttl">Troubleshooting</span></a>
+<a class="next" href="../pages/formulas.html"><span class="dir">Next →</span><span class="ttl">Formula &amp; data sheet</span></a>
+</nav>
+    </article>
+  </main>
+
+  <aside class="toc"><h2>On this page</h2></aside>
+
+</div>
+
+<footer class="site-footer">
+  <p><strong>Centrifugal Pump Knowledge Base</strong> — engineering reference prepared for Zachry Philippines.
+     Copyright &copy; 2026 Zachry Philippines. All rights reserved.
+     Written as original reference material; it is not a reproduction of any publication.</p>
+  <p>Technical scope and chapter structure follow <em>Practical Centrifugal Pumps: Design, Operation and Maintenance</em>
+     by P. Girdhar &amp; O. Moniz (Newnes/Elsevier, 2005), which remains the recommended full text.
+     Standards referenced (API 610, API 682, ANSI/ASME B73, ISO 5199, Hydraulic Institute) are cited for orientation only —
+     <strong>always design and verify against the current edition of the governing standard and the OEM's own data.</strong>
+     See <a href="../pages/standards.html">Standards &amp; Sources</a>.</p>
+</footer>
+
+<div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search">
+  <div class="search-box">
+    <input type="search" id="search-input" placeholder="Search for cavitation, NPSH, wear ring clearance&hellip;"
+           autocomplete="off" spellcheck="false" aria-label="Search query">
+    <div class="search-results" id="search-results">
+      <p class="search-empty">Type to search every page of the knowledge base.</p>
+    </div>
+    <div class="search-foot">
+      <span><kbd>&uarr;</kbd><kbd>&darr;</kbd> navigate</span>
+      <span><kbd>Enter</kbd> open</span>
+      <span><kbd>Esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>

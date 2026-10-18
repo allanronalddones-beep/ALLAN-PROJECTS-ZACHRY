@@ -1,0 +1,951 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Installation and Commissioning · Centrifugal Pump Knowledge Base</title>
+<meta name="description" content="Siting, foundation design, grouting, alignment, suction and discharge piping rules, pre-operational checks and the start-up sequence — the stage where most of a pump&#x27;s service life">
+<meta name="author" content="Zachry Philippines — Mechanical Engineering">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%230f4c75'/%3E%3Cpath d='M16 7a9 9 0 1 0 9 9h-9z' fill='%23fff'/%3E%3Ccircle cx='16' cy='16' r='2.6' fill='%230f4c75'/%3E%3C/svg%3E">
+
+</head>
+<body data-root="../">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <button class="header-btn nav-toggle" id="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+    <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+      <path d="M2 4h12M2 8h12M2 12h12"/>
+    </svg>
+  </button>
+
+  <a class="brand" href="../index.html">
+    <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      <circle cx="16" cy="16" r="13" stroke="currentColor" stroke-width="2"/>
+      <path d="M16 5a11 11 0 0 1 11 11H16z" fill="currentColor" opacity=".3"/>
+      <path d="M16 16 7.5 10.5M16 16l8.5-5.5M16 16v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="16" cy="16" r="2.8" fill="currentColor"/>
+    </svg>
+    <span class="brand-text">
+      <b>Centrifugal Pumps</b>
+      <span>Engineering Knowledge Base</span>
+    </span>
+  </a>
+
+  <span class="header-spacer"></span>
+
+  <button class="header-btn" id="search-open" aria-label="Search the knowledge base">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+      <circle cx="7" cy="7" r="4.5"/><path d="m10.5 10.5 4 4"/>
+    </svg>
+    <span class="label">Search</span>
+    <span class="header-spacer"></span>
+    <kbd>Ctrl K</kbd>
+  </button>
+
+  <button class="header-btn" id="theme-toggle" aria-label="Toggle theme">
+    <span class="theme-icon" aria-hidden="true">&#9790;</span>
+  </button>
+</header>
+
+<div class="layout has-toc">
+
+  <aside class="sidebar" id="sidebar">
+    <a class="up-link" href="../../index.html">
+      <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+           stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M10 3 5 8l5 5"/>
+      </svg>
+      Rotary Equipment Handbook
+    </a>
+    <nav class="nav-group" aria-label="Main">
+<p class="nav-title">Start here</p>
+<ul class="nav-list">
+<li><a href="../index.html"><span class="nav-num">⌂</span><span>Overview</span></a></li>
+</ul></nav>
+<nav class="nav-group">
+<p class="nav-title">Core reference</p>
+<ul class="nav-list">
+<li><a href="../pages/fundamentals.html"><span class="nav-num">01</span><span>Fundamentals &amp; types</span></a></li>
+<li><a href="../pages/construction.html"><span class="nav-num">02</span><span>Design &amp; construction</span></a></li>
+<li><a href="../pages/hydraulics.html"><span class="nav-num">03</span><span>Hydraulics &amp; NPSH</span></a></li>
+<li><a href="../pages/forces.html"><span class="nav-num">04</span><span>Rotor forces</span></a></li>
+<li><a href="../pages/operation.html"><span class="nav-num">05</span><span>Operation &amp; curves</span></a></li>
+</ul></nav>
+<nav class="nav-group">
+<p class="nav-title">Project lifecycle</p>
+<ul class="nav-list">
+<li><a href="../pages/selection.html"><span class="nav-num">06</span><span>Specification &amp; selection</span></a></li>
+<li><a href="../pages/testing.html"><span class="nav-num">07</span><span>Testing &amp; inspection</span></a></li>
+<li><a href="../pages/installation.html" class="current" aria-current="page"><span class="nav-num">08</span><span>Installation &amp; commissioning</span></a></li>
+<li><a href="../pages/maintenance.html"><span class="nav-num">09</span><span>Maintenance &amp; reliability</span></a></li>
+</ul></nav>
+<nav class="nav-group">
+<p class="nav-title">Field tools</p>
+<ul class="nav-list">
+<li><a href="../pages/troubleshooting.html"><span class="nav-num">10</span><span>Troubleshooting</span></a></li>
+<li><a href="../pages/calculators.html"><span class="nav-num">11</span><span>Calculators</span></a></li>
+<li><a href="../pages/formulas.html"><span class="nav-num">12</span><span>Formula &amp; data sheet</span></a></li>
+</ul></nav>
+<nav class="nav-group">
+<p class="nav-title">Reference</p>
+<ul class="nav-list">
+<li><a href="../pages/glossary.html"><span class="nav-num">13</span><span>Glossary</span></a></li>
+<li><a href="../pages/standards.html"><span class="nav-num">14</span><span>Standards &amp; sources</span></a></li>
+</ul></nav>
+  </aside>
+
+  <main class="main" id="main">
+    <article class="prose">
+      <p class="crumbs"><a href="../index.html">Knowledge base</a> &rsaquo; Project lifecycle &rsaquo; Installation</p>
+      <p class="eyebrow">Chapter 08 · Project lifecycle</p>
+      <h1>Installation and Commissioning</h1>
+      <p class="lede">Siting, foundation design, grouting, alignment, suction and discharge piping rules, pre-operational checks and the start-up sequence — the stage where most of a pump's service life is won or lost.</p>
+      <p>After specification, selection, sizing, inspection and testing, installation is the next
+      key factor in reliable operation. Properly installed, operated and maintained, a pump can
+      give many years of trouble-free service. Incorrectly installed, maintenance and operational
+      problems will impede its performance for its entire life — and no amount of later
+      maintenance recovers what a bad installation costs.</p>
+
+      <p>Installation needs careful preparation and planning, coordinated between the supervising
+      engineer, the mechanical and electrical contractors, and the suppliers. It is a series of
+      steps, and each one has to be right before the next begins.</p>
+
+      <h2 id="site-location">Site location</h2>
+
+      <p>A pre-installation activity. Before the equipment even arrives, layout drawings are
+      available, which allows the site location to be selected and marked out.</p>
+
+      <p><strong>Ergonomics is a prime factor.</strong> Where equipment is accessible for
+      maintenance, technicians perform better and operators activate and control it more
+      efficiently. A pump or motor that is difficult to access and maintain becomes a cause of
+      longer downtime and lower availability. Poor workmanship caused by difficult access leads
+      directly to lower reliability.</p>
+
+      <div class="note danger">
+        <span class="note-label">Safety is the main aspect</span>
+        <p>A difficult site has a higher probability of accidents. Site selection deserves
+        considerable attention and should be done by someone with real practical experience in
+        pump operation and maintenance — not solely from a layout drawing.</p>
+      </div>
+
+      <h2 id="receipt-and-physical-inspection">Receipt and physical inspection</h2>
+
+      <p>Examine all pumps and auxiliary equipment on receipt for signs of apparent damage, and
+      notify any damage found. Where installation is not immediate, store in a clean, dry
+      location protected from damage, following the manufacturer's recommendations and protecting
+      from environmental extremes.</p>
+
+      <p>Check the equipment <em>before</em> storage to anticipate problems at installation time —
+      check sizes, the design features called for on the plans and specifications, and all
+      interface components. These simple early checks minimise installation problems
+      considerably.</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Recommended practices on receipt and in storage</caption>
+          <tbody>
+            <tr><td><strong>Openings</strong></td><td>Keep all nozzles and openings covered or plugged until the piping is attached.</td></tr>
+            <tr><td><strong>Bearings</strong></td><td>Fill bearing housings with oil of the recommended viscosity. For greased bearings, pump in new grease and displace the old.</td></tr>
+            <tr><td><strong>Preservation</strong></td><td>Coat all exposed surfaces with rust preventive. For storage beyond <strong>6 months</strong>, coat the internals too with a suitable rust preventive or oil mist.</td></tr>
+            <tr><td><strong>Packing</strong></td><td>Remove pump packings with sleeves.</td></tr>
+            <tr><td><strong>Mechanical seals</strong></td><td>Handle carefully. <strong>Do not subject to impact or excessive vibration.</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="pre-alignment-checks">Pre-alignment checks</h2>
+
+      <p>If installing immediately after receipt, carry out an <strong>alignment check of the
+      pump with its motor on the baseplate</strong>, to confirm that the final alignment
+      tolerances in the specification are actually achievable. Use a reverse dial indicator or
+      laser alignment method.</p>
+
+      <div class="note ok">
+        <span class="note-label">Why do this before anything is grouted</span>
+        <p>If the specified alignment is not achievable, <strong>there is still time to rectify
+        the fault</strong> — which saves time and money and prevents the quick fixes that get
+        applied when the problem is discovered at the final stage of installation.</p>
+        <p>Once correct alignment is confirmed, the pump and motor can be <strong>removed from
+        the base</strong> to ease installation and prevent damage to critical components.</p>
+      </div>
+
+      <h2 id="pump-foundation">Pump foundation</h2>
+
+      <h3 id="locating-the-foundation">Locating the foundation</h3>
+
+      <p>Once the site location is fixed, locating the foundation is largely fine-tuning to bring
+      it into line with existing equipment, piping and vessels. The site-location factors still
+      apply: allow room for walkways, existing and new piping, operator and technician
+      accessibility, and aesthetics.</p>
+
+      <p>What can usually be altered is the orientation of the pump's face, its proximity to
+      walls, and the height and depth of the foundation.</p>
+
+      <div class="note warn">
+        <span class="note-label">Changing pump height changes the hydraulics</span>
+        <p>If pump height or location is altered, ensure the <strong>operating parameters can
+        still be met — and the prime consideration is the NPSH margin or ratio</strong>. Raising
+        a pump 600 mm to clear a walkway can quietly consume the whole suction margin. Where
+        installation standards or guidelines already exist, obtain the responsible engineer's
+        consent.</p>
+      </div>
+
+      <h3 id="design-and-dimensions">Design and dimensions</h3>
+
+      <p>The foundation has two specific purposes:</p>
+
+      <ol>
+        <li>to <strong>support</strong> the pump so it operates safely;</li>
+        <li>its mass <strong>damps</strong> the pump vibrations.</li>
+      </ol>
+
+      <p>It must provide enough rigidity to absorb the axial, transverse and torsional loads the
+      rotating pump imposes. Proper structural design requires an evaluation of soil conditions so
+      that both dynamic and static forces are considered.</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Foundation design requirements</caption>
+          <tbody>
+            <tr><td><strong>Mass</strong></td><td>At least <strong>three times</strong> the total weight of supported equipment.</td></tr>
+            <tr><td><strong>Isolation</strong></td><td>Rests on solid or stabilised earth, <strong>completely independent</strong> of other foundations, pads, walls or operating platforms.</td></tr>
+            <tr><td><strong>Concrete</strong></td><td>A minimum of <strong>3000 psi</strong> steel-reinforced concrete.</td></tr>
+            <tr><td><strong>Resonance</strong></td><td>Resonant frequency must <strong>not be excitable</strong> by pump operating speed or multiples of it.</td></tr>
+            <tr><td><strong>Common base</strong></td><td>All units — pump, gearbox and motor — rest on a <strong>common foundation</strong>.</td></tr>
+            <tr><td><strong>Thermal</strong></td><td>Designed for <strong>uniform temperatures</strong>, to minimise distortion and misalignment.</td></tr>
+            <tr><td><strong>Seismic</strong></td><td>Designed accounting for regional seismic activity.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>Rules of thumb for dimensions</h4>
+
+      <ul>
+        <li><strong>The 30° rule.</strong> Drop two lines from the pump centre at 30° to the
+        vertical. The <strong>width of the foundation should exceed their spread</strong>.</li>
+        <li><strong>Mass.</strong> Foundation weight at least three times the mass of supported
+        equipment.</li>
+        <li><strong>Edge margin.</strong> For pumps under 500 hp, at least <strong>3 in</strong>
+        between baseplate edge and foundation edge, all the way around. For higher horsepower,
+        <strong>6 in</strong>.</li>
+      </ul>
+
+      <h3 id="excavation-and-forms">Excavation and forms</h3>
+
+      <p>With location, orientation and dimensions fixed, mark the location and excavate a
+      correctly sized cavity to the correct depth. Typical requirements: cement saw, jackhammer,
+      air supply, wheelbarrow, shovels, a small front-end loader, a disposal method for excavated
+      material, and digging permits. Excavation for an average-sized centrifugal pump takes a
+      maximum of about two days.</p>
+
+      <p>Then place the forms — reusable or single use. The forms must be
+      <strong>true, solid, well braced and liquid-tight</strong>. Leak tightness matters
+      particularly because <strong>epoxies seep through small holes far more readily than
+      cement</strong>.</p>
+
+      <p>Once installed, ensure the forms are <strong>level, square and securely fastened</strong>
+      to the floor or ground — the weight of cement and epoxy bears on them and can easily cause a
+      shift. <strong>If the form shifts during pouring, the job has to be terminated and
+      restarted.</strong></p>
+
+      <p>For epoxy pours, coat the <em>insides</em> of the forms with an anti-stick material so
+      the forms can be removed without destroying them. <strong>Wax</strong> is a good anti-stick
+      material: it coats well and the forms can be coated before assembly and installation.</p>
+
+      <h3 id="rebar-and-anchor-bolts">Rebar and anchor bolts</h3>
+
+      <p>Install the rebar and pump hold-down bolts. Rebar ring and post count depends on the
+      foundation dimensions — a 60″ × 60″ × 36″ foundation typically takes
+      <strong>three rings of rebar tied to eight posts</strong>. Rebar is placed several inches
+      from the sides, top and bottom, equally spaced from top and bottom.</p>
+
+      <p>Then the anchor bolts. Length is typically <strong>10 to 15 times the bolt
+      diameter</strong>, which is what gives the bolt enough stretch to develop the design holding
+      force.</p>
+
+      <div class="note danger">
+        <span class="note-label">The anchor bolt failure nobody expects</span>
+        <p>If epoxy grout is allowed to grip the anchor bolt, <strong>the bolt will break at the
+        grout surface even when tightened only to the design torque</strong> — because it cannot
+        stretch. This requirement is met at foundation design stage by using
+        <strong>bolt sleeves</strong> in the concrete.</p>
+        <p>Where sleeves are used, fill them with <strong>non-binding material — sand, flexible
+        foam or wax</strong> — to prevent epoxy bonding to the bolt. The exposed length from the
+        top of the concrete to the bottom of the baseplate can also be wrapped with one layer of
+        weather stripping and one layer of duct tape.</p>
+      </div>
+
+      <h4>Typical ANSI pump anchor bolt detail</h4>
+
+      <p>An acceptable hold-down bolt for most ANSI pumps is a <strong>5/8 in J-bolt mounted in a
+      1½ in pipe</strong>, the pipe at least 6 in long:</p>
+
+      <ul>
+        <li>the J-bolt extends past the top of the pipe by at least the pump base height plus
+        1½ in;</li>
+        <li>it extends past the bottom of the pipe by an inch or two before the "J" bends;</li>
+        <li>a washer is welded to the bottom of the pipe, the J-bolt passes through it, and the
+        J-bolt is then welded to the washer.</li>
+      </ul>
+
+      <p>The bolts must be <strong>true to themselves and with respect to each other</strong>,
+      which is best achieved with a <strong>single bracket securing all the bolts</strong>.</p>
+
+      <h2 id="pouring">Pouring</h2>
+
+      <h3 id="concrete-pour">Concrete pour</h3>
+
+      <p>Pour the concrete mix slowly while stirring the cement — normally from a cement truck,
+      or pumped or wheelbarrowed where a truck cannot reach. Trowel-finish the top of the pad when
+      the cement is ready.</p>
+
+      <div class="note warn">
+        <span class="note-label">Curing must complete before epoxy grout</span>
+        <p>The <strong>epoxy–concrete bond is sensitive to moisture</strong>, which must be
+        prevented at all times. Curing of freshly poured concrete must complete before epoxy
+        grout is applied.</p>
+        <p><strong>Proper method:</strong> run the ASTM 157-80 concrete shrinkage test to
+        determine when shrinkage drops to minimum — that indicates the end of the chemical
+        reaction between cement and water.</p>
+        <p><strong>Rule of thumb in its absence:</strong> standard concrete (5-bag mix) —
+        <strong>28 days</strong>; quick-setting concrete (6–7 bag mix) — <strong>7 days</strong>.</p>
+        <p><strong>Field check:</strong> tape one square foot of plastic sheet over the concrete
+        block and leave overnight. Moisture on the underside means the concrete is
+        <strong>not</strong> ready. Repeat until no moisture appears.</p>
+      </div>
+
+      <h4>Removing laitance</h4>
+
+      <p>Surface preparation begins two to three days after the pour. It may be necessary to chip
+      the top <strong>½″ to 1″</strong> from the foundation surface to remove the cement-rich
+      surface layer called <strong>laitance</strong> — a weak surface created when concrete is
+      cast, which would not provide proper adhesion or support for the grout beneath the
+      baseplate.</p>
+
+      <p>Sand blasting removes laitance and exposes the aggregate. The most common method is to
+      wait for the concrete to cure and then chip the laitance with
+      <strong>light-duty pneumatic hammers</strong>. <strong>Jackhammers and sharp pointed
+      chisels should not be used</strong> — they damage the sound concrete beneath.</p>
+
+      <p>Chamfer all foundation edges <strong>at least 2 to 4 in at 45°</strong> to remove stress
+      concentration. Remove all dust, dirt, chips, oil and water, and cover the foundation.</p>
+
+      <h3 id="full-epoxy-foundation">Full epoxy foundation</h3>
+
+      <p>It is sometimes necessary or advantageous to make the entire foundation from epoxy.
+      Initial cost is higher, but it offers:</p>
+
+      <ul>
+        <li>superior vibration damping;</li>
+        <li>better chemical resistance;</li>
+        <li><strong>faster curing</strong> — epoxy cures in <strong>24 hours</strong>, against
+        7 days minimum even for quick-setting cement, so equipment installation can begin almost
+        immediately.</li>
+      </ul>
+
+      <p>Procedure: mix epoxy parts A (resin) and B (hardener) per instructions. <strong>Mix both
+      parts completely and leave nothing unmixed</strong> — unmixed parts are a hazard needing
+      special disposal, whereas the mixture of the two is not hazardous.</p>
+
+      <p>Add the mixed resin to an empty mortar mixer, then add the aggregate: <strong>pure
+      silica</strong>, some with sand texture and some with pea-gravel texture, at a specific
+      ratio set by ambient conditions. Pure silica is used instead of sand and pea gravel for its
+      <strong>superior heat-sink capability</strong>, and it adds to the overall strength.</p>
+
+      <p>Mix to uniform consistency, <strong>slowly, so no air is entrained</strong> — air is
+      detrimental to pour strength. A <strong>spiral-blade mortar mixer</strong> is best suited.
+      Pour into the hole and repeat until complete. An average-size foundation can be poured in
+      under 4 hours when properly administered. Complete any finishing touches before the epoxy
+      cures.</p>
+
+      <h2 id="baseplate-and-sole-plate-preparation">Baseplate and sole plate preparation</h2>
+
+      <p><strong>Remove all equipment from the baseplate or sole plate before grouting.</strong>
+      This helps level the plate and reduces unwanted distortion. The pump and
+      motor/turbine/engine are mounted after the baseplate has been properly grouted.</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Baseplate preparation checklist</caption>
+          <tbody>
+            <tr>
+              <td><strong>Grout-contact surface</strong></td>
+              <td>Coat with inorganic zinc silicate or a compatible primer. The surface should be <strong>bare or rusted, free of blisters, and not smooth</strong> — a smooth surface will not bond properly with epoxy grout.</td>
+            </tr>
+            <tr>
+              <td><strong>Grout openings</strong></td>
+              <td>At least <strong>one grouting opening in each bulkhead section</strong> and/or each <strong>12 ft²</strong> of base area as a minimum.</td>
+            </tr>
+            <tr>
+              <td><strong>Vent holes</strong></td>
+              <td>At the <strong>corners of each bulkhead compartment</strong>, to ensure no voids form from trapped air. Typically <strong>½ in</strong> diameter.</td>
+            </tr>
+            <tr>
+              <td><strong>Corners</strong></td>
+              <td>Round all baseplate corners to <strong>20 in radius</strong>. Epoxy shrinks as it cures; rounding prevents stress corrosion in the grout. Sharp corners eventually crack the grout.</td>
+            </tr>
+            <tr>
+              <td><strong>Cleanliness</strong></td>
+              <td>Free from oil, grease and rust before placing on the foundation.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 id="levelling">Levelling</h3>
+
+      <p>Rest the baseplate on the foundation supported on <strong>levelling screws, rectangular
+      levelling shims or taper wedges placed close to the foundation bolts</strong> to prevent
+      distortion. Coat levelling screws adequately with grease or wax to prevent epoxy adhesion.</p>
+
+      <div class="specs">
+        <dl class="spec"><dt>Baseplate level tolerance</dt><dd>0.002<small> in per foot</small></dd></dl>
+        <dl class="spec"><dt>Min. shim under driver</dt><dd>1/8<small> in</small></dd></dl>
+        <dl class="spec"><dt>Machined surface overhang</dt><dd>0.1<small> in beyond feet</small></dd></dl>
+      </div>
+
+      <p>Level side-to-side, end-to-end <strong>and diagonally</strong> to within 0.002 in per
+      foot. Machined surfaces must be flat and parallel, and
+      <strong>the mounting surface tolerance must remain the same after the anchor bolts are
+      tightened</strong>. Once level, confirm all wedges and shims are in contact with both
+      baseplate and foundation, tighten the foundation bolts evenly, and <strong>re-check the
+      levels</strong>.</p>
+
+      <h4>Before the grout is poured — four things that are hard to fix later</h4>
+
+      <ol>
+        <li>Check the <strong>elevation of the machined surfaces</strong> to confirm it allows a
+        minimum <strong>1/8 in shim thickness under the driving equipment</strong>.</li>
+        <li>Ensure <strong>eight alignment positioning screws</strong> are provided for positioning
+        the driver. Machined mounting surfaces should extend <strong>0.1 in beyond the pump and
+        driver feet on all sides</strong>.</li>
+        <li>Drill and tap <strong>two holes on the baseplate flanges each side of the anchor-bolt
+        holes</strong> to make provision for 1½ in jack/levelling screws.</li>
+        <li><strong>Grease and insert the coupling guard bolts</strong> into the baseplate. It is
+        difficult to drill and tap those holes once they are filled with epoxy grout.</li>
+      </ol>
+
+      <h2 id="grouting">Grouting</h2>
+
+      <p>Grout is a hardenable material — mortar, concrete or epoxy — placed under and around the
+      baseplate to ensure intimate contact with the foundation. The reasons for grouting:</p>
+
+      <ul>
+        <li>to provide a <strong>uniformly distributed load-bearing surface</strong>;</li>
+        <li>to provide effective <strong>damping</strong> of machinery vibration;</li>
+        <li>to fill cavities and cover projections, eliminating unsafe conditions and improving
+        performance.</li>
+      </ul>
+
+      <p>Two types are in use: <strong>epoxy grout</strong> (resin, hardener and aggregate), and
+      <strong>cement plus a natural or metallic aggregate</strong>.</p>
+
+      <h3 id="epoxy-grout">Epoxy grout</h3>
+
+      <p><strong>Forms.</strong> Lay out heavy-duty forms — <strong>epoxy weighs nearly 2.5 times
+      as much as concrete</strong>. Use ¾ in plywood with adequate bracing. Wax-coat the surfaces
+      that will contact the epoxy, normally <strong>three coats</strong> with sufficient interval
+      between coats for wax penetration and drying. Give the forms a <strong>1 in, 45°
+      chamfer</strong> on the vertical and horizontal edges so mating allows minimum seepage; use
+      a plastic sealant at all joints and at the foundation interface if needed.</p>
+
+      <p><strong>One pour or two.</strong> API-design baseplates require <strong>two-pour</strong>
+      grouts: one to fill the void between concrete and baseplate flanges, and one to fill the void
+      between the baseplate flange and the top of the baseplate. However, if the free surface of
+      the grout at the baseplate flanges is confined 6–7 in higher, the grout level at the top of
+      the baseplate can be filled in <strong>one pour</strong>. A one-pour grout can be
+      accomplished in <strong>45 minutes</strong> and, with curing complete in 24 hours, the forms
+      can be removed — and where ambient temperature is above 25 °C, the pump and driver can be
+      installed as soon as the forms come off. <strong>A two-pour job needs more time and
+      cost.</strong></p>
+
+      <p><strong>Temperature window.</strong> Epoxy grouts have a narrow range for mixing and
+      placement: <strong>10 °C to 35 °C</strong> for best life, flowability and curing. Below that,
+      add low-temperature accelerators and keep the foundation and baseplate heated. Above it,
+      place temporary shades over the baseplate <strong>24 hours before and 48 hours after</strong>
+      the pour.</p>
+
+      <p><strong>Mixing.</strong> Mix in a wheelbarrow with a mortar-mixing hoe, or in a motorised
+      mixer where the grout area is larger (10 units or more) — keeping
+      <strong>blade speed limited to 15 rpm</strong>. For hand mixing use two wheelbarrows to keep
+      a continuous supply to the men pouring. Either way, <strong>mix slowly to prevent froth or
+      air entrapment</strong>, for <strong>3–5 minutes</strong> after adding hardener to resin.
+      <strong>Record the timing of mixing and pouring</strong> and confirm it meets the
+      specification.</p>
+
+      <p><strong>Pouring.</strong> Pour slowly using a large funnel placed about a metre above the
+      baseplate, to provide the force needed to push grout out of the vent holes. A positive
+      displacement pump can perform the same function. As grout overflows from a vent hole, cover
+      it with duct tape and continue filling. Take random grout samples with ambient temperature
+      and location recorded.</p>
+
+      <p><strong>Finishing.</strong> As the epoxy begins to harden, form <strong>domes</strong> so
+      no water accumulates in low areas; remove after 24 hours. Relieve the jackscrews after
+      <strong>3 days</strong>. After full cure, remove the sealing tape and the wedges or shims,
+      and fill the shim holes with <strong>silicone caulking</strong>. Then tighten the anchor
+      bolts to the recommended torque.</p>
+
+      <div class="note field">
+        <span class="note-label">The hammer test for voids</span>
+        <p>Check the grout job by <strong>ringing the baseplate with a hammer</strong>. A good job
+        <strong>sounds like hitting a lead plate</strong>; one with voids <strong>rings like a
+        bell</strong>. This takes two minutes and finds the defect that would otherwise show up
+        as unexplained vibration after commissioning. Any voids detected should be
+        pressure grouted.</p>
+      </div>
+
+      <h3 id="cement-grout">Cement grout</h3>
+
+      <p>The procedure is similar to epoxy. Lay out the forms with the same precautions. Where the
+      foundation is concrete, keep the top surface <strong>saturated with water</strong> for the
+      period recommended by the grout manufacturer, then <strong>remove that water from the top
+      and from boltholes just before placing the grout</strong>.</p>
+
+      <p>Prevent grout entering the anchor bolt sleeves: fill sleeves with a
+      <strong>non-bonding pliable material such as asphalt or silicone rubber moulding
+      compound</strong>, to prevent a water pocket around the bolt. Wrap duct tape around the
+      exposed anchor bolt threads to prevent direct grout contact.</p>
+
+      <p>Temperature requirements are similar to epoxy, but the range must be maintained for a
+      minimum of <strong>24 hours after pouring</strong>. Prepare the grout per instructions with
+      the right amount and quality of <strong>oil-free water</strong>.</p>
+
+      <p><strong>Placement must be rapid and continuous.</strong> Start at one end of the
+      baseplate and work toward the other, to ensure all air is positively vented and no pockets
+      are trapped.</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Cement grout finishing levels</caption>
+          <tbody>
+            <tr><td>Grout cut back</td><td>To the bottom outer edge of the baseplate or sole plate, tapered to the existing concrete.</td></tr>
+            <tr><td>Flange-type support baseplates</td><td>Top of grout at the <strong>top of the flange</strong>.</td></tr>
+            <tr><td>Solid-sided baseplates and sole plates</td><td>Top of grout <strong>1 in above the bottom of the baseplate</strong> or underside of the sole plate.</td></tr>
+            <tr><td>Outside top edges</td><td>Chamfered at <strong>45°</strong>.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>After initial set, trim to the levels shown on the drawings. After complete cure, hammer
+      test for air voids and pressure grout any found. Forms can come out after 24 hours.
+      Levelling shims and wedges may be removed after cure, filling the voids with grout
+      <em>without</em> aggregate.</p>
+
+      <div class="note warn">
+        <span class="note-label">Remove the levelling screws</span>
+        <p>Where levelling screws were used, <strong>remove them after the grout has
+        cured</strong> so the full equipment weight is distributed evenly over the grouted area,
+        then caulk the holes with putty. Leaving them in place means the machine is standing on a
+        few point loads rather than on the grout bed — which defeats the purpose of grouting.</p>
+      </div>
+
+      <p>Finally, tighten the anchor bolts to the right torque. The pump and driver are now ready
+      for installation.</p>
+
+      <h2 id="installing-the-pump-and-driver">Installing the pump and driver</h2>
+
+      <p>Once the grout is cured and the base is clean, remove the bolts used to seal the
+      boltholes and install the pump — which should be in
+      <strong>operation-ready condition</strong> when it goes on the base.</p>
+
+      <p>Place the driver, motor or turbine, at the location shown on the drawings and confirm the
+      <strong>distance between shaft ends (DBSE)</strong>:</p>
+
+      <ul>
+        <li>set DBSE with the pump and driver shafts <strong>pulled toward each other</strong>;</li>
+        <li>for motor drives with <strong>sleeve bearings</strong>, set DBSE with the motor shaft
+        at its <strong>magnetic centre</strong>.</li>
+      </ul>
+
+      <div class="note danger">
+        <span class="note-label">Check rotation before coupling up</span>
+        <p>For an electric motor, confirm the motor is wired correctly for the correct direction
+        of rotation. <strong>This check must be carried out before the equipment is coupled
+        up.</strong> Pumps, seals and magnetic drive bearings can be ruined if operated dry or in
+        reverse.</p>
+        <p>After the rotation check, <strong>de-energise the motor and lock out the
+        breaker</strong>.</p>
+      </div>
+
+      <h3 id="final-alignment">Final alignment</h3>
+
+      <p>Align pump and motor to the final tolerances using a reverse dial gauge or a laser
+      alignment tool.</p>
+
+      <h4>Soft foot</h4>
+
+      <p>This is the stage at which a soft foot condition manifests. Loosen the hold-down bolts
+      <strong>one at a time</strong> and use a dial gauge to record movement between the machine
+      foot and the baseplate or sole plate.</p>
+
+      <div class="specs">
+        <dl class="spec"><dt>Soft foot limit</dt><dd>0.025<small> mm (1 mil)</small></dd></dl>
+      </div>
+
+      <p>Any movement in excess of 1 mil indicates soft foot and must be corrected by adding the
+      required amount of shims under the feet.</p>
+
+      <h4>Thermal growth with a steam turbine driver</h4>
+
+      <p>Alignment with a steam turbine is usually carried out at ambient conditions. When steam is
+      introduced the turbine centreline rises, producing misalignment. Compute the vertical growth
+      and offset for it:</p>
+
+      <div class="formula">
+        <p class="eq">Rise = <b>1.2 mils per inch</b> of height from base to centreline, per 100 °C rise<br>
+        (equivalently <b>1.2 mm per metre</b> of height, per 100 °C rise)</p>
+        <p class="fnote"><strong>Example:</strong> an impulse steam turbine with 130 °C exhaust in
+        a 30 °C ambient is a 100 °C rise. With 12 in from foot base to shaft centreline, the
+        thermal growth is <strong>14.4 mils</strong>.</p>
+      </div>
+
+      <h3 id="then-bolt-the-piping-and-re-check">Then bolt the piping — and re-check</h3>
+
+      <p>After alignment is complete, bolt up the piping associated with the pump and steam
+      turbine. Then <strong>check the alignment again</strong>; it should give similar readings.</p>
+
+      <div class="note danger">
+        <span class="note-label">This is the check that catches pipe strain</span>
+        <p>If the alignment readings have changed after bolting the piping, <strong>investigate
+        the piping and make suitable corrections</strong>. Left unattended, this causes
+        <strong>stress on the pump casing and nozzles</strong> — and it is the root cause behind a
+        great many "unexplained" bearing and seal failures months later.</p>
+      </div>
+
+      <p>Once alignment is approved, drill the support pads for the pumps and drivers at
+      <strong>two locations</strong> for taper dowels. Locate the dowels
+      <strong>preferably at the end carrying the thrust bearings</strong>.</p>
+
+      <h2 id="associated-piping-and-fittings">Associated piping and fittings</h2>
+
+      <p>Piping associated with the pump <strong>must be anchored and supported independently of
+      the pump</strong>. Without adequate anchorage, expansion and contraction of the line
+      transfers forces to the pump casing. Where pipes are not supported, their weight is borne by
+      the pump casing and nozzles, causing them to deflect and crack — and the pump's seal life
+      suffers from the same strain.</p>
+
+      <p>Connections must be carefully aligned <strong>axially, angularly and in length</strong>,
+      and the flange boltholes must be in phase with the pump nozzle holes.</p>
+
+      <div class="note danger">
+        <span class="note-label">The one-minute test for pipe strain</span>
+        <p>Disconnect all the suction and discharge flanges on the pump. <strong>If levers are
+        required to force the pipe flange onto the pump nozzles to facilitate bolting, you can be
+        certain the pump will sooner or later start giving bearing and other
+        problems.</strong></p>
+        <p>This is the single most valuable check in this chapter. It costs nothing and it finds
+        the defect that no amount of subsequent alignment, balancing or bearing replacement will
+        cure.</p>
+      </div>
+
+      <h3 id="suction-inlet-piping">Suction (inlet) piping</h3>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Suction piping rules</caption>
+          <tbody>
+            <tr>
+              <td><strong>Support</strong></td>
+              <td>Piping run and connection fittings properly aligned and <strong>supported separately</strong> to reduce strain on the casing.</td>
+            </tr>
+            <tr>
+              <td><strong>Straight run</strong></td>
+              <td>Straight run leading to the suction nozzle at least <strong>3 to 6 pipe diameters</strong> from the upstream elbow.</td>
+            </tr>
+            <tr>
+              <td><strong>Elbow type</strong></td>
+              <td>Standard type or <strong>long radius</strong>.</td>
+            </tr>
+            <tr>
+              <td><strong>Negative suction</strong></td>
+              <td>All suction piping must be <strong>airtight</strong>.</td>
+            </tr>
+            <tr>
+              <td><strong>Pipe size</strong></td>
+              <td>At least <strong>one commercial size larger</strong> than the pump inlet opening.</td>
+            </tr>
+            <tr>
+              <td><strong>Reducer</strong></td>
+              <td><strong>Eccentric</strong> reducer with the <strong>flat side on top</strong> — so air cannot be trapped in the line. Straight length after the eccentric reducer: <strong>2 pipe diameters</strong>.</td>
+            </tr>
+            <tr>
+              <td><strong>Velocity</strong></td>
+              <td>Sized so liquid velocity is <strong>not more than 2 to 3 m/s</strong>.</td>
+            </tr>
+            <tr>
+              <td><strong>Slope</strong></td>
+              <td>In negative suction, a <strong>continuous rise to the suction inlet</strong>; minimum slope <strong>6 mm per 100 mm</strong>. Not required in flooded suction.</td>
+            </tr>
+            <tr>
+              <td><strong>Isolation valves</strong></td>
+              <td>In negative suction, <strong>no isolation valves recommended</strong>; they may be provided in flooded suction. Even fully open, a valve contributes friction loss and lowers available NPSH — and on a pump with high negative suction lift, NPSH-a is already low.</td>
+            </tr>
+            <tr>
+              <td><strong>Drain and gauge</strong></td>
+              <td>Provide a means to <strong>drain the contents between the suction isolation valves and the pump casing</strong>, and a <strong>tapping for a suction pressure gauge</strong>.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 id="sump-submergence-and-vortexing">Sump, submergence and vortexing</h4>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Submergence and strainer geometry in negative suction</caption>
+          <tbody>
+            <tr>
+              <td><strong>Strainer submergence</strong></td>
+              <td>Minimum depth at least <strong>3 pipe diameters</strong>, measured from the <strong>upper row of holes</strong> of the strainer.</td>
+            </tr>
+            <tr>
+              <td><strong>Strainer to floor</strong></td>
+              <td>Distance between the bottom of the strainer and the sump floor: <strong>2 pipe diameters</strong>.</td>
+            </tr>
+            <tr>
+              <td><strong>Bellmouth / funnel</strong></td>
+              <td>With D = 2d, the optimum distance between the bellmouth rim and the sump bottom is about <strong>0.5 d</strong>. <strong>Larger leads to eddies and vortices.</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Minimum submergence</strong></td>
+              <td>At least <strong>2 d</strong>.</td>
+            </tr>
+            <tr>
+              <td><strong>Strainer area and mesh</strong></td>
+              <td>Suction strainer at least <strong>4 × the suction pipe area</strong>; mesh size must screen out solids that could clog the impeller.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note warn">
+        <span class="note-label">Why vortexing matters</span>
+        <p>Swirling vortices draw <strong>air into the suction pipe</strong>, which interferes
+        with pump performance — and it presents as a baffling intermittent problem because it
+        depends on sump level. The geometry rules above exist to prevent it; they are cheap at
+        design stage and almost impossible to fix afterwards.</p>
+      </div>
+
+      <h3 id="discharge-piping">Discharge piping</h3>
+
+      <ul>
+        <li>Piping run and fittings properly aligned and <strong>supported separately</strong>.</li>
+        <li>Discharge pipe size at least <strong>one commercial size larger</strong> than the pump
+        outlet.</li>
+        <li><strong>Minimise the number of fittings and size changes</strong> to prevent fluid
+        friction losses.</li>
+        <li>Check valve of the <strong>non-slam type</strong>, to prevent hydraulic shock.</li>
+        <li><strong>Isolation valve downstream of the check valve</strong>, so the check valve can
+        be taken out for servicing.</li>
+        <li><strong>Concentric</strong> reducers in the discharge, to minimise friction loss.
+        (Contrast the suction, which takes an eccentric reducer.)</li>
+        <li>A pressure tapping <strong>as close as possible to the pump outlet and before the
+        isolation valve</strong>, to measure shut-off head.</li>
+        <li>A second pressure tapping <strong>downstream of the reducer</strong>, as a good
+        indicator of operating pressure.</li>
+        <li><strong>Expansion joints only after careful piping analysis</strong>, especially where
+        discharge pressures are high.</li>
+      </ul>
+
+      <h2 id="on-site-installation-and-commissioning">On-site installation and commissioning</h2>
+
+      <p>Once the shop tests are witnessed and verified, the pump is disconnected and transported
+      to site for installation and commissioning.</p>
+
+      <div class="note">
+        <span class="note-label">Expect the duty point to differ — and know why</span>
+        <p>Once installed, checked, primed and tested, the pump <strong>may or may not operate at
+        the design point</strong> as calculated. There are several legitimate reasons:</p>
+        <ul style="margin-bottom:0">
+          <li><strong>"As designed" versus "as constructed."</strong> Differences in pipe runs,
+          number of bends, or quality of fittings change the frictional resistance the pump must
+          overcome — up or down — moving the operating point away from the design point.</li>
+          <li><strong>Over-generous friction allowance at design stage.</strong> Too much
+          allowance for H<sub>f</sub> means the pump selected is <strong>oversized</strong>, and
+          it will operate off the performance curve or far to the right of BEP.</li>
+          <li><strong>Change in fluid properties.</strong></li>
+          <li><strong>Anomalies introduced between shop test and site</strong> — wrong impeller
+          size, wrong pump speed, incorrect direction of rotation.</li>
+        </ul>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Commissioning acceptance of the system resistance evaluation</caption>
+          <thead>
+            <tr><th class="num">Measured deviation from design point</th><th>Verdict on the total system resistance H<sub>ts</sub></th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="num">Within ±2.5%</td><td><span class="pill ok">Good</span> The evaluation of H<sub>ts</sub> is considered good.</td></tr>
+            <tr><td class="num">Within ±5%</td><td><span class="pill warn">Satisfactory</span> The evaluation is considered satisfactory.</td></tr>
+            <tr><td class="num">Greater than 5%</td><td><span class="pill danger">Investigate</span> The system needs to be checked out.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>It is always good practice to have the <strong>pump manufacturer's representative
+      involved</strong> at installation, testing and commissioning.</p>
+
+      <p><strong>Commissioning test logs</strong>, similar to those drawn up at the shop test,
+      must be filled in and held on record as part of the offer and acceptance protocol. Based on
+      the operating point at commissioning, the <strong>system resistance curve must be developed
+      and drawn up</strong> for the pump and system. These documents are what you will refer to
+      later when verifying pump and system performance — they are the baseline for every
+      performance check in <a href="maintenance.html">Chapter 09</a>.</p>
+
+      <h2 id="pre-operational-checks">Pre-operational checks</h2>
+
+      <p>Mainly focused on the auxiliary systems.</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Pre-operational checklist</caption>
+          <tbody>
+            <tr>
+              <td><strong>Double mechanical seals</strong> (back-to-back, external pressurised sealant)</td>
+              <td><strong>Flush and clean the lines before connecting them to the pump.</strong> If the casing is pressurised, check the sealant supply pressure is <strong>1–1.5 kg/cm² above casing pressure</strong> — lower pressure can cause the inner seal to open up and contaminate the process fluid.</td>
+            </tr>
+            <tr>
+              <td><strong>Tandem mechanical seals</strong></td>
+              <td>The overhead reservoir providing thermosyphon circulation for the outboard seal must be <strong>thoroughly cleaned by oil flush</strong> before connecting to the pump.</td>
+            </tr>
+            <tr>
+              <td><strong>Cooling water</strong></td>
+              <td>Flush all cooling water lines to pumps and turbines. <strong>Confirm supply and return lines are connected to the correct headers.</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Bearing lubrication</strong></td>
+              <td>Drain bearing housings of their oil and refill with <strong>fresh oil of correct viscosity</strong>. <strong>Verify oil reaches all bearings.</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Oil mist systems</strong></td>
+              <td>Must be up and running for almost <strong>12 hours before start-up</strong>. Oil mist piping must slope <strong>toward the equipment</strong> with no sags or low spots.</td>
+            </tr>
+            <tr>
+              <td><strong>Re-confirm</strong></td>
+              <td>Direction of rotation of the motor · over-speed trip setting of a steam turbine · greasing of the coupling · <strong>earthing of equipment</strong>.</td>
+            </tr>
+            <tr>
+              <td><strong>Separate lube oil system</strong></td>
+              <td>Where the pump and turbine have one, <strong>all alarms and trips must be checked and tested</strong>.</td>
+            </tr>
+            <tr>
+              <td><strong>Final mechanical</strong></td>
+              <td><strong>Rotate the pump by hand and look for any rubs.</strong> Place the coupling guard and tighten the bolts.</td>
+            </tr>
+            <tr>
+              <td><strong>Electrical</strong></td>
+              <td>Inform the electrical department to energise.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="preparation-for-start-up">Preparation for start-up</h2>
+
+      <p>The sequence from here:</p>
+
+      <ol>
+        <li>Open the <strong>pump suction valve slowly</strong> and check all joints for
+        leakage.</li>
+        <li>Open the pump casing to <strong>vent any vapour</strong>. This can be tricky with
+        flashing hydrocarbons, so it has to be done several times.</li>
+        <li>If the pumping temperature is high, <strong>allow the pump to warm up</strong>. For
+        multistage pumps with long rotors, it is a good idea to <strong>keep rotating the rotor
+        180° every 30 minutes</strong> while warming — otherwise the rotor sags and bows.</li>
+        <li>Open the sealant and cooling water lines and <strong>ensure circulation</strong>.</li>
+        <li><strong>Discharge valve position depends on the pump type</strong>: kept
+        <strong>closed</strong> for low specific speed pumps, <strong>open</strong> for higher
+        specific speed pumps. This prevents overloading the motor drive — see
+        <a href="operation.html#how-specific-speed-shapes-the-curves">Chapter 05</a>.</li>
+        <li>Confirm the electrical supply has been energised.</li>
+        <li><strong>Start the pump.</strong></li>
+      </ol>
+
+      <h2 id="pump-in-operation">Pump in operation</h2>
+
+      <div class="table-wrap">
+        <table>
+          <caption>First-run checks and their acceptance</caption>
+          <tbody>
+            <tr>
+              <td><strong>Discharge pressure</strong></td>
+              <td>Check it is along expected lines. <strong>If the pressure does not come up, the most probable reason is improper priming</strong> — stop the pump and re-prime. On a low specific speed pump, the discharge pressure <em>falls</em> as the discharge valve is opened, which is normal.</td>
+            </tr>
+            <tr>
+              <td><strong>Flow rate</strong></td>
+              <td>Confirm.</td>
+            </tr>
+            <tr>
+              <td><strong>Vibration</strong></td>
+              <td>Take measurements of the <strong>entire train</strong> with a data collector. Record overall <em>and</em> filtered readings, and <strong>record and store the frequency plots</strong>. Study them for possible defects. Because overall vibration varies with the operating point, <strong>record readings and frequency plots at 4 or 5 operating points including the normal and rated points</strong> — this is your vibration baseline for the life of the machine.</td>
+            </tr>
+            <tr>
+              <td><strong>Seal leakage</strong></td>
+              <td>Confirm. Some leakage in the initial stages is possible and may settle down after wear-in.</td>
+            </tr>
+            <tr>
+              <td><strong>Bearing temperature</strong></td>
+              <td>Pump and motor/turbine bearings <strong>no more than 10–20 °C above ambient</strong>. Higher indicates a bearing in distress — <em>unless</em> they are greased, in which case the most probable cause is <strong>over-greasing</strong>. A vibration or shock pulse analysis confirms it; if so, wait 24 hours and allow the excess grease to work out.</td>
+            </tr>
+            <tr>
+              <td><strong>Performance check</strong></td>
+              <td>Once steady state is achieved, carry out a performance check and determine the efficiency. <strong>Plot it on the pump characteristic curves</strong> — this is the commissioning baseline for all future <a href="maintenance.html#performance-monitoring">performance monitoring</a>.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note field">
+        <span class="note-label">Shutdown — and a free test</span>
+        <p>When the trial is complete, <strong>shut the discharge valve partially and switch off
+        the motor</strong>. Then <strong>keep an eye on any reverse rotation of the pump</strong>.
+        That observation is a free functional check of the <strong>non-return valve</strong>: if
+        the pump turns backward, the NRV is passing. Given what the
+        <a href="operation.html#abnormal-operation-the-complete-characteristic">reverse rotation
+        quadrant</a> can do to a machine, it is worth the thirty seconds.</p>
+      </div>
+
+      <nav class="pager" aria-label="Page navigation">
+<a class="prev" href="../pages/testing.html"><span class="dir">← Previous</span><span class="ttl">Testing &amp; inspection</span></a>
+<a class="next" href="../pages/maintenance.html"><span class="dir">Next →</span><span class="ttl">Maintenance &amp; reliability</span></a>
+</nav>
+    </article>
+  </main>
+
+  <aside class="toc"><h2>On this page</h2></aside>
+
+</div>
+
+<footer class="site-footer">
+  <p><strong>Centrifugal Pump Knowledge Base</strong> — engineering reference prepared for Zachry Philippines.
+     Copyright &copy; 2026 Zachry Philippines. All rights reserved.
+     Written as original reference material; it is not a reproduction of any publication.</p>
+  <p>Technical scope and chapter structure follow <em>Practical Centrifugal Pumps: Design, Operation and Maintenance</em>
+     by P. Girdhar &amp; O. Moniz (Newnes/Elsevier, 2005), which remains the recommended full text.
+     Standards referenced (API 610, API 682, ANSI/ASME B73, ISO 5199, Hydraulic Institute) are cited for orientation only —
+     <strong>always design and verify against the current edition of the governing standard and the OEM's own data.</strong>
+     See <a href="../pages/standards.html">Standards &amp; Sources</a>.</p>
+</footer>
+
+<div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search">
+  <div class="search-box">
+    <input type="search" id="search-input" placeholder="Search for cavitation, NPSH, wear ring clearance&hellip;"
+           autocomplete="off" spellcheck="false" aria-label="Search query">
+    <div class="search-results" id="search-results">
+      <p class="search-empty">Type to search every page of the knowledge base.</p>
+    </div>
+    <div class="search-foot">
+      <span><kbd>&uarr;</kbd><kbd>&darr;</kbd> navigate</span>
+      <span><kbd>Enter</kbd> open</span>
+      <span><kbd>Esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rotary Equipment Handbook · Zachry Philippines</title>
+<meta name="description" content="Engineering references for rotary equipment — pumps, compressors, turbines and fans.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f4c75'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%23fff' stroke-width='2.4'/%3E%3Ccircle cx='16' cy='16' r='1.8' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#f6f7f9; --raised:#fff; --sunken:#eceef2;
+  --text:#16202c; --muted:#5a6675; --faint:#8794a3;
+  --border:#d9dee5; --border-hi:#b9c2cd;
+  --brand:#0f4c75; --brand-soft:#e4eef6;
+  --ok:#1d6b45; --ok-soft:#e3f3ea; --warn:#8a6400; --warn-soft:#fbf2d8;
+  --shadow:0 2px 6px rgba(16,28,44,.08),0 6px 20px rgba(16,28,44,.08);
+  --sans:"Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:"Cascadia Mono","SF Mono",Consolas,"Liberation Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#11151b; --raised:#171d25; --sunken:#0c1015;
+  --text:#dde3ea; --muted:#9aa7b6; --faint:#6e7d8d;
+  --border:#2a3440; --border-hi:#3c4857;
+  --brand:#4ea3dd; --brand-soft:#17293a;
+  --ok:#5cc08c; --ok-soft:#14291e; --warn:#d9b44a; --warn-soft:#2b2512;
+  --shadow:0 2px 6px rgba(0,0,0,.4),0 6px 20px rgba(0,0,0,.3);
+}}
+:root[data-theme="dark"]{
+  --bg:#11151b; --raised:#171d25; --sunken:#0c1015;
+  --text:#dde3ea; --muted:#9aa7b6; --faint:#6e7d8d;
+  --border:#2a3440; --border-hi:#3c4857;
+  --brand:#4ea3dd; --brand-soft:#17293a;
+  --ok:#5cc08c; --ok-soft:#14291e; --warn:#d9b44a; --warn-soft:#2b2512;
+  --shadow:0 2px 6px rgba(0,0,0,.4),0 6px 20px rgba(0,0,0,.3);
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);
+  font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+header.top{border-bottom:1px solid var(--border);background:var(--raised)}
+.top-in{display:flex;align-items:center;gap:12px;height:58px}
+.back{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;
+  color:var(--muted);text-decoration:none}
+.back:hover{color:var(--brand)}
+.spacer{flex:1}
+#theme{display:grid;place-items:center;width:34px;height:34px;border:1px solid var(--border);
+  border-radius:6px;background:var(--raised);color:var(--muted);cursor:pointer;font-size:14px}
+#theme:hover{border-color:var(--border-hi);color:var(--text)}
+.hero{padding:48px 0 4px}
+.eyebrow{display:inline-block;margin-bottom:11px;padding:3px 11px;border-radius:100px;
+  background:var(--brand-soft);color:var(--brand);font-size:11.5px;font-weight:700;
+  letter-spacing:.055em;text-transform:uppercase}
+h1{margin:0 0 13px;font-size:clamp(26px,3.6vw,36px);line-height:1.17;letter-spacing:-.02em}
+.lede{margin:0;max-width:64ch;font-size:17px;line-height:1.6;color:var(--muted)}
+h2{margin:46px 0 6px;padding-top:17px;border-top:1px solid var(--border);
+  font-size:13px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--faint)}
+.sec-note{margin:0 0 18px;font-size:14px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:15px}
+.tool{display:flex;flex-direction:column;padding:19px;border:1px solid var(--border);
+  border-radius:11px;background:var(--raised);text-decoration:none;color:inherit;
+  transition:border-color .15s,transform .15s,box-shadow .15s}
+a.tool:hover{border-color:var(--brand);transform:translateY(-2px);box-shadow:var(--shadow)}
+.tool.soon{opacity:.7;cursor:default}
+.tool-top{display:flex;align-items:center;margin-bottom:10px}
+.badge{margin-left:auto;padding:2.5px 9px;border-radius:100px;font-size:10.5px;font-weight:700;
+  letter-spacing:.045em;text-transform:uppercase}
+.badge.live{background:var(--ok-soft);color:var(--ok)}
+.badge.soon{background:var(--warn-soft);color:var(--warn)}
+.k{font-family:var(--mono);font-size:11.5px;font-weight:700;color:var(--brand);
+  letter-spacing:.04em}
+.tool h3{margin:0 0 7px;font-size:16px;font-weight:650;line-height:1.3}
+.tool p{margin:0;font-size:13.5px;line-height:1.55;color:var(--muted)}
+footer{margin-top:60px;border-top:1px solid var(--border);background:var(--raised)}
+footer .wrap{padding-top:24px;padding-bottom:28px}
+footer p{margin:0;font-size:12.5px;line-height:1.6;color:var(--faint);max-width:88ch}
+@media (max-width:600px){.wrap{padding:0 16px}.grid{grid-template-columns:1fr}.hero{padding:34px 0 4px}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="back" href="../index.html">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+           stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M10 3 5 8l5 5"/>
+      </svg>
+      Engineering Tools Database
+    </a>
+    <span class="spacer"></span>
+    <button id="theme" aria-label="Toggle theme" title="Toggle theme">&#9790;</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">Discipline handbook</p>
+    <h1>Rotary Equipment Handbook</h1>
+    <p class="lede">Engineering references for rotating machinery — the machines that move
+    fluid and the failure modes they share. Pumps first; compressors, turbines and fans to
+    follow.</p>
+  </section>
+
+  <h2>Available now</h2>
+  <p class="sec-note">Published and ready to use.</p>
+
+  <div class="grid">
+    <a class="tool" href="centrifugal-pumps/index.html">
+      <div class="tool-top">
+        <span class="k">01</span>
+        <span class="badge live">Live</span>
+      </div>
+      <h3>Centrifugal Pumps</h3>
+      <p>Fifteen pages covering hydraulics and NPSH, construction, rotor forces, specification,
+      testing, installation and maintenance — with a field troubleshooting guide, six
+      calculators and a printable formula sheet.</p>
+    </a>
+  </div>
+
+  <h2>Planned</h2>
+  <p class="sec-note">Not published yet.</p>
+
+  <div class="grid">
+    <div class="tool soon">
+      <div class="tool-top"><span class="k">02</span><span class="badge soon">Planned</span></div>
+      <h3>Centrifugal Compressors</h3>
+      <p>Surge and stall, polytropic head, anti-surge control, seal gas systems.</p>
+    </div>
+    <div class="tool soon">
+      <div class="tool-top"><span class="k">03</span><span class="badge soon">Planned</span></div>
+      <h3>Steam &amp; Gas Turbines</h3>
+      <p>Governing, overspeed protection, thermal growth and alignment, condition monitoring.</p>
+    </div>
+    <div class="tool soon">
+      <div class="tool-top"><span class="k">04</span><span class="badge soon">Planned</span></div>
+      <h3>Fans &amp; Blowers</h3>
+      <p>Fan laws, system effect, inlet box and damper control, vibration limits.</p>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Rotary Equipment Handbook &mdash; part of the
+       <a href="../index.html">Engineering Tools Database</a>, Zachry Philippines.
+       Copyright &copy; 2026 Zachry Philippines. All rights reserved.
+       These are engineering references, not design codes or specifications.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var r = document.documentElement, K = 'zachry-tools-theme', btn = document.getElementById('theme');
+  function get(){ try { return localStorage.getItem(K); } catch(e){ return null; } }
+  function paint(m){
+    if (m === 'light' || m === 'dark') r.setAttribute('data-theme', m);
+    else r.removeAttribute('data-theme');
+    var dark = m === 'dark' || (!m && window.matchMedia &&
+               window.matchMedia('(prefers-color-scheme: dark)').matches);
+    btn.textContent = dark ? '☀' : '☾';
+  }
+  paint(get());
+  btn.addEventListener('click', function(){
+    var dark = r.getAttribute('data-theme') === 'dark' ||
+      (!r.hasAttribute('data-theme') && window.matchMedia &&
+       window.matchMedia('(prefers-color-scheme: dark)').matches);
+    var next = dark ? 'light' : 'dark';
+    try { localStorage.setItem(K, next); } catch(e){}
+    paint(next);
+  });
+})();
+</script>
+</body>
+</html>
