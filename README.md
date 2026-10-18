@@ -125,10 +125,14 @@ rebuilds and republishes the site, usually within a minute or two. Progress is o
 **keep it there**, or folders and files beginning with an underscore will stop being
 served.
 
-The workflow runs `actions/configure-pages` with `enablement: true`, so it switches Pages
-on by itself and there is **no Settings → Pages step to do by hand**. If the site is ever
-down, re-run the workflow from the Actions tab rather than changing the Pages settings —
-the Source there should read *GitHub Actions*.
+**Pages has to be switched on once, by hand:** Settings → Pages → Source: **GitHub
+Actions**. The workflow cannot do this for you — creating a Pages site is an admin-level
+API call and a workflow's `GITHUB_TOKEN` never holds admin rights. After that one step,
+every push republishes automatically and the Pages settings should not need touching
+again.
+
+If the site goes down, re-run the workflow from the Actions tab before changing any
+setting.
 
 ---
 
