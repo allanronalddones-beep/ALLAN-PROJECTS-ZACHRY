@@ -1,0 +1,49 @@
+name: Deploy to GitHub Pages
+
+# Publishes the whole repository root as a static site.
+#
+# `configure-pages` runs with `enablement: true`, so this workflow switches
+# GitHub Pages on by itself the first time it runs. That is deliberate: it
+# removes the manual Settings -> Pages step, which is easy to leave unsaved,
+# and it means the site can never drift out of step with `main`.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:          # lets you re-run it by hand from the Actions tab
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never let two deploys race. Queue them instead of cancelling, so a push
+# landing mid-deploy still ends up published.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Configure Pages (enabling it if it is off)
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Upload the site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # the repository root — .nojekyll keeps GitHub from running Jekyll
+          path: .
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

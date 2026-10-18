@@ -116,11 +116,19 @@ own [README](rotary-equipment-handbook/centrifugal-pumps/README.md).
 
 ## GitHub Pages
 
-Served from the repository root of branch `main`. `.nojekyll` at the root is what stops
-GitHub trying to process the files with Jekyll — **keep it there**, or folders and files
-beginning with an underscore will stop being served.
+Served from the repository root of branch `main`, deployed by the workflow in
+[`.github/workflows/pages.yml`](.github/workflows/pages.yml). Every push to `main`
+rebuilds and republishes the site, usually within a minute or two. Progress is on the
+**Actions** tab.
 
-Settings → Pages → Source: *Deploy from a branch* · Branch: `main` · Folder: `/ (root)`
+`.nojekyll` at the root is what stops GitHub trying to process the files with Jekyll —
+**keep it there**, or folders and files beginning with an underscore will stop being
+served.
+
+The workflow runs `actions/configure-pages` with `enablement: true`, so it switches Pages
+on by itself and there is **no Settings → Pages step to do by hand**. If the site is ever
+down, re-run the workflow from the Actions tab rather than changing the Pages settings —
+the Source there should read *GitHub Actions*.
 
 ---
 
