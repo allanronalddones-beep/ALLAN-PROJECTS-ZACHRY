@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Electrical — Rotating Equipment General Reference</title>
+<meta name="description" content="Electric motors, cooling and mounting codes, insulation and efficiency classes, starting methods, motor tests, hazardous area classification, explosion protection, IP and NEMA ratings.">
+<link rel="stylesheet" href="assets/reference.css">
+</head>
+<body data-base="">
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="brand" href="index.html">Rotating Equipment <span>General Reference</span></a>
+    <span class="chapter-badge">Chapter 11</span>
+    <span class="spacer"></span>
+    <div class="search-wrap">
+      <input type="search" id="site-search" placeholder="Search sections…  (press /)" autocomplete="off" aria-label="Search the reference">
+      <div class="search-results" id="search-results" role="listbox"></div>
+    </div>
+  </div>
+</header>
+
+<main class="layout">
+
+  <h1 class="page-title">11 &nbsp;Electrical</h1>
+  <p class="page-sub">Motors, their ratings and tests, hazardous area classification, and enclosure protection.</p>
+
+  <nav class="toc" aria-label="Chapter contents">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#s11-1"><span class="t-no">11.1</span> Electric motors</a>
+        <ol>
+          <li><a href="#s11-1-1"><span class="t-no">11.1.1</span> Types</a></li>
+          <li><a href="#s11-1-2"><span class="t-no">11.1.2</span> Speed and slip</a></li>
+          <li><a href="#s11-1-3"><span class="t-no">11.1.3</span> Cooling and mounting codes</a></li>
+          <li><a href="#s11-1-4"><span class="t-no">11.1.4</span> Insulation and temperature rise</a></li>
+          <li><a href="#s11-1-5"><span class="t-no">11.1.5</span> Efficiency classes</a></li>
+          <li><a href="#s11-1-6"><span class="t-no">11.1.6</span> Starting</a></li>
+        </ol>
+      </li>
+      <li><a href="#s11-2"><span class="t-no">11.2</span> Motor tests</a></li>
+      <li><a href="#s11-3"><span class="t-no">11.3</span> Power sources and voltage selection</a></li>
+      <li><a href="#s11-4"><span class="t-no">11.4</span> Hazardous area classification</a></li>
+      <li><a href="#s11-5"><span class="t-no">11.5</span> Explosion protection concepts</a></li>
+      <li><a href="#s11-6"><span class="t-no">11.6</span> Reading the marking</a></li>
+      <li><a href="#s11-7"><span class="t-no">11.7</span> IP ratings</a></li>
+      <li><a href="#s11-8"><span class="t-no">11.8</span> NEMA enclosure types</a></li>
+      <li><a href="#s11-9"><span class="t-no">11.9</span> IP and NEMA compared</a></li>
+      <li><a href="#s11-10"><span class="t-no">11.10</span> Sources</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="s11-1"><span class="sec-no">11.1</span>Electric motors</h2>
+
+  <h3 id="s11-1-1"><span class="sec-no">11.1.1</span>Types</h3>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 11.1-1 — Motor types in rotating equipment service</caption>
+      <thead><tr><th scope="col">Type</th><th scope="col">Characteristics</th><th scope="col">Typical application</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Squirrel cage induction</th><td>Rugged, no brushes, cheap, slip-dependent speed</td><td><strong>The default.</strong> The overwhelming majority of pump and compressor drives.</td></tr>
+        <tr><th scope="row">Wound rotor induction</th><td>External rotor resistance gives high starting torque at low current</td><td>High-inertia loads; largely displaced by VFDs</td></tr>
+        <tr><th scope="row">Synchronous</th><td>Exact speed, adjustable power factor, can supply reactive power</td><td>Large low-speed drives, power factor correction. Pulsating torque during start.</td></tr>
+        <tr><th scope="row">Permanent magnet synchronous</th><td>Highest efficiency, compact</td><td>Increasingly used with VFDs; high-speed direct drive</td></tr>
+        <tr><th scope="row">DC</th><td>Simple wide speed control</td><td>Legacy only — superseded by AC with VFD</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 id="s11-1-2"><span class="sec-no">11.1.2</span>Speed and slip</h3>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <msub><mi>N</mi><mtext>s</mtext></msub><mo>=</mo>
+      <mfrac><mrow><mn>120</mn><mo>⁢</mo><mi>f</mi></mrow><mi>p</mi></mfrac>
+      <mspace width="2.5em"/>
+      <mi>s</mi><mo>=</mo>
+      <mfrac><mrow><msub><mi>N</mi><mtext>s</mtext></msub><mo>−</mo><mi>N</mi></mrow><msub><mi>N</mi><mtext>s</mtext></msub></mfrac>
+    </mrow></math>
+  </div>
+
+  <div class="where">
+    <dl>
+      <dt>N<sub>s</sub></dt><dd>synchronous speed, rpm</dd>
+      <dt>f</dt><dd>supply frequency, Hz</dd>
+      <dt>p</dt><dd>number of poles</dd>
+      <dt>s</dt><dd>slip, fraction — typically 0.01 to 0.05 at full load</dd>
+    </dl>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 11.1-2 — Synchronous speeds</caption>
+      <thead><tr><th scope="col" class="num">Poles</th><th scope="col" class="num">50 Hz (rpm)</th><th scope="col" class="num">60 Hz (rpm)</th></tr></thead>
+      <tbody>
+        <tr><td class="num">2</td><td class="num">3000</td><td class="num">3600</td></tr>
+        <tr><td class="num">4</td><td class="num">1500</td><td class="num">1800</td></tr>
+        <tr><td class="num">6</td><td class="num">1000</td><td class="num">1200</td></tr>
+        <tr><td class="num">8</td><td class="num">750</td><td class="num">900</td></tr>
+        <tr><td class="num">10</td><td class="num">600</td><td class="num">720</td></tr>
+        <tr><td class="num">12</td><td class="num">500</td><td class="num">600</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>The Philippines runs at 60 Hz.</strong>
+    A 4-pole motor turns 1800 rpm synchronous, roughly 1770 rpm loaded. Equipment and curves from 50 Hz practice must be corrected — see the affinity-law consequences in §4.3. A 50 Hz-wound motor energised at 60 Hz will also be over-fluxed or under-torqued depending on whether the voltage is scaled with frequency; check the nameplate for a dual rating before assuming it is usable.
+  </div>
+
+  <h3 id="s11-1-3"><span class="sec-no">11.1.3</span>Cooling and mounting codes</h3>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 11.1-3 — IEC 60034-6 cooling (IC) codes and NEMA equivalents</caption>
+      <thead><tr><th scope="col">IC code</th><th scope="col">Description</th><th scope="col">NEMA term</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">IC 01</th><td>Open, free circulation, internal fan</td><td>ODP — open drip proof</td></tr>
+        <tr><th scope="row">IC 410</th><td>Totally enclosed, frame surface cooled, no fan</td><td>TENV — totally enclosed non-ventilated</td></tr>
+        <tr><th scope="row">IC 411</th><td>Totally enclosed, frame surface cooled, shaft-mounted fan</td><td><strong>TEFC</strong> — the industrial workhorse</td></tr>
+        <tr><th scope="row">IC 416</th><td>Totally enclosed, frame surface cooled, separately driven fan</td><td>TEBC / TEFC-BC — for variable-speed duty</td></tr>
+        <tr><th scope="row">IC 611</th><td>Totally enclosed, air-to-air heat exchanger</td><td>TEAAC / CACA</td></tr>
+        <tr><th scope="row">IC 81W</th><td>Totally enclosed, air-to-water heat exchanger</td><td>TEWAC / CACW</td></tr>
+        <tr><th scope="row">IC 666</th><td>Totally enclosed, separate forced ventilation from a duct</td><td>Pipe-ventilated</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>A shaft-mounted fan stops cooling when the motor slows.</strong>
+    An IC 411 (TEFC) motor on a VFD loses cooling capacity roughly in proportion to speed while still carrying torque. Below about 50 % speed at full torque it overheats. Constant-torque variable-speed duty requires IC 416 — a separately driven, constant-speed blower. This is one of the most common and most expensive VFD retrofit mistakes.
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 11.1-4 — IEC 60034-7 mounting (IM) codes, common arrangements</caption>
+      <thead><tr><th scope="col">IM code</th><th scope="col">Arrangement</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">IM B3</th><td>Horizontal, foot mounted, two end shields</td></tr>
+        <tr><th scope="row">IM B5</th><td>Horizontal, flange mounted (large flange), no feet</td></tr>
+        <tr><th scope="row">IM B35</th><td>Horizontal, foot mounted with flange</td></tr>
+        <tr><th scope="row">IM B14</th><td>Horizontal, face mounted (small flange)</td></tr>
+        <tr><th scope="row">IM V1</th><td>Vertical, shaft down, flange mounted — <strong>vertical pumps</strong></td></tr>
+        <tr><th scope="row">IM V3</th><td>Vertical, shaft up, flange mounted</td></tr>
+        <tr><th scope="row">IM V5</th><td>Vertical, shaft down, foot mounted to a wall</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Vertical motors carry the pump thrust.</strong>
+    An IM V1 motor for a vertical pump needs a thrust bearing rated for the hydraulic down-thrust plus rotor weight, and often a non-reverse ratchet to stop backward rotation when the pump is shut down against a full column. Both are purchase-order items, not standard features.
+  </div>
+
+  <h3 id="s11-1-4"><span class="sec-no">11.1.4</span>Insulation and temperature rise</h3>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 11.1-5 — Insulation classes and permitted rise (40 °C ambient, measured by resistance, service factor 1.0)</caption>
+      <thead>
+        <tr><th scope="col">Class</th><th scope="col" class="num">Max. hot-spot temperature</th><th scope="col" class="num">Permitted rise</th><th scope="col" class="num">Hot-spot allowance</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">A</th><td class="num">105 °C</td><td class="num">60 K</td><td class="num">5 K</td></tr>
+        <tr><th scope="row">E</th><td class="num">120 °C</td><td class="num">75 K</td><td class="num">5 K</td></tr>
+        <tr><th scope="row">B</th><td class="num">130 °C</td><td class="num">80 K</td><td class="num">10 K</td></tr>
+        <tr><th scope="row">F</th><td class="num">155 °C</td><td class="num">105 K</td><td class="num">10 K</td></tr>
+        <tr><th scope="row">H</th><td class="num">180 °C</td><td class="num">125 K</td><td class="num">15 K</td></tr>
+        <tr><th scope="row">N</th><td class="num">200 °C</td><td class="num">—</td><td class="num">—</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>"Class F insulation with Class B rise" is the standard industrial specification, and it is not redundancy for its own sake.</strong>
+    The motor is built with Class F material (155 °C capability) but guaranteed not to exceed Class B rise (80 K). That 25 K margin roughly quadruples insulation life — as a rule of thumb, insulation life halves for every 10 K of continuous over-temperature. It also absorbs voltage unbalance, high ambient and harmonic heating. Specify it.
+  </div>
+
+  <div class="warn">
+    <strong>Ambient above 40 °C must be stated on the datasheet.</strong>
+    The rise limits above assume a 40 °C ambient. A motor in a Philippine plant room at 50 °C has 10 K less headroom and must be derated or specified for the higher ambient. Vendors do not assume a tropical ambient unless told.
+  </div>
+
+  <h3 id="s11-1-5"><span class="sec-no">11.1.5</span>Efficiency classes</h3>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 11.1-6 — IEC 60034-30-1 efficiency classes</caption>
+      <thead><tr><th scope="col">Class</th><th scope="col">Designation</th><th scope="col">Comment</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">IE1</th><td>Standard efficiency</td><td>Withdrawn from sale in many jurisdictions</td></tr>
+        <tr><th scope="row">IE2</th><td>High efficiency</td><td>Roughly equivalent to NEMA Energy Efficient</td></tr>
+        <tr><th scope="row">IE3</th><td>Premium efficiency</td><td>Roughly equivalent to NEMA Premium. Common minimum requirement.</td></tr>
+        <tr><th scope="row">IE4</th><td>Super premium efficiency</td><td></td></tr>
+        <tr><th scope="row">IE5</th><td>Ultra premium efficiency</td><td>Typically permanent magnet or synchronous reluctance</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Efficiency is a lifecycle argument, not a purchase-price argument.</strong>
+    A continuously running motor consumes its purchase price in electricity within months. Two efficiency points on a 500 kW motor running 8000 h/year is roughly 80 MWh per year. The payback on the premium is normally measured in months.
+  </div>
+
+  <h3 id="s11-1-6"><span class="sec-no">11.1.6</span>Starting</h3>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 11.1-7 — Starting methods</caption>
+      <thead>
+        <tr><th scope="col">Method</th><th scope="col" class="num">Starting current</th><th scope="col" class="num">Starting torque</th><th scope="col">Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Direct on line (DOL)</th><td class="num">6 – 8 × FLC</td><td class="num">100 %</td><td>Simplest and cheapest. Limited by supply capacity and voltage dip.</td></tr>
+        <tr><th scope="row">Star–delta</th><td class="num">⅓ of DOL</td><td class="num">⅓ of DOL</td><td>Cheap reduced-voltage start. Transition transient can be severe. Only for low starting-torque loads.</td></tr>
+        <tr><th scope="row">Autotransformer</th><td class="num">(tap)² × DOL</td><td class="num">(tap)² × DOL</td><td>Selectable taps — typically 50, 65, 80 %. Better torque per ampere than star–delta.</td></tr>
+        <tr><th scope="row">Soft starter</th><td class="num">2 – 4 × FLC</td><td>Reduced, ramped</td><td>Smooth, adjustable, controls mechanical shock. No speed control once running.</td></tr>
+        <tr><th scope="row">Variable frequency drive</th><td class="num">≈ 1 × FLC</td><td class="num">Up to 150 %+</td><td>Full torque at low current, plus speed control. Most expensive; brings harmonics and bearing-current issues.</td></tr>
+        <tr><th scope="row">Reactor</th><td>Reduced</td><td>Reduced as current²</td><td>Simple, robust, used on large MV motors</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>Torque falls as the square of voltage.</strong>
+    Any reduced-voltage start reduces torque by the square of the voltage ratio. A star–delta start gives one third of the torque. If the load needs more than that to accelerate — a loaded screw compressor, a high-inertia fan — the motor will stall at part speed, draw locked-rotor current and trip or burn. Check the load torque-speed curve against the motor's reduced-voltage curve, with the actual voltage dip, before selecting the method.
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 11.1-8 — NEMA MG 1 design letters</caption>
+      <thead><tr><th scope="col">Design</th><th scope="col">Starting torque</th><th scope="col">Starting current</th><th scope="col" class="num">Slip</th><th scope="col">Application</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">A</th><td>Normal</td><td>High</td><td class="num">&lt; 5 %</td><td>Rare; machine tools</td></tr>
+        <tr><th scope="row">B</th><td>Normal</td><td>Normal</td><td class="num">&lt; 5 %</td><td><strong>The standard</strong> — pumps, fans, compressors</td></tr>
+        <tr><th scope="row">C</th><td>High</td><td>Normal</td><td class="num">&lt; 5 %</td><td>Loaded starts — conveyors, positive displacement pumps</td></tr>
+        <tr><th scope="row">D</th><td>Very high</td><td>Low</td><td class="num">5 – 13 %</td><td>High-inertia, high-shock — punch presses, hoists</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Voltage drop on starting</h3>
+
+  <div class="note">
+    <strong>Rule of thumb.</strong>
+    Starting voltage dip at the motor terminals is normally limited to about 15 % (85 % retained), and the dip at the common busbar to about 10 %, so that other running motors are not dragged down and contactors do not drop out. A motor that is large relative to the supply transformer will violate this on DOL and forces a reduced-voltage method. The calculation needs the source impedance, so it belongs to the electrical engineer — but the mechanical engineer should raise it when the motor exceeds roughly 15–20 % of the transformer rating.
+  </div>
+
+  <h2 id="s11-2"><span class="sec-no">11.2</span>Motor tests</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 11.2-1 — Routine tests, carried out on every motor</caption>
+      <thead><tr><th scope="col">Test</th><th scope="col">Purpose</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Winding resistance</th><td>Baseline for temperature-rise calculation; detects connection faults</td></tr>
+        <tr><th scope="row">Insulation resistance and polarisation index</th><td>Winding insulation condition and dryness</td></tr>
+        <tr><th scope="row">High voltage (dielectric) withstand</th><td>Insulation integrity at (2 × rated + 1000) V typically</td></tr>
+        <tr><th scope="row">No-load running</th><td>Current, losses, mechanical soundness</td></tr>
+        <tr><th scope="row">Locked rotor (or reduced-voltage equivalent)</th><td>Starting current and torque characteristics</td></tr>
+        <tr><th scope="row">Vibration</th><td>Against IEC 60034-14 or NEMA MG 1 Part 7 limits</td></tr>
+        <tr><th scope="row">Bearing temperature</th><td>Verifies bearing fit and lubrication</td></tr>
+        <tr><th scope="row">Direction of rotation and phase sequence</th><td>Avoids reverse running on site</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 11.2-2 — Type and optional tests, specified where justified</caption>
+      <thead><tr><th scope="col">Test</th><th scope="col">Purpose</th><th scope="col">When to specify</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Temperature rise (heat run)</th><td>Demonstrates the guaranteed rise class at full load</td><td>Critical or large motors; whenever Class B rise is guaranteed</td></tr>
+        <tr><th scope="row">Efficiency and power factor</th><td>Verifies guarantees</td><td>Where efficiency is contractually guaranteed</td></tr>
+        <tr><th scope="row">Overspeed</th><td>Mechanical integrity at 120 % speed</td><td>Two-pole and variable-speed machines</td></tr>
+        <tr><th scope="row">Surge comparison</th><td>Detects turn-to-turn insulation weakness</td><td>Form-wound MV machines (API 541)</td></tr>
+        <tr><th scope="row">Partial discharge / tan δ</th><td>Insulation system quality, baseline for condition monitoring</td><td>MV machines, critical service</td></tr>
+        <tr><th scope="row">Sound pressure level</th><td>Noise compliance</td><td>Where a site noise limit applies</td></tr>
+        <tr><th scope="row">Bearing insulation resistance</th><td>Verifies shaft-current protection</td><td>VFD-fed and large machines</td></tr>
+        <tr><th scope="row">String test</th><td>Motor run coupled to the driven machine</td><td>Critical unspared trains</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>Specify bearing insulation on VFD-fed motors.</strong>
+    A VFD's fast switching produces common-mode voltage that discharges through the bearings, pitting and fluting the raceways and destroying them in months. The standard countermeasures are an insulated non-drive-end bearing, a shaft grounding ring, and output filtering. None of these are fitted unless specified, and the failure looks like a lubrication problem, so it is often misdiagnosed and repeated.
+  </div>
+
+  <h2 id="s11-3"><span class="sec-no">11.3</span>Power sources and voltage selection</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 11.3-1 — Typical motor voltage by rating</caption>
+      <thead><tr><th scope="col">Motor rating</th><th scope="col">Typical voltage</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Up to ~150 kW</th><td>400 V / 415 V (50 Hz) · 460 V / 480 V (60 Hz)</td></tr>
+        <tr><th scope="row">150 kW – 4 MW</th><td>3.3 kV, 4.16 kV, 6.6 kV</td></tr>
+        <tr><th scope="row">Above ~4 MW</th><td>6.6 kV, 11 kV, 13.8 kV</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 11.3-2 — Philippine supply characteristics</caption>
+      <thead><tr><th scope="col">Parameter</th><th scope="col">Value</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Frequency</th><td>60 Hz</td></tr>
+        <tr><th scope="row">LV distribution</th><td>230 V single phase; 230 V, 400 V and 480 V three phase in industrial plant</td></tr>
+        <tr><th scope="row">MV distribution</th><td>13.8 kV and 34.5 kV commonly</td></tr>
+        <tr><th scope="row">Governing code</th><td>Philippine Electrical Code (PEC), derived from NFPA 70 (NEC)</td></tr>
+        <tr><th scope="row">Hazardous area philosophy</th><td>Class/Division per the NEC lineage, though Zone methods appear on internationally engineered projects</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>Expect both systems on the same site.</strong>
+    Philippine practice follows the NEC through the PEC, while much imported process equipment arrives IEC-marked. Both appear in the same plant and even the same package. Section 11.9 covers the translation, and §11.4 the trap in the gas group lettering.
+  </div>
+
+  <h2 id="s11-4"><span class="sec-no">11.4</span>Hazardous area classification</h2>
+
+  <h3>Zones and Divisions</h3>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 11.4-1 — IEC/ATEX Zones against NEC Divisions</caption>
+      <thead><tr><th scope="col">IEC Zone (gas)</th><th scope="col">Definition</th><th scope="col">NEC Division</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Zone 0</th><td>Explosive atmosphere present continuously, or for long periods, or frequently</td><td rowspan="2">Division 1</td></tr>
+        <tr><th scope="row">Zone 1</th><td>Likely to occur in normal operation occasionally</td></tr>
+        <tr><th scope="row">Zone 2</th><td>Not likely in normal operation, and if it does occur, only briefly</td><td>Division 2</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>The three-zone system is finer than the two-division system.</strong>
+    Division 1 covers both Zone 0 and Zone 1. A conversion from Zone to Division is therefore conservative and straightforward; converting Division 1 to a Zone requires a judgement about which zone actually applies. Dust has a parallel scheme: Zones 20, 21, 22 against Class II Divisions 1 and 2.
+  </div>
+
+  <h3>Gas groups — the lettering trap</h3>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 11.4-2 — Gas groups, IEC against NEC</caption>
+      <thead>
+        <tr><th scope="col">IEC group</th><th scope="col">Representative gas</th><th scope="col">NEC group</th><th scope="col">Hazard severity</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">II C</th><td>Hydrogen</td><td><strong>B</strong></td><td rowspan="2">Most easily ignited</td></tr>
+        <tr><th scope="row">II C</th><td>Acetylene</td><td><strong>A</strong></td></tr>
+        <tr><th scope="row">II B</th><td>Ethylene</td><td><strong>C</strong></td><td>Intermediate</td></tr>
+        <tr><th scope="row">II A</th><td>Propane, methane (surface)</td><td><strong>D</strong></td><td>Least</td></tr>
+        <tr><th scope="row">I</th><td>Methane — underground mining only</td><td>—</td><td>Separate scheme</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>The letters run in opposite directions.</strong>
+    IEC <strong>IIC</strong> is the most hazardous group; NEC Group <strong>C</strong> is intermediate. IEC <strong>IIA</strong> is the least hazardous; NEC Group <strong>A</strong> is the most. Reading "Group C" on a nameplate and assuming it covers hydrogen because IIC does is a genuine and dangerous error. Always check which scheme the nameplate is using — the IEC form is written "II C", with the Roman numeral.
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 11.4-3 — Dust and fibre groups</caption>
+      <thead><tr><th scope="col">IEC</th><th scope="col">Material</th><th scope="col">NEC</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">III A</th><td>Combustible flyings</td><td>Class III</td></tr>
+        <tr><th scope="row">III B</th><td>Non-conductive dust</td><td>Class II Group F (carbonaceous), G (other)</td></tr>
+        <tr><th scope="row">III C</th><td>Conductive dust</td><td>Class II Group E (metal dust)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Temperature classes</h3>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 11.4-4 — Temperature classes (IEC and NEC share the T numbering)</caption>
+      <thead><tr><th scope="col">Class</th><th scope="col" class="num">Max. surface temperature</th><th scope="col">Example gases requiring it or better</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">T1</th><td class="num">450 °C</td><td>Methane, hydrogen, ammonia</td></tr>
+        <tr><th scope="row">T2</th><td class="num">300 °C</td><td>Ethylene, butane, ethanol</td></tr>
+        <tr><th scope="row">T3</th><td class="num">200 °C</td><td>Hexane, petrol, diesel, H₂S</td></tr>
+        <tr><th scope="row">T4</th><td class="num">135 °C</td><td>Acetaldehyde, diethyl ether</td></tr>
+        <tr><th scope="row">T5</th><td class="num">100 °C</td><td>—</td></tr>
+        <tr><th scope="row">T6</th><td class="num">85 °C</td><td>Carbon disulfide</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Lower T number means a hotter permitted surface.</strong>
+    Equipment marked T4 is suitable wherever T1, T2 or T3 is required, because its surface stays cooler. The rule is: the equipment's T class number must be <em>equal to or higher than</em> the number demanded by the gas. T4 equipment satisfies a T3 requirement; T3 equipment does not satisfy T4.
+  </div>
+
+  <div class="note">
+    <strong>Equipment Protection Levels.</strong>
+    Modern IEC practice adds an EPL suffix expressing the protection afforded: <strong>Ga, Gb, Gc</strong> for gas and <strong>Da, Db, Dc</strong> for dust. Zone 0 needs Ga, Zone 1 needs Gb or better, Zone 2 needs Gc or better. The EPL has largely replaced reasoning directly from the zone when selecting equipment.
+  </div>
+
+  <h2 id="s11-5"><span class="sec-no">11.5</span>Explosion protection concepts</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 11.5-1 — IEC 60079 protection concepts</caption>
+      <thead>
+        <tr><th scope="col">Mark</th><th scope="col">Concept</th><th scope="col">Principle</th><th scope="col">Standard</th><th scope="col">Zone</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Ex d</th><td>Flameproof enclosure</td><td>Contains an internal explosion and cools escaping gases through flame paths so they cannot ignite the surroundings</td><td>60079-1</td><td>1, 2</td></tr>
+        <tr><th scope="row">Ex e</th><td>Increased safety</td><td>Construction measures prevent arcs, sparks and hot surfaces arising at all</td><td>60079-7</td><td>1, 2</td></tr>
+        <tr><th scope="row">Ex ia</th><td>Intrinsic safety</td><td>Energy limited below that needed for ignition — safe with two faults</td><td>60079-11</td><td><strong>0</strong>, 1, 2</td></tr>
+        <tr><th scope="row">Ex ib</th><td>Intrinsic safety</td><td>Safe with one fault</td><td>60079-11</td><td>1, 2</td></tr>
+        <tr><th scope="row">Ex ic</th><td>Intrinsic safety</td><td>Safe in normal operation</td><td>60079-11</td><td>2</td></tr>
+        <tr><th scope="row">Ex p</th><td>Pressurisation</td><td>Internal overpressure of clean air or inert gas keeps the atmosphere out</td><td>60079-2</td><td>1, 2</td></tr>
+        <tr><th scope="row">Ex m</th><td>Encapsulation</td><td>Components potted in compound</td><td>60079-18</td><td>0, 1, 2 by subdivision</td></tr>
+        <tr><th scope="row">Ex o</th><td>Oil immersion</td><td>Parts immersed in oil</td><td>60079-6</td><td>1, 2</td></tr>
+        <tr><th scope="row">Ex q</th><td>Powder filling</td><td>Enclosure filled with quartz powder</td><td>60079-5</td><td>1, 2</td></tr>
+        <tr><th scope="row">Ex ec</th><td>Increased safety, level c</td><td>Zone 2 equivalent of Ex e; replaced the former Ex nA</td><td>60079-7</td><td>2</td></tr>
+        <tr><th scope="row">Ex s</th><td>Special protection</td><td>Assessed individually against the general requirements</td><td>60079-33</td><td>By assessment</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 11.5-2 — Which concept for a motor</caption>
+      <thead><tr><th scope="col">Zone</th><th scope="col">Common motor protection</th><th scope="col">Notes</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Zone 1</th><td>Ex d or Ex de</td><td>Flameproof frame, often with an Ex e terminal box (the "de" combination)</td></tr>
+        <tr><th scope="row">Zone 1</th><td>Ex e</td><td>Increased safety. Requires a certified thermal protection device and a stated t<sub>E</sub> time.</td></tr>
+        <tr><th scope="row">Zone 1</th><td>Ex p</td><td>Large MV machines — purged and pressurised</td></tr>
+        <tr><th scope="row">Zone 2</th><td>Ex ec (formerly Ex nA)</td><td>Non-sparking. Much cheaper than Ex d.</td></tr>
+        <tr><th scope="row">Zone 0</th><td>—</td><td>Motors are not installed in Zone 0</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>The t<sub>E</sub> time on an Ex e motor is a protection setting, not a data-sheet curiosity.</strong>
+    t<sub>E</sub> is the time the stalled motor takes to reach its limiting temperature from rated running temperature. The overload protection must trip within t<sub>E</sub> at locked-rotor current, and the relay must be certified for the duty. An Ex e motor with a conventional thermal overload set by rule of thumb is not protected.
+  </div>
+
+  <div class="warn">
+    <strong>Never open an Ex d enclosure in a live hazardous area, and never damage a flame path.</strong>
+    An Ex d enclosure's safety depends entirely on the gap and length of its machined flame paths. Scratching a flange face, substituting a bolt with one of lower grade or shorter engagement, adding paint to the joint, or using the wrong gasket all defeat the protection. Flame-path faces are protected with a thin smear of approved grease, never sealant.
+  </div>
+
+  <h2 id="s11-6"><span class="sec-no">11.6</span>Reading the marking</h2>
+
+  <p>A typical IEC/ATEX motor marking:</p>
+
+  <div class="eq" style="font-family:var(--font-mono); font-size:1.05rem; text-align:center;">
+    II 2G &nbsp; Ex db eb IIB+H2 T4 Gb
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 11.6-1 — Marking decoded</caption>
+      <thead><tr><th scope="col">Element</th><th scope="col">Meaning</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">II</th><td>Equipment group II — surface industry (not mining)</td></tr>
+        <tr><th scope="row">2G</th><td>ATEX category 2, Gas — suitable for Zone 1</td></tr>
+        <tr><th scope="row">Ex</th><td>Explosion protected</td></tr>
+        <tr><th scope="row">db</th><td>Flameproof enclosure, EPL b</td></tr>
+        <tr><th scope="row">eb</th><td>Increased safety, EPL b — applies to the terminal box</td></tr>
+        <tr><th scope="row">IIB+H2</th><td>Gas group IIB plus hydrogen — IIB equipment additionally qualified for hydrogen</td></tr>
+        <tr><th scope="row">T4</th><td>Maximum surface temperature 135 °C</td></tr>
+        <tr><th scope="row">Gb</th><td>Equipment Protection Level Gb — Zone 1</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Also on the plate, and also mandatory.</strong>
+    The certificate number, the certifying body, the ambient temperature range (an <strong>X</strong> suffix on the certificate number signals special conditions of use that must be read), and for Ex e motors the t<sub>E</sub> time and I<sub>A</sub>/I<sub>N</sub> ratio. An "X" you have not read is an unverified installation.
+  </div>
+
+  <h2 id="s11-7"><span class="sec-no">11.7</span>IP ratings</h2>
+
+  <p>IEC 60529. Two digits: ingress of solids, then ingress of water.</p>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 11.7-1 — First digit: protection against solid objects</caption>
+      <thead><tr><th scope="col" class="num">Digit</th><th scope="col">Protection</th></tr></thead>
+      <tbody>
+        <tr><td class="num">0</td><td>No protection</td></tr>
+        <tr><td class="num">1</td><td>Objects larger than 50 mm — back of the hand</td></tr>
+        <tr><td class="num">2</td><td>Objects larger than 12.5 mm — a finger</td></tr>
+        <tr><td class="num">3</td><td>Objects larger than 2.5 mm — a tool</td></tr>
+        <tr><td class="num">4</td><td>Objects larger than 1 mm — a wire</td></tr>
+        <tr><td class="num">5</td><td>Dust protected — ingress not entirely prevented but not enough to interfere</td></tr>
+        <tr><td class="num">6</td><td>Dust tight</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 11.7-2 — Second digit: protection against water</caption>
+      <thead><tr><th scope="col" class="num">Digit</th><th scope="col">Protection</th></tr></thead>
+      <tbody>
+        <tr><td class="num">0</td><td>No protection</td></tr>
+        <tr><td class="num">1</td><td>Vertically falling drips</td></tr>
+        <tr><td class="num">2</td><td>Drips, enclosure tilted up to 15°</td></tr>
+        <tr><td class="num">3</td><td>Spraying water up to 60° from vertical</td></tr>
+        <tr><td class="num">4</td><td>Splashing water from any direction</td></tr>
+        <tr><td class="num">5</td><td>Water jets from any direction (6.3 mm nozzle)</td></tr>
+        <tr><td class="num">6</td><td>Powerful water jets (12.5 mm nozzle)</td></tr>
+        <tr><td class="num">7</td><td>Temporary immersion, 1 m for 30 min</td></tr>
+        <tr><td class="num">8</td><td>Continuous immersion, conditions agreed with the manufacturer</td></tr>
+        <tr><td class="num">9 / 9K</td><td>High pressure, high temperature jets</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 11.7-3 — Common IP ratings in plant</caption>
+      <thead><tr><th scope="col">Rating</th><th scope="col">Typical use</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">IP 21 / IP 23</th><td>Indoor switchgear, drip-proof motors in a building</td></tr>
+        <tr><th scope="row">IP 54</th><td>General indoor industrial; dust protected and splash proof</td></tr>
+        <tr><th scope="row">IP 55</th><td><strong>The usual outdoor motor minimum.</strong> Dust protected, jet proof.</td></tr>
+        <tr><th scope="row">IP 56</th><td>Exposed outdoor, wash-down, marine deck</td></tr>
+        <tr><th scope="row">IP 65 / IP 66</th><td>Dust tight; junction boxes, field instruments, offshore</td></tr>
+        <tr><th scope="row">IP 67 / IP 68</th><td>Submersible — sump and borehole equipment</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>IP66 does not imply IP67.</strong>
+    The water digits are <em>not</em> fully cumulative. Resistance to powerful jets (6) does not demonstrate resistance to immersion (7), because they are different tests. Equipment qualified for both is marked with both, as "IP66/IP67".
+  </div>
+
+  <h2 id="s11-8"><span class="sec-no">11.8</span>NEMA enclosure types</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 11.8-1 — NEMA 250 enclosure types</caption>
+      <thead><tr><th scope="col">Type</th><th scope="col">Location</th><th scope="col">Protects against</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">1</th><td>Indoor</td><td>Contact with live parts; falling dirt</td></tr>
+        <tr><th scope="row">2</th><td>Indoor</td><td>Type 1 plus dripping and light splashing</td></tr>
+        <tr><th scope="row">3</th><td>Outdoor</td><td>Windblown dust, rain, sleet, snow; undamaged by external ice formation</td></tr>
+        <tr><th scope="row">3R</th><td>Outdoor</td><td>Falling dirt, rain, sleet, snow; ice. No windblown dust requirement.</td></tr>
+        <tr><th scope="row">3S</th><td>Outdoor</td><td>As Type 3, and external mechanisms remain operable when ice-laden</td></tr>
+        <tr><th scope="row">3X / 3RX / 3SX</th><td>Outdoor</td><td>As above, with added corrosion resistance</td></tr>
+        <tr><th scope="row">4</th><td>Indoor or outdoor</td><td>Windblown dust and rain, splashing water, <strong>hose-directed water</strong>; ice</td></tr>
+        <tr><th scope="row">4X</th><td>Indoor or outdoor</td><td>Type 4 plus corrosion resistance. <strong>The standard coastal / offshore choice.</strong></td></tr>
+        <tr><th scope="row">5</th><td>Indoor</td><td>Settling airborne dust, lint, fibres, dripping water</td></tr>
+        <tr><th scope="row">6</th><td>Indoor or outdoor</td><td>Hose-directed water and <strong>occasional temporary submersion</strong> at limited depth</td></tr>
+        <tr><th scope="row">6P</th><td>Indoor or outdoor</td><td>Type 6 plus <strong>prolonged submersion</strong> at limited depth; corrosion resistance</td></tr>
+        <tr><th scope="row">12 / 12K</th><td>Indoor</td><td>Circulating dust, falling dirt, dripping non-corrosive liquids. 12K has knockouts.</td></tr>
+        <tr><th scope="row">13</th><td>Indoor</td><td>Dust, spraying water, oil and non-corrosive coolant</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Type 4X is the one to remember for the Philippines.</strong>
+    Coastal, humid, salt-laden air with heavy rainfall is exactly the duty Type 4X (or IP66 with a suitable material and coating) addresses. The corrosion resistance comes from the enclosure material — 316 stainless or a suitable non-metallic — not from the type designation alone.
+  </div>
+
+  <h2 id="s11-9"><span class="sec-no">11.9</span>IP and NEMA compared</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 11.9-1 — Approximate NEMA to IP correspondence</caption>
+      <thead><tr><th scope="col">NEMA Type</th><th scope="col">Meets at least</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">1</th><td>IP 10</td></tr>
+        <tr><th scope="row">2</th><td>IP 11</td></tr>
+        <tr><th scope="row">3 / 3S</th><td>IP 54</td></tr>
+        <tr><th scope="row">3R</th><td>IP 14</td></tr>
+        <tr><th scope="row">4 / 4X</th><td>IP 56</td></tr>
+        <tr><th scope="row">5</th><td>IP 52</td></tr>
+        <tr><th scope="row">6 / 6P</th><td>IP 67</td></tr>
+        <tr><th scope="row">12 / 12K</th><td>IP 52</td></tr>
+        <tr><th scope="row">13</th><td>IP 54</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>The conversion only runs one way.</strong>
+    A NEMA type can be said to <em>meet or exceed</em> the corresponding IP rating. The reverse is not true. NEMA 250 tests things the IP code does not address at all — corrosion resistance, the effect of external ice formation, oil and coolant exposure, and gasket ageing. An enclosure marked IP66 has not been shown to meet Type 4X, and substituting one for the other on a coastal site is how stainless requirements get quietly lost.
+  </div>
+
+  <h2 id="s11-10"><span class="sec-no">11.10</span>Sources</h2>
+
+  <ul>
+    <li>IEC 60034-1, <em>Rotating electrical machines — Rating and performance</em>.</li>
+    <li>IEC 60034-5, degrees of protection for rotating machines; IEC 60034-6, cooling methods (IC code); IEC 60034-7, mounting arrangements (IM code); IEC 60034-14, mechanical vibration.</li>
+    <li>IEC 60034-30-1, <em>Efficiency classes of line operated AC motors (IE code)</em>.</li>
+    <li>IEC 60529, <em>Degrees of protection provided by enclosures (IP Code)</em>.</li>
+    <li>IEC 60079 series, <em>Explosive atmospheres</em> — Part 0 general, Part 1 (Ex d), Part 2 (Ex p), Part 5 (Ex q), Part 6 (Ex o), Part 7 (Ex e, Ex ec), Part 10-1 and 10-2 (area classification), Part 11 (Ex i), Part 14 (installation design), Part 15, Part 18 (Ex m), Part 33 (Ex s).</li>
+    <li>Directive 2014/34/EU (ATEX) — equipment groups and categories.</li>
+    <li>NEMA MG 1, <em>Motors and Generators</em> — design letters, vibration, efficiency.</li>
+    <li>NEMA 250, <em>Enclosures for Electrical Equipment (1000 Volts Maximum)</em>.</li>
+    <li>NFPA 70, <em>National Electrical Code</em>, Articles 500–506; NFPA 497 for classification of Class I locations.</li>
+    <li>Philippine Electrical Code (PEC) — the governing installation code in the Philippines.</li>
+    <li>API Standard 541, form-wound squirrel cage induction motors 375 kW and larger; API 546, brushless synchronous machines; API 547, general-purpose form-wound motors.</li>
+    <li>IEEE 112, <em>Standard Test Procedure for Polyphase Induction Motors and Generators</em>.</li>
+  </ul>
+
+  <p>Correspondence tables between IEC and North American schemes are approximate guides for interpretation. Equipment suitability in any hazardous area must be established from the certificate and the area classification drawing, never from a conversion table.</p>
+
+  <nav class="prev-next">
+    <span><a href="ch10-heat-exchangers.html">← Ch 10 · Heat Exchanger</a></span>
+    <span><a href="ch12-trade-terms.html">Ch 12 · Trade Terms →</a></span>
+  </nav>
+
+</main>
+
+<footer class="foot">
+  <p><strong>Rotating Equipment General Reference</strong> — Chapter 11, Electrical.</p>
+  <p>Independently written from public standards &mdash; see <a href="index.html#provenance">provenance</a> and <a href="NOTICE.md">NOTICE.md</a>.<br>Copyright &copy; 2026 Zachry Philippines. All rights reserved.</p>
+</footer>
+
+<script src="assets/search-index.js"></script>
+<script src="assets/reference.js"></script>
+</body>
+</html>

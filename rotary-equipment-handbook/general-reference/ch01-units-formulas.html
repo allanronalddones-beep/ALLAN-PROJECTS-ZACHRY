@@ -1,0 +1,859 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Units, Conversions &amp; Formulas — Rotating Equipment General Reference</title>
+<meta name="description" content="Physical constants, unit conversion factors and working formulas for rotating equipment engineering.">
+<link rel="stylesheet" href="assets/reference.css">
+</head>
+<body data-base="">
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="brand" href="index.html">Rotating Equipment <span>General Reference</span></a>
+    <span class="chapter-badge">Chapter 1</span>
+    <span class="spacer"></span>
+    <div class="search-wrap">
+      <input type="search" id="site-search" placeholder="Search sections…  (press /)" autocomplete="off" aria-label="Search the reference">
+      <div class="search-results" id="search-results" role="listbox"></div>
+    </div>
+  </div>
+</header>
+
+<main class="layout">
+
+  <h1 class="page-title">1 &nbsp;Units, Conversions &amp; Formulas</h1>
+  <p class="page-sub">Physical constants, unit conversion factors, and the working formulas used daily in rotating&nbsp;equipment engineering.</p>
+
+  <nav class="toc" aria-label="Chapter contents">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#s1-1"><span class="t-no">1.1</span> Physical Constants</a></li>
+      <li><a href="#s1-2"><span class="t-no">1.2</span> Units and Unit Conversions</a>
+        <ol>
+          <li><a href="#s1-2-1"><span class="t-no">1.2.1</span> SI base and derived units</a></li>
+          <li><a href="#s1-2-2"><span class="t-no">1.2.2</span> Interactive converter</a></li>
+          <li><a href="#s1-2-3"><span class="t-no">1.2.3</span> Length, mass and volume</a></li>
+          <li><a href="#s1-2-4"><span class="t-no">1.2.4</span> Pressure</a></li>
+          <li><a href="#s1-2-5"><span class="t-no">1.2.5</span> Flow</a></li>
+          <li><a href="#s1-2-6"><span class="t-no">1.2.6</span> Power</a></li>
+          <li><a href="#s1-2-7"><span class="t-no">1.2.7</span> Energy and work</a></li>
+          <li><a href="#s1-2-8"><span class="t-no">1.2.8</span> Density and viscosity</a></li>
+          <li><a href="#s1-2-9"><span class="t-no">1.2.9</span> Heat transfer and thermal properties</a></li>
+          <li><a href="#s1-2-10"><span class="t-no">1.2.10</span> Torque</a></li>
+        </ol>
+      </li>
+      <li><a href="#s1-3"><span class="t-no">1.3</span> Formulas</a>
+        <ol>
+          <li><a href="#s1-3-1"><span class="t-no">1.3.1</span> Temperature</a></li>
+          <li><a href="#s1-3-2"><span class="t-no">1.3.2</span> Viscosity</a></li>
+          <li><a href="#s1-3-3"><span class="t-no">1.3.3</span> Specific gravity and API gravity</a></li>
+          <li><a href="#s1-3-4"><span class="t-no">1.3.4</span> Volumetric capacity of gas</a></li>
+          <li><a href="#s1-3-5"><span class="t-no">1.3.5</span> Flow (liquid)</a></li>
+          <li><a href="#s1-3-6"><span class="t-no">1.3.6</span> Head (liquid)</a></li>
+        </ol>
+      </li>
+      <li><a href="#s1-4"><span class="t-no">1.4</span> Sources</a></li>
+    </ol>
+  </nav>
+
+  <!-- ==================================================== 1.1 CONSTANTS -->
+  <h2 id="s1-1"><span class="sec-no">1.1</span>Physical Constants</h2>
+
+  <p>Values below follow the 2019 revision of the SI. Seven constants are now <em>exact by definition</em> and carry no uncertainty; these are marked <strong>exact</strong>. Remaining values are CODATA 2018 recommended values.</p>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 1.1-1 — Universal constants</caption>
+      <thead>
+        <tr><th scope="col">Quantity</th><th scope="col">Symbol</th><th scope="col" class="num">Value</th><th scope="col">Unit</th><th scope="col">Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Speed of light in vacuum</th><td class="sym">c</td><td class="num">299 792 458</td><td class="sym">m/s</td><td class="exact">exact</td></tr>
+        <tr><th scope="row">Planck constant</th><td class="sym">h</td><td class="num">6.626 070 15 × 10⁻³⁴</td><td class="sym">J·s</td><td class="exact">exact</td></tr>
+        <tr><th scope="row">Elementary charge</th><td class="sym">e</td><td class="num">1.602 176 634 × 10⁻¹⁹</td><td class="sym">C</td><td class="exact">exact</td></tr>
+        <tr><th scope="row">Boltzmann constant</th><td class="sym">k<sub>B</sub></td><td class="num">1.380 649 × 10⁻²³</td><td class="sym">J/K</td><td class="exact">exact</td></tr>
+        <tr><th scope="row">Avogadro constant</th><td class="sym">N<sub>A</sub></td><td class="num">6.022 140 76 × 10²³</td><td class="sym">mol⁻¹</td><td class="exact">exact</td></tr>
+        <tr><th scope="row">Molar gas constant</th><td class="sym">R</td><td class="num">8.314 462 618</td><td class="sym">J/(mol·K)</td><td class="exact">exact (= N<sub>A</sub>k<sub>B</sub>)</td></tr>
+        <tr><th scope="row">Faraday constant</th><td class="sym">F</td><td class="num">96 485.332 12</td><td class="sym">C/mol</td><td class="exact">exact (= N<sub>A</sub>e)</td></tr>
+        <tr><th scope="row">Stefan–Boltzmann constant</th><td class="sym">σ</td><td class="num">5.670 374 419 × 10⁻⁸</td><td class="sym">W/(m²·K⁴)</td><td class="exact">exact</td></tr>
+        <tr><th scope="row">Newtonian constant of gravitation</th><td class="sym">G</td><td class="num">6.674 30 × 10⁻¹¹</td><td class="sym">m³/(kg·s²)</td><td class="exact">± 2.2 × 10⁻⁵ rel.</td></tr>
+        <tr><th scope="row">Electron rest mass</th><td class="sym">m<sub>e</sub></td><td class="num">9.109 383 7015 × 10⁻³¹</td><td class="sym">kg</td><td class="exact">CODATA 2018</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 1.1-2 — Engineering reference conditions and properties</caption>
+      <thead>
+        <tr><th scope="col">Quantity</th><th scope="col">Symbol</th><th scope="col" class="num">Value</th><th scope="col">Unit</th><th scope="col">Note</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Standard gravitational acceleration</th><td class="sym">g<sub>n</sub></td><td class="num">9.806 65</td><td class="sym">m/s²</td><td class="exact">defined (= 32.174 05 ft/s²)</td></tr>
+        <tr><th scope="row">Standard atmosphere</th><td class="sym">atm</td><td class="num">101 325</td><td class="sym">Pa</td><td class="exact">defined (= 1.013 25 bar = 14.6959 psi)</td></tr>
+        <tr><th scope="row">Ice point</th><td class="sym">T<sub>0</sub></td><td class="num">273.15</td><td class="sym">K</td><td class="exact">0 °C</td></tr>
+        <tr><th scope="row">Triple point of water</th><td class="sym">T<sub>tp</sub></td><td class="num">273.16</td><td class="sym">K</td><td class="exact">0.01 °C — <em>not</em> the ice point</td></tr>
+        <tr><th scope="row">Molar volume, ideal gas (0 °C, 101.325 kPa)</th><td class="sym">V<sub>m</sub></td><td class="num">22.413 970</td><td class="sym">L/mol</td><td class="exact">“normal” conditions</td></tr>
+        <tr><th scope="row">Molar volume, ideal gas (0 °C, 100 kPa)</th><td class="sym">V<sub>m</sub></td><td class="num">22.710 955</td><td class="sym">L/mol</td><td class="exact">IUPAC STP</td></tr>
+        <tr><th scope="row">Maximum density of water (3.98 °C)</th><td class="sym">ρ<sub>w,max</sub></td><td class="num">999.972</td><td class="sym">kg/m³</td><td class="exact">1000 kg/m³ used conventionally</td></tr>
+        <tr><th scope="row">Density of water at 15 °C</th><td class="sym">ρ<sub>w</sub></td><td class="num">999.10</td><td class="sym">kg/m³</td><td class="exact">SG reference temperature (ISO)</td></tr>
+        <tr><th scope="row">Molar mass of dry air</th><td class="sym">M<sub>air</sub></td><td class="num">28.9647</td><td class="sym">g/mol</td><td class="exact">—</td></tr>
+        <tr><th scope="row">Density of dry air (0 °C, 101.325 kPa)</th><td class="sym">ρ<sub>air</sub></td><td class="num">1.2922</td><td class="sym">kg/m³</td><td class="exact">“normal” air</td></tr>
+        <tr><th scope="row">Density of dry air (15 °C, 101.325 kPa)</th><td class="sym">ρ<sub>air</sub></td><td class="num">1.2250</td><td class="sym">kg/m³</td><td class="exact">ISO standard air</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>Watch the ice point.</strong>
+    0 °C = 273.15 K. The value 273.16 K is the triple point of water (0.01 °C) and is a frequent transcription error in older handbooks. Using 273.16 in a compressor or expander temperature-ratio calculation introduces a small but systematic error.
+  </div>
+
+  <!-- ==================================================== 1.2 CONVERSIONS -->
+  <h2 id="s1-2"><span class="sec-no">1.2</span>Units and Unit Conversions</h2>
+
+  <h3 id="s1-2-1"><span class="sec-no">1.2.1</span>SI base and derived units</h3>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 1.2-1 — Quantities commonly handled in rotating equipment work</caption>
+      <thead>
+        <tr><th scope="col">Quantity</th><th scope="col">SI unit</th><th scope="col">Symbol</th><th scope="col">In base units</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Force</th><td>newton</td><td class="sym">N</td><td class="sym">kg·m/s²</td></tr>
+        <tr><th scope="row">Pressure, stress</th><td>pascal</td><td class="sym">Pa</td><td class="sym">N/m² = kg/(m·s²)</td></tr>
+        <tr><th scope="row">Energy, work, heat</th><td>joule</td><td class="sym">J</td><td class="sym">N·m = kg·m²/s²</td></tr>
+        <tr><th scope="row">Power</th><td>watt</td><td class="sym">W</td><td class="sym">J/s = kg·m²/s³</td></tr>
+        <tr><th scope="row">Frequency</th><td>hertz</td><td class="sym">Hz</td><td class="sym">s⁻¹</td></tr>
+        <tr><th scope="row">Dynamic viscosity</th><td>pascal-second</td><td class="sym">Pa·s</td><td class="sym">kg/(m·s)</td></tr>
+        <tr><th scope="row">Kinematic viscosity</th><td>—</td><td class="sym">m²/s</td><td class="sym">m²/s</td></tr>
+        <tr><th scope="row">Torque</th><td>newton-metre</td><td class="sym">N·m</td><td class="sym">kg·m²/s²</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>kgf is not an SI unit.</strong>
+    The kilogram-force (kgf) and its derivatives (kgf/cm², kgf·m) remain common in vendor documentation from Japan and continental Europe. 1&nbsp;kgf = 9.806&nbsp;65&nbsp;N exactly. The unit “at” (technical atmosphere) is 1&nbsp;kgf/cm² and is <em>not</em> the same as the standard atmosphere “atm”.
+  </div>
+
+  <h3 id="s1-2-2"><span class="sec-no">1.2.2</span>Interactive converter</h3>
+
+  <p>Enter a value, pick the units. Everything is computed from the exact factors tabulated in the sections that follow — nothing is rounded before display.</p>
+
+  <div class="converter" id="unit-converter">
+    <div class="converter-head">Unit converter</div>
+    <div class="converter-body">
+      <div class="conv-row">
+        <label for="conv-cat">Quantity</label>
+        <select id="conv-cat" data-conv="category" style="grid-column: 1 / -1; max-width: none;"></select>
+      </div>
+      <div class="conv-row">
+        <label for="conv-in">From</label>
+        <input type="number" id="conv-in" data-conv="input" step="any" value="1" aria-label="Value to convert">
+        <select data-conv="from" aria-label="Convert from unit"></select>
+      </div>
+      <div class="conv-swap">
+        <button type="button" data-conv="swap" title="Swap units">⇅ swap</button>
+      </div>
+      <div class="conv-row">
+        <label for="conv-out">To</label>
+        <input type="text" id="conv-out" data-conv="output" readonly aria-label="Converted value">
+        <select data-conv="to" aria-label="Convert to unit"></select>
+      </div>
+      <div class="conv-factor" data-conv="factor"></div>
+    </div>
+  </div>
+
+  <h3 id="s1-2-3"><span class="sec-no">1.2.3</span>Length, mass and volume</h3>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 1.2-2 — Length. Values marked <strong>exact</strong> are definitions, not measurements.</caption>
+      <thead><tr><th scope="col">Unit</th><th scope="col" class="num">in metres</th><th scope="col"></th></tr></thead>
+      <tbody>
+        <tr><th scope="row">inch (in)</th><td class="num">0.0254</td><td class="exact">exact</td></tr>
+        <tr><th scope="row">foot (ft)</th><td class="num">0.3048</td><td class="exact">exact — 12 in</td></tr>
+        <tr><th scope="row">yard (yd)</th><td class="num">0.9144</td><td class="exact">exact — 3 ft</td></tr>
+        <tr><th scope="row">mile (mi)</th><td class="num">1609.344</td><td class="exact">exact — 5280 ft</td></tr>
+        <tr><th scope="row">nautical mile (NM)</th><td class="num">1852</td><td class="exact">exact</td></tr>
+        <tr><th scope="row">mil / thou</th><td class="num">2.54 × 10⁻⁵</td><td class="exact">exact — 0.001 in; shaft alignment &amp; clearances</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 1.2-3 — Mass</caption>
+      <thead><tr><th scope="col">Unit</th><th scope="col" class="num">in kilograms</th><th scope="col"></th></tr></thead>
+      <tbody>
+        <tr><th scope="row">pound (lb)</th><td class="num">0.453 592 37</td><td class="exact">exact</td></tr>
+        <tr><th scope="row">ounce (oz)</th><td class="num">0.028 349 523 125</td><td class="exact">exact — lb/16</td></tr>
+        <tr><th scope="row">tonne (t)</th><td class="num">1000</td><td class="exact">exact — metric ton</td></tr>
+        <tr><th scope="row">short ton (US)</th><td class="num">907.184 74</td><td class="exact">exact — 2000 lb</td></tr>
+        <tr><th scope="row">long ton (UK)</th><td class="num">1016.046 908 8</td><td class="exact">exact — 2240 lb</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 1.2-4 — Volume</caption>
+      <thead><tr><th scope="col">Unit</th><th scope="col" class="num">in m³</th><th scope="col" class="num">in litres</th><th scope="col"></th></tr></thead>
+      <tbody>
+        <tr><th scope="row">litre (L)</th><td class="num">0.001</td><td class="num">1</td><td class="exact">exact</td></tr>
+        <tr><th scope="row">cubic foot (ft³)</th><td class="num">0.028 316 846 592</td><td class="num">28.3168</td><td class="exact">exact</td></tr>
+        <tr><th scope="row">cubic inch (in³)</th><td class="num">1.638 7064 × 10⁻⁵</td><td class="num">0.016 3871</td><td class="exact">exact</td></tr>
+        <tr><th scope="row">US gallon</th><td class="num">3.785 411 784 × 10⁻³</td><td class="num">3.785 41</td><td class="exact">exact — 231 in³</td></tr>
+        <tr><th scope="row">UK (imperial) gallon</th><td class="num">4.546 09 × 10⁻³</td><td class="num">4.546 09</td><td class="exact">exact</td></tr>
+        <tr><th scope="row">US barrel, oil (bbl)</th><td class="num">0.158 987 294 928</td><td class="num">158.987</td><td class="exact">exact — 42 US gal</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 id="s1-2-4"><span class="sec-no">1.2.4</span>Pressure</h3>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 1.2-5 — Pressure cross-conversion. Read across: 1 unit in the row header equals the value shown in each column.</caption>
+      <thead>
+        <tr>
+          <th scope="col">1 →</th>
+          <th scope="col" class="num">kPa</th>
+          <th scope="col" class="num">bar</th>
+          <th scope="col" class="num">kgf/cm²</th>
+          <th scope="col" class="num">atm</th>
+          <th scope="col" class="num">psi</th>
+          <th scope="col" class="num">mmHg</th>
+          <th scope="col" class="num">mmH₂O</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">kPa</th><td class="num">1</td><td class="num">0.01</td><td class="num">0.010 1972</td><td class="num">0.009 8692</td><td class="num">0.145 038</td><td class="num">7.500 62</td><td class="num">101.972</td></tr>
+        <tr><th scope="row">bar</th><td class="num">100</td><td class="num">1</td><td class="num">1.019 72</td><td class="num">0.986 923</td><td class="num">14.503 8</td><td class="num">750.062</td><td class="num">10 197.2</td></tr>
+        <tr><th scope="row">kgf/cm²</th><td class="num">98.0665</td><td class="num">0.980 665</td><td class="num">1</td><td class="num">0.967 841</td><td class="num">14.223 3</td><td class="num">735.559</td><td class="num">10 000</td></tr>
+        <tr><th scope="row">atm</th><td class="num">101.325</td><td class="num">1.013 25</td><td class="num">1.033 23</td><td class="num">1</td><td class="num">14.695 9</td><td class="num">760</td><td class="num">10 332.3</td></tr>
+        <tr><th scope="row">psi</th><td class="num">6.894 76</td><td class="num">0.068 9476</td><td class="num">0.070 3070</td><td class="num">0.068 0460</td><td class="num">1</td><td class="num">51.714 9</td><td class="num">703.070</td></tr>
+        <tr><th scope="row">mmHg (torr)</th><td class="num">0.133 322</td><td class="num">0.001 333 22</td><td class="num">0.001 359 51</td><td class="num">0.001 315 79</td><td class="num">0.019 3368</td><td class="num">1</td><td class="num">13.5951</td></tr>
+        <tr><th scope="row">mmH₂O</th><td class="num">0.009 806 65</td><td class="num">9.806 65 × 10⁻⁵</td><td class="num">1 × 10⁻⁴</td><td class="num">9.678 41 × 10⁻⁵</td><td class="num">0.001 422 33</td><td class="num">0.073 5559</td><td class="num">1</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Gauge, absolute and differential.</strong>
+    Conversion factors apply to the magnitude only. Always carry the reference with the symbol — barg / bara, psig / psia, kPa(g) / kPa(a). Pump and compressor datasheets mix these freely, and
+    <em>p</em><sub>abs</sub> = <em>p</em><sub>gauge</sub> + <em>p</em><sub>atm,local</sub>, where <em>p</em><sub>atm,local</sub> is site barometric pressure, not 1.01325 bar, at any appreciable altitude.
+  </div>
+
+  <h3 id="s1-2-5"><span class="sec-no">1.2.5</span>Flow</h3>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 1.2-6 — Volumetric flow</caption>
+      <thead>
+        <tr><th scope="col">1 →</th><th scope="col" class="num">m³/h</th><th scope="col" class="num">L/s</th><th scope="col" class="num">US gpm</th><th scope="col" class="num">UK gpm</th><th scope="col" class="num">ft³/min (cfm)</th><th scope="col" class="num">bbl/day</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">m³/h</th><td class="num">1</td><td class="num">0.277 778</td><td class="num">4.402 87</td><td class="num">3.666 15</td><td class="num">0.588 578</td><td class="num">150.955</td></tr>
+        <tr><th scope="row">L/s</th><td class="num">3.6</td><td class="num">1</td><td class="num">15.8503</td><td class="num">13.1981</td><td class="num">2.118 88</td><td class="num">543.439</td></tr>
+        <tr><th scope="row">US gpm</th><td class="num">0.227 125</td><td class="num">0.063 0902</td><td class="num">1</td><td class="num">0.832 674</td><td class="num">0.133 681</td><td class="num">34.2857</td></tr>
+        <tr><th scope="row">UK gpm</th><td class="num">0.272 765</td><td class="num">0.075 7682</td><td class="num">1.200 95</td><td class="num">1</td><td class="num">0.160 544</td><td class="num">41.1754</td></tr>
+        <tr><th scope="row">ft³/min (cfm)</th><td class="num">1.699 01</td><td class="num">0.471 947</td><td class="num">7.480 52</td><td class="num">6.228 83</td><td class="num">1</td><td class="num">256.475</td></tr>
+        <tr><th scope="row">bbl/day</th><td class="num">0.006 624 47</td><td class="num">0.001 840 13</td><td class="num">0.029 1667</td><td class="num">0.024 2863</td><td class="num">0.003 899 02</td><td class="num">1</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 1.2-7 — Mass flow</caption>
+      <thead><tr><th scope="col">1 →</th><th scope="col" class="num">kg/h</th><th scope="col" class="num">kg/s</th><th scope="col" class="num">t/h</th><th scope="col" class="num">lb/h</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">kg/h</th><td class="num">1</td><td class="num">2.777 78 × 10⁻⁴</td><td class="num">0.001</td><td class="num">2.204 62</td></tr>
+        <tr><th scope="row">kg/s</th><td class="num">3600</td><td class="num">1</td><td class="num">3.6</td><td class="num">7936.64</td></tr>
+        <tr><th scope="row">t/h</th><td class="num">1000</td><td class="num">0.277 778</td><td class="num">1</td><td class="num">2204.62</td></tr>
+        <tr><th scope="row">lb/h</th><td class="num">0.453 592</td><td class="num">1.259 98 × 10⁻⁴</td><td class="num">4.535 92 × 10⁻⁴</td><td class="num">1</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 id="s1-2-6"><span class="sec-no">1.2.6</span>Power</h3>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 1.2-8 — Power</caption>
+      <thead>
+        <tr><th scope="col">1 →</th><th scope="col" class="num">kW</th><th scope="col" class="num">hp (mech.)</th><th scope="col" class="num">PS (metric hp)</th><th scope="col" class="num">kgf·m/s</th><th scope="col" class="num">BTU/h</th><th scope="col" class="num">kcal/h</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">kW</th><td class="num">1</td><td class="num">1.341 02</td><td class="num">1.359 62</td><td class="num">101.972</td><td class="num">3412.14</td><td class="num">859.845</td></tr>
+        <tr><th scope="row">hp (mech.)</th><td class="num">0.745 700</td><td class="num">1</td><td class="num">1.013 87</td><td class="num">76.0402</td><td class="num">2544.43</td><td class="num">641.186</td></tr>
+        <tr><th scope="row">PS (metric hp)</th><td class="num">0.735 499</td><td class="num">0.986 320</td><td class="num">1</td><td class="num">75</td><td class="num">2509.63</td><td class="num">632.415</td></tr>
+        <tr><th scope="row">kgf·m/s</th><td class="num">0.009 806 65</td><td class="num">0.013 1509</td><td class="num">0.013 3333</td><td class="num">1</td><td class="num">33.4617</td><td class="num">8.432 20</td></tr>
+        <tr><th scope="row">BTU/h</th><td class="num">2.930 71 × 10⁻⁴</td><td class="num">3.930 15 × 10⁻⁴</td><td class="num">3.984 66 × 10⁻⁴</td><td class="num">0.029 8849</td><td class="num">1</td><td class="num">0.251 996</td></tr>
+        <tr><th scope="row">kcal/h</th><td class="num">0.001 163</td><td class="num">0.001 559 61</td><td class="num">0.001 581 24</td><td class="num">0.118 593</td><td class="num">3.968 32</td><td class="num">1</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>Two different “horsepower”.</strong>
+    Mechanical (imperial) horsepower = 550 ft·lbf/s = 745.700 W. Metric horsepower (PS, CV, ch, pk) = 75 kgf·m/s = 735.499 W. They differ by 1.4&nbsp;%, which is enough to matter on a motor rating check. European and Japanese vendor data commonly means PS when it prints “HP”.
+  </div>
+
+  <h3 id="s1-2-7"><span class="sec-no">1.2.7</span>Energy and work</h3>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 1.2-9 — Energy, work and heat. Calorie and BTU are the International Table (IT) definitions.</caption>
+      <thead>
+        <tr><th scope="col">1 →</th><th scope="col" class="num">kJ</th><th scope="col" class="num">kcal</th><th scope="col" class="num">BTU</th><th scope="col" class="num">kWh</th><th scope="col" class="num">kgf·m</th><th scope="col" class="num">ft·lbf</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">kJ</th><td class="num">1</td><td class="num">0.238 846</td><td class="num">0.947 817</td><td class="num">2.777 78 × 10⁻⁴</td><td class="num">101.972</td><td class="num">737.562</td></tr>
+        <tr><th scope="row">kcal</th><td class="num">4.1868</td><td class="num">1</td><td class="num">3.968 32</td><td class="num">0.001 163</td><td class="num">426.935</td><td class="num">3088.03</td></tr>
+        <tr><th scope="row">BTU</th><td class="num">1.055 06</td><td class="num">0.251 996</td><td class="num">1</td><td class="num">2.930 71 × 10⁻⁴</td><td class="num">107.586</td><td class="num">778.169</td></tr>
+        <tr><th scope="row">kWh</th><td class="num">3600</td><td class="num">859.845</td><td class="num">3412.14</td><td class="num">1</td><td class="num">367 098</td><td class="num">2 655 224</td></tr>
+        <tr><th scope="row">kgf·m</th><td class="num">0.009 806 65</td><td class="num">0.002 342 28</td><td class="num">0.009 294 91</td><td class="num">2.724 07 × 10⁻⁶</td><td class="num">1</td><td class="num">7.233 01</td></tr>
+        <tr><th scope="row">ft·lbf</th><td class="num">0.001 355 82</td><td class="num">3.238 32 × 10⁻⁴</td><td class="num">0.001 285 07</td><td class="num">3.766 16 × 10⁻⁷</td><td class="num">0.138 255</td><td class="num">1</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 id="s1-2-8"><span class="sec-no">1.2.8</span>Density and viscosity</h3>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 1.2-10 — Density</caption>
+      <thead><tr><th scope="col">1 →</th><th scope="col" class="num">kg/m³</th><th scope="col" class="num">g/cm³</th><th scope="col" class="num">lb/ft³</th><th scope="col" class="num">lb/US gal</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">kg/m³</th><td class="num">1</td><td class="num">0.001</td><td class="num">0.062 4280</td><td class="num">0.008 345 40</td></tr>
+        <tr><th scope="row">g/cm³</th><td class="num">1000</td><td class="num">1</td><td class="num">62.4280</td><td class="num">8.345 40</td></tr>
+        <tr><th scope="row">lb/ft³</th><td class="num">16.0185</td><td class="num">0.016 0185</td><td class="num">1</td><td class="num">0.133 681</td></tr>
+        <tr><th scope="row">lb/US gal</th><td class="num">119.826</td><td class="num">0.119 826</td><td class="num">7.480 52</td><td class="num">1</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 1.2-11 — Viscosity</caption>
+      <thead><tr><th scope="col">Type</th><th scope="col">Unit</th><th scope="col" class="num">SI equivalent</th><th scope="col"></th></tr></thead>
+      <tbody>
+        <tr><th scope="row" rowspan="4">Dynamic (absolute), μ</th><td>poise (P)</td><td class="num">0.1 Pa·s</td><td class="exact">= 1 dyn·s/cm² = 1 g/(cm·s)</td></tr>
+        <tr><td>centipoise (cP)</td><td class="num">0.001 Pa·s = 1 mPa·s</td><td class="exact">water at 20 °C ≈ 1 cP</td></tr>
+        <tr><td>lb/(ft·s)</td><td class="num">1.488 16 Pa·s</td><td class="exact">—</td></tr>
+        <tr><td>lbf·s/ft² (slug/ft·s)</td><td class="num">47.8803 Pa·s</td><td class="exact">—</td></tr>
+        <tr><th scope="row" rowspan="3">Kinematic, ν</th><td>stokes (St)</td><td class="num">1 × 10⁻⁴ m²/s</td><td class="exact">= 1 cm²/s</td></tr>
+        <tr><td>centistokes (cSt)</td><td class="num">1 × 10⁻⁶ m²/s = 1 mm²/s</td><td class="exact">water at 20 °C ≈ 1 cSt</td></tr>
+        <tr><td>ft²/s</td><td class="num">0.092 903 04 m²/s</td><td class="exact">exact</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 id="s1-2-9"><span class="sec-no">1.2.9</span>Heat transfer and thermal properties</h3>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 1.2-12 — Thermal quantities</caption>
+      <thead><tr><th scope="col">Quantity</th><th scope="col">Unit</th><th scope="col" class="num">SI equivalent</th></tr></thead>
+      <tbody>
+        <tr><th scope="row" rowspan="2">Heat transfer coefficient</th><td>kcal/(m²·h·°C)</td><td class="num">1.163 W/(m²·K)</td></tr>
+        <tr><td>BTU/(ft²·h·°F)</td><td class="num">5.678 26 W/(m²·K)</td></tr>
+        <tr><th scope="row" rowspan="2">Thermal conductivity</th><td>kcal/(m·h·°C)</td><td class="num">1.163 W/(m·K)</td></tr>
+        <tr><td>BTU/(ft·h·°F)</td><td class="num">1.730 73 W/(m·K)</td></tr>
+        <tr><th scope="row" rowspan="2">Specific heat capacity</th><td>kcal/(kg·°C)</td><td class="num">4.1868 kJ/(kg·K)</td></tr>
+        <tr><td>BTU/(lb·°F)</td><td class="num">4.1868 kJ/(kg·K)</td></tr>
+        <tr><th scope="row" rowspan="2">Specific enthalpy</th><td>kcal/kg</td><td class="num">4.1868 kJ/kg</td></tr>
+        <tr><td>BTU/lb</td><td class="num">2.326 kJ/kg</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>A useful identity.</strong>
+    kcal/(kg·°C) and BTU/(lb·°F) are numerically <em>identical</em> — both equal 4.1868 kJ/(kg·K). A specific heat of 0.48 in one system is 0.48 in the other. The same holds for any “energy per mass per degree” quantity.
+  </div>
+
+  <h3 id="s1-2-10"><span class="sec-no">1.2.10</span>Torque</h3>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 1.2-13 — Torque. Relevant to coupling ratings and bolt tightening (Chapter 13).</caption>
+      <thead><tr><th scope="col">1 →</th><th scope="col" class="num">N·m</th><th scope="col" class="num">kgf·m</th><th scope="col" class="num">lbf·ft</th><th scope="col" class="num">lbf·in</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">N·m</th><td class="num">1</td><td class="num">0.101 972</td><td class="num">0.737 562</td><td class="num">8.850 75</td></tr>
+        <tr><th scope="row">kgf·m</th><td class="num">9.806 65</td><td class="num">1</td><td class="num">7.233 01</td><td class="num">86.7962</td></tr>
+        <tr><th scope="row">lbf·ft</th><td class="num">1.355 82</td><td class="num">0.138 255</td><td class="num">1</td><td class="num">12</td></tr>
+        <tr><th scope="row">lbf·in</th><td class="num">0.112 985</td><td class="num">0.011 5212</td><td class="num">0.083 3333</td><td class="num">1</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ==================================================== 1.3 FORMULAS -->
+  <h2 id="s1-3"><span class="sec-no">1.3</span>Formulas</h2>
+
+  <h3 id="s1-3-1"><span class="sec-no">1.3.1</span>Temperature</h3>
+
+  <h4>Absolute and relative scales</h4>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mi>T</mi><mo>[</mo><mtext>K</mtext><mo>]</mo><mo>=</mo><mi>t</mi><mo>[</mo><mtext>°C</mtext><mo>]</mo><mo>+</mo><mn>273.15</mn>
+    </mrow></math>
+  </div>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mi>t</mi><mo>[</mo><mtext>°F</mtext><mo>]</mo><mo>=</mo>
+      <mfrac><mn>9</mn><mn>5</mn></mfrac><mo>⁢</mo><mi>t</mi><mo>[</mo><mtext>°C</mtext><mo>]</mo><mo>+</mo><mn>32</mn>
+      <mspace width="2em"/>
+      <mi>t</mi><mo>[</mo><mtext>°C</mtext><mo>]</mo><mo>=</mo>
+      <mfrac><mn>5</mn><mn>9</mn></mfrac><mo stretchy="false">(</mo><mi>t</mi><mo>[</mo><mtext>°F</mtext><mo>]</mo><mo>−</mo><mn>32</mn><mo stretchy="false">)</mo>
+    </mrow></math>
+  </div>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mi>T</mi><mo>[</mo><mtext>°R</mtext><mo>]</mo><mo>=</mo><mi>t</mi><mo>[</mo><mtext>°F</mtext><mo>]</mo><mo>+</mo><mn>459.67</mn>
+      <mspace width="2em"/>
+      <mi>T</mi><mo>[</mo><mtext>°R</mtext><mo>]</mo><mo>=</mo><mfrac><mn>9</mn><mn>5</mn></mfrac><mo>⁢</mo><mi>T</mi><mo>[</mo><mtext>K</mtext><mo>]</mo>
+    </mrow></math>
+  </div>
+
+  <h4>Temperature differences</h4>
+
+  <p>A <em>difference</em> converts by ratio only — the offset does not apply:</p>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mn>1</mn><mspace width="0.2em"/><mtext>K</mtext><mo>=</mo>
+      <mn>1</mn><mspace width="0.2em"/><mtext>°C</mtext><mo>=</mo>
+      <mn>1.8</mn><mspace width="0.2em"/><mtext>°F</mtext><mo>=</mo>
+      <mn>1.8</mn><mspace width="0.2em"/><mtext>°R</mtext>
+    </mrow></math>
+  </div>
+
+  <div class="warn">
+    <strong>Common error.</strong>
+    A 10 °C temperature rise across a bearing is an 18 °F rise, not 50 °F. Apply the +32 offset to temperatures, never to temperature rises, approach temperatures or LMTDs.
+  </div>
+
+  <h3 id="s1-3-2"><span class="sec-no">1.3.2</span>Viscosity</h3>
+
+  <h4>Dynamic and kinematic viscosity</h4>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mi>ν</mi><mo>=</mo><mfrac><mi>μ</mi><mi>ρ</mi></mfrac>
+    </mrow></math>
+  </div>
+
+  <div class="where">
+    <dl>
+      <dt>ν</dt><dd>kinematic viscosity, m²/s</dd>
+      <dt>μ</dt><dd>dynamic (absolute) viscosity, Pa·s</dd>
+      <dt>ρ</dt><dd>density, kg/m³</dd>
+    </dl>
+  </div>
+
+  <p>In the practical units used on pump datasheets, this reduces to:</p>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mi>ν</mi><mo>[</mo><mtext>cSt</mtext><mo>]</mo><mo>=</mo>
+      <mfrac>
+        <mrow><mi>μ</mi><mo>[</mo><mtext>cP</mtext><mo>]</mo></mrow>
+        <mrow><mtext>SG</mtext></mrow>
+      </mfrac>
+    </mrow></math>
+  </div>
+
+  <div class="note">
+    <strong>Which one does the pump care about?</strong>
+    Hydraulic performance correction (head, flow and efficiency de-rating per the Hydraulic Institute method) is driven by <em>kinematic</em> viscosity in cSt. Bearing and seal calculations generally use <em>dynamic</em> viscosity. Check which the vendor has quoted before applying a correction factor.
+  </div>
+
+  <h4>Saybolt Universal Seconds (SUS / SSU)</h4>
+
+  <p>For kinematic viscosity above roughly 50&nbsp;cSt the relationship is effectively linear:</p>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <msub><mi>ν</mi><mrow><mtext>SUS</mtext><mo>,</mo><mn>100</mn><mtext>°F</mtext></mrow></msub>
+      <mo>≈</mo><mn>4.632</mn><mo>⁢</mo><mi>ν</mi><mo>[</mo><mtext>cSt</mtext><mo>]</mo>
+      <mspace width="2em"/>
+      <msub><mi>ν</mi><mrow><mtext>SUS</mtext><mo>,</mo><mn>210</mn><mtext>°F</mtext></mrow></msub>
+      <mo>≈</mo><mn>4.664</mn><mo>⁢</mo><mi>ν</mi><mo>[</mo><mtext>cSt</mtext><mo>]</mo>
+    </mrow></math>
+  </div>
+
+  <p>Below 50&nbsp;cSt the relationship is non-linear and the ASTM&nbsp;D2161 tables or the full correlation should be used. Indicative values:</p>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 1.3-1 — Kinematic viscosity, indicative equivalents at 100 °F (37.8 °C)</caption>
+      <thead><tr><th scope="col" class="num">cSt</th><th scope="col" class="num">SUS</th><th scope="col">Typical fluid</th></tr></thead>
+      <tbody>
+        <tr><td class="num">1.0</td><td class="num">31</td><td>water at 20 °C</td></tr>
+        <tr><td class="num">2.0</td><td class="num">32.6</td><td>light hydrocarbon / condensate</td></tr>
+        <tr><td class="num">10</td><td class="num">58.8</td><td>light fuel oil</td></tr>
+        <tr><td class="num">32</td><td class="num">150</td><td>ISO VG 32 turbine oil</td></tr>
+        <tr><td class="num">46</td><td class="num">214</td><td>ISO VG 46 turbine / bearing oil</td></tr>
+        <tr><td class="num">68</td><td class="num">315</td><td>ISO VG 68 gear oil</td></tr>
+        <tr><td class="num">220</td><td class="num">1019</td><td>ISO VG 220 gear oil</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 id="s1-3-3"><span class="sec-no">1.3.3</span>Specific gravity and API gravity</h3>
+
+  <h4>Specific gravity</h4>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mtext>SG</mtext><mo>=</mo>
+      <mfrac>
+        <msub><mi>ρ</mi><mtext>liquid</mtext></msub>
+        <msub><mi>ρ</mi><mtext>water</mtext></msub>
+      </mfrac>
+    </mrow></math>
+  </div>
+
+  <p>SG is dimensionless and <strong>only meaningful with its reference temperatures stated</strong>. The petroleum convention is 60/60 °F — liquid at 60 °F referred to water at 60 °F. ISO practice is 15/4 °C. Mixing the two introduces an error of about 0.1 %.</p>
+
+  <h4>API gravity</h4>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mtext>°API</mtext><mo>=</mo>
+      <mfrac><mn>141.5</mn><msub><mtext>SG</mtext><mn>60/60</mn></msub></mfrac>
+      <mo>−</mo><mn>131.5</mn>
+      <mspace width="2em"/>
+      <msub><mtext>SG</mtext><mn>60/60</mn></msub><mo>=</mo>
+      <mfrac><mn>141.5</mn><mrow><mtext>°API</mtext><mo>+</mo><mn>131.5</mn></mrow></mfrac>
+    </mrow></math>
+  </div>
+
+  <p>Water is 10 °API by definition. Higher °API means lighter crude; above 10 °API the liquid floats on water.</p>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 1.3-2 — API gravity reference points</caption>
+      <thead><tr><th scope="col">Classification</th><th scope="col" class="num">°API</th><th scope="col" class="num">SG (60/60 °F)</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Extra heavy / bitumen</th><td class="num">&lt; 10</td><td class="num">&gt; 1.000</td></tr>
+        <tr><th scope="row">Water (by definition)</th><td class="num">10.0</td><td class="num">1.000</td></tr>
+        <tr><th scope="row">Heavy crude</th><td class="num">10 – 22.3</td><td class="num">1.000 – 0.920</td></tr>
+        <tr><th scope="row">Medium crude</th><td class="num">22.3 – 31.1</td><td class="num">0.920 – 0.870</td></tr>
+        <tr><th scope="row">Light crude</th><td class="num">&gt; 31.1</td><td class="num">&lt; 0.870</td></tr>
+        <tr><th scope="row">Condensate</th><td class="num">50 – 70</td><td class="num">0.780 – 0.702</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4>Barrels per tonne</h4>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mtext>bbl per tonne</mtext><mo>=</mo>
+      <mfrac><mn>6.2898</mn><msub><mtext>SG</mtext><mn>60/60</mn></msub></mfrac>
+      <mo>=</mo>
+      <mfrac><mrow><mtext>°API</mtext><mo>+</mo><mn>131.5</mn></mrow><mn>22.497</mn></mfrac>
+    </mrow></math>
+  </div>
+
+  <h4>Baumé scale</h4>
+
+  <p>Occasionally found on older chemical-service datasheets. At 60 °F:</p>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mtext>Heavier than water:</mtext><mspace width="1em"/>
+      <mtext>°Bé</mtext><mo>=</mo><mn>145</mn><mo>−</mo><mfrac><mn>145</mn><mtext>SG</mtext></mfrac>
+    </mrow></math>
+  </div>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mtext>Lighter than water:</mtext><mspace width="1em"/>
+      <mtext>°Bé</mtext><mo>=</mo><mfrac><mn>140</mn><mtext>SG</mtext></mfrac><mo>−</mo><mn>130</mn>
+    </mrow></math>
+  </div>
+
+  <h3 id="s1-3-4"><span class="sec-no">1.3.4</span>Volumetric capacity of gas</h3>
+
+  <h4>Reference conditions — define them before quoting a flow</h4>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 1.3-3 — Gas flow reference conditions in common use</caption>
+      <thead><tr><th scope="col">Designation</th><th scope="col">Temperature</th><th scope="col">Pressure</th><th scope="col">Usage</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Normal (Nm³/h, Nl/min)</th><td>0 °C (273.15 K)</td><td>101.325 kPa</td><td>European / Japanese vendor data</td></tr>
+        <tr><th scope="row">Standard, ISO (Sm³/h)</th><td>15 °C (288.15 K)</td><td>101.325 kPa</td><td>ISO 13443, oil &amp; gas</td></tr>
+        <tr><th scope="row">Standard, US (SCFM, MMSCFD)</th><td>60 °F (288.71 K)</td><td>14.696 psia</td><td>US practice, 0 % RH</td></tr>
+        <tr><th scope="row">Standard, API</th><td>60 °F (288.71 K)</td><td>14.696 psia</td><td>API 617 / 618 datasheets</td></tr>
+        <tr><th scope="row">IUPAC STP</th><td>0 °C (273.15 K)</td><td>100 kPa</td><td>chemistry, rarely process</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>“Standard” is not standard.</strong>
+    Nm³/h and Sm³/h differ by 5.5 %, and SCFM definitions vary between vendors (60 °F, 68 °F and 70 °F bases all exist). On any inquiry or bid tabulation, state the reference condition explicitly next to the number. This is the single most common source of compressor capacity disputes.
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 1.3-4 — Reference-condition conversions (ideal gas, dry)</caption>
+      <thead><tr><th scope="col">1 →</th><th scope="col" class="num">Nm³/h (0 °C)</th><th scope="col" class="num">Sm³/h (15 °C)</th><th scope="col" class="num">SCFM (60 °F)</th><th scope="col" class="num">MMSCFD</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Nm³/h (0 °C)</th><td class="num">1</td><td class="num">1.054 91</td><td class="num">0.622 097</td><td class="num">8.958 2 × 10⁻⁴</td></tr>
+        <tr><th scope="row">Sm³/h (15 °C)</th><td class="num">0.947 944</td><td class="num">1</td><td class="num">0.589 713</td><td class="num">8.491 9 × 10⁻⁴</td></tr>
+        <tr><th scope="row">SCFM (60 °F)</th><td class="num">1.607 47</td><td class="num">1.695 74</td><td class="num">1</td><td class="num">0.001 44</td></tr>
+        <tr><th scope="row">MMSCFD</th><td class="num">1116.30</td><td class="num">1177.60</td><td class="num">694.444</td><td class="num">1</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4>Actual versus standard volume</h4>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <msub><mi>Q</mi><mtext>act</mtext></msub><mo>=</mo>
+      <msub><mi>Q</mi><mtext>std</mtext></msub>
+      <mo>⁢</mo>
+      <mfrac><msub><mi>p</mi><mtext>std</mtext></msub><msub><mi>p</mi><mtext>act</mtext></msub></mfrac>
+      <mo>⁢</mo>
+      <mfrac><msub><mi>T</mi><mtext>act</mtext></msub><msub><mi>T</mi><mtext>std</mtext></msub></mfrac>
+      <mo>⁢</mo>
+      <mfrac><msub><mi>Z</mi><mtext>act</mtext></msub><msub><mi>Z</mi><mtext>std</mtext></msub></mfrac>
+    </mrow></math>
+  </div>
+
+  <div class="where">
+    <dl>
+      <dt>Q</dt><dd>volumetric flow (any consistent unit)</dd>
+      <dt>p</dt><dd><strong>absolute</strong> pressure</dd>
+      <dt>T</dt><dd><strong>absolute</strong> temperature, K or °R</dd>
+      <dt>Z</dt><dd>compressibility factor; Z<sub>std</sub> ≈ 1 for most gases at reference conditions</dd>
+    </dl>
+  </div>
+
+  <h4>ACFM from SCFM, including humidity</h4>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mtext>ACFM</mtext><mo>=</mo><mtext>SCFM</mtext>
+      <mo>⁢</mo>
+      <mfrac>
+        <msub><mi>p</mi><mtext>std</mtext></msub>
+        <mrow><msub><mi>p</mi><mtext>act</mtext></msub><mo>−</mo><mi>φ</mi><mo>⁢</mo><msub><mi>p</mi><mtext>sat</mtext></msub></mrow>
+      </mfrac>
+      <mo>⁢</mo>
+      <mfrac><msub><mi>T</mi><mtext>act</mtext></msub><msub><mi>T</mi><mtext>std</mtext></msub></mfrac>
+    </mrow></math>
+  </div>
+
+  <div class="where">
+    <dl>
+      <dt>φ</dt><dd>relative humidity, as a fraction (0 to 1)</dd>
+      <dt>p<sub>sat</sub></dt><dd>saturation vapour pressure of water at T<sub>act</sub></dd>
+    </dl>
+  </div>
+
+  <p>For dry gas, or where humidity is negligible, set <em>φ</em> = 0 and the expression reduces to the pressure and temperature ratios alone.</p>
+
+  <h4>Gas density from the real gas law</h4>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mi>ρ</mi><mo>=</mo>
+      <mfrac>
+        <mrow><mi>p</mi><mo>⁢</mo><mi>M</mi></mrow>
+        <mrow><mi>Z</mi><mo>⁢</mo><mi>R</mi><mo>⁢</mo><mi>T</mi></mrow>
+      </mfrac>
+    </mrow></math>
+  </div>
+
+  <div class="where">
+    <dl>
+      <dt>ρ</dt><dd>density, kg/m³</dd>
+      <dt>p</dt><dd>absolute pressure, Pa</dd>
+      <dt>M</dt><dd>molar mass, kg/mol</dd>
+      <dt>Z</dt><dd>compressibility factor, dimensionless</dd>
+      <dt>R</dt><dd>8.314 463 J/(mol·K)</dd>
+      <dt>T</dt><dd>absolute temperature, K</dd>
+    </dl>
+  </div>
+
+  <h3 id="s1-3-5"><span class="sec-no">1.3.5</span>Flow (liquid)</h3>
+
+  <h4>Mass flow to volumetric flow</h4>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mi>Q</mi><mo>[</mo><msup><mtext>m</mtext><mn>3</mn></msup><mtext>/h</mtext><mo>]</mo><mo>=</mo>
+      <mfrac>
+        <mrow><mi>W</mi><mo>[</mo><mtext>kg/h</mtext><mo>]</mo></mrow>
+        <mrow><mi>ρ</mi><mo>[</mo><mtext>kg/</mtext><msup><mtext>m</mtext><mn>3</mn></msup><mo>]</mo></mrow>
+      </mfrac>
+      <mspace width="2em"/>
+      <mi>Q</mi><mo>[</mo><msup><mtext>m</mtext><mn>3</mn></msup><mtext>/h</mtext><mo>]</mo><mo>=</mo>
+      <mfrac>
+        <mrow><mi>W</mi><mo>[</mo><mtext>t/h</mtext><mo>]</mo></mrow>
+        <mtext>SG</mtext>
+      </mfrac>
+    </mrow></math>
+  </div>
+
+  <p>The second form is the one worth memorising: at SG = 1, one tonne per hour is one cubic metre per hour.</p>
+
+  <h4>Velocity in a pipe</h4>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mi>v</mi><mo>=</mo>
+      <mfrac><mi>Q</mi><mi>A</mi></mfrac>
+      <mo>=</mo>
+      <mfrac>
+        <mrow><mn>4</mn><mo>⁢</mo><mi>Q</mi></mrow>
+        <mrow><mi>π</mi><mo>⁢</mo><msup><mi>d</mi><mn>2</mn></msup></mrow>
+      </mfrac>
+    </mrow></math>
+  </div>
+
+  <p>In working units, with <em>Q</em> in m³/h and inside diameter <em>d</em> in mm:</p>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mi>v</mi><mo>[</mo><mtext>m/s</mtext><mo>]</mo><mo>=</mo>
+      <mfrac>
+        <mrow><mn>353.7</mn><mo>⁢</mo><mi>Q</mi><mo>[</mo><msup><mtext>m</mtext><mn>3</mn></msup><mtext>/h</mtext><mo>]</mo></mrow>
+        <msup><mrow><mo>(</mo><mi>d</mi><mo>[</mo><mtext>mm</mtext><mo>]</mo><mo>)</mo></mrow><mn>2</mn></msup>
+      </mfrac>
+    </mrow></math>
+  </div>
+
+  <h4>Reynolds number</h4>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mi>Re</mi><mo>=</mo>
+      <mfrac>
+        <mrow><mi>ρ</mi><mo>⁢</mo><mi>v</mi><mo>⁢</mo><mi>d</mi></mrow>
+        <mi>μ</mi>
+      </mfrac>
+      <mo>=</mo>
+      <mfrac>
+        <mrow><mi>v</mi><mo>⁢</mo><mi>d</mi></mrow>
+        <mi>ν</mi>
+      </mfrac>
+    </mrow></math>
+  </div>
+
+  <p>Laminar below about 2300; fully turbulent above about 4000. Pump suction piping in viscous service is frequently laminar — check before applying a turbulent friction correlation.</p>
+
+  <h3 id="s1-3-6"><span class="sec-no">1.3.6</span>Head (liquid)</h3>
+
+  <h4>Pressure to head</h4>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mi>H</mi><mo>=</mo>
+      <mfrac>
+        <mi>p</mi>
+        <mrow><mi>ρ</mi><mo>⁢</mo><mi>g</mi></mrow>
+      </mfrac>
+    </mrow></math>
+  </div>
+
+  <p>In the units actually used on a pump datasheet:</p>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mi>H</mi><mo>[</mo><mtext>m</mtext><mo>]</mo><mo>=</mo>
+      <mfrac>
+        <mrow><mn>10.197</mn><mo>⁢</mo><mi>Δp</mi><mo>[</mo><mtext>bar</mtext><mo>]</mo></mrow>
+        <mtext>SG</mtext>
+      </mfrac>
+      <mspace width="2em"/>
+      <mi>H</mi><mo>[</mo><mtext>ft</mtext><mo>]</mo><mo>=</mo>
+      <mfrac>
+        <mrow><mn>2.3067</mn><mo>⁢</mo><mi>Δp</mi><mo>[</mo><mtext>psi</mtext><mo>]</mo></mrow>
+        <mtext>SG</mtext>
+      </mfrac>
+    </mrow></math>
+  </div>
+
+  <div class="note">
+    <strong>Head is the property of the pump; pressure is not.</strong>
+    A centrifugal pump develops the same <em>head</em> regardless of the liquid’s density — the differential <em>pressure</em> scales with SG. This is why performance curves are always plotted in metres or feet of liquid, and why a pump tested on water will deliver proportionally less differential pressure on a light hydrocarbon.
+  </div>
+
+  <h4>Net Positive Suction Head available</h4>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <msub><mtext>NPSH</mtext><mtext>a</mtext></msub><mo>=</mo>
+      <mfrac>
+        <mrow><msub><mi>p</mi><mtext>s</mtext></msub><mo>−</mo><msub><mi>p</mi><mtext>v</mtext></msub></mrow>
+        <mrow><mi>ρ</mi><mo>⁢</mo><mi>g</mi></mrow>
+      </mfrac>
+      <mo>+</mo><msub><mi>H</mi><mtext>s</mtext></msub>
+      <mo>−</mo><msub><mi>H</mi><mtext>f</mtext></msub>
+    </mrow></math>
+  </div>
+
+  <div class="where">
+    <dl>
+      <dt>p<sub>s</sub></dt><dd>absolute pressure on the liquid surface in the suction vessel, Pa</dd>
+      <dt>p<sub>v</sub></dt><dd>vapour pressure of the liquid at pumping temperature, Pa (absolute)</dd>
+      <dt>H<sub>s</sub></dt><dd>static head — liquid level above pump centreline, m (negative for a suction lift)</dd>
+      <dt>H<sub>f</sub></dt><dd>friction and fitting losses in the suction line, m</dd>
+    </dl>
+  </div>
+
+  <div class="warn">
+    <strong>Margin, not equality.</strong>
+    NPSH<sub>a</sub> must exceed NPSH<sub>r</sub> by a margin, not merely equal it. API 610 requires a margin over the vendor’s 3 % head-drop NPSH<sub>r</sub>; a boiling-point liquid at its bubble point has
+    <em>p</em><sub>s</sub> = <em>p</em><sub>v</sub>, so the entire available NPSH comes from static head less friction loss.
+  </div>
+
+  <!-- ==================================================== 1.4 SOURCES -->
+  <h2 id="s1-4"><span class="sec-no">1.4</span>Sources</h2>
+
+  <ul>
+    <li>BIPM, <em>The International System of Units (SI)</em>, 9th edition, 2019 — SI definitions and the exact constants.</li>
+    <li>CODATA internationally recommended values of the fundamental physical constants, 2018 adjustment.</li>
+    <li>ISO 80000-1:2022, <em>Quantities and units — General</em>.</li>
+    <li>ISO 13443:1996, <em>Natural gas — Standard reference conditions</em>.</li>
+    <li>ASTM D2161, <em>Standard Practice for Conversion of Kinematic Viscosity to Saybolt Universal Viscosity</em>.</li>
+    <li>ASTM D1250 / API MPMS Chapter 11, petroleum measurement tables — API gravity.</li>
+    <li>API Standard 610, <em>Centrifugal Pumps for Petroleum, Petrochemical and Natural Gas Industries</em> — NPSH margin requirements.</li>
+    <li>Hydraulic Institute ANSI/HI 9.6.7, <em>Effects of Liquid Viscosity on Rotodynamic Pump Performance</em>.</li>
+  </ul>
+
+  <p>Conversion factors in this chapter are derived from the defining relations above and computed to full precision, then rounded for display. Where a factor is exact by definition it is marked <strong>exact</strong>; all others are rounded to six significant figures.</p>
+
+  <nav class="prev-next">
+    <span><a href="index.html">← Contents</a></span>
+    <span class="no-print" style="color: var(--text-faint);">Chapter 2 — Standards · planned</span>
+  </nav>
+
+</main>
+
+<footer class="foot">
+  <p><strong>Rotating Equipment General Reference</strong> — Chapter 1, Units, Conversions &amp; Formulas.</p>
+  <p>Independently written from public standards and first principles &mdash; see <a href="index.html#provenance">provenance</a> and <a href="NOTICE.md">NOTICE.md</a>.<br>Copyright &copy; 2026 Zachry Philippines. All rights reserved.</p>
+</footer>
+
+<script src="assets/search-index.js"></script>
+<script src="assets/reference.js"></script>
+</body>
+</html>

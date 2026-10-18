@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Expander Selection — Rotating Equipment General Reference</title>
+<meta name="description" content="Low temperature turboexpanders and high temperature hot gas expanders — principles, applications, and power recovery calculations.">
+<link rel="stylesheet" href="assets/reference.css">
+</head>
+<body data-base="">
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="brand" href="index.html">Rotating Equipment <span>General Reference</span></a>
+    <span class="chapter-badge">Chapter 6</span>
+    <span class="spacer"></span>
+    <div class="search-wrap">
+      <input type="search" id="site-search" placeholder="Search sections…  (press /)" autocomplete="off" aria-label="Search the reference">
+      <div class="search-results" id="search-results" role="listbox"></div>
+    </div>
+  </div>
+</header>
+
+<main class="layout">
+
+  <h1 class="page-title">6 &nbsp;Expander Selection</h1>
+  <p class="page-sub">Recovering shaft work from a pressure let-down, at cryogenic and at high temperature.</p>
+
+  <nav class="toc" aria-label="Chapter contents">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#s6-1"><span class="t-no">6.1</span> Principle</a></li>
+      <li><a href="#s6-2"><span class="t-no">6.2</span> Expansion calculations</a></li>
+      <li><a href="#s6-3"><span class="t-no">6.3</span> Low temperature expanders</a></li>
+      <li><a href="#s6-4"><span class="t-no">6.4</span> High temperature expanders</a></li>
+      <li><a href="#s6-5"><span class="t-no">6.5</span> Loading arrangements</a></li>
+      <li><a href="#s6-6"><span class="t-no">6.6</span> Sources</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="s6-1"><span class="sec-no">6.1</span>Principle</h2>
+
+  <p>An expander is a compressor run backwards. Gas at high pressure does work on a rotor as it expands, the rotor drives a load, and the gas leaves colder than a throttling valve would have left it. Two distinct benefits follow, and a given application usually wants one of them more than the other.</p>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 6.1-1 — What the expander is for</caption>
+      <thead><tr><th scope="col">Objective</th><th scope="col">Service</th><th scope="col">Temperature regime</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Refrigeration — produce cold</th><td>Gas processing, NGL recovery, air separation, LNG liquefaction, ethylene</td><td>Cryogenic, down to −150 °C and below</td></tr>
+        <tr><th scope="row">Power recovery — produce shaft work</th><td>FCC flue gas, nitric acid tail gas, blast furnace top gas, natural gas pressure let-down</td><td>Hot, 350 to 700 °C — or ambient</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Isenthalpic versus isentropic.</strong>
+    A Joule-Thomson valve expands at constant enthalpy and extracts no work. An expander approaches constant entropy and extracts work, so for the same pressure drop it produces substantially more cooling — typically two to three times the temperature drop of a JT valve, and shaft power as well. That is the entire economic case.
+  </div>
+
+  <h2 id="s6-2"><span class="sec-no">6.2</span>Expansion calculations</h2>
+
+  <h3>Isentropic enthalpy drop</h3>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mi>Δ</mi><msub><mi>h</mi><mi>s</mi></msub><mo>=</mo>
+      <msub><mi>c</mi><mi>p</mi></msub><mo>⁢</mo><msub><mi>T</mi><mn>1</mn></msub>
+      <mrow><mo>[</mo><mn>1</mn><mo>−</mo>
+        <msup>
+          <mrow><mo>(</mo><mfrac><msub><mi>p</mi><mn>2</mn></msub><msub><mi>p</mi><mn>1</mn></msub></mfrac><mo>)</mo></mrow>
+          <mfrac><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mi>k</mi></mfrac>
+        </msup>
+      <mo>]</mo></mrow>
+    </mrow></math>
+  </div>
+
+  <div class="where">
+    <dl>
+      <dt>Δh<sub>s</sub></dt><dd>isentropic enthalpy drop, kJ/kg</dd>
+      <dt>c<sub>p</sub></dt><dd>specific heat at constant pressure, kJ/(kg·K)</dd>
+      <dt>T<sub>1</sub></dt><dd>inlet temperature, K (absolute)</dd>
+      <dt>p<sub>1</sub>, p<sub>2</sub></dt><dd>inlet and outlet pressure, absolute</dd>
+      <dt>k</dt><dd>specific heat ratio</dd>
+    </dl>
+  </div>
+
+  <h3>Recovered power</h3>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mi>P</mi><mo>[</mo><mtext>kW</mtext><mo>]</mo><mo>=</mo>
+      <mover><mi>m</mi><mo>˙</mo></mover><mo>⁢</mo>
+      <mi>Δ</mi><msub><mi>h</mi><mi>s</mi></msub><mo>⁢</mo>
+      <msub><mi>η</mi><mi>s</mi></msub><mo>⁢</mo>
+      <msub><mi>η</mi><mtext>mech</mtext></msub>
+    </mrow></math>
+  </div>
+
+  <div class="where">
+    <dl>
+      <dt>ṁ</dt><dd>mass flow, kg/s</dd>
+      <dt>η<sub>s</sub></dt><dd>isentropic efficiency — typically 0.80 to 0.88 for a radial inflow turboexpander</dd>
+      <dt>η<sub>mech</sub></dt><dd>mechanical efficiency, typically 0.97 to 0.99</dd>
+    </dl>
+  </div>
+
+  <h3>Outlet temperature</h3>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <msub><mi>T</mi><mn>2</mn></msub><mo>=</mo>
+      <msub><mi>T</mi><mn>1</mn></msub>
+      <mrow><mo>[</mo><mn>1</mn><mo>−</mo>
+        <msub><mi>η</mi><mi>s</mi></msub>
+        <mrow><mo>(</mo><mn>1</mn><mo>−</mo>
+          <msup>
+            <mrow><mo>(</mo><mfrac><msub><mi>p</mi><mn>2</mn></msub><msub><mi>p</mi><mn>1</mn></msub></mfrac><mo>)</mo></mrow>
+            <mfrac><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mi>k</mi></mfrac>
+          </msup>
+        <mo>)</mo></mrow>
+      <mo>]</mo></mrow>
+    </mrow></math>
+  </div>
+
+  <div class="note">
+    <p style="margin-top:0"><strong>Worked example — hot gas expander.</strong></p>
+    <p>FCC flue gas: 60 kg/s at 690 °C (963 K) and 2.8 bar a, expanding to 1.1 bar a.
+    Take <em>c<sub>p</sub></em> = 1.12 kJ/(kg·K), <em>k</em> = 1.35, η<sub>s</sub> = 0.85.</p>
+    <p>(p₂/p₁)<sup>(k−1)/k</sup> = (0.3929)<sup>0.2593</sup> = 0.7849</p>
+    <p>Δh<sub>s</sub> = 1.12 × 963 × (1 − 0.7849) = 232.0 kJ/kg</p>
+    <p><em>P</em> = 60 × 232.0 × 0.85 × 0.98 ≈ <strong>11 600 kW</strong></p>
+    <p style="margin-bottom:0"><em>T</em>₂ = 963 × [1 − 0.85(1 − 0.7849)] = 963 × 0.8171 = 787 K = <strong>514 °C</strong></p>
+  </div>
+
+  <div class="warn">
+    <strong>Check for condensation across the expansion.</strong>
+    In cryogenic service the expansion path may cross into the two-phase region. Modest liquid fraction at the outlet is tolerated by many designs — commonly stated limits are of the order of a few per cent by mass — but it must be deliberate, within the vendor's limit, and verified on a Mollier or <em>T</em>–<em>s</em> diagram for the actual composition. Liquid at the inlet or in excess at the outlet erodes the wheel.
+  </div>
+
+  <h2 id="s6-3"><span class="sec-no">6.3</span>Low temperature expanders</h2>
+
+  <p>Radial inflow turboexpanders, almost universally, running at high speed on a single overhung wheel.</p>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 6.3-1 — Cryogenic turboexpander applications</caption>
+      <thead><tr><th scope="col">Process</th><th scope="col">Role</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">NGL / LPG recovery</th><td>Generates the cold that condenses C₂+ from the gas stream. Turboexpander plants displaced JT plants for exactly this reason.</td></tr>
+        <tr><th scope="row">Natural gas dew point control</th><td>Hydrocarbon dew pointing before sales gas delivery</td></tr>
+        <tr><th scope="row">LNG liquefaction</th><td>Nitrogen or methane expander cycles</td></tr>
+        <tr><th scope="row">Air separation</th><td>Refrigeration for the cold box</td></tr>
+        <tr><th scope="row">Ethylene plants</th><td>Demethaniser refrigeration</td></tr>
+        <tr><th scope="row">Helium and hydrogen liquefaction</th><td>Deep cryogenic refrigeration</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 6.3-2 — Design features and why they exist</caption>
+      <thead><tr><th scope="col">Feature</th><th scope="col">Reason</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Variable inlet guide vanes</th><td>Capacity and efficiency control over a wide flow range; also the primary speed control element</td></tr>
+        <tr><th scope="row">Very high speed</th><td>Small wheel, high tip speed. 10 000 to 60 000 rpm is normal; small machines run faster.</td></tr>
+        <tr><th scope="row">Magnetic or gas bearings (optional)</th><td>Eliminates oil, and with it the risk of oil entering the cold box</td></tr>
+        <tr><th scope="row">Dry gas or labyrinth seals with seal gas</th><td>Prevents lube oil migration into the process. Seal gas is usually warm, dry process gas or nitrogen.</td></tr>
+        <tr><th scope="row">Cold box integration</th><td>Machine is insulated within or adjacent to the cold box; piping arranged for differential contraction</td></tr>
+        <tr><th scope="row">Austenitic stainless / aluminium construction</th><td>Toughness at cryogenic temperature</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>Seal gas and lube oil are the usual failure path.</strong>
+    Loss of seal gas differential allows lube oil to migrate to the cold end, where it freezes and plugs the cold box — an expensive, slow recovery. Seal gas supply reliability, differential pressure monitoring and a trip on low differential are essential, not optional.
+  </div>
+
+  <h2 id="s6-4"><span class="sec-no">6.4</span>High temperature expanders</h2>
+
+  <p>Also called hot gas expanders or power recovery turbines. Usually axial, and usually large.</p>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 6.4-1 — Hot gas expander applications</caption>
+      <thead><tr><th scope="col">Application</th><th scope="col">Inlet conditions</th><th scope="col">Notes</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">FCC flue gas power recovery</th><td>620 – 730 °C, 2 – 3.5 bar a</td><td>The classic case. Recovers a large fraction of the main air blower power.</td></tr>
+        <tr><th scope="row">Nitric acid tail gas</th><td>300 – 650 °C</td><td>Drives the process air compressor</td></tr>
+        <tr><th scope="row">Blast furnace top gas (TRT)</th><td>Ambient to 250 °C</td><td>High flow, low pressure</td></tr>
+        <tr><th scope="row">Natural gas let-down</th><td>Pre-heated to avoid hydrate / low outlet temperature</td><td>City gate stations, inlet to distribution</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 6.4-2 — Dominant design problems</caption>
+      <thead><tr><th scope="col">Problem</th><th scope="col">Consequence</th><th scope="col">Mitigation</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Catalyst fines erosion</th><td>FCC flue gas carries alumina/silica catalyst. Blade leading edges and the nozzle ring erode.</td><td>Third-stage separator upstream, with specified particle size and loading limits; erosion-resistant blade coatings; wide blade spacing</td></tr>
+        <tr><th scope="row">Catalyst deposition</th><td>Fines build up on blades, unbalancing the rotor</td><td>On-line water or steam washing; vibration monitoring</td></tr>
+        <tr><th scope="row">High temperature creep</th><td>Blade and disc life</td><td>Nickel-based superalloy blades, disc cooling, temperature limit protection</td></tr>
+        <tr><th scope="row">Thermal transients</th><td>Differential expansion, rubbing, low-cycle fatigue</td><td>Controlled start-up and shutdown ramp rates; hot standby arrangements</td></tr>
+        <tr><th scope="row">Overspeed on load loss</th><td>Train accelerates rapidly if the load is lost</td><td>Fast-acting trip and shut-off valve; independent overspeed protection</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>Erosion sets the maintenance interval, not hours run.</strong>
+    Hot gas expander availability is governed almost entirely by how well the upstream separation performs. A third-stage separator operating off-design puts fines into the machine and turns a four-year run into a one-year run. Particulate loading limits in the vendor's specification are hard limits, not targets.
+  </div>
+
+  <h2 id="s6-5"><span class="sec-no">6.5</span>Loading arrangements</h2>
+
+  <p>The recovered work must go somewhere. The choice affects the whole train layout and control philosophy.</p>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 6.5-1 — Expander loading arrangements</caption>
+      <thead><tr><th scope="col">Arrangement</th><th scope="col">Description</th><th scope="col">Comment</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Expander-compressor (compander)</th><td>Expander wheel and a booster compressor wheel on a common shaft</td><td>The standard cryogenic arrangement. Recompresses the residue gas. Self-contained, no external power.</td></tr>
+        <tr><th scope="row">Expander-generator</th><td>Drives a generator, directly or through a gearbox</td><td>Exports electrical power. Needs speed control synchronised to the grid.</td></tr>
+        <tr><th scope="row">Integrated train</th><td>Expander, motor-generator, steam turbine and main air blower on one shaft</td><td>FCC power recovery trains. Motor-generator makes up the difference between recovered and required power either way.</td></tr>
+        <tr><th scope="row">Oil / hydraulic brake</th><td>Work dissipated</td><td>Only where cold is the objective and power recovery is not worth the equipment</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Applicable standard.</strong>
+    API 617 Part 4 covers expander-compressors. General-purpose and power-recovery expanders are frequently supplied to the vendor's standard with the project adding API-equivalent requirements for materials, testing, instrumentation (API 670) and lube systems (API 614). Confirm early which standard actually governs — it is often left ambiguous in the inquiry.
+  </div>
+
+  <h2 id="s6-6"><span class="sec-no">6.6</span>Sources</h2>
+
+  <ul>
+    <li>API Standard 617, <em>Axial and Centrifugal Compressors and Expander-compressors</em>, Part 4 — Expander-compressors.</li>
+    <li>API Standard 614 / ISO 10438, <em>Lubrication, Shaft-Sealing and Oil-Control Systems</em>.</li>
+    <li>API Standard 670, <em>Machinery Protection Systems</em>.</li>
+    <li>API Standard 611, general-purpose steam turbines — referenced for overspeed protection practice on expander trains.</li>
+    <li>ASME PTC 10, <em>Performance Test Code on Compressors and Exhausters</em> — applied to expander-compressors.</li>
+    <li>ISO 10439 series, <em>Petroleum, petrochemical and natural gas industries — Axial and centrifugal compressors and expander-compressors</em>.</li>
+  </ul>
+
+  <p>Efficiency and temperature ranges are typical values for preliminary work. Machine performance is vendor-specific and must be taken from the certified prediction for the actual gas composition.</p>
+
+  <nav class="prev-next">
+    <span><a href="ch05-compressors.html">← Ch 5 · Compressor Selection</a></span>
+    <span><a href="ch07-steam-turbines.html">Ch 7 · Steam Turbine Selection →</a></span>
+  </nav>
+
+</main>
+
+<footer class="foot">
+  <p><strong>Rotating Equipment General Reference</strong> — Chapter 6, Expander Selection.</p>
+  <p>Independently written from public standards &mdash; see <a href="index.html#provenance">provenance</a> and <a href="NOTICE.md">NOTICE.md</a>.<br>Copyright &copy; 2026 Zachry Philippines. All rights reserved.</p>
+</footer>
+
+<script src="assets/search-index.js"></script>
+<script src="assets/reference.js"></script>
+</body>
+</html>

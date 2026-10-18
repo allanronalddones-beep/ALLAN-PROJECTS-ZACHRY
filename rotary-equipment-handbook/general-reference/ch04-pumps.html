@@ -1,0 +1,711 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pump Selection — Rotating Equipment General Reference</title>
+<meta name="description" content="API 610 pump types, selection logic, affinity laws, specific speed, NPSH, power calculation, vertical, sealless and positive displacement pumps.">
+<link rel="stylesheet" href="assets/reference.css">
+</head>
+<body data-base="">
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="brand" href="index.html">Rotating Equipment <span>General Reference</span></a>
+    <span class="chapter-badge">Chapter 4</span>
+    <span class="spacer"></span>
+    <div class="search-wrap">
+      <input type="search" id="site-search" placeholder="Search sections…  (press /)" autocomplete="off" aria-label="Search the reference">
+      <div class="search-results" id="search-results" role="listbox"></div>
+    </div>
+  </div>
+</header>
+
+<main class="layout">
+
+  <h1 class="page-title">4 &nbsp;Pump Selection</h1>
+  <p class="page-sub">Choosing a pump type, reading its curve, and the calculations that decide whether it will work.</p>
+
+  <nav class="toc" aria-label="Chapter contents">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#s4-1"><span class="t-no">4.1</span> Choosing a pump family</a></li>
+      <li><a href="#s4-2"><span class="t-no">4.2</span> API 610 type codes</a></li>
+      <li><a href="#s4-3"><span class="t-no">4.3</span> Affinity laws</a></li>
+      <li><a href="#s4-4"><span class="t-no">4.4</span> Specific speed and impeller profile</a></li>
+      <li><a href="#s4-5"><span class="t-no">4.5</span> Reading the performance curve</a></li>
+      <li><a href="#s4-6"><span class="t-no">4.6</span> Power and efficiency</a></li>
+      <li><a href="#s4-7"><span class="t-no">4.7</span> NPSH and suction specific speed</a></li>
+      <li><a href="#s4-8"><span class="t-no">4.8</span> Vertical pumps</a></li>
+      <li><a href="#s4-9"><span class="t-no">4.9</span> Sealless pumps</a></li>
+      <li><a href="#s4-10"><span class="t-no">4.10</span> Positive displacement pumps</a></li>
+      <li><a href="#s4-11"><span class="t-no">4.11</span> Cryogenic submerged motor pumps</a></li>
+      <li><a href="#s4-12"><span class="t-no">4.12</span> Sources</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="s4-1"><span class="sec-no">4.1</span>Choosing a pump family</h2>
+
+  <p>The first decision is rotodynamic versus positive displacement. It is driven by viscosity, flow, differential head and whether the flow must be metered.</p>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 4.1-1 — Rotodynamic versus positive displacement</caption>
+      <thead><tr><th scope="col"></th><th scope="col">Centrifugal (rotodynamic)</th><th scope="col">Positive displacement</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Flow vs pressure</th><td>Flow falls as head rises — follows a curve</td><td>Flow near-constant regardless of pressure</td></tr>
+        <tr><th scope="row">Viscosity limit</th><td>Degrades above ~100 cSt, impractical above ~500 cSt</td><td>Improves with viscosity; handles 100 000 cSt+</td></tr>
+        <tr><th scope="row">Low flow, high head</th><td>Poor — low specific speed, poor efficiency</td><td>Natural fit</td></tr>
+        <tr><th scope="row">High flow, low head</th><td>Natural fit</td><td>Impractical</td></tr>
+        <tr><th scope="row">Metering accuracy</th><td>No</td><td>Yes — API 675 controlled volume</td></tr>
+        <tr><th scope="row">Dead-head</th><td>Survivable briefly; heats up</td><td><strong>Destroys the pump or bursts the line.</strong> Relief valve mandatory.</td></tr>
+        <tr><th scope="row">Shear sensitivity</th><td>High shear at impeller</td><td>Gentler — favours emulsions, polymers</td></tr>
+        <tr><th scope="row">Pulsation</th><td>Smooth</td><td>Inherent — needs dampeners and pulsation study</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>Every positive displacement pump needs a relief valve on the discharge.</strong>
+    It will not "find its own operating point". If the discharge is blocked, pressure rises until something fails. The relief must be upstream of any isolation valve and sized for full pump capacity.
+  </div>
+
+  <h2 id="s4-2"><span class="sec-no">4.2</span>API 610 type codes</h2>
+
+  <p>API 610 classifies pumps by a two-letter configuration code plus a number. The code tells you the bearing arrangement, casing split and mounting without a drawing.</p>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 4.2-1 — OH: overhung, impeller cantilevered beyond the bearings</caption>
+      <thead><tr><th scope="col">Code</th><th scope="col">Configuration</th><th scope="col">Typical use</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">OH1</th><td>Foot-mounted, single stage, separate bearing housing</td><td>Non-API general service. Not permitted for most API 610 hydrocarbon duty.</td></tr>
+        <tr><th scope="row">OH2</th><td><strong>Centreline-mounted</strong>, single stage, separate bearing housing</td><td>The API process pump workhorse. Centreline mounting keeps alignment as the casing heats.</td></tr>
+        <tr><th scope="row">OH3</th><td>Vertical in-line with separate bearing bracket</td><td>Space-limited installations, moderate duty</td></tr>
+        <tr><th scope="row">OH4</th><td>Vertical in-line, rigidly coupled</td><td>Motor bearings carry the pump rotor</td></tr>
+        <tr><th scope="row">OH5</th><td>Vertical in-line, close-coupled (impeller on the motor shaft)</td><td>Compact, low cost, no alignment</td></tr>
+        <tr><th scope="row">OH6</th><td>Vertical in-line, high-speed integrally geared</td><td>High head, low flow — replaces a multistage pump</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 4.2-2 — BB: between bearings, impeller supported each side</caption>
+      <thead><tr><th scope="col">Code</th><th scope="col">Casing</th><th scope="col">Stages</th><th scope="col">Typical use</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">BB1</th><td>Axially split</td><td>1 or 2</td><td>High flow, moderate head — cooling water, transfer</td></tr>
+        <tr><th scope="row">BB2</th><td>Radially split</td><td>1 or 2</td><td>High pressure or high temperature single stage</td></tr>
+        <tr><th scope="row">BB3</th><td>Axially split</td><td>Multistage</td><td>High head; easy rotor access. Limited by pressure.</td></tr>
+        <tr><th scope="row">BB4</th><td>Radially split, single casing (ring section)</td><td>Multistage</td><td>Boiler feed, high pressure</td></tr>
+        <tr><th scope="row">BB5</th><td><strong>Radially split, double casing (barrel)</strong></td><td>Multistage</td><td>Highest pressure — injection, boiler feed, pipeline. Inner cartridge withdrawable.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 4.2-3 — VS: vertically suspended</caption>
+      <thead><tr><th scope="col">Code</th><th scope="col">Configuration</th><th scope="col">Typical use</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">VS1</th><td>Single casing, diffuser, wet pit, discharge through column</td><td>Deep well, high head cooling water</td></tr>
+        <tr><th scope="row">VS2</th><td>Single casing, volute, wet pit</td><td>Moderate head, large flow</td></tr>
+        <tr><th scope="row">VS3</th><td>Single casing, axial flow, wet pit</td><td>Very high flow, very low head</td></tr>
+        <tr><th scope="row">VS4</th><td>Single casing, line-shaft driven sump pump</td><td>Sumps — bearings lubricated by the pumped liquid or external flush</td></tr>
+        <tr><th scope="row">VS5</th><td>Single casing, cantilever sump pump</td><td>Sumps with solids or intermittent level — no submerged bearings</td></tr>
+        <tr><th scope="row">VS6</th><td><strong>Double casing (can), diffuser</strong></td><td>Low NPSHa service — the can provides submergence. Condensate, LPG, light hydrocarbons.</td></tr>
+        <tr><th scope="row">VS7</th><td>Double casing (can), volute</td><td>As VS6, volute hydraulics</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Why VS6 exists.</strong>
+    When NPSH available at grade is insufficient, a barrel (can) pump drops the first-stage impeller several metres below grade. Every metre of can depth adds a metre of static head to NPSHa. It is the standard answer for liquids at or near their bubble point — LPG, condensate, light ends.
+  </div>
+
+  <h2 id="s4-3"><span class="sec-no">4.3</span>Affinity laws</h2>
+
+  <p>For a given pump operating at the same point of its curve, changing speed scales the performance predictably.</p>
+
+  <h3>Speed change</h3>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mfrac><msub><mi>Q</mi><mn>2</mn></msub><msub><mi>Q</mi><mn>1</mn></msub></mfrac>
+      <mo>=</mo>
+      <mfrac><msub><mi>N</mi><mn>2</mn></msub><msub><mi>N</mi><mn>1</mn></msub></mfrac>
+      <mspace width="2em"/>
+      <mfrac><msub><mi>H</mi><mn>2</mn></msub><msub><mi>H</mi><mn>1</mn></msub></mfrac>
+      <mo>=</mo>
+      <msup><mrow><mo>(</mo><mfrac><msub><mi>N</mi><mn>2</mn></msub><msub><mi>N</mi><mn>1</mn></msub></mfrac><mo>)</mo></mrow><mn>2</mn></msup>
+      <mspace width="2em"/>
+      <mfrac><msub><mi>P</mi><mn>2</mn></msub><msub><mi>P</mi><mn>1</mn></msub></mfrac>
+      <mo>=</mo>
+      <msup><mrow><mo>(</mo><mfrac><msub><mi>N</mi><mn>2</mn></msub><msub><mi>N</mi><mn>1</mn></msub></mfrac><mo>)</mo></mrow><mn>3</mn></msup>
+    </mrow></math>
+  </div>
+
+  <h3>Impeller diameter trim</h3>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mfrac><msub><mi>Q</mi><mn>2</mn></msub><msub><mi>Q</mi><mn>1</mn></msub></mfrac>
+      <mo>≈</mo>
+      <mfrac><msub><mi>D</mi><mn>2</mn></msub><msub><mi>D</mi><mn>1</mn></msub></mfrac>
+      <mspace width="2em"/>
+      <mfrac><msub><mi>H</mi><mn>2</mn></msub><msub><mi>H</mi><mn>1</mn></msub></mfrac>
+      <mo>≈</mo>
+      <msup><mrow><mo>(</mo><mfrac><msub><mi>D</mi><mn>2</mn></msub><msub><mi>D</mi><mn>1</mn></msub></mfrac><mo>)</mo></mrow><mn>2</mn></msup>
+      <mspace width="2em"/>
+      <mfrac><msub><mi>P</mi><mn>2</mn></msub><msub><mi>P</mi><mn>1</mn></msub></mfrac>
+      <mo>≈</mo>
+      <msup><mrow><mo>(</mo><mfrac><msub><mi>D</mi><mn>2</mn></msub><msub><mi>D</mi><mn>1</mn></msub></mfrac><mo>)</mo></mrow><mn>3</mn></msup>
+    </mrow></math>
+  </div>
+
+  <div class="warn">
+    <strong>Diameter trim is approximate; speed change is not.</strong>
+    The speed laws are exact for geometrically similar flow. Trimming changes the impeller–volute relationship, so the real result falls short of the prediction, increasingly so for large trims. Limit trims to roughly 10–15 % of maximum diameter, and expect an efficiency penalty of around 1 point per 5 % trimmed.
+  </div>
+
+  <div class="note">
+    <strong>The cube law is why variable speed saves money.</strong>
+    Throttling a pump from 100 % to 70 % flow leaves shaft power near 85–90 %. Slowing it to deliver 70 % flow drops power to 0.7³ ≈ 34 %. The saving is real but only where the system curve is friction-dominated; against a high static head, slowing the pump quickly reaches the point where it delivers nothing at all.
+  </div>
+
+  <h3>50 Hz to 60 Hz</h3>
+
+  <p>A pump moved from 50 Hz to 60 Hz supply runs 20 % faster:</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th scope="col">Quantity</th><th scope="col" class="num">Ratio</th><th scope="col" class="num">Change</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Speed</th><td class="num">1.20</td><td class="num">+20 %</td></tr>
+        <tr><th scope="row">Flow</th><td class="num">1.20</td><td class="num">+20 %</td></tr>
+        <tr><th scope="row">Head</th><td class="num">1.44</td><td class="num">+44 %</td></tr>
+        <tr><th scope="row">Shaft power</th><td class="num">1.73</td><td class="num">+73 %</td></tr>
+        <tr><th scope="row">NPSH required</th><td class="num">≈ 1.44</td><td class="num">+44 %</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>Relevant to Philippine installations.</strong>
+    Equipment built for 50 Hz European practice and installed on a 60 Hz supply absorbs roughly 1.73 times the power and demands about 1.44 times the NPSH. The motor is very likely undersized and the pump may cavitate. Check both before energising.
+  </div>
+
+  <h2 id="s4-4"><span class="sec-no">4.4</span>Specific speed and impeller profile</h2>
+
+  <p>Specific speed is a dimensionless-in-spirit index that characterises impeller geometry. It is evaluated <strong>at the best efficiency point</strong>, at maximum impeller diameter, for a single stage and single suction.</p>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <msub><mi>N</mi><mtext>s</mtext></msub><mo>=</mo>
+      <mfrac>
+        <mrow><mi>N</mi><mo>⁢</mo><msqrt><mi>Q</mi></msqrt></mrow>
+        <msup><mi>H</mi><mn>0.75</mn></msup>
+      </mfrac>
+    </mrow></math>
+  </div>
+
+  <div class="where">
+    <dl>
+      <dt>N</dt><dd>rotational speed, rpm</dd>
+      <dt>Q</dt><dd>flow at BEP — m³/s (metric form) or US gpm (US form)</dd>
+      <dt>H</dt><dd>head per stage at BEP — m (metric form) or ft (US form)</dd>
+    </dl>
+  </div>
+
+  <div class="note">
+    <strong>Always state which convention.</strong>
+    The US form (gpm, ft) gives numbers about <strong>51.6 times</strong> larger than the metric form (m³/s, m). A "specific speed of 1500" is meaningless without the units. Vendor literature is usually US.
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 4.4-1 — Impeller profile by specific speed</caption>
+      <thead>
+        <tr><th scope="col" class="num">N<sub>s</sub> (US)</th><th scope="col" class="num">N<sub>s</sub> (metric)</th><th scope="col">Impeller type</th><th scope="col">Characteristic</th><th scope="col">Peak efficiency</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="num">500 – 1500</td><td class="num">10 – 29</td><td>Radial</td><td>High head, low flow. Steep curve.</td><td class="num">Lower</td></tr>
+        <tr><td class="num">1500 – 4000</td><td class="num">29 – 78</td><td>Francis / mixed</td><td>The efficiency sweet spot</td><td class="num">Highest</td></tr>
+        <tr><td class="num">4000 – 7000</td><td class="num">78 – 136</td><td>Mixed flow</td><td>High flow, moderate head</td><td class="num">High</td></tr>
+        <tr><td class="num">7000 – 15000</td><td class="num">136 – 290</td><td>Axial (propeller)</td><td>Very high flow, very low head. Power rises at shutoff.</td><td class="num">High</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>Axial pumps behave backwards at shutoff.</strong>
+    A radial pump draws least power at closed valve; an axial pump draws <em>most</em>. Never start an axial or high specific speed mixed-flow pump against a closed discharge — the motor will be overloaded. Radial pumps are started closed as standard practice; axial pumps are started open.
+  </div>
+
+  <h2 id="s4-5"><span class="sec-no">4.5</span>Reading the performance curve</h2>
+
+  <figure style="margin:1.5rem 0;">
+    <svg viewBox="0 0 720 420" role="img" aria-labelledby="curve-title curve-desc" style="width:100%;height:auto;background:var(--bg-sunken);border:1px solid var(--border);border-radius:var(--radius);">
+      <title id="curve-title">Centrifugal pump performance curve</title>
+      <desc id="curve-desc">Head falls with increasing flow; efficiency peaks at the best efficiency point; power rises with flow; NPSH required rises steeply toward run-out. The preferred operating region spans roughly 70 to 120 percent of best efficiency point flow, and the allowable operating region is wider.</desc>
+
+      <!-- axes -->
+      <g stroke="var(--border-strong)" stroke-width="1.5" fill="none">
+        <path d="M70 340 L660 340"/>
+        <path d="M70 40 L70 340"/>
+      </g>
+
+      <!-- AOR / POR bands -->
+      <rect x="150" y="40" width="420" height="300" fill="var(--accent)" opacity="0.05"/>
+      <rect x="260" y="40" width="200" height="300" fill="var(--accent)" opacity="0.10"/>
+
+      <g font-size="11" fill="var(--text-muted)" font-family="system-ui, sans-serif" text-anchor="middle">
+        <text x="360" y="58">POR &nbsp;70–120 % BEP</text>
+        <text x="360" y="74" font-size="10">AOR is the wider band</text>
+      </g>
+
+      <!-- head curve -->
+      <path d="M70 100 Q 250 108 380 150 T 640 290" stroke="var(--accent)" stroke-width="2.5" fill="none"/>
+      <!-- efficiency curve -->
+      <path d="M90 330 Q 250 150 360 140 Q 480 150 630 300" stroke="#2e9e6b" stroke-width="2" fill="none" stroke-dasharray="6 3"/>
+      <!-- power curve -->
+      <path d="M70 300 Q 300 265 640 215" stroke="#c9771f" stroke-width="2" fill="none"/>
+      <!-- NPSHr curve -->
+      <path d="M70 332 Q 330 326 480 310 T 640 245" stroke="#b14b7a" stroke-width="2" fill="none" stroke-dasharray="3 3"/>
+
+      <!-- BEP marker -->
+      <line x1="360" y1="140" x2="360" y2="340" stroke="var(--text-faint)" stroke-width="1" stroke-dasharray="4 4"/>
+      <circle cx="360" cy="140" r="4.5" fill="#2e9e6b"/>
+      <circle cx="360" cy="142" r="4.5" fill="var(--accent)"/>
+
+      <g font-size="12" font-family="system-ui, sans-serif" font-weight="600">
+        <text x="150" y="96" fill="var(--accent)">Head</text>
+        <text x="300" y="132" fill="#2e9e6b">Efficiency</text>
+        <text x="540" y="205" fill="#c9771f">Power</text>
+        <text x="520" y="300" fill="#b14b7a">NPSH required</text>
+      </g>
+
+      <g font-size="11" fill="var(--text-muted)" font-family="system-ui, sans-serif">
+        <text x="364" y="358">BEP</text>
+        <text x="74" y="358">Shutoff</text>
+        <text x="596" y="358">Run-out</text>
+        <text x="300" y="384" text-anchor="middle" font-size="12" fill="var(--text)">Flow  Q  →</text>
+      </g>
+
+      <text x="22" y="200" font-size="12" fill="var(--text)" font-family="system-ui, sans-serif" transform="rotate(-90 22 200)" text-anchor="middle">Head / Efficiency / Power →</text>
+    </svg>
+    <figcaption style="font-size:.85rem;color:var(--text-muted);margin-top:.5rem;">Figure 4.5-1 — Characteristic curves for a radial centrifugal pump. Shapes are indicative; the relationships are what matter.</figcaption>
+  </figure>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 4.5-1 — Curve terminology</caption>
+      <thead><tr><th scope="col">Term</th><th scope="col">Definition</th><th scope="col">Why it matters</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">BEP</th><td>Best efficiency point — flow at which efficiency peaks</td><td>Hydraulic loads are minimum here. Everything is referenced to it.</td></tr>
+        <tr><th scope="row">Shutoff</th><td>Zero flow, closed discharge</td><td>Maximum head. All power becomes heat — temperature rise limits run time.</td></tr>
+        <tr><th scope="row">Run-out</th><td>Maximum flow the pump will pass</td><td>Motor overload risk; NPSHr is highest here.</td></tr>
+        <tr><th scope="row">POR</th><td>Preferred operating region — API 610: <strong>70 % to 120 % of BEP flow</strong></td><td>Where the pump should normally run. Vibration within API limits.</td></tr>
+        <tr><th scope="row">AOR</th><td>Allowable operating region — defined by the vendor</td><td>Wider than POR. Beyond it the vendor accepts no responsibility.</td></tr>
+        <tr><th scope="row">Rated point</th><td>The duty the pump is purchased for</td><td>API 610 requires the rated point to fall within the POR.</td></tr>
+        <tr><th scope="row">Minimum continuous stable flow</th><td>Lowest flow at which the pump runs without unacceptable vibration</td><td>Sets the minimum flow bypass size</td></tr>
+        <tr><th scope="row">Head rise to shutoff</th><td>Percentage head increase from rated point to shutoff</td><td>API 610 prefers a continuously rising curve, typically 5–20 % rise, for stable parallel operation and control</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>Running below minimum flow is the most common way to destroy a pump.</strong>
+    At low flow the pump suffers suction and discharge recirculation, high radial load, high vibration, and rapid temperature rise. Oversizing a pump "for safety" and then throttling it into low-flow operation is self-defeating — it guarantees the damage it was meant to avoid.
+  </div>
+
+  <h3>Temperature rise at low flow</h3>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mi>Δ</mi><mi>T</mi><mo>=</mo>
+      <mfrac>
+        <mrow><mi>g</mi><mo>⁢</mo><mi>H</mi></mrow>
+        <mrow><msub><mi>c</mi><mi>p</mi></msub><mo>⁢</mo><mi>η</mi></mrow>
+      </mfrac>
+      <mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>η</mi><mo stretchy="false">)</mo>
+    </mrow></math>
+  </div>
+
+  <div class="where">
+    <dl>
+      <dt>ΔT</dt><dd>temperature rise across the pump, K</dd>
+      <dt>g</dt><dd>9.80665 m/s²</dd>
+      <dt>H</dt><dd>head, m</dd>
+      <dt>c<sub>p</sub></dt><dd>specific heat capacity, J/(kg·K)</dd>
+      <dt>η</dt><dd>efficiency at the operating point, as a fraction</dd>
+    </dl>
+  </div>
+
+  <p>At shutoff, η → 0 and all absorbed power heats the contained liquid. This is why a pump must never be left running against a closed valve, and why minimum flow bypasses exist.</p>
+
+  <h2 id="s4-6"><span class="sec-no">4.6</span>Power and efficiency</h2>
+
+  <h3>Hydraulic and shaft power</h3>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <msub><mi>P</mi><mtext>shaft</mtext></msub><mo>[</mo><mtext>kW</mtext><mo>]</mo>
+      <mo>=</mo>
+      <mfrac>
+        <mrow><mi>Q</mi><mo>⁢</mo><mi>H</mi><mo>⁢</mo><mtext>SG</mtext></mrow>
+        <mrow><mn>367</mn><mo>⁢</mo><mi>η</mi></mrow>
+      </mfrac>
+    </mrow></math>
+  </div>
+
+  <div class="where">
+    <dl>
+      <dt>Q</dt><dd>flow, m³/h</dd>
+      <dt>H</dt><dd>total differential head, m</dd>
+      <dt>SG</dt><dd>specific gravity at pumping temperature</dd>
+      <dt>η</dt><dd>pump efficiency as a fraction</dd>
+      <dt>367</dt><dd>rounded from 367 097 / 1000 — derived from ρ<sub>water</sub> g / 3600</dd>
+    </dl>
+  </div>
+
+  <p>In US units:</p>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <msub><mi>P</mi><mtext>shaft</mtext></msub><mo>[</mo><mtext>hp</mtext><mo>]</mo>
+      <mo>=</mo>
+      <mfrac>
+        <mrow><mi>Q</mi><mo>[</mo><mtext>gpm</mtext><mo>]</mo><mo>⁢</mo><mi>H</mi><mo>[</mo><mtext>ft</mtext><mo>]</mo><mo>⁢</mo><mtext>SG</mtext></mrow>
+        <mrow><mn>3960</mn><mo>⁢</mo><mi>η</mi></mrow>
+      </mfrac>
+    </mrow></math>
+  </div>
+
+  <h3>Worked example</h3>
+
+  <div class="note">
+    <p style="margin-top:0"><strong>Duty:</strong> 250 m³/h, 85 m differential head, SG 0.82, pump efficiency 76 %.</p>
+    <p><em>P</em> = (250 × 85 × 0.82) / (367 × 0.76) = 17 425 / 278.9 = <strong>62.5 kW</strong></p>
+    <p style="margin-bottom:0">API 610 requires the driver to be rated for the maximum power over the AOR with the maximum impeller fitted — not for the rated point. A 75 kW motor is the realistic selection, and the end-of-curve power must be checked before settling on it.</p>
+  </div>
+
+  <h3>Viscosity correction</h3>
+
+  <p>Above roughly 20 cSt, head, flow and efficiency all fall relative to the water curve. Correction factors from ANSI/HI 9.6.7 are applied as:</p>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <msub><mi>Q</mi><mtext>vis</mtext></msub><mo>=</mo><msub><mi>C</mi><mi>Q</mi></msub><msub><mi>Q</mi><mtext>water</mtext></msub>
+      <mspace width="1.5em"/>
+      <msub><mi>H</mi><mtext>vis</mtext></msub><mo>=</mo><msub><mi>C</mi><mi>H</mi></msub><msub><mi>H</mi><mtext>water</mtext></msub>
+      <mspace width="1.5em"/>
+      <msub><mi>η</mi><mtext>vis</mtext></msub><mo>=</mo><msub><mi>C</mi><mi>η</mi></msub><msub><mi>η</mi><mtext>water</mtext></msub>
+    </mrow></math>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 4.6-1 — Scale of the viscosity effect (indicative)</caption>
+      <thead><tr><th scope="col" class="num">Viscosity</th><th scope="col">Effect</th></tr></thead>
+      <tbody>
+        <tr><td class="num">&lt; 20 cSt</td><td>Negligible — use the water curve</td></tr>
+        <tr><td class="num">20 – 100 cSt</td><td>Modest correction; efficiency drops a few points</td></tr>
+        <tr><td class="num">100 – 500 cSt</td><td>Substantial — efficiency may fall by a third. Power <em>rises</em>.</td></tr>
+        <tr><td class="num">&gt; 500 cSt</td><td>Centrifugal selection becomes marginal; consider positive displacement</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>Viscosity cuts head and flow but raises absorbed power.</strong>
+    Disc friction on the impeller grows with viscosity. Sizing the motor from the water curve on a viscous duty under-sizes it. Always obtain the vendor's viscous-corrected curve and size the driver from that.
+  </div>
+
+  <h2 id="s4-7"><span class="sec-no">4.7</span>NPSH and suction specific speed</h2>
+
+  <p>NPSH available is a property of the <strong>system</strong>; NPSH required is a property of the <strong>pump</strong>. The system must supply more than the pump demands, with margin.</p>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <msub><mtext>NPSH</mtext><mtext>a</mtext></msub><mo>=</mo>
+      <mfrac>
+        <mrow><msub><mi>p</mi><mtext>s</mtext></msub><mo>−</mo><msub><mi>p</mi><mtext>v</mtext></msub></mrow>
+        <mrow><mi>ρ</mi><mo>⁢</mo><mi>g</mi></mrow>
+      </mfrac>
+      <mo>+</mo><msub><mi>H</mi><mtext>s</mtext></msub>
+      <mo>−</mo><msub><mi>H</mi><mtext>f</mtext></msub>
+    </mrow></math>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 4.7-1 — NPSH terminology</caption>
+      <thead><tr><th scope="col">Term</th><th scope="col">Meaning</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">NPSH3 / NPSHr</th><td>The NPSH at which total head has <strong>already dropped by 3 %</strong>. This is the value on the vendor curve. The pump is cavitating at NPSH3 — it is a measurement point, not a safe operating limit.</td></tr>
+        <tr><th scope="row">NPSHi</th><td>Incipient cavitation — the point where cavitation begins. Typically 2 to 20 times NPSH3.</td></tr>
+        <tr><th scope="row">NPSH margin</th><td>NPSHa − NPSHr, or the ratio NPSHa / NPSHr. What actually protects the pump.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>NPSHa = NPSHr is not acceptable.</strong>
+    Matching available to required means operating at 3 % head drop with active cavitation. ANSI/HI 9.6.1 gives margin ratios by service; typical practice is a margin of the greater of 1 m or 10 % of NPSHr for benign service, rising substantially for high-energy, high suction-specific-speed or hydrocarbon duties. Project specifications routinely require more.
+  </div>
+
+  <h3>Suction specific speed</h3>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <msub><mi>N</mi><mtext>ss</mtext></msub><mo>=</mo>
+      <mfrac>
+        <mrow><mi>N</mi><mo>⁢</mo><msqrt><mi>Q</mi></msqrt></mrow>
+        <msup><mrow><mo>(</mo><msub><mtext>NPSH</mtext><mn>3</mn></msub><mo>)</mo></mrow><mn>0.75</mn></msup>
+      </mfrac>
+    </mrow></math>
+  </div>
+
+  <p>Evaluated at BEP, maximum impeller diameter, per suction eye. A high N<sub>ss</sub> means a large impeller eye that achieves low NPSHr — but a large eye recirculates badly at part load.</p>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 4.7-2 — Suction specific speed guidance (US units: rpm, gpm, ft)</caption>
+      <thead><tr><th scope="col" class="num">N<sub>ss</sub></th><th scope="col">Interpretation</th></tr></thead>
+      <tbody>
+        <tr><td class="num">&lt; 8 000</td><td>Conservative. Wide stable operating range.</td></tr>
+        <tr><td class="num">8 000 – 11 000</td><td>Normal commercial range. Commonly specified as the upper limit.</td></tr>
+        <tr><td class="num">11 000 – 14 000</td><td>Aggressive. Narrowing stable range; justify it.</td></tr>
+        <tr><td class="num">&gt; 14 000</td><td>Low NPSHr bought at the cost of part-load reliability. Normally rejected.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>The trade-off in one sentence.</strong>
+    A vendor can always meet a tight NPSH requirement by enlarging the suction eye — and will quietly hand you a pump that cannot be turned down. Capping N<sub>ss</sub> on the requisition is how that is prevented.
+  </div>
+
+  <h2 id="s4-8"><span class="sec-no">4.8</span>Vertical pumps</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 4.8-1 — When a vertical pump is the right answer</caption>
+      <thead><tr><th scope="col">Driver</th><th scope="col">Type</th><th scope="col">Reasoning</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">NPSHa at grade is insufficient</th><td>VS6 / VS7 can pump</td><td>Can depth converts directly into NPSHa</td></tr>
+        <tr><th scope="row">Drawing from an open sump or pit</th><td>VS4 / VS5</td><td>No separate suction vessel needed</td></tr>
+        <tr><th scope="row">Seawater lift from a caisson</th><td>VS1 / VS6</td><td>Long column, submerged first stage</td></tr>
+        <tr><th scope="row">Very high flow, low head</th><td>VS3 axial</td><td>Cooling water circulation</td></tr>
+        <tr><th scope="row">Plot space is severely limited</th><td>VS or OH3/OH4/OH5</td><td>Small footprint</td></tr>
+        <tr><th scope="row">Intermittent / dry-running sump duty</th><td>VS5 cantilever</td><td>No submerged bearing to run dry</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 4.8-2 — Vertical pump design issues</caption>
+      <thead><tr><th scope="col">Issue</th><th scope="col">Consequence</th><th scope="col">Control</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Reed critical frequency</th><td>The pump and motor on a long column form a cantilever with a low natural frequency. Resonance with running speed or 2× is common.</td><td>Vendor RCF analysis; stiffen the structure or change speed. Required by API 610 for VS pumps.</td></tr>
+        <tr><th scope="row">Submerged line-shaft bearings</th><td>Wear, no inspection access, failure on dry running</td><td>Product-lubricated bearing selection; low-level trip; or choose VS5 cantilever</td></tr>
+        <tr><th scope="row">Suction submergence</th><td>Vortexing draws air into the suction</td><td>Minimum submergence per ANSI/HI 9.8; vortex breakers; suction bell design</td></tr>
+        <tr><th scope="row">Pit geometry</th><td>Swirl and pre-rotation degrade performance and cause vibration</td><td>ANSI/HI 9.8 intake design; physical or CFD model study for large pumps</td></tr>
+        <tr><th scope="row">Thrust</th><td>Hydraulic down-thrust plus rotor weight carried by the motor thrust bearing</td><td>Verify motor thrust rating covers transient and steady thrust</td></tr>
+        <tr><th scope="row">Straightness and assembly</th><td>Column and shaft alignment over many metres</td><td>Assembly procedure, run-out checks at each joint</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="s4-9"><span class="sec-no">4.9</span>Sealless pumps</h2>
+
+  <p>Where a mechanical seal is unacceptable — extreme toxicity, very high leakage cost, or regulatory limits — the seal is eliminated entirely. API 685 governs. Two configurations exist.</p>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 4.9-1 — Magnetic drive versus canned motor</caption>
+      <thead><tr><th scope="col"></th><th scope="col">Magnetic drive</th><th scope="col">Canned motor</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Principle</th><td>Torque transmitted through a containment shell by permanent magnets</td><td>Motor rotor runs inside the process liquid, separated from the stator by a thin can</td></tr>
+        <tr><th scope="row">Motor</th><td>Standard external motor</td><td>Integral, special</td></tr>
+        <tr><th scope="row">Containment</th><td>Single containment shell</td><td>Stator can plus motor housing — secondary containment inherent</td></tr>
+        <tr><th scope="row">Eddy current losses</th><td>Significant in metallic shells; avoided with non-metallic shells</td><td>In the can</td></tr>
+        <tr><th scope="row">Footprint</th><td>Longer</td><td>Compact</td></tr>
+        <tr><th scope="row">Maintenance</th><td>Conventional motor serviceable separately</td><td>Specialist repair</td></tr>
+        <tr><th scope="row">Decoupling</th><td>Magnets can slip under overload — stalls rather than breaks</td><td>Not applicable</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>Both types depend absolutely on liquid for bearing lubrication and cooling.</strong>
+    The internal bearings are process-lubricated and the circulation path removes heat from the containment shell. A few seconds of dry running destroys the bearings; a blocked circulation path burns out the shell. Power monitoring and a reliable low-flow trip are not optional extras on a sealless pump — they are part of the pump.
+  </div>
+
+  <div class="note">
+    <strong>Solids are the other killer.</strong>
+    Magnetic particles migrate to the magnets; abrasives destroy the product-lubricated bearings. Sealless pumps need clean liquid, and the circulation path usually needs a filter or cyclone separator.
+  </div>
+
+  <h2 id="s4-10"><span class="sec-no">4.10</span>Positive displacement pumps</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 4.10-1 — Positive displacement families</caption>
+      <thead><tr><th scope="col">Family</th><th scope="col">Types</th><th scope="col">Standard</th><th scope="col">Best for</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Reciprocating — power</th><td>Plunger, piston (simplex to quintuplex)</td><td>API 674</td><td>High pressure, moderate flow — injection, hydraulic</td></tr>
+        <tr><th scope="row">Reciprocating — direct acting</th><td>Steam or air driven</td><td>API 674</td><td>No electrical supply; inherently variable speed</td></tr>
+        <tr><th scope="row">Reciprocating — metering</th><td>Diaphragm, packed plunger</td><td>API 675</td><td>Accurate dosing — chemical injection</td></tr>
+        <tr><th scope="row">Rotary — gear</th><td>External, internal</td><td>API 676</td><td>Viscous liquids, lube oil transfer</td></tr>
+        <tr><th scope="row">Rotary — screw</th><td>Two-screw, three-screw</td><td>API 676</td><td>Viscous, low shear, smooth flow — fuel oil, crude transfer</td></tr>
+        <tr><th scope="row">Rotary — vane</th><td>Sliding vane</td><td>API 676</td><td>Low viscosity, self-priming — LPG, solvents</td></tr>
+        <tr><th scope="row">Rotary — progressing cavity</th><td>Single helical rotor in elastomer stator</td><td>API 676</td><td>Slurries, sludge, shear-sensitive fluids</td></tr>
+        <tr><th scope="row">Rotary — lobe / circumferential piston</th><td>Twin lobe</td><td>API 676</td><td>Hygienic and food service, gentle handling</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Acceleration head</h3>
+
+  <p>Reciprocating pumps accelerate and decelerate the entire suction column every stroke. The inertia of that column imposes an additional NPSH demand that is frequently larger than the friction loss and is routinely overlooked.</p>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <msub><mi>h</mi><mtext>a</mtext></msub><mo>=</mo>
+      <mfrac>
+        <mrow><mi>L</mi><mo>⁢</mo><mi>v</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>C</mi></mrow>
+        <mrow><mi>K</mi><mo>⁢</mo><mi>g</mi></mrow>
+      </mfrac>
+    </mrow></math>
+  </div>
+
+  <div class="where">
+    <dl>
+      <dt>h<sub>a</sub></dt><dd>acceleration head, m</dd>
+      <dt>L</dt><dd>actual length of the suction line, m (not equivalent length)</dd>
+      <dt>v</dt><dd>mean velocity in the suction line, m/s</dd>
+      <dt>n</dt><dd>pump speed, rpm</dd>
+      <dt>C</dt><dd>constant for the pump configuration — Table 4.10-2</dd>
+      <dt>K</dt><dd>fluid compressibility factor — Table 4.10-3</dd>
+      <dt>g</dt><dd>9.80665 m/s²</dd>
+    </dl>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 4.10-2 — Configuration constant C</caption>
+      <thead><tr><th scope="col">Configuration</th><th scope="col" class="num">C</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Simplex, double acting</th><td class="num">0.200</td></tr>
+        <tr><th scope="row">Duplex, single acting</th><td class="num">0.200</td></tr>
+        <tr><th scope="row">Duplex, double acting</th><td class="num">0.115</td></tr>
+        <tr><th scope="row">Triplex, single or double acting</th><td class="num">0.066</td></tr>
+        <tr><th scope="row">Quintuplex</th><td class="num">0.040</td></tr>
+        <tr><th scope="row">Septuplex</th><td class="num">0.028</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 4.10-3 — Compressibility factor K</caption>
+      <thead><tr><th scope="col">Fluid</th><th scope="col" class="num">K</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Hot oil</th><td class="num">1.4</td></tr>
+        <tr><th scope="row">Most hydrocarbons</th><td class="num">1.5</td></tr>
+        <tr><th scope="row">Amine, glycol, water</th><td class="num">2.0</td></tr>
+        <tr><th scope="row">Deaerated water</th><td class="num">2.5</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <p style="margin-top:0"><strong>Worked example.</strong> Triplex pump, 300 rpm, 8 m of suction line, velocity 0.9 m/s, pumping hydrocarbon (K = 1.5).</p>
+    <p style="margin-bottom:0"><em>h</em><sub>a</sub> = (8 × 0.9 × 300 × 0.066) / (1.5 × 9.80665) = 142.6 / 14.71 = <strong>9.7 m</strong> — an NPSH demand that will dwarf the friction loss and that no centrifugal-pump intuition would predict.</p>
+  </div>
+
+  <div class="warn">
+    <strong>Shorten and fatten the suction line.</strong>
+    Acceleration head is proportional to both length and velocity. Doubling the suction pipe diameter cuts velocity by four and acceleration head with it. A suction pulsation dampener close to the pump effectively shortens <em>L</em> to the distance between dampener and cylinder, and is the standard remedy where the line cannot be shortened.
+  </div>
+
+  <h3>Pulsation</h3>
+
+  <p>API 674 requires a pulsation analysis for most installations. The approach mirrors API 618 for reciprocating compressors — see §5.5. Design approaches run from an empirical check (Approach 1) through acoustic simulation (Approach 2) to a full mechanical and acoustic study (Approach 3), selected by machine size and criticality.</p>
+
+  <h2 id="s4-11"><span class="sec-no">4.11</span>Cryogenic submerged motor pumps</h2>
+
+  <p>For LNG, liquid nitrogen, ethylene and similar services, the motor is submerged in the cryogenic liquid inside the pressure containment. There is no shaft penetration and therefore no seal.</p>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 4.11-1 — Cryogenic submerged pump configurations</caption>
+      <thead><tr><th scope="col">Type</th><th scope="col">Installation</th><th scope="col">Service</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">In-tank</th><td>Suspended in the storage tank on its own column, retrievable through a removal well without tank entry</td><td>LNG tank low-pressure pump out</td></tr>
+        <tr><th scope="row">In-pot (vessel-mounted)</th><td>Installed in a dedicated suction pot outside the tank</td><td>LNG high-pressure send-out, loading</td></tr>
+        <tr><th scope="row">Vaporiser feed</th><td>In-pot, multistage</td><td>Regasification terminals</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 4.11-2 — Design considerations</caption>
+      <thead><tr><th scope="col">Factor</th><th scope="col">Requirement</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Motor cooling and lubrication</th><td>By the pumped cryogen itself. Flow must be guaranteed before and during running.</td></tr>
+        <tr><th scope="row">Cool-down</th><td>Controlled, slow cool-down before start to avoid thermal shock and differential contraction seizure</td></tr>
+        <tr><th scope="row">Materials</th><td>Austenitic stainless, aluminium alloys, bronze. Carbon steel is excluded — no toughness at −162 °C.</td></tr>
+        <tr><th scope="row">Insulation</th><td>Motor winding insulation qualified for cryogenic temperature and immersion in the product</td></tr>
+        <tr><th scope="row">Thrust balance</th><td>Usually a balance drum or balance disc; thrust bearings run in the cryogen</td></tr>
+        <tr><th scope="row">Minimum flow</th><td>Essential — loss of flow means loss of motor cooling within seconds</td></tr>
+        <tr><th scope="row">Electrical penetration</th><td>Cryogenic-rated, gas-tight power feedthrough is a critical containment item</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Applicable standard.</strong>
+    API 610 does not cover these machines. Cryogenic submerged motor pumps for LNG service are normally specified to the vendor's standard supplemented by project requirements, with reference to EN 1473 and NFPA 59A for the terminal, and IEC 60079 for the electrical aspects of a machine immersed in flammable liquid.
+  </div>
+
+  <h2 id="s4-12"><span class="sec-no">4.12</span>Sources</h2>
+
+  <ul>
+    <li>API Standard 610 / ISO 13709, <em>Centrifugal Pumps for Petroleum, Petrochemical and Natural Gas Industries</em> — type codes, POR/AOR, nozzle loads, NPSH margin, driver sizing.</li>
+    <li>API Standard 674, <em>Positive Displacement Pumps — Reciprocating</em>.</li>
+    <li>API Standard 675, <em>Positive Displacement Pumps — Controlled Volume for Petroleum, Chemical and Gas Industry Services</em>.</li>
+    <li>API Standard 676, <em>Positive Displacement Pumps — Rotary</em>.</li>
+    <li>API Standard 685, <em>Sealless Centrifugal Pumps for Petroleum, Petrochemical and Gas Industry Process Service</em>.</li>
+    <li>API Standard 682 / ISO 21049, <em>Pumps — Shaft Sealing Systems for Centrifugal and Rotary Pumps</em>.</li>
+    <li>ANSI/HI 9.6.1, <em>Rotodynamic Pumps — Guideline for NPSH Margin</em>.</li>
+    <li>ANSI/HI 9.6.3, <em>Rotodynamic Pumps — Guideline for Operating Regions</em>.</li>
+    <li>ANSI/HI 9.6.7, <em>Rotodynamic Pumps — Guideline for Effects of Liquid Viscosity on Performance</em>.</li>
+    <li>ANSI/HI 9.8, <em>Rotodynamic Pumps for Pump Intake Design</em>.</li>
+    <li>ASME B73.1 / B73.2, chemical process pumps.</li>
+    <li>EN 1473 and NFPA 59A — LNG installations.</li>
+  </ul>
+
+  <p>Figure 4.5-1 is an original schematic drawn to show the relationship between the curves; it is not a specific pump's performance data.</p>
+
+  <nav class="prev-next">
+    <span><a href="ch03-materials.html">← Ch 3 · Materials</a></span>
+    <span><a href="ch05-compressors.html">Ch 5 · Compressor Selection →</a></span>
+  </nav>
+
+</main>
+
+<footer class="foot">
+  <p><strong>Rotating Equipment General Reference</strong> — Chapter 4, Pump Selection.</p>
+  <p>Independently written from public standards &mdash; see <a href="index.html#provenance">provenance</a> and <a href="NOTICE.md">NOTICE.md</a>.<br>Copyright &copy; 2026 Zachry Philippines. All rights reserved.</p>
+</footer>
+
+<script src="assets/search-index.js"></script>
+<script src="assets/reference.js"></script>
+</body>
+</html>

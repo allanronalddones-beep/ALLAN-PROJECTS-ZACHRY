@@ -14,6 +14,7 @@ page is open.
 
 | Tool | Status | Path |
 |---|---|---|
+| [Rotating Equipment General Reference](rotary-equipment-handbook/general-reference/) | ✅ Live | `rotary-equipment-handbook/general-reference/` |
 | [Centrifugal Pump Knowledge Base](rotary-equipment-handbook/centrifugal-pumps/) | ✅ Live | `rotary-equipment-handbook/centrifugal-pumps/` |
 | Material Selection per API 610 | 🔸 Planned | — |
 | Performance Evaluation | 🔸 Planned | — |
@@ -36,6 +37,7 @@ inside it.
 │
 └── rotary-equipment-handbook/
     ├── index.html                      handbook hub — lists its tools
+    ├── general-reference/              a tool — breadth across every machine family
     └── centrifugal-pumps/              a tool, entirely self-contained
         ├── index.html                  the tool's own landing page
         ├── pages/                      generated content pages
@@ -76,6 +78,22 @@ tool can never break another — and a tool can be handed to someone as a folder
   on whatever device is to hand.
 - **Flag indicative values.** Where a number comes from a standard, name the standard and
   the edition, and say that it is indicative.
+
+---
+
+## Working on the general reference
+
+Hand-written HTML — there is no page generator. Edit the chapter file directly, then
+rebuild the one generated artefact:
+
+```bash
+cd rotary-equipment-handbook/general-reference
+python tools/build_search_index.py   # regenerate assets/search-index.js
+```
+
+Its search index is a `.js` file rather than `.json` because `fetch()` is blocked under
+`file://` and the tool has to work from a copied folder. Full detail in that tool's own
+[README](rotary-equipment-handbook/general-reference/README.md).
 
 ---
 

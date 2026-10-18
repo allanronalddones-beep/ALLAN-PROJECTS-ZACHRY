@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Construction — Rotating Equipment General Reference</title>
+<meta name="description" content="Installation flow, foundations and grouting, balancing grades, vibration criteria, shaft alignment methods and tolerances, and bolt tightening.">
+<link rel="stylesheet" href="assets/reference.css">
+</head>
+<body data-base="">
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="brand" href="index.html">Rotating Equipment <span>General Reference</span></a>
+    <span class="chapter-badge">Chapter 13</span>
+    <span class="spacer"></span>
+    <div class="search-wrap">
+      <input type="search" id="site-search" placeholder="Search sections…  (press /)" autocomplete="off" aria-label="Search the reference">
+      <div class="search-results" id="search-results" role="listbox"></div>
+    </div>
+  </div>
+</header>
+
+<main class="layout">
+
+  <h1 class="page-title">13 &nbsp;Construction</h1>
+  <p class="page-sub">Getting the machine onto its foundation, aligned, balanced and bolted correctly.</p>
+
+  <nav class="toc" aria-label="Chapter contents">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#s13-1"><span class="t-no">13.1</span> Installation flow</a></li>
+      <li><a href="#s13-2"><span class="t-no">13.2</span> Foundations and grouting</a></li>
+      <li><a href="#s13-3"><span class="t-no">13.3</span> Balancing</a></li>
+      <li><a href="#s13-4"><span class="t-no">13.4</span> Vibration criteria</a></li>
+      <li><a href="#s13-5"><span class="t-no">13.5</span> Shaft alignment</a></li>
+      <li><a href="#s13-6"><span class="t-no">13.6</span> Bolt tightening</a></li>
+      <li><a href="#s13-7"><span class="t-no">13.7</span> Sources</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="s13-1"><span class="sec-no">13.1</span>Installation flow</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 13.1-1 — Sequence from delivery to handover</caption>
+      <thead><tr><th scope="col">#</th><th scope="col">Step</th><th scope="col">Key points and hold points</th></tr></thead>
+      <tbody>
+        <tr><td class="num">1</td><th scope="row">Receipt and inspection</th><td>Check against packing list; inspect for transit damage before signing; verify shock/tilt indicators; confirm preservation intact</td></tr>
+        <tr><td class="num">2</td><th scope="row">Storage and preservation</th><td>Indoor where specified; nitrogen blanket maintained; shafts rotated on a schedule; desiccant replaced; records kept</td></tr>
+        <tr><td class="num">3</td><th scope="row">Foundation acceptance</th><td>Concrete strength and cure verified; anchor bolt positions and projections checked; surface chipped to sound aggregate. <strong>Hold point.</strong></td></tr>
+        <tr><td class="num">4</td><th scope="row">Baseplate setting</th><td>Set on jackscrews or shims; level within tolerance in two axes; anchor bolts fitted but not finally tightened</td></tr>
+        <tr><td class="num">5</td><th scope="row">Grouting</th><td>Forms sealed, grout placed to avoid voids, cured per the manufacturer. <strong>Hold point.</strong></td></tr>
+        <tr><td class="num">6</td><th scope="row">Anchor bolt tightening</th><td>After grout has cured, to the specified torque or tension, in sequence</td></tr>
+        <tr><td class="num">7</td><th scope="row">Soft foot check and correction</th><td>Before any alignment. <strong>Hold point.</strong></td></tr>
+        <tr><td class="num">8</td><th scope="row">Preliminary alignment</th><td>Cold, with thermal offsets applied</td></tr>
+        <tr><td class="num">9</td><th scope="row">Piping connection</th><td>Free and unstrained — the pipe must come to the nozzle, not be pulled to it. <strong>Hold point.</strong></td></tr>
+        <tr><td class="num">10</td><th scope="row">Pipe strain check</th><td>Re-check alignment with piping bolted and unbolted; movement beyond tolerance means the pipe must be re-worked</td></tr>
+        <tr><td class="num">11</td><th scope="row">Final alignment</th><td>Recorded and signed. <strong>Hold point.</strong></td></tr>
+        <tr><td class="num">12</td><th scope="row">Coupling installation</th><td>Hub advance recorded; match marks aligned; spacer fitted; guard installed</td></tr>
+        <tr><td class="num">13</td><th scope="row">Auxiliary systems</th><td>Lube oil flushing to the specified cleanliness; seal systems commissioned; cooling water proven</td></tr>
+        <tr><td class="num">14</td><th scope="row">Pre-commissioning checks</th><td>Rotation direction, protection function tests, instrument calibration, interlock proving</td></tr>
+        <tr><td class="num">15</td><th scope="row">Solo run and performance run</th><td>Driver solo first, then coupled. Vibration and bearing temperature recorded.</td></tr>
+        <tr><td class="num">16</td><th scope="row">Hot alignment check</th><td>After thermal stabilisation on critical machines</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>Pipe strain is the most commonly missed step and one of the most damaging.</strong>
+    Piping forced into place pulls the casing out of alignment, distorts it, and loads the bearings continuously. Check alignment with the flange bolts loose and again with them tight: movement beyond the alignment tolerance means the pipe is pulling and must be cut and re-fitted. API 686 and API 610 both set nozzle load limits; exceeding them voids the vendor's alignment and vibration guarantees.
+  </div>
+
+  <h2 id="s13-2"><span class="sec-no">13.2</span>Foundations and grouting</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 13.2-1 — Foundation considerations</caption>
+      <thead><tr><th scope="col">Item</th><th scope="col">Guidance</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Mass</th><td>For centrifugal machines, a block mass of roughly 3 times the machine mass is a common starting point; for reciprocating machines, 3 to 5 times, driven by the unbalanced forces</td></tr>
+        <tr><th scope="row">Natural frequency</th><td>Separate the foundation's natural frequencies from running speed and its harmonics, commonly by at least 20 %</td></tr>
+        <tr><th scope="row">Surface preparation</th><td>Chip to sound, exposed coarse aggregate; remove laitance; clean and dry before grouting</td></tr>
+        <tr><th scope="row">Anchor bolts</th><td>Sleeved to allow adjustment and to give a free stretch length; stretch length matters for retaining preload</td></tr>
+        <tr><th scope="row">Levelling</th><td>Jackscrews preferred over shim stacks under the baseplate; jackscrews removed or backed off after grouting</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 13.2-2 — Grout selection</caption>
+      <thead><tr><th scope="col"></th><th scope="col">Cementitious</th><th scope="col">Epoxy</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Compressive strength</th><td>Lower</td><td>Higher</td></tr>
+        <tr><th scope="row">Chemical / oil resistance</th><td>Poor — attacked by oil and many process chemicals</td><td>Excellent</td></tr>
+        <tr><th scope="row">Bond to steel</th><td>Mechanical only</td><td>Chemical adhesion</td></tr>
+        <tr><th scope="row">Shrinkage</th><td>Needs a shrinkage-compensated formulation</td><td>Very low, but <strong>significant thermal expansion</strong></td></tr>
+        <tr><th scope="row">Cure time</th><td>Days</td><td>Hours to a few days</td></tr>
+        <tr><th scope="row">Typical use</th><td>General machinery, water service</td><td>API machinery, oil-exposed, high-vibration, critical</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>Epoxy grout expands when it cures and when it gets hot.</strong>
+    Large epoxy pours generate an exotherm and have a much higher coefficient of thermal expansion than concrete. Place in lifts, respect the maximum pour depth, and provide expansion joints in long pours. Ignoring this cracks the grout or the foundation, and a cracked grout bed is a complete re-do.
+  </div>
+
+  <div class="note">
+    <strong>Voids under the baseplate defeat everything else.</strong>
+    Grout must fill completely. Vent holes and grout holes in the baseplate, a head box to maintain hydrostatic pressure, and placing from one side to push air ahead of the flow are the standard means. Hammer-test the baseplate after cure — a hollow sound means a void, and a void means the baseplate is not supported where the calculation assumed it was.
+  </div>
+
+  <h2 id="s13-3"><span class="sec-no">13.3</span>Balancing</h2>
+
+  <h3>Balance quality grades</h3>
+
+  <p>ISO 21940-11 (which superseded ISO 1940-1) defines balance quality grade <em>G</em> as the product of permissible specific unbalance and angular velocity:</p>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mi>G</mi><mo>=</mo>
+      <msub><mi>e</mi><mtext>per</mtext></msub><mo>⁢</mo><mi>ω</mi>
+      <mspace width="2.5em"/>
+      <msub><mi>e</mi><mtext>per</mtext></msub><mo>=</mo>
+      <mfrac>
+        <mrow><mn>9549</mn><mo>⁢</mo><mi>G</mi></mrow>
+        <mi>n</mi>
+      </mfrac>
+    </mrow></math>
+  </div>
+
+  <div class="where">
+    <dl>
+      <dt>G</dt><dd>balance quality grade, mm/s</dd>
+      <dt>e<sub>per</sub></dt><dd>permissible residual specific unbalance, g·mm/kg (numerically equal to µm of eccentricity)</dd>
+      <dt>n</dt><dd>maximum service speed, rpm</dd>
+    </dl>
+  </div>
+
+  <p>The permissible residual unbalance for the rotor is then:</p>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <msub><mi>U</mi><mtext>per</mtext></msub><mo>=</mo>
+      <msub><mi>e</mi><mtext>per</mtext></msub><mo>⁢</mo><mi>m</mi>
+    </mrow></math>
+  </div>
+
+  <div class="where">
+    <dl>
+      <dt>U<sub>per</sub></dt><dd>permissible residual unbalance, g·mm</dd>
+      <dt>m</dt><dd>rotor mass, kg</dd>
+    </dl>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 13.3-1 — Balance quality grades for rotating equipment</caption>
+      <thead><tr><th scope="col">Grade</th><th scope="col">Typical rotors</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">G 0.4</th><td>Precision grinder spindles, gyroscopes</td></tr>
+        <tr><th scope="row">G 1</th><td>Precision machine tool drives, small high-speed armatures</td></tr>
+        <tr><th scope="row">G 2.5</th><td><strong>Gas and steam turbines, turbo-compressors, turbo-generators, machine tool drives, medium and large electric armatures, pumps with turbine drive.</strong> The usual API machinery grade.</td></tr>
+        <tr><th scope="row">G 6.3</th><td>Pump impellers, fans, flywheels, centrifuge drums, general machine parts, standard electric motor armatures</td></tr>
+        <tr><th scope="row">G 16</th><td>Drive shafts, parts of agricultural machinery, crankshaft components of multi-cylinder engines</td></tr>
+        <tr><th scope="row">G 40</th><td>Car wheels, drive shafts of elastically mounted engines</td></tr>
+        <tr><th scope="row">G 100 and above</th><td>Reciprocating engine components; coarser classes</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <p style="margin-top:0"><strong>Worked example.</strong> A 180 kg compressor rotor running at 11 000 rpm, specified to G 2.5.</p>
+    <p><em>e</em><sub>per</sub> = 9549 × 2.5 / 11 000 = 2.17 g·mm/kg</p>
+    <p style="margin-bottom:0"><em>U</em><sub>per</sub> = 2.17 × 180 = <strong>391 g·mm</strong> total, normally divided between two correction planes — roughly 195 g·mm per plane. That is a 0.2 g mass at 1 m radius, or 20 g at 10 mm radius: a smear of dirt on an impeller matters at this speed.</p>
+  </div>
+
+  <div class="warn">
+    <strong>Higher speed means a tighter tolerance for the same grade.</strong>
+    e<sub>per</sub> is inversely proportional to speed. The same G 2.5 grade allows 24 g·mm/kg at 1000 rpm but only 2.4 g·mm/kg at 10 000 rpm. This is why high-speed rotors must be kept scrupulously clean, why coupling match marks matter, and why a single lost balance weight is a trip-level event.
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 13.3-2 — Single-plane, two-plane and at-speed balancing</caption>
+      <thead><tr><th scope="col">Method</th><th scope="col">When</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Single plane (static)</th><td>Disc-shaped rotors where the diameter is large relative to the length — a single fan or impeller</td></tr>
+        <tr><th scope="row">Two plane (dynamic)</th><td>Rotors whose length is significant relative to diameter. The normal case.</td></tr>
+        <tr><th scope="row">Multi-plane at speed</th><td>Flexible rotors operating above their first critical speed — corrected at or near service speed in a high-speed balance facility</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="s13-4"><span class="sec-no">13.4</span>Vibration criteria</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 13.4-1 — ISO 20816 / ISO 10816-3 evaluation zones, broadband rms velocity (mm/s) measured on bearing housings</caption>
+      <thead>
+        <tr>
+          <th scope="col">Machine group</th>
+          <th scope="col">Support</th>
+          <th scope="col" class="num">A / B</th>
+          <th scope="col" class="num">B / C</th>
+          <th scope="col" class="num">C / D</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row" rowspan="2">Group 1 — large machines<br><span style="font-weight:400;font-size:.85em;color:var(--text-muted)">300 kW to 50 MW; shaft height &gt; 315 mm</span></th>
+          <td>Rigid</td><td class="num">2.3</td><td class="num">4.5</td><td class="num">7.1</td></tr>
+        <tr><td>Flexible</td><td class="num">3.5</td><td class="num">7.1</td><td class="num">11.0</td></tr>
+        <tr><th scope="row" rowspan="2">Group 2 — medium machines<br><span style="font-weight:400;font-size:.85em;color:var(--text-muted)">15 kW to 300 kW; shaft height 160–315 mm</span></th>
+          <td>Rigid</td><td class="num">1.4</td><td class="num">2.8</td><td class="num">4.5</td></tr>
+        <tr><td>Flexible</td><td class="num">2.3</td><td class="num">4.5</td><td class="num">7.1</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 13.4-2 — What the zones mean</caption>
+      <thead><tr><th scope="col">Zone</th><th scope="col">Interpretation</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">A</th><td>Newly commissioned machines normally fall here</td></tr>
+        <tr><th scope="row">B</th><td>Acceptable for unrestricted long-term operation</td></tr>
+        <tr><th scope="row">C</th><td>Unsatisfactory for long-term continuous operation. Acceptable for a limited period while remedial action is arranged.</td></tr>
+        <tr><th scope="row">D</th><td>Severe enough to cause damage. Investigate and correct.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Rigid or flexible support — the definition that decides which row applies.</strong>
+    The support is <em>rigid</em> if the first natural frequency of the machine-support system in the measurement direction is above the main excitation frequency (usually running speed), typically by at least 25 %. Otherwise it is <em>flexible</em>. A large machine on a massive block foundation is usually rigid; the same machine on a steel structure or skid is usually flexible. Getting this wrong moves the acceptance limit by a factor of about 1.5.
+  </div>
+
+  <div class="warn">
+    <strong>Broadband velocity is a screening measure, not a diagnosis.</strong>
+    A machine can sit comfortably in Zone B while a bearing fails, because early rolling-element bearing defects appear at high frequency where velocity amplitude is small. Overall velocity catches unbalance, misalignment and looseness. Bearing condition needs envelope/demodulated acceleration or shock pulse measurement. For machines with fluid-film bearings, API 670 shaft-relative proximity probes measure what actually matters — shaft movement within the clearance.
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 13.4-3 — Reading common vibration signatures</caption>
+      <thead><tr><th scope="col">Dominant frequency</th><th scope="col">Likely cause</th><th scope="col">Distinguishing feature</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">1 × running speed</th><td>Unbalance</td><td>Mostly radial, steady phase, rises with speed²</td></tr>
+        <tr><th scope="row">1 × and 2 × </th><td>Misalignment</td><td>Significant <strong>axial</strong> component; 2× often prominent</td></tr>
+        <tr><th scope="row">2 × </th><td>Looseness, cracked shaft</td><td>Often with harmonics and a raised noise floor</td></tr>
+        <tr><th scope="row">Multiple harmonics</th><td>Mechanical looseness</td><td>Many orders, directional</td></tr>
+        <tr><th scope="row">0.38 – 0.48 × </th><td>Oil whirl / oil whip</td><td>Fluid-film bearings; sub-synchronous, can lock onto a critical speed</td></tr>
+        <tr><th scope="row">Vane / blade pass frequency</th><td>Hydraulic or aerodynamic excitation</td><td>Number of vanes × running speed; rises off BEP</td></tr>
+        <tr><th scope="row">Broadband, random, high frequency</th><td>Cavitation</td><td>Pumps; gravelly sound; changes with suction conditions</td></tr>
+        <tr><th scope="row">Bearing defect frequencies</th><td>Rolling element bearing damage</td><td>Non-synchronous; BPFO, BPFI, BSF, FTF</td></tr>
+        <tr><th scope="row">Gear mesh frequency and sidebands</th><td>Gear wear or eccentricity</td><td>Teeth × speed, with 1× sidebands</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="s13-5"><span class="sec-no">13.5</span>Shaft alignment</h2>
+
+  <h3>Soft foot — always first</h3>
+
+  <div class="warn">
+    <strong>Correct soft foot before attempting alignment.</strong>
+    Soft foot is any condition where the machine feet do not sit flat on the baseplate, so that tightening a hold-down bolt distorts the casing. Alignment carried out over an uncorrected soft foot cannot be made to repeat, and the distortion loads the bearings continuously. Check by loosening each foot bolt in turn with a dial indicator on that foot; movement beyond about 0.05 mm requires shimming. Note that <em>angular</em> soft foot (a foot that is not parallel to the base) cannot be fixed with flat shims and needs machining.
+  </div>
+
+  <h3>Methods</h3>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 13.5-1 — Alignment methods</caption>
+      <thead><tr><th scope="col">Method</th><th scope="col">Accuracy</th><th scope="col">Notes</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Straightedge and feeler gauge</th><td>Very low</td><td>Rough positioning only. Not an alignment method for any coupled machine.</td></tr>
+        <tr><th scope="row">Rim and face (dial indicators)</th><td>Moderate</td><td>Needs a face reading; affected by axial float. Works for short couplings.</td></tr>
+        <tr><th scope="row">Reverse dial indicator</th><td>Good</td><td>Two rim readings, no face reading. Unaffected by axial float. The classic method for spacer couplings.</td></tr>
+        <tr><th scope="row">Laser alignment</th><td>Highest</td><td>Fast, computes moves directly, records results. Standard practice now.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Bar sag must be measured, not estimated.</strong>
+    With dial indicator methods, the bracket holding the indicator sags under its own weight, and that sag appears in the readings as a real misalignment. Measure it by mounting the bracket on a rigid pipe, rotating 180°, and recording the change. Subtract it from the field readings. Laser systems remove this error entirely, which is a large part of why they displaced dial indicators.
+  </div>
+
+  <h3>Tolerances</h3>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 13.5-2 — Indicative alignment tolerances at the coupling, for a cold alignment with thermal offsets applied</caption>
+      <thead>
+        <tr><th scope="col" class="num">Speed (rpm)</th><th scope="col" class="num">Parallel offset — acceptable</th><th scope="col" class="num">Angularity — acceptable (mm per 100 mm)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="num">up to 1000</td><td class="num">0.09 mm</td><td class="num">0.09</td></tr>
+        <tr><td class="num">1000 – 2000</td><td class="num">0.06 mm</td><td class="num">0.07</td></tr>
+        <tr><td class="num">2000 – 3000</td><td class="num">0.04 mm</td><td class="num">0.05</td></tr>
+        <tr><td class="num">3000 – 4000</td><td class="num">0.03 mm</td><td class="num">0.04</td></tr>
+        <tr><td class="num">above 6000</td><td class="num">0.02 mm</td><td class="num">0.03</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>These are indicative; the vendor's and the project's figures govern.</strong>
+    Published alignment tolerance tables differ between sources, and API 686 and individual machine vendors set their own requirements. Use the table above for planning and expectation-setting, and the specified figures for acceptance. Record the achieved values either way.
+  </div>
+
+  <h3>Thermal offset</h3>
+
+  <p>The machines must be aligned <em>cold</em> such that they come into alignment <em>hot</em>. Use the thermal growth relation from §3.3:</p>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mi>Δ</mi><mi>L</mi><mo>=</mo>
+      <mi>α</mi><mo>⁢</mo><mi>L</mi><mo>⁢</mo><mi>Δ</mi><mi>T</mi>
+    </mrow></math>
+  </div>
+
+  <p>where <em>L</em> is the vertical distance from the foot/shim plane to the shaft centreline for each machine, and Δ<em>T</em> is the rise of that supporting metal — not the process temperature. Growth of the pump and growth of the driver partly cancel; only the <em>difference</em> is set as the cold offset.</p>
+
+  <div class="note">
+    <strong>Get the offsets from the vendor where they exist.</strong>
+    Vendors of hot machines publish recommended cold alignment offsets that account for casing, pedestal and baseplate growth together. These are more reliable than a hand calculation. Where none exist, measure hot alignment on the first unit and correct the rest.
+  </div>
+
+  <h2 id="s13-6"><span class="sec-no">13.6</span>Bolt tightening</h2>
+
+  <h3>Torque and preload</h3>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mi>T</mi><mo>=</mo>
+      <mi>K</mi><mo>⁢</mo><mi>F</mi><mo>⁢</mo><mi>d</mi>
+    </mrow></math>
+  </div>
+
+  <div class="where">
+    <dl>
+      <dt>T</dt><dd>applied torque, N·m</dd>
+      <dt>K</dt><dd>nut factor — dimensionless, dominated by friction</dd>
+      <dt>F</dt><dd>bolt preload (tension), N</dd>
+      <dt>d</dt><dd>nominal bolt diameter, m</dd>
+    </dl>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 13.6-1 — Indicative nut factor K</caption>
+      <thead><tr><th scope="col">Condition</th><th scope="col" class="num">K</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Dry, as-received steel</th><td class="num">0.20 – 0.25</td></tr>
+        <tr><th scope="row">Machine oil</th><td class="num">0.18 – 0.21</td></tr>
+        <tr><th scope="row">General purpose grease</th><td class="num">0.15 – 0.18</td></tr>
+        <tr><th scope="row">Molybdenum disulfide / nickel anti-seize</th><td class="num">0.10 – 0.15</td></tr>
+        <tr><th scope="row">PTFE-based compound</th><td class="num">0.08 – 0.12</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>Torque control is a poor way to achieve a known preload.</strong>
+    Roughly 90 % of applied torque is consumed by friction under the nut face and in the threads, and only about 10 % becomes bolt tension. Because <em>K</em> varies by a factor of two or more with lubrication, surface condition and reuse, torque control delivers a preload scatter commonly quoted at ±25 to ±30 %. Where preload matters — flange joints, high-pressure casings, critical hold-downs — use bolt tensioning, turn-of-nut, or direct bolt-elongation measurement instead.
+  </div>
+
+  <div class="note">
+    <strong>Specify the lubricant with the torque.</strong>
+    A torque figure without a stated lubrication condition is incomplete. Applying a dry-assembly torque to a moly-lubricated stud can overload and yield it; applying a lubricated torque to a dry stud leaves the joint loose. The lubricant is part of the specification.
+  </div>
+
+  <h3>Flange joint assembly</h3>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 13.6-2 — ASME PCC-1 assembly sequence, in outline</caption>
+      <thead><tr><th scope="col">Pass</th><th scope="col">Target</th><th scope="col">Pattern</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Hand tight / snug</th><td>Contact, flange faces parallel</td><td>Check gap at four points</td></tr>
+        <tr><th scope="row">Pass 1</th><td>20 – 30 % of target torque</td><td>Cross (star) pattern</td></tr>
+        <tr><th scope="row">Pass 2</th><td>50 – 70 %</td><td>Cross pattern</td></tr>
+        <tr><th scope="row">Pass 3</th><td>100 %</td><td>Cross pattern</td></tr>
+        <tr><th scope="row">Pass 4</th><td>100 %</td><td><strong>Rotational (clockwise, bolt to bolt)</strong> until no nut turns</td></tr>
+        <tr><th scope="row">Pass 5 (optional)</th><td>100 %</td><td>Repeat rotational after 4 hours or more, to recover relaxation</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Why the final rotational pass matters.</strong>
+    Tightening any bolt relaxes its neighbours — elastic interaction. A cross pattern alone leaves a very uneven load distribution around the flange. The final pass round the circle equalises it, and is what actually produces a leak-free joint. PCC-1 also gives alternative patterns that reach uniform load in fewer passes for large-diameter flanges.
+  </div>
+
+  <h3>Hold-down bolts</h3>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 13.6-3 — Machine hold-down bolting (API 686 practice)</caption>
+      <thead><tr><th scope="col">Item</th><th scope="col">Guidance</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Shims</th><td>Stainless steel, clean, burr-free. Limit the number of shims per foot — commonly no more than four or five — and avoid thin stacks.</td></tr>
+        <tr><th scope="row">Shim area</th><td>Shims should cover the full foot area, not just surround the bolt</td></tr>
+        <tr><th scope="row">Tightening sequence</th><td>Diagonal, in stages, re-checking alignment as the bolts come up to torque</td></tr>
+        <tr><th scope="row">Free stretch length</th><td>Anchor bolts need an unbonded length so they behave as springs and retain preload</td></tr>
+        <tr><th scope="row">Post-tightening check</th><td>Re-check soft foot and alignment after final tightening — both can change</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="s13-7"><span class="sec-no">13.7</span>Sources</h2>
+
+  <ul>
+    <li>API Recommended Practice 686, <em>Machinery Installation and Installation Design</em> — foundations, grouting, alignment, piping, bolting.</li>
+    <li>API Standard 610 / ISO 13709 — nozzle loads, baseplate and alignment requirements.</li>
+    <li>ISO 21940-11, <em>Mechanical vibration — Rotor balancing — Part 11: Procedures and tolerances for rotors with rigid behaviour</em> (supersedes ISO 1940-1).</li>
+    <li>ISO 21940-12, balancing of rotors with flexible behaviour.</li>
+    <li>ISO 20816-1 and ISO 20816-3, <em>Mechanical vibration — Measurement and evaluation of machine vibration</em> (supersede parts of ISO 10816).</li>
+    <li>ISO 20816-6 / ISO 10816-6 — reciprocating machines.</li>
+    <li>API Standard 670, <em>Machinery Protection Systems</em> — proximity probes, accelerometers, alarm and trip settings.</li>
+    <li>ASME PCC-1, <em>Guidelines for Pressure Boundary Bolted Flange Joint Assembly</em>.</li>
+    <li>ASME B16.5 and B16.47 — flange dimensions and bolting.</li>
+    <li>ACI 351.3R, <em>Foundations for Dynamic Equipment</em>.</li>
+  </ul>
+
+  <p>Alignment tolerances in Table 13.5-2 and foundation mass ratios in Table 13.2-1 are indicative planning values. Acceptance criteria are those in the project specification and the equipment vendor's installation manual.</p>
+
+  <nav class="prev-next">
+    <span><a href="ch12-trade-terms.html">← Ch 12 · Trade Terms</a></span>
+    <span><a href="ch14-operation.html">Ch 14 · Operation →</a></span>
+  </nav>
+
+</main>
+
+<footer class="foot">
+  <p><strong>Rotating Equipment General Reference</strong> — Chapter 13, Construction.</p>
+  <p>Independently written from public standards &mdash; see <a href="index.html#provenance">provenance</a> and <a href="NOTICE.md">NOTICE.md</a>.<br>Copyright &copy; 2026 Zachry Philippines. All rights reserved.</p>
+</footer>
+
+<script src="assets/search-index.js"></script>
+<script src="assets/reference.js"></script>
+</body>
+</html>

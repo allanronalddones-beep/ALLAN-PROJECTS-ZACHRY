@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Heat Exchanger — Rotating Equipment General Reference</title>
+<meta name="description" content="TEMA designation, shell and tube construction, duty and LMTD calculation, overall heat transfer coefficient, fouling, air coolers and plate exchangers.">
+<link rel="stylesheet" href="assets/reference.css">
+</head>
+<body data-base="">
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="brand" href="index.html">Rotating Equipment <span>General Reference</span></a>
+    <span class="chapter-badge">Chapter 10</span>
+    <span class="spacer"></span>
+    <div class="search-wrap">
+      <input type="search" id="site-search" placeholder="Search sections…  (press /)" autocomplete="off" aria-label="Search the reference">
+      <div class="search-results" id="search-results" role="listbox"></div>
+    </div>
+  </div>
+</header>
+
+<main class="layout">
+
+  <h1 class="page-title">10 &nbsp;Heat Exchanger</h1>
+  <p class="page-sub">Types, TEMA designation, and the thermal calculation — with emphasis on the exchangers that come attached to rotating equipment.</p>
+
+  <nav class="toc" aria-label="Chapter contents">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#s10-1"><span class="t-no">10.1</span> Types</a></li>
+      <li><a href="#s10-2"><span class="t-no">10.2</span> TEMA designation</a></li>
+      <li><a href="#s10-3"><span class="t-no">10.3</span> TEMA classes</a></li>
+      <li><a href="#s10-4"><span class="t-no">10.4</span> Thermal calculation</a></li>
+      <li><a href="#s10-5"><span class="t-no">10.5</span> Overall heat transfer coefficient</a></li>
+      <li><a href="#s10-6"><span class="t-no">10.6</span> Fouling</a></li>
+      <li><a href="#s10-7"><span class="t-no">10.7</span> Air-cooled exchangers</a></li>
+      <li><a href="#s10-8"><span class="t-no">10.8</span> Plate exchangers</a></li>
+      <li><a href="#s10-9"><span class="t-no">10.9</span> Exchangers on rotating equipment packages</a></li>
+      <li><a href="#s10-10"><span class="t-no">10.10</span> Sources</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="s10-1"><span class="sec-no">10.1</span>Types</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 10.1-1 — Exchanger types and where each fits</caption>
+      <thead><tr><th scope="col">Type</th><th scope="col">Strengths</th><th scope="col">Limitations</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Shell and tube</th><td>Wide pressure and temperature range, robust, well standardised, cleanable</td><td>Large, heavy, lower heat transfer per unit volume</td></tr>
+        <tr><th scope="row">Air-cooled (fin-fan)</th><td>No cooling water, no water treatment, low operating cost</td><td>Large plot area; performance tied to ambient air temperature</td></tr>
+        <tr><th scope="row">Gasketed plate</th><td>Very high transfer coefficient, compact, close temperature approach, expandable</td><td>Gasket limits on pressure, temperature and fluid compatibility</td></tr>
+        <tr><th scope="row">Welded / brazed plate</th><td>Compact, no gaskets, higher pressure and temperature</td><td>Not mechanically cleanable</td></tr>
+        <tr><th scope="row">Plate-fin (brazed aluminium)</th><td>Extremely compact, very close approach, multi-stream</td><td>Cryogenic / clean service only; low temperature limit on aluminium</td></tr>
+        <tr><th scope="row">Double pipe / hairpin</th><td>Simple, true counter-current, small duties</td><td>Area limited</td></tr>
+        <tr><th scope="row">Spiral</th><td>Handles slurries and fouling fluids, self-cleaning action</td><td>Pressure limited, specialised</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="s10-2"><span class="sec-no">10.2</span>TEMA designation</h2>
+
+  <p>A shell and tube exchanger is described by three letters: front head, shell, rear head — for example <strong>AES</strong> or <strong>BEU</strong>. Together with the shell diameter and tube length, this specifies the configuration.</p>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 10.2-1 — Front head (stationary head) types</caption>
+      <thead><tr><th scope="col">Letter</th><th scope="col">Description</th><th scope="col">Comment</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">A</th><td>Channel with removable cover</td><td>Tube side can be opened for cleaning without breaking piping. The usual choice for fouling tube-side service.</td></tr>
+        <tr><th scope="row">B</th><td>Bonnet — integral cover</td><td>Cheaper, fewer joints, less leakage risk. Piping must be removed to access tubes.</td></tr>
+        <tr><th scope="row">C</th><td>Channel integral with tubesheet, removable cover</td><td>For heavy bundles</td></tr>
+        <tr><th scope="row">N</th><td>Channel integral with tubesheet and shell, removable cover</td><td>Non-removable bundle</td></tr>
+        <tr><th scope="row">D</th><td>Special high-pressure closure</td><td>Very high tube-side pressure</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 10.2-2 — Shell types</caption>
+      <thead><tr><th scope="col">Letter</th><th scope="col">Description</th><th scope="col">Comment</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">E</th><td>One-pass shell</td><td>The default. Most exchangers are E shells.</td></tr>
+        <tr><th scope="row">F</th><td>Two-pass shell with longitudinal baffle</td><td>Approaches true counter-current. Baffle leakage is the weakness.</td></tr>
+        <tr><th scope="row">G</th><td>Split flow</td><td>Thermosiphon reboilers</td></tr>
+        <tr><th scope="row">H</th><td>Double split flow</td><td>Low shell-side pressure drop</td></tr>
+        <tr><th scope="row">J</th><td>Divided flow</td><td>Low shell-side pressure drop — condensers</td></tr>
+        <tr><th scope="row">K</th><td>Kettle type reboiler</td><td>Enlarged shell with vapour disengagement space</td></tr>
+        <tr><th scope="row">X</th><td>Cross flow</td><td>Very low pressure drop — vacuum condensers</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 10.2-3 — Rear head types</caption>
+      <thead><tr><th scope="col">Letter</th><th scope="col">Description</th><th scope="col">Bundle removable?</th><th scope="col">Differential expansion?</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">L / M / N</th><td>Fixed tubesheet</td><td>No</td><td>No — needs an expansion bellows if ΔT is large</td></tr>
+        <tr><th scope="row">P</th><td>Outside packed floating head</td><td>Yes</td><td>Yes</td></tr>
+        <tr><th scope="row">S</th><td>Floating head with backing device</td><td>Yes</td><td>Yes. The common API choice.</td></tr>
+        <tr><th scope="row">T</th><td>Pull-through floating head</td><td>Yes — straight out</td><td>Yes. Easiest maintenance; largest bypass lane.</td></tr>
+        <tr><th scope="row">U</th><td>U-tube bundle</td><td>Yes</td><td>Yes — inherently</td></tr>
+        <tr><th scope="row">W</th><td>Externally sealed floating tubesheet</td><td>Yes</td><td>Yes</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 10.2-4 — Common combinations</caption>
+      <thead><tr><th scope="col">Designation</th><th scope="col">Why it is chosen</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">BEM</th><td>Cheapest. Fixed tubesheet, both sides clean, small temperature difference.</td></tr>
+        <tr><th scope="row">AEL</th><td>Fixed tubesheet with tube-side access for cleaning — cooling water in tubes</td></tr>
+        <tr><th scope="row">BEU</th><td>U-tube. Handles differential expansion, shell side cleanable, cheap. Tube side must be clean — U-bends cannot be mechanically cleaned.</td></tr>
+        <tr><th scope="row">AES</th><td>Floating head with backing device. Both sides cleanable, handles expansion. The refinery workhorse.</td></tr>
+        <tr><th scope="row">AET</th><td>Pull-through floating head. Fastest bundle removal; more shell-side bypass.</td></tr>
+        <tr><th scope="row">AKT / BKU</th><td>Kettle reboiler</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>Put the fouling fluid in the tubes, and think before choosing a U-tube.</strong>
+    Tube bores can be mechanically cleaned; U-bends cannot. A BEU exchanger with a fouling tube-side fluid cannot be cleaned without chemical circulation, and is a recurring operational complaint. Choose U-tubes when the tube side is clean and differential expansion must be accommodated cheaply.
+  </div>
+
+  <h2 id="s10-3"><span class="sec-no">10.3</span>TEMA classes</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 10.3-1 — TEMA mechanical standards classes</caption>
+      <thead><tr><th scope="col">Class</th><th scope="col">Intended service</th><th scope="col">Relative robustness</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">R</th><td>Severe requirements of petroleum and related processing</td><td>Heaviest — thicker tubesheets, larger corrosion allowance, tighter tolerances</td></tr>
+        <tr><th scope="row">C</th><td>Generally moderate requirements of commercial and general process service</td><td>Lightest, most economical</td></tr>
+        <tr><th scope="row">B</th><td>Chemical process service</td><td>Between R and C</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Class R for hydrocarbon service.</strong>
+    Refinery and oil &amp; gas exchangers are normally TEMA Class R. The class affects corrosion allowance, minimum tube pitch, tubesheet thickness and baffle spacing — it is not just a documentation label, and substituting Class C to save cost changes the physical exchanger.
+  </div>
+
+  <h2 id="s10-4"><span class="sec-no">10.4</span>Thermal calculation</h2>
+
+  <h3>Duty</h3>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mi>Q</mi><mo>=</mo>
+      <mover><mi>m</mi><mo>˙</mo></mover><mo>⁢</mo>
+      <msub><mi>c</mi><mi>p</mi></msub><mo>⁢</mo>
+      <mi>Δ</mi><mi>T</mi>
+      <mspace width="2.5em"/>
+      <mi>Q</mi><mo>=</mo>
+      <mover><mi>m</mi><mo>˙</mo></mover><mo>⁢</mo>
+      <mi>λ</mi>
+      <mspace width="0.8em"/>
+      <mtext>(latent duty)</mtext>
+    </mrow></math>
+  </div>
+
+  <div class="where">
+    <dl>
+      <dt>Q</dt><dd>heat duty, W</dd>
+      <dt>ṁ</dt><dd>mass flow, kg/s</dd>
+      <dt>c<sub>p</sub></dt><dd>specific heat, J/(kg·K)</dd>
+      <dt>λ</dt><dd>latent heat of vaporisation or condensation, J/kg</dd>
+    </dl>
+  </div>
+
+  <h3>Log mean temperature difference</h3>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mi>Δ</mi><msub><mi>T</mi><mtext>lm</mtext></msub><mo>=</mo>
+      <mfrac>
+        <mrow><mi>Δ</mi><msub><mi>T</mi><mn>1</mn></msub><mo>−</mo><mi>Δ</mi><msub><mi>T</mi><mn>2</mn></msub></mrow>
+        <mrow><mi>ln</mi><mo>⁡</mo><mrow><mo>(</mo><mfrac><mrow><mi>Δ</mi><msub><mi>T</mi><mn>1</mn></msub></mrow><mrow><mi>Δ</mi><msub><mi>T</mi><mn>2</mn></msub></mrow></mfrac><mo>)</mo></mrow></mrow>
+      </mfrac>
+    </mrow></math>
+  </div>
+
+  <p>Where Δ<em>T</em><sub>1</sub> and Δ<em>T</em><sub>2</sub> are the temperature differences between the two streams at each end of the exchanger, evaluated for pure counter-current flow.</p>
+
+  <h3>Required area</h3>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mi>Q</mi><mo>=</mo>
+      <mi>U</mi><mo>⁢</mo><mi>A</mi><mo>⁢</mo><mi>F</mi><mo>⁢</mo>
+      <mi>Δ</mi><msub><mi>T</mi><mtext>lm</mtext></msub>
+      <mspace width="2em"/>
+      <mi>A</mi><mo>=</mo>
+      <mfrac><mi>Q</mi><mrow><mi>U</mi><mo>⁢</mo><mi>F</mi><mo>⁢</mo><mi>Δ</mi><msub><mi>T</mi><mtext>lm</mtext></msub></mrow></mfrac>
+    </mrow></math>
+  </div>
+
+  <div class="where">
+    <dl>
+      <dt>U</dt><dd>overall heat transfer coefficient, W/(m²·K)</dd>
+      <dt>A</dt><dd>heat transfer area, m²</dd>
+      <dt>F</dt><dd>LMTD correction factor for non-counter-current flow — 1.0 for true counter-current or pure isothermal duty</dd>
+    </dl>
+  </div>
+
+  <div class="warn">
+    <strong>Keep F above about 0.8.</strong>
+    A multipass exchanger is not truly counter-current, and <em>F</em> corrects for that. Below roughly 0.8 the factor becomes very sensitive to small changes in terminal temperatures, so a minor shift in operating conditions produces a large change in capability. The usual remedies are more shells in series, or an F-shell. A design sitting at F = 0.7 is fragile.
+  </div>
+
+  <div class="note">
+    <p style="margin-top:0"><strong>Worked example — lube oil cooler.</strong></p>
+    <p>Oil cooled 70 °C → 45 °C; cooling water 32 °C → 40 °C, counter-current.</p>
+    <p>Δ<em>T</em>₁ = 70 − 40 = 30 K &nbsp;&nbsp; Δ<em>T</em>₂ = 45 − 32 = 13 K</p>
+    <p>Δ<em>T</em><sub>lm</sub> = (30 − 13) / ln(30/13) = 17 / 0.8362 = <strong>20.3 K</strong></p>
+    <p>Duty: 12 kg/s of oil, <em>c<sub>p</sub></em> = 2.1 kJ/(kg·K) → <em>Q</em> = 12 × 2100 × 25 = 630 kW</p>
+    <p style="margin-bottom:0">With <em>U</em> = 400 W/(m²·K) and <em>F</em> = 0.9: <em>A</em> = 630 000 / (400 × 0.9 × 20.3) = <strong>86 m²</strong></p>
+  </div>
+
+  <h2 id="s10-5"><span class="sec-no">10.5</span>Overall heat transfer coefficient</h2>
+
+  <p>Resistances in series, referred to the outside tube area:</p>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mfrac><mn>1</mn><msub><mi>U</mi><mi>o</mi></msub></mfrac><mo>=</mo>
+      <mfrac><mn>1</mn><msub><mi>h</mi><mi>o</mi></msub></mfrac>
+      <mo>+</mo><msub><mi>R</mi><mrow><mi>f</mi><mo>,</mo><mi>o</mi></mrow></msub>
+      <mo>+</mo>
+      <mfrac>
+        <mrow><msub><mi>d</mi><mi>o</mi></msub><mo>⁢</mo><mi>ln</mi><mo>⁡</mo><mrow><mo>(</mo><msub><mi>d</mi><mi>o</mi></msub><mo>/</mo><msub><mi>d</mi><mi>i</mi></msub><mo>)</mo></mrow></mrow>
+        <mrow><mn>2</mn><mo>⁢</mo><mi>k</mi></mrow>
+      </mfrac>
+      <mo>+</mo>
+      <msub><mi>R</mi><mrow><mi>f</mi><mo>,</mo><mi>i</mi></mrow></msub>
+      <mfrac><msub><mi>d</mi><mi>o</mi></msub><msub><mi>d</mi><mi>i</mi></msub></mfrac>
+      <mo>+</mo>
+      <mfrac><mn>1</mn><msub><mi>h</mi><mi>i</mi></msub></mfrac>
+      <mfrac><msub><mi>d</mi><mi>o</mi></msub><msub><mi>d</mi><mi>i</mi></msub></mfrac>
+    </mrow></math>
+  </div>
+
+  <div class="where">
+    <dl>
+      <dt>h<sub>o</sub>, h<sub>i</sub></dt><dd>outside and inside film coefficients, W/(m²·K)</dd>
+      <dt>R<sub>f,o</sub>, R<sub>f,i</sub></dt><dd>outside and inside fouling resistances, m²·K/W</dd>
+      <dt>d<sub>o</sub>, d<sub>i</sub></dt><dd>tube outside and inside diameter</dd>
+      <dt>k</dt><dd>tube wall thermal conductivity, W/(m·K)</dd>
+    </dl>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 10.5-1 — Indicative overall coefficients, W/(m²·K), clean</caption>
+      <thead><tr><th scope="col">Hot side</th><th scope="col">Cold side</th><th scope="col" class="num">U</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Water</th><td>Water</td><td class="num">800 – 1500</td></tr>
+        <tr><th scope="row">Light organic</th><td>Water</td><td class="num">350 – 850</td></tr>
+        <tr><th scope="row">Medium organic</th><td>Water</td><td class="num">250 – 600</td></tr>
+        <tr><th scope="row">Lube oil</th><td>Water</td><td class="num">250 – 550</td></tr>
+        <tr><th scope="row">Heavy organic</th><td>Water</td><td class="num">60 – 300</td></tr>
+        <tr><th scope="row">Steam (condensing)</th><td>Water</td><td class="num">1500 – 4000</td></tr>
+        <tr><th scope="row">Steam (condensing)</th><td>Light organic</td><td class="num">500 – 1000</td></tr>
+        <tr><th scope="row">Gas (1 – 2 bar)</th><td>Water</td><td class="num">20 – 80</td></tr>
+        <tr><th scope="row">Gas (10 bar +)</th><td>Water</td><td class="num">150 – 500</td></tr>
+        <tr><th scope="row">Process gas</th><td>Air (air cooler, bare tube basis)</td><td class="num">300 – 450</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>The smallest coefficient controls.</strong>
+    Resistances add. If the gas-side film coefficient is 50 W/(m²·K) and the water side is 5000, improving the water side is almost pointless — the gas side is 99 % of the resistance. This is why gas and air services use extended surface (fins): the only effective move is to add area where the resistance is.
+  </div>
+
+  <h2 id="s10-6"><span class="sec-no">10.6</span>Fouling</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 10.6-1 — Indicative fouling resistances, m²·K/W</caption>
+      <thead><tr><th scope="col">Fluid</th><th scope="col" class="num">R<sub>f</sub></th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Treated cooling tower water</th><td class="num">0.00018 – 0.00035</td></tr>
+        <tr><th scope="row">Seawater (below 50 °C)</th><td class="num">0.00009 – 0.00018</td></tr>
+        <tr><th scope="row">River / untreated water</th><td class="num">0.00035 – 0.00070</td></tr>
+        <tr><th scope="row">Steam, oil-free</th><td class="num">0.00009</td></tr>
+        <tr><th scope="row">Lubricating oil</th><td class="num">0.00018</td></tr>
+        <tr><th scope="row">Light hydrocarbon / naphtha</th><td class="num">0.00018 – 0.00035</td></tr>
+        <tr><th scope="row">Heavy fuel oil</th><td class="num">0.00070 – 0.00100</td></tr>
+        <tr><th scope="row">Compressed air</th><td class="num">0.00035</td></tr>
+        <tr><th scope="row">Flue gas</th><td class="num">0.00170 – 0.00350</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>Over-specifying fouling makes fouling worse.</strong>
+    Generous fouling allowances enlarge the exchanger. A larger exchanger runs at lower velocity for the same flow, and low velocity promotes deposition. The oversized exchanger then fouls faster than the correctly sized one would have, and the clean-condition performance is so far from design that control becomes difficult. Specify fouling from operating experience with the actual fluid, not from the top of a range.
+  </div>
+
+  <div class="note">
+    <strong>Velocity is the main fouling control.</strong>
+    Cooling water in tubes is normally kept above about 1 m/s to limit deposition and biological growth, and below about 2.5 to 3 m/s to limit erosion — lower for copper alloys, higher for titanium and super duplex. Both limits exist and both matter.
+  </div>
+
+  <h2 id="s10-7"><span class="sec-no">10.7</span>Air-cooled exchangers</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 10.7-1 — Forced versus induced draught</caption>
+      <thead><tr><th scope="col"></th><th scope="col">Forced draught (fan below)</th><th scope="col">Induced draught (fan above)</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Fan location</th><td>Below the bundle, pushing air up</td><td>Above the bundle, drawing air through</td></tr>
+        <tr><th scope="row">Fan operating temperature</th><td>Ambient — easier on bearings, belts and motor</td><td>Hot exit air — limits materials</td></tr>
+        <tr><th scope="row">Air distribution</th><td>Less uniform</td><td>More uniform</td></tr>
+        <tr><th scope="row">Hot air recirculation</th><td>More prone</td><td>Less prone — higher discharge velocity</td></tr>
+        <tr><th scope="row">Maintenance access</th><td>Easy — fan at grade level</td><td>Difficult — fan above the bundle</td></tr>
+        <tr><th scope="row">Power</th><td>Slightly lower (cooler, denser air)</td><td>Slightly higher</td></tr>
+        <tr><th scope="row">Common choice</th><td>Most common</td><td>Where close approach or recirculation control matters</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 10.7-2 — Air cooler design notes</caption>
+      <thead><tr><th scope="col">Item</th><th scope="col">Note</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Design air temperature</th><td>Normally chosen so it is exceeded only a small percentage of the year. In a tropical climate this is a high number and it dominates the design.</td></tr>
+        <tr><th scope="row">Approach temperature</th><td>Process outlet cannot approach ambient closer than about 8 – 15 K economically</td></tr>
+        <tr><th scope="row">Fin type</th><td>Extruded (best corrosion protection), L-foot wrapped, embedded (G-fin, best for high temperature)</td></tr>
+        <tr><th scope="row">Capacity control</th><td>Auto-variable pitch fans, two-speed or variable-speed motors, louvres, fan shutdown</td></tr>
+        <tr><th scope="row">Winterisation</th><td>Recirculation of warm air, louvres, steam coils — not a concern in the tropics but routine elsewhere</td></tr>
+        <tr><th scope="row">Noise</th><td>Fan tip speed is the dominant variable. Low-noise fans trade efficiency for sound.</td></tr>
+        <tr><th scope="row">Vibration switch</th><td>Standard protection against blade loss or bearing failure</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>Hot air recirculation is the usual cause of underperformance.</strong>
+    Exhausted hot air drawn back into the inlet raises the effective ambient, sometimes by several degrees, and the cooler never reaches design duty. Bank spacing, elevation, prevailing wind and adjacent structures all matter. It is a plot layout problem that shows up as a thermal performance problem.
+  </div>
+
+  <h2 id="s10-8"><span class="sec-no">10.8</span>Plate exchangers</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 10.8-1 — Plate versus shell and tube</caption>
+      <thead><tr><th scope="col"></th><th scope="col">Gasketed plate</th><th scope="col">Shell and tube</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">U, water/water</th><td class="num">3000 – 7000 W/(m²·K)</td><td class="num">800 – 1500 W/(m²·K)</td></tr>
+        <tr><th scope="row">Approach temperature</th><td>Down to 1 – 2 K</td><td>Typically 5 K or more</td></tr>
+        <tr><th scope="row">Volume / weight for a duty</th><td>Much smaller</td><td>Larger</td></tr>
+        <tr><th scope="row">Pressure limit</th><td>Typically up to ~25 bar</td><td>Very high</td></tr>
+        <tr><th scope="row">Temperature limit</th><td>Gasket-limited, typically ≤ 180 °C</td><td>Material-limited</td></tr>
+        <tr><th scope="row">Expandable</th><td>Yes — add plates</td><td>No</td></tr>
+        <tr><th scope="row">Cleaning</th><td>Open the frame, clean plates individually</td><td>Mechanical or chemical</td></tr>
+        <tr><th scope="row">Leak mode</th><td>Gasket leak to atmosphere — visible, generally benign</td><td>Tube leak between streams — cross-contamination</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Plate exchangers are the right answer for cooling water duty on a machine package.</strong>
+    Lube oil coolers, seal coolers and jacket water coolers are typically low-pressure, moderate-temperature, water-cooled duties with limited plot space — the exact envelope where a plate unit is compact, efficient and cheap. The usual objection is gasket compatibility with the oil; confirm the gasket elastomer against §3.6.
+  </div>
+
+  <h2 id="s10-9"><span class="sec-no">10.9</span>Exchangers on rotating equipment packages</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 10.9-1 — Where exchangers appear on a machine package</caption>
+      <thead><tr><th scope="col">Service</th><th scope="col">Typical type</th><th scope="col">Governing standard</th><th scope="col">Watch for</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Lube oil cooler</th><td>Shell and tube (TEMA) or plate</td><td>API 614 / ISO 10438</td><td>Twin coolers with transfer valve for on-line changeover; oil outlet temperature control</td></tr>
+        <tr><th scope="row">Seal oil cooler</th><td>Shell and tube or plate</td><td>API 614, API 682</td><td>Same twin arrangement; seal flush temperature is critical to seal life</td></tr>
+        <tr><th scope="row">Compressor intercooler / aftercooler</th><td>Shell and tube, or air-cooled</td><td>API 617, 618, 619</td><td>Condensate knock-out and drainage — liquid carryover into the next stage is destructive</td></tr>
+        <tr><th scope="row">Jacket water cooler</th><td>Plate or shell and tube</td><td>Machine standard</td><td>Cylinder jacket temperature control on reciprocating machines</td></tr>
+        <tr><th scope="row">Seal flush cooler (Plan 21 / 23)</th><td>Small shell and tube coil</td><td>API 682</td><td>Plan 23 circulates a closed loop and needs far less cooling than Plan 21 — prefer it</td></tr>
+        <tr><th scope="row">Surface condenser</th><td>Shell and tube</td><td>HEI standards</td><td>Air removal, vacuum integrity, cooling water fouling</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>Oil must be on the shell side, water in the tubes.</strong>
+    Cooling water is the fouling, corrosive stream and needs to be cleanable, so it belongs in the tubes. The usual arrangement also keeps oil pressure above water pressure, so that a tube leak drives oil into the water rather than water into the lube oil system. Water in the lube oil destroys bearings; the leak direction is a design decision, not an accident.
+  </div>
+
+  <h2 id="s10-10"><span class="sec-no">10.10</span>Sources</h2>
+
+  <ul>
+    <li>TEMA, <em>Standards of the Tubular Exchanger Manufacturers Association</em> — designation letters and mechanical classes R, C and B.</li>
+    <li>API Standard 660 / ISO 16812, <em>Shell-and-tube Heat Exchangers</em>.</li>
+    <li>API Standard 661 / ISO 13706, <em>Air-cooled Heat Exchangers for General Refinery Service</em>.</li>
+    <li>API Standard 662, <em>Plate Heat Exchangers for General Refinery Services</em>.</li>
+    <li>API Standard 614 / ISO 10438, <em>Lubrication, Shaft-Sealing and Oil-Control Systems</em>.</li>
+    <li>API Standard 682 / ISO 21049, <em>Pumps — Shaft Sealing Systems</em> — flush plan cooler arrangements.</li>
+    <li>ASME Boiler and Pressure Vessel Code, Section VIII Division 1.</li>
+    <li>HEI, <em>Standards for Steam Surface Condensers</em>.</li>
+  </ul>
+
+  <p>Coefficients and fouling resistances in Tables 10.5-1 and 10.6-1 are indicative ranges for preliminary sizing and order-of-magnitude checking. Thermal design is carried out with rating software and the governing fouling factors come from the project specification and operating experience.</p>
+
+  <nav class="prev-next">
+    <span><a href="ch09-coupling.html">← Ch 9 · Coupling</a></span>
+    <span><a href="ch11-electrical.html">Ch 11 · Electrical →</a></span>
+  </nav>
+
+</main>
+
+<footer class="foot">
+  <p><strong>Rotating Equipment General Reference</strong> — Chapter 10, Heat Exchanger.</p>
+  <p>Independently written from public standards &mdash; see <a href="index.html#provenance">provenance</a> and <a href="NOTICE.md">NOTICE.md</a>.<br>Copyright &copy; 2026 Zachry Philippines. All rights reserved.</p>
+</footer>
+
+<script src="assets/search-index.js"></script>
+<script src="assets/reference.js"></script>
+</body>
+</html>

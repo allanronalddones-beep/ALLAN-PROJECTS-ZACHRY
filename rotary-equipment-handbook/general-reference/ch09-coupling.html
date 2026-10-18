@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coupling — Rotating Equipment General Reference</title>
+<meta name="description" content="Coupling types, flexible element comparison, service factors, torque calculation, spacer length and API 671 requirements.">
+<link rel="stylesheet" href="assets/reference.css">
+</head>
+<body data-base="">
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="brand" href="index.html">Rotating Equipment <span>General Reference</span></a>
+    <span class="chapter-badge">Chapter 9</span>
+    <span class="spacer"></span>
+    <div class="search-wrap">
+      <input type="search" id="site-search" placeholder="Search sections…  (press /)" autocomplete="off" aria-label="Search the reference">
+      <div class="search-results" id="search-results" role="listbox"></div>
+    </div>
+  </div>
+</header>
+
+<main class="layout">
+
+  <h1 class="page-title">9 &nbsp;Coupling</h1>
+  <p class="page-sub">Transmitting torque while accommodating misalignment, axial movement and torsional behaviour.</p>
+
+  <nav class="toc" aria-label="Chapter contents">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#s9-1"><span class="t-no">9.1</span> What a coupling has to do</a></li>
+      <li><a href="#s9-2"><span class="t-no">9.2</span> Types</a></li>
+      <li><a href="#s9-3"><span class="t-no">9.3</span> Torque</a></li>
+      <li><a href="#s9-4"><span class="t-no">9.4</span> Service factors and sizing</a></li>
+      <li><a href="#s9-5"><span class="t-no">9.5</span> Spacer length and hub mounting</a></li>
+      <li><a href="#s9-6"><span class="t-no">9.6</span> Torsional considerations</a></li>
+      <li><a href="#s9-7"><span class="t-no">9.7</span> Balance and API 671</a></li>
+      <li><a href="#s9-8"><span class="t-no">9.8</span> Sources</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="s9-1"><span class="sec-no">9.1</span>What a coupling has to do</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 9.1-1 — Coupling functions</caption>
+      <thead><tr><th scope="col">Function</th><th scope="col">Detail</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Transmit torque</th><td>Continuously at rated load, and survive peak and transient torques</td></tr>
+        <tr><th scope="row">Accommodate misalignment</th><td>Parallel (offset), angular, and combinations — residual after alignment, plus thermal growth in service</td></tr>
+        <tr><th scope="row">Accommodate axial movement</th><td>Thermal growth, rotor float, thrust bearing clearance</td></tr>
+        <tr><th scope="row">Separate the machines</th><td>Spacer gives access to the seal without moving the driver</td></tr>
+        <tr><th scope="row">Tune the torsional system</th><td>Coupling stiffness and inertia place the train's torsional natural frequencies</td></tr>
+        <tr><th scope="row">Limit transmitted force</th><td>A flexible coupling must not impose large forces and moments on the machine bearings</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>A coupling does not correct misalignment — it tolerates it.</strong>
+    Running misaligned within the coupling's rating still loads the bearings and seals of both machines, and the reaction force grows with the offset. Misalignment is a leading cause of bearing and seal failure. Align properly (Chapter 13); the coupling's capacity is there for thermal movement and residual error, not as an alignment budget.
+  </div>
+
+  <h2 id="s9-2"><span class="sec-no">9.2</span>Types</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 9.2-1 — Flexible coupling types compared</caption>
+      <thead>
+        <tr><th scope="col">Type</th><th scope="col">How it flexes</th><th scope="col">Lubrication</th><th scope="col">Misalignment capacity</th><th scope="col">Typical application</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Disc pack</th><td>Elastic bending of thin stainless steel discs</td><td><strong>None</strong></td><td>Angular ~0.25–0.5° per flex element</td><td>The modern API 671 standard. Most special-purpose trains.</td></tr>
+        <tr><th scope="row">Diaphragm</th><td>Elastic flexure of a contoured disc</td><td><strong>None</strong></td><td>Angular ~0.25–0.5°, high axial capability</td><td>High speed, high power — gas turbines, large compressors</td></tr>
+        <tr><th scope="row">Gear</th><td>Sliding of crowned gear teeth</td><td>Grease or continuous oil — <strong>required</strong></td><td>Angular up to ~1.5° per mesh</td><td>Older installations, very high torque density, low speed</td></tr>
+        <tr><th scope="row">Grid</th><td>Flexing of a serpentine steel grid</td><td>Grease</td><td>Moderate</td><td>General purpose, some shock absorption</td></tr>
+        <tr><th scope="row">Elastomeric — compression</th><td>Compression of rubber blocks</td><td>None</td><td>Good</td><td>General purpose; damps torsional vibration</td></tr>
+        <tr><th scope="row">Elastomeric — shear (tyre)</th><td>Shear of a rubber element</td><td>None</td><td>High</td><td>Low torsional stiffness where detuning is needed</td></tr>
+        <tr><th scope="row">Rigid</th><td>Does not flex</td><td>n/a</td><td>None</td><td>Vertical pumps, where the driver bearing carries the rotor</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Disc and diaphragm versus gear</h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th scope="col"></th><th scope="col">Dry flexible (disc / diaphragm)</th><th scope="col">Gear</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Wear</th><td>None in normal service — no relative sliding</td><td>Tooth wear is continuous; life is finite</td></tr>
+        <tr><th scope="row">Lubrication failure</th><td>Not applicable</td><td>Loss of lube causes rapid failure; a common root cause</td></tr>
+        <tr><th scope="row">Axial force generated</th><td>Predictable, proportional to axial displacement and element stiffness</td><td>Unpredictable — depends on friction at the teeth, which varies with lubrication condition</td></tr>
+        <tr><th scope="row">Failure mode</th><td>Fatigue cracking of discs — usually progressive</td><td>Tooth wear, then rapid</td></tr>
+        <tr><th scope="row">Overload behaviour</th><td>Discs can fail suddenly if overloaded</td><td>More tolerant of momentary overload</td></tr>
+        <tr><th scope="row">Torque density</th><td>Lower for a given diameter</td><td>Higher</td></tr>
+        <tr><th scope="row">Balance</th><td>Good — no clearances</td><td>Clearances permit eccentricity and unbalance shift</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Why dry couplings displaced gear couplings on critical machines.</strong>
+    The unpredictable axial force from a gear coupling, which depends on the friction coefficient at the teeth, feeds directly into the thrust bearing. As lubrication degrades the force grows, and thrust bearing failures traceable to coupling lock-up were common. A disc or diaphragm coupling's axial force is a calculable spring rate. API 671 strongly favours non-lubricated designs.
+  </div>
+
+  <h2 id="s9-3"><span class="sec-no">9.3</span>Torque</h2>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mi>T</mi><mo>[</mo><mtext>N·m</mtext><mo>]</mo><mo>=</mo>
+      <mfrac>
+        <mrow><mn>9549</mn><mo>⁢</mo><mi>P</mi><mo>[</mo><mtext>kW</mtext><mo>]</mo></mrow>
+        <mrow><mi>N</mi><mo>[</mo><mtext>rpm</mtext><mo>]</mo></mrow>
+      </mfrac>
+    </mrow></math>
+  </div>
+
+  <p>In US units:</p>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mi>T</mi><mo>[</mo><mtext>lbf·in</mtext><mo>]</mo><mo>=</mo>
+      <mfrac>
+        <mrow><mn>63025</mn><mo>⁢</mo><mi>P</mi><mo>[</mo><mtext>hp</mtext><mo>]</mo></mrow>
+        <mrow><mi>N</mi><mo>[</mo><mtext>rpm</mtext><mo>]</mo></mrow>
+      </mfrac>
+    </mrow></math>
+  </div>
+
+  <div class="note">
+    <p style="margin-top:0"><strong>Worked example.</strong> 2200 kW motor at 2980 rpm.</p>
+    <p style="margin-bottom:0"><em>T</em> = 9549 × 2200 / 2980 = <strong>7050 N·m</strong> continuous. The coupling must then be selected for this torque multiplied by the applicable service factor (§9.4), and separately checked against the peak transient torque.</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 9.3-1 — Torque cases to check</caption>
+      <thead><tr><th scope="col">Case</th><th scope="col">Source</th><th scope="col">Relative magnitude</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Normal continuous</th><td>Rated power at rated speed</td><td class="num">1.0</td></tr>
+        <tr><th scope="row">Maximum continuous</th><td>End-of-curve power, maximum impeller, cold fluid</td><td class="num">1.1 – 1.3</td></tr>
+        <tr><th scope="row">Motor starting</th><td>Direct-on-line start, locked rotor and pull-up torque</td><td class="num">1.5 – 2.5</td></tr>
+        <tr><th scope="row">Motor short circuit</th><td>Terminal fault or out-of-phase re-closure</td><td class="num"><strong>up to 10+</strong></td></tr>
+        <tr><th scope="row">Synchronous motor starting</th><td>Pulsating torque during run-up, exciting torsional modes</td><td class="num">Oscillating</td></tr>
+        <tr><th scope="row">Reciprocating machine</th><td>Cyclic torque variation each revolution</td><td class="num">Oscillating, large</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>The short-circuit case is the one that breaks couplings.</strong>
+    An induction motor subjected to a terminal short circuit or an out-of-phase re-closure delivers a transient air-gap torque many times rated — commonly cited at up to around ten times. API 671 requires the coupling to withstand defined transient torques without permanent deformation. Where a train includes a large motor, the electrical fault torque must be obtained from the motor vendor and given to the coupling vendor; it is not derivable from the nameplate.
+  </div>
+
+  <h2 id="s9-4"><span class="sec-no">9.4</span>Service factors and sizing</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 9.4-1 — Indicative service factors on rated torque</caption>
+      <thead><tr><th scope="col">Driven machine</th><th scope="col">Driver: electric motor / turbine</th><th scope="col">Driver: reciprocating engine</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Centrifugal pump, fan, blower</th><td class="num">1.25 – 1.5</td><td class="num">1.75 – 2.0</td></tr>
+        <tr><th scope="row">Centrifugal compressor</th><td class="num">1.5</td><td class="num">2.0</td></tr>
+        <tr><th scope="row">Rotary (screw) compressor</th><td class="num">1.5 – 1.75</td><td class="num">2.0 – 2.5</td></tr>
+        <tr><th scope="row">Reciprocating compressor / pump</th><td class="num">2.0 – 2.5</td><td class="num">2.5 – 3.0</td></tr>
+        <tr><th scope="row">Generator</th><td class="num">1.5 – 2.0</td><td class="num">2.0 – 2.5</td></tr>
+        <tr><th scope="row">Crusher, mill, shredder</th><td class="num">2.0 – 3.0</td><td class="num">2.5 – 3.5</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Treat these as a starting point only.</strong>
+    Service factors are a crude proxy for a torsional analysis. For API 671 special-purpose trains the service factor does not replace the torsional study — API 671 requires a minimum continuous rating margin over the driver's rated power, plus demonstrated capability against the specified transient torques. For general-purpose drives, AGMA 9000-series factors are the usual basis, and the vendor's own catalogue factors govern.
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 9.4-2 — Data the coupling vendor needs</caption>
+      <thead><tr><th scope="col">Item</th><th scope="col">Why</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Rated and maximum power, speed</th><td>Torque sizing</td></tr>
+        <tr><th scope="row">Transient / fault torque</th><td>Peak capability check</td></tr>
+        <tr><th scope="row">Shaft diameters, taper or cylindrical, keyway details</th><td>Hub design and fit</td></tr>
+        <tr><th scope="row">Distance between shaft ends (DBSE)</th><td>Spacer length</td></tr>
+        <tr><th scope="row">Axial movement required, each machine</th><td>Flex element axial capacity</td></tr>
+        <tr><th scope="row">Thermal growth, each machine</th><td>Misalignment at operating temperature</td></tr>
+        <tr><th scope="row">Allowable moment and force on each machine shaft end</th><td>Coupling reaction limits</td></tr>
+        <tr><th scope="row">Required coupling inertia and torsional stiffness range</th><td>Torsional tuning</td></tr>
+        <tr><th scope="row">Hazardous area classification</th><td>Guard material — non-sparking requirements</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="s9-5"><span class="sec-no">9.5</span>Spacer length and hub mounting</h2>
+
+  <h3>Spacer</h3>
+
+  <p>The spacer sets the distance between shaft ends. Two considerations compete:</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th scope="col">Longer spacer</th><th scope="col">Shorter spacer</th></tr></thead>
+      <tbody>
+        <tr><td>More misalignment capacity for the same angular deflection of each element</td><td>Less overhung mass and moment on the shaft ends</td></tr>
+        <tr><td>Room to withdraw the seal cartridge without moving the driver</td><td>Higher coupling lateral natural frequency</td></tr>
+        <tr><td>Easier access for alignment measurement</td><td>Lower cost</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>API 610 requires a spacer coupling.</strong>
+    The minimum spacer length on an API 610 pump is specified so that the mechanical seal and bearing housing can be removed without disturbing the driver or the suction and discharge piping. This is why back-pull-out designs and spacer couplings go together, and why fitting a short coupling "to save space" costs far more in every future seal change.
+  </div>
+
+  <h3>Hub mounting</h3>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 9.5-1 — Hub-to-shaft connections</caption>
+      <thead><tr><th scope="col">Method</th><th scope="col">Torque capacity</th><th scope="col">Notes</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Straight bore with key, clearance fit</th><td>Low</td><td>Fretting and backlash. Not for high-speed or reversing duty.</td></tr>
+        <tr><th scope="row">Straight bore with key, interference fit</th><td>Moderate</td><td>Heated for assembly. Common general purpose.</td></tr>
+        <tr><th scope="row">Tapered bore with key, hydraulic fit</th><td>High</td><td>API 671 standard. Precise, repeatable, removable.</td></tr>
+        <tr><th scope="row">Tapered bore, keyless, hydraulic fit</th><td>Highest</td><td>No key means no stress raiser and no unbalance from the keyway. Preferred for high-speed trains.</td></tr>
+        <tr><th scope="row">Flanged / integral</th><td>Highest</td><td>Bolted to a shaft-end flange; common on gas turbines</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>Record the hydraulic fit advance.</strong>
+    A tapered hydraulic fit is set by driving the hub a specified axial distance up the taper, not by torque or by feel. Under-advance slips in service; over-advance can burst the hub. The advance figure and the measured value belong in the installation record, and the hub must be removed and reset if there is any doubt.
+  </div>
+
+  <h2 id="s9-6"><span class="sec-no">9.6</span>Torsional considerations</h2>
+
+  <p>The coupling is usually the softest torsional element in a train, which means it largely sets where the torsional natural frequencies fall. That makes it a tuning element as well as a power transmission element.</p>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 9.6-1 — Torsional excitation sources</caption>
+      <thead><tr><th scope="col">Source</th><th scope="col">Excitation frequency</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Any rotor unbalance or misalignment</th><td>1× and 2× running speed</td></tr>
+        <tr><th scope="row">Reciprocating compressor / pump</th><td>Multiples of running speed set by cylinder count and action</td></tr>
+        <tr><th scope="row">Synchronous motor start</th><td>Sweeping pulsating torque at twice slip frequency, from 2× line down to zero</td></tr>
+        <tr><th scope="row">Variable frequency drive</th><td>Harmonics of the output frequency and of the switching scheme</td></tr>
+        <tr><th scope="row">Electrical faults</th><td>Line frequency and twice line frequency transients</td></tr>
+        <tr><th scope="row">Gear mesh</th><td>Tooth passing frequency</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>Torsional vibration is invisible.</strong>
+    Unlike lateral vibration, it produces no casing movement and does not show on standard vibration monitoring. The first indication is frequently a broken shaft, a failed coupling or cracked gear teeth. For trains with reciprocating machines, synchronous motors or VFDs, a torsional analysis is mandatory under API 671 and the relevant machine standard — it is not a discretionary study.
+  </div>
+
+  <div class="note">
+    <strong>Separation margin.</strong>
+    API practice requires torsional natural frequencies to be separated from significant excitation frequencies by a margin, commonly 10 % above and below over the operating speed range. Where separation cannot be achieved, a stress analysis must demonstrate acceptable life. The usual remedies are to change coupling stiffness or inertia — which is why the torsional analysis must be completed before the coupling is finally ordered.
+  </div>
+
+  <h2 id="s9-7"><span class="sec-no">9.7</span>Balance and API 671</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 9.7-1 — Key API 671 requirements</caption>
+      <thead><tr><th scope="col">Area</th><th scope="col">Requirement in outline</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Type</th><td>Non-lubricated flexible element designs preferred</td></tr>
+        <tr><th scope="row">Rating</th><td>Continuous rating with margin over the driver rating; defined capability against transient torques</td></tr>
+        <tr><th scope="row">Balance</th><td>Component balance as standard, with assembly balance where specified; residual unbalance limits tied to the machine's balance quality</td></tr>
+        <tr><th scope="row">Interchangeability</th><td>Components must be interchangeable without rebalancing where specified</td></tr>
+        <tr><th scope="row">Marriage / match marking</th><td>Assembly orientation marked so the coupling reassembles as balanced</td></tr>
+        <tr><th scope="row">Overspeed</th><td>Capability to defined overspeed, with spin testing where specified</td></tr>
+        <tr><th scope="row">Guards</th><td>Non-sparking material in hazardous areas; must not be a vibration source</td></tr>
+        <tr><th scope="row">Documentation</th><td>Torsional stiffness, mass, inertia (WR²), centre of gravity, axial stiffness — needed for the train's rotordynamic and torsional models</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Match marking is not a formality.</strong>
+    A balanced coupling assembly is balanced in one particular angular relationship between hub, spacer and flex elements. Reassembling it rotated by one bolt hole reintroduces unbalance. Every component carries a match mark; alignment of those marks is a hold point in reassembly.
+  </div>
+
+  <h2 id="s9-8"><span class="sec-no">9.8</span>Sources</h2>
+
+  <ul>
+    <li>API Standard 671 / ISO 10441, <em>Special-Purpose Couplings for Petroleum, Chemical and Gas Industry Services</em>.</li>
+    <li>AGMA 9000-series standards — flexible coupling classification, balance and alignment practice.</li>
+    <li>AGMA 9002, <em>Bores and Keyways for Flexible Couplings</em>.</li>
+    <li>API Standard 610 / ISO 13709 — spacer coupling requirement for back-pull-out maintenance.</li>
+    <li>API Standard 684, <em>Tutorial on Rotordynamics</em> — lateral and torsional analysis, balancing.</li>
+    <li>ISO 1940-1 / ISO 21940-11, balance quality grades for rigid rotors.</li>
+  </ul>
+
+  <p>Service factors in Table 9.4-1 are indicative values for preliminary sizing. The governing figures are those in the coupling vendor's catalogue and, for special-purpose trains, the results of the torsional analysis.</p>
+
+  <nav class="prev-next">
+    <span><a href="ch08-gas-turbines.html">← Ch 8 · Gas Turbine Selection</a></span>
+    <span><a href="ch10-heat-exchangers.html">Ch 10 · Heat Exchanger →</a></span>
+  </nav>
+
+</main>
+
+<footer class="foot">
+  <p><strong>Rotating Equipment General Reference</strong> — Chapter 9, Coupling.</p>
+  <p>Independently written from public standards &mdash; see <a href="index.html#provenance">provenance</a> and <a href="NOTICE.md">NOTICE.md</a>.<br>Copyright &copy; 2026 Zachry Philippines. All rights reserved.</p>
+</footer>
+
+<script src="assets/search-index.js"></script>
+<script src="assets/reference.js"></script>
+</body>
+</html>

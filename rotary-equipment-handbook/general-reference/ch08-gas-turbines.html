@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gas Turbine Selection — Rotating Equipment General Reference</title>
+<meta name="description" content="Gas turbine types, cycle performance, key performance data, site derating for ambient and altitude, fuels and emissions.">
+<link rel="stylesheet" href="assets/reference.css">
+</head>
+<body data-base="">
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="brand" href="index.html">Rotating Equipment <span>General Reference</span></a>
+    <span class="chapter-badge">Chapter 8</span>
+    <span class="spacer"></span>
+    <div class="search-wrap">
+      <input type="search" id="site-search" placeholder="Search sections…  (press /)" autocomplete="off" aria-label="Search the reference">
+      <div class="search-results" id="search-results" role="listbox"></div>
+    </div>
+  </div>
+</header>
+
+<main class="layout">
+
+  <h1 class="page-title">8 &nbsp;Gas Turbine Selection</h1>
+  <p class="page-sub">Types, cycle performance, and the site conditions that decide what you actually get.</p>
+
+  <nav class="toc" aria-label="Chapter contents">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#s8-1"><span class="t-no">8.1</span> Types</a></li>
+      <li><a href="#s8-2"><span class="t-no">8.2</span> Shaft arrangements</a></li>
+      <li><a href="#s8-3"><span class="t-no">8.3</span> Cycle and performance</a></li>
+      <li><a href="#s8-4"><span class="t-no">8.4</span> Key performance data</a></li>
+      <li><a href="#s8-5"><span class="t-no">8.5</span> Site derating</a></li>
+      <li><a href="#s8-6"><span class="t-no">8.6</span> Fuel and emissions</a></li>
+      <li><a href="#s8-7"><span class="t-no">8.7</span> Sources</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="s8-1"><span class="sec-no">8.1</span>Types</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 8.1-1 — Aeroderivative, heavy duty and light industrial</caption>
+      <thead><tr><th scope="col"></th><th scope="col">Aeroderivative</th><th scope="col">Heavy duty (frame)</th><th scope="col">Light industrial</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Origin</th><td>Aircraft engine core, industrialised</td><td>Purpose-built stationary</td><td>Purpose-built, smaller</td></tr>
+        <tr><th scope="row">Typical range</th><td>15 – 100 MW</td><td>30 – 500 MW</td><td>1 – 20 MW</td></tr>
+        <tr><th scope="row">Simple-cycle efficiency</th><td>Higher — 38 – 44 %</td><td>Lower — 32 – 40 %</td><td>25 – 35 %</td></tr>
+        <tr><th scope="row">Pressure ratio</th><td>High — 20 to 40</td><td>Moderate — 12 to 22</td><td>8 to 18</td></tr>
+        <tr><th scope="row">Exhaust temperature</th><td>Lower</td><td>Higher — better for combined cycle and cogeneration</td><td>Moderate</td></tr>
+        <tr><th scope="row">Weight and footprint</th><td>Light, compact</td><td>Heavy, large foundation</td><td>Compact, often packaged</td></tr>
+        <tr><th scope="row">Start time to full load</th><td>Fast — minutes</td><td>Slow — tens of minutes</td><td>Fast</td></tr>
+        <tr><th scope="row">Maintenance</th><td>Modular — engine swapped out, repaired off site</td><td>In-situ, longer outages</td><td>Modular or in-situ</td></tr>
+        <tr><th scope="row">Best suited to</th><td>Offshore, peaking, mechanical drive, space-constrained</td><td>Baseload power, combined cycle</td><td>Cogeneration, mechanical drive</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="s8-2"><span class="sec-no">8.2</span>Shaft arrangements</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 8.2-1 — Single shaft versus two shaft</caption>
+      <thead><tr><th scope="col"></th><th scope="col">Single shaft</th><th scope="col">Two shaft (free power turbine)</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Arrangement</th><td>Compressor, turbine and load on one shaft</td><td>Gas generator on one shaft; aerodynamically coupled power turbine on a separate shaft drives the load</td></tr>
+        <tr><th scope="row">Load speed</th><td>Fixed — tied to compressor speed</td><td>Variable and independent of gas generator speed</td></tr>
+        <tr><th scope="row">Starting torque</th><td>Must accelerate the load as well as the compressor</td><td>Gas generator starts unloaded — much lower starting requirement</td></tr>
+        <tr><th scope="row">Part-load efficiency</th><td>Falls off sharply</td><td>Better</td></tr>
+        <tr><th scope="row">Best for</th><td>Generator drive at constant frequency</td><td>Mechanical drive — compressors and pumps</td></tr>
+        <tr><th scope="row">Overspeed risk</th><td>Restrained by the load</td><td><strong>Power turbine can run away if coupling is lost</strong> — independent overspeed protection essential</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="s8-3"><span class="sec-no">8.3</span>Cycle and performance</h2>
+
+  <p>The Brayton cycle: air is compressed, fuel is burned at approximately constant pressure, and the hot gas expands through the turbine. The compressor absorbs a large fraction — commonly half to two-thirds — of the turbine's gross output. What is left is useful work.</p>
+
+  <h3>Thermal efficiency and heat rate</h3>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <msub><mi>η</mi><mtext>th</mtext></msub><mo>=</mo>
+      <mfrac>
+        <msub><mi>P</mi><mtext>output</mtext></msub>
+        <mrow><mover><mi>m</mi><mo>˙</mo></mover><mtext>fuel</mtext><mo>⁢</mo><mtext>LHV</mtext></mrow>
+      </mfrac>
+      <mspace width="2.5em"/>
+      <mtext>Heat rate</mtext><mo>=</mo>
+      <mfrac><mn>3600</mn><msub><mi>η</mi><mtext>th</mtext></msub></mfrac>
+    </mrow></math>
+  </div>
+
+  <div class="where">
+    <dl>
+      <dt>η<sub>th</sub></dt><dd>thermal efficiency, fraction</dd>
+      <dt>Heat rate</dt><dd>kJ/kWh — the fuel energy consumed per unit of electrical or shaft output</dd>
+      <dt>LHV</dt><dd>lower heating value of the fuel, kJ/kg</dd>
+    </dl>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 8.3-1 — Efficiency and heat rate equivalents</caption>
+      <thead><tr><th scope="col" class="num">Thermal efficiency</th><th scope="col" class="num">Heat rate (kJ/kWh)</th><th scope="col" class="num">Heat rate (BTU/kWh)</th></tr></thead>
+      <tbody>
+        <tr><td class="num">25 %</td><td class="num">14 400</td><td class="num">13 648</td></tr>
+        <tr><td class="num">30 %</td><td class="num">12 000</td><td class="num">11 374</td></tr>
+        <tr><td class="num">35 %</td><td class="num">10 286</td><td class="num">9 749</td></tr>
+        <tr><td class="num">40 %</td><td class="num">9 000</td><td class="num">8 530</td></tr>
+        <tr><td class="num">45 %</td><td class="num">8 000</td><td class="num">7 582</td></tr>
+        <tr><td class="num">60 % (combined cycle)</td><td class="num">6 000</td><td class="num">5 687</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>LHV or HHV — always state which.</strong>
+    Gas turbine performance is conventionally quoted on <strong>LHV</strong>. Fuel is often sold and metered on <strong>HHV</strong>. For natural gas the difference is roughly 10 %, so an efficiency quoted on HHV looks about 10 % relatively worse than the same machine on LHV. Comparing two vendors on different bases is a real and common error in bid evaluation.
+  </div>
+
+  <h3>Combined cycle and cogeneration</h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th scope="col">Configuration</th><th scope="col">Description</th><th scope="col" class="num">Typical efficiency</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Simple cycle</th><td>Exhaust to atmosphere</td><td class="num">30 – 44 %</td></tr>
+        <tr><th scope="row">Cogeneration (CHP)</th><td>Exhaust raises steam or provides process heat</td><td class="num">70 – 85 % fuel utilisation</td></tr>
+        <tr><th scope="row">Combined cycle</th><td>Exhaust raises steam for a steam turbine</td><td class="num">50 – 64 %</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Exhaust temperature is an asset.</strong>
+    A heavy duty frame machine with lower simple-cycle efficiency may beat an aeroderivative overall, because its hotter exhaust makes more and better steam. Select on the efficiency of the whole scheme, not the gas turbine alone.
+  </div>
+
+  <h2 id="s8-4"><span class="sec-no">8.4</span>Key performance data</h2>
+
+  <p>The parameters to extract from any vendor quotation, and to compare like for like:</p>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 8.4-1 — Data to collect for every machine evaluated</caption>
+      <thead><tr><th scope="col">Parameter</th><th scope="col">Unit</th><th scope="col">Why it matters</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">ISO rating — output</th><td>kW / MW</td><td>Reference basis for comparison. <em>Never</em> the site output.</td></tr>
+        <tr><th scope="row">ISO heat rate</th><td>kJ/kWh (LHV)</td><td>Fuel cost over the life of the plant</td></tr>
+        <tr><th scope="row">Site-rated output</th><td>kW</td><td>What you will actually get — see §8.5</td></tr>
+        <tr><th scope="row">Pressure ratio</th><td>—</td><td>Indicates aeroderivative versus frame</td></tr>
+        <tr><th scope="row">Exhaust mass flow</th><td>kg/s</td><td>Sizes the HRSG, the stack and the exhaust duct</td></tr>
+        <tr><th scope="row">Exhaust temperature</th><td>°C</td><td>Steam production potential</td></tr>
+        <tr><th scope="row">Shaft speed</th><td>rpm</td><td>Gearbox requirement</td></tr>
+        <tr><th scope="row">NO<sub>x</sub> emissions</th><td>ppmvd @ 15 % O₂</td><td>Permit compliance. State the oxygen reference.</td></tr>
+        <tr><th scope="row">Start time to full load</th><td>minutes</td><td>Operability, black start, peaking duty</td></tr>
+        <tr><th scope="row">Inspection intervals</th><td>equivalent operating hours</td><td>Combustion, hot gas path and major overhaul intervals drive lifecycle cost</td></tr>
+        <tr><th scope="row">Degradation</th><td>% per 1000 h</td><td>Recoverable (washing) and non-recoverable</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>ISO rating conditions (ISO 2314 / ISO 3977).</strong>
+    15 °C ambient, 101.325 kPa (sea level), 60 % relative humidity, with zero inlet and exhaust pressure loss and no auxiliary losses. No real installation meets any of those conditions.
+  </div>
+
+  <h2 id="s8-5"><span class="sec-no">8.5</span>Site derating</h2>
+
+  <p>A gas turbine is a volumetric air machine. Anything that reduces the mass of air it ingests reduces its output almost proportionally.</p>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 8.5-1 — Derating effects, indicative magnitudes</caption>
+      <thead><tr><th scope="col">Factor</th><th scope="col">Effect on output</th><th scope="col">Effect on heat rate</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Ambient temperature</th><td><strong>−0.5 to −0.9 % per °C above 15 °C</strong></td><td>Worsens 0.1 – 0.2 % per °C</td></tr>
+        <tr><th scope="row">Altitude / barometric pressure</th><td>Falls in direct proportion to ambient pressure</td><td>Essentially unchanged</td></tr>
+        <tr><th scope="row">Relative humidity</th><td>Small; moist air is less dense — slight loss</td><td>Slight</td></tr>
+        <tr><th scope="row">Inlet pressure loss (filters, silencer)</th><td>≈ −0.3 to −0.5 % per 100 Pa (≈ per 10 mm H₂O)</td><td>Worsens</td></tr>
+        <tr><th scope="row">Exhaust back pressure (HRSG, stack)</th><td>≈ −0.2 to −0.3 % per 100 Pa</td><td>Worsens</td></tr>
+        <tr><th scope="row">Compressor fouling</th><td>−2 to −6 % recoverable by washing</td><td>Worsens 1 – 3 %</td></tr>
+        <tr><th scope="row">Non-recoverable degradation</th><td>−1 to −3 % over the first major interval</td><td>Worsens</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Altitude correction</h3>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mfrac><msub><mi>P</mi><mtext>site</mtext></msub><msub><mi>P</mi><mtext>ISO</mtext></msub></mfrac>
+      <mo>≈</mo>
+      <mfrac><msub><mi>p</mi><mtext>amb</mtext></msub><mn>101.325</mn></mfrac>
+      <mspace width="2em"/>
+      <msub><mi>p</mi><mtext>amb</mtext></msub><mo>≈</mo>
+      <mn>101.325</mn>
+      <msup>
+        <mrow><mo>(</mo><mn>1</mn><mo>−</mo><mn>2.25577</mn><mo>×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>5</mn></mrow></msup><mi>z</mi><mo>)</mo></mrow>
+        <mn>5.2559</mn>
+      </msup>
+    </mrow></math>
+  </div>
+
+  <div class="where">
+    <dl>
+      <dt>z</dt><dd>site elevation above sea level, m</dd>
+      <dt>p<sub>amb</sub></dt><dd>ambient barometric pressure, kPa</dd>
+    </dl>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 8.5-2 — Barometric pressure and output factor by elevation</caption>
+      <thead><tr><th scope="col" class="num">Elevation (m)</th><th scope="col" class="num">p<sub>amb</sub> (kPa)</th><th scope="col" class="num">Output factor</th></tr></thead>
+      <tbody>
+        <tr><td class="num">0</td><td class="num">101.3</td><td class="num">1.000</td></tr>
+        <tr><td class="num">250</td><td class="num">98.4</td><td class="num">0.971</td></tr>
+        <tr><td class="num">500</td><td class="num">95.5</td><td class="num">0.942</td></tr>
+        <tr><td class="num">1000</td><td class="num">89.9</td><td class="num">0.887</td></tr>
+        <tr><td class="num">1500</td><td class="num">84.6</td><td class="num">0.835</td></tr>
+        <tr><td class="num">2000</td><td class="num">79.5</td><td class="num">0.785</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <p style="margin-top:0"><strong>Worked example — tropical site.</strong></p>
+    <p>A machine with an ISO rating of 30 MW, installed at 50 m elevation with a 32 °C design ambient, 300 Pa inlet loss and 400 Pa exhaust back pressure.</p>
+    <ul style="margin:.4rem 0">
+      <li>Temperature: (32 − 15) × 0.7 % = −11.9 %</li>
+      <li>Altitude: factor 0.994 → −0.6 %</li>
+      <li>Inlet loss: 300 Pa × 0.4 %/100 Pa = −1.2 %</li>
+      <li>Exhaust loss: 400 Pa × 0.25 %/100 Pa = −1.0 %</li>
+    </ul>
+    <p style="margin-bottom:0">Combined ≈ −14.4 %, giving roughly <strong>25.7 MW</strong> at site conditions — before any allowance for degradation between washes. Sizing the driven equipment from the 30 MW nameplate would have been a 4 MW error.</p>
+  </div>
+
+  <div class="warn">
+    <strong>This matters acutely in the Philippines and the tropics generally.</strong>
+    A 32 to 35 °C design ambient costs 12 to 15 % of nameplate output before anything else is counted. Evaporative cooling or inlet chilling recovers part of it; high ambient humidity limits what evaporative cooling can achieve. Always obtain the vendor's site-specific performance curve for the actual design ambient — never scale from the ISO rating by rule of thumb for a final selection.
+  </div>
+
+  <h2 id="s8-6"><span class="sec-no">8.6</span>Fuel and emissions</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 8.6-1 — Fuel considerations</caption>
+      <thead><tr><th scope="col">Fuel</th><th scope="col">Notes</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Natural gas</th><td>Preferred. Wobbe index must stay within the combustor's band — a change in gas composition can require re-tuning or prevent operation.</td></tr>
+        <tr><th scope="row">Distillate (diesel)</th><td>Common backup fuel. Dual-fuel machines transfer on load. Requires fuel treatment and more frequent hot gas path inspection.</td></tr>
+        <tr><th scope="row">Heavy / residual fuel</th><td>Requires washing and inhibitor dosing for vanadium and sodium. Substantially shortens inspection intervals.</td></tr>
+        <tr><th scope="row">Refinery / process gas</th><td>Variable composition and heating value. Hydrogen content affects flame speed and combustor design.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 8.6-2 — NO<sub>x</sub> control</caption>
+      <thead><tr><th scope="col">Method</th><th scope="col">Principle</th><th scope="col">Comment</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Dry low NO<sub>x</sub> (DLN / DLE)</th><td>Lean premixed combustion lowers flame temperature</td><td>Standard for gas firing. Narrower operating band; combustion dynamics must be managed.</td></tr>
+        <tr><th scope="row">Water or steam injection</th><td>Diluent lowers flame temperature</td><td>Effective on liquid fuel. Costs efficiency and consumes treated water.</td></tr>
+        <tr><th scope="row">SCR</th><td>Ammonia or urea over a catalyst in the exhaust</td><td>Post-combustion. Needed where permits demand single-digit ppm.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Always quote emissions with the oxygen reference.</strong>
+    "25 ppm NO<sub>x</sub>" is meaningless alone. The convention is ppmvd corrected to 15 % O₂, dry. Without the reference, two quotations cannot be compared, and a permit limit cannot be demonstrated.
+  </div>
+
+  <h2 id="s8-7"><span class="sec-no">8.7</span>Sources</h2>
+
+  <ul>
+    <li>API Standard 616, <em>Gas Turbines for the Petroleum, Chemical and Gas Industry Services</em>.</li>
+    <li>ISO 2314, <em>Gas turbines — Acceptance tests</em>.</li>
+    <li>ISO 3977 series, <em>Gas turbines — Procurement</em>.</li>
+    <li>ASME PTC 22, <em>Gas Turbines</em> — performance test code.</li>
+    <li>ISO 19859, <em>Gas turbine applications — Requirements for power generation</em>.</li>
+    <li>ISO 2533, <em>Standard Atmosphere</em> — the barometric relation used in §8.5.</li>
+    <li>API Standard 670, <em>Machinery Protection Systems</em> — overspeed protection for free power turbines.</li>
+    <li>API Standard 614 / ISO 10438 — lubrication systems.</li>
+  </ul>
+
+  <p>Derating magnitudes are indicative ranges for screening and must be replaced by the vendor's site-specific performance curves before selection. Efficiency ranges reflect current commercial machines and will move as products change.</p>
+
+  <nav class="prev-next">
+    <span><a href="ch07-steam-turbines.html">← Ch 7 · Steam Turbine Selection</a></span>
+    <span><a href="ch09-coupling.html">Ch 9 · Coupling →</a></span>
+  </nav>
+
+</main>
+
+<footer class="foot">
+  <p><strong>Rotating Equipment General Reference</strong> — Chapter 8, Gas Turbine Selection.</p>
+  <p>Independently written from public standards &mdash; see <a href="index.html#provenance">provenance</a> and <a href="NOTICE.md">NOTICE.md</a>.<br>Copyright &copy; 2026 Zachry Philippines. All rights reserved.</p>
+</footer>
+
+<script src="assets/search-index.js"></script>
+<script src="assets/reference.js"></script>
+</body>
+</html>

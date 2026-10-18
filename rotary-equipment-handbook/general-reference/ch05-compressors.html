@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compressor Selection — Rotating Equipment General Reference</title>
+<meta name="description" content="Compressor type coverage, fans and blowers, centrifugal, reciprocating and screw compressors — selection, head and power calculations, surge and capacity control.">
+<link rel="stylesheet" href="assets/reference.css">
+</head>
+<body data-base="">
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="brand" href="index.html">Rotating Equipment <span>General Reference</span></a>
+    <span class="chapter-badge">Chapter 5</span>
+    <span class="spacer"></span>
+    <div class="search-wrap">
+      <input type="search" id="site-search" placeholder="Search sections…  (press /)" autocomplete="off" aria-label="Search the reference">
+      <div class="search-results" id="search-results" role="listbox"></div>
+    </div>
+  </div>
+</header>
+
+<main class="layout">
+
+  <h1 class="page-title">5 &nbsp;Compressor Selection</h1>
+  <p class="page-sub">Picking a compression technology, and the thermodynamic calculations behind the selection.</p>
+
+  <nav class="toc" aria-label="Chapter contents">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#s5-1"><span class="t-no">5.1</span> Types and coverage</a></li>
+      <li><a href="#s5-2"><span class="t-no">5.2</span> Fans and blowers</a></li>
+      <li><a href="#s5-3"><span class="t-no">5.3</span> Compression thermodynamics</a></li>
+      <li><a href="#s5-4"><span class="t-no">5.4</span> Centrifugal compressors</a></li>
+      <li><a href="#s5-5"><span class="t-no">5.5</span> Reciprocating compressors</a></li>
+      <li><a href="#s5-6"><span class="t-no">5.6</span> Screw compressors</a></li>
+      <li><a href="#s5-7"><span class="t-no">5.7</span> Sources</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="s5-1"><span class="sec-no">5.1</span>Types and coverage</h2>
+
+  <figure style="margin:1.5rem 0;">
+    <svg viewBox="0 0 720 440" role="img" aria-labelledby="cov-title cov-desc" style="width:100%;height:auto;background:var(--bg-sunken);border:1px solid var(--border);border-radius:var(--radius);">
+      <title id="cov-title">Compressor type coverage by inlet flow and discharge pressure</title>
+      <desc id="cov-desc">Reciprocating compressors cover low flow and the highest discharge pressures. Screw compressors cover low to moderate flow at moderate pressure. Centrifugal compressors cover moderate to high flow across a wide pressure range. Axial compressors cover the highest flows at low to moderate pressure. Fans and blowers occupy the high flow, very low pressure corner.</desc>
+
+      <g stroke="var(--border-strong)" stroke-width="1.5" fill="none">
+        <path d="M80 380 L680 380"/>
+        <path d="M80 40 L80 380"/>
+      </g>
+
+      <!-- gridlines -->
+      <g stroke="var(--border)" stroke-width="0.5" stroke-dasharray="3 4">
+        <path d="M200 40 L200 380"/><path d="M320 40 L320 380"/>
+        <path d="M440 40 L440 380"/><path d="M560 40 L560 380"/>
+        <path d="M80 300 L680 300"/><path d="M80 220 L680 220"/>
+        <path d="M80 140 L680 140"/><path d="M80 60 L680 60"/>
+      </g>
+
+      <!-- regions -->
+      <g opacity="0.72">
+        <rect x="86" y="50"  width="190" height="300" rx="10" fill="#8c4f7d"/>
+        <rect x="130" y="210" width="230" height="130" rx="10" fill="#1f7a6a"/>
+        <rect x="250" y="80"  width="330" height="250" rx="10" fill="#10559a"/>
+        <rect x="430" y="250" width="240" height="90"  rx="10" fill="#9c6a1c"/>
+        <rect x="380" y="330" width="290" height="42"  rx="10" fill="#4a6572"/>
+      </g>
+
+      <g font-family="system-ui, sans-serif" font-size="13" font-weight="650" fill="#fff" text-anchor="middle">
+        <text x="181" y="100">Reciprocating</text>
+        <text x="181" y="118" font-size="10" font-weight="400">API 618</text>
+        <text x="200" y="285">Screw</text>
+        <text x="200" y="301" font-size="10" font-weight="400">API 619</text>
+        <text x="415" y="165">Centrifugal</text>
+        <text x="415" y="183" font-size="10" font-weight="400">API 617</text>
+        <text x="550" y="292">Axial</text>
+        <text x="550" y="308" font-size="10" font-weight="400">API 617</text>
+        <text x="525" y="357" font-size="12">Fans &amp; blowers · API 673</text>
+      </g>
+
+      <g font-size="11" fill="var(--text-muted)" font-family="system-ui, sans-serif" text-anchor="middle">
+        <text x="200" y="398">10³</text><text x="320" y="398">10⁴</text>
+        <text x="440" y="398">10⁵</text><text x="560" y="398">10⁶</text>
+        <text x="380" y="422" font-size="12" fill="var(--text)">Inlet volume flow  (m³/h, log scale)  →</text>
+      </g>
+
+      <g font-size="11" fill="var(--text-muted)" font-family="system-ui, sans-serif" text-anchor="end">
+        <text x="72" y="304">1</text><text x="72" y="224">10</text>
+        <text x="72" y="144">100</text><text x="72" y="64">1000</text>
+      </g>
+
+      <text x="24" y="210" font-size="12" fill="var(--text)" font-family="system-ui, sans-serif" transform="rotate(-90 24 210)" text-anchor="middle">Discharge pressure (bar a, log scale) →</text>
+    </svg>
+    <figcaption style="font-size:.85rem;color:var(--text-muted);margin-top:.5rem;">Figure 5.1-1 — Indicative coverage by compressor type. Boundaries overlap widely and vendors extend them; use this to narrow the field, not to make the selection.</figcaption>
+  </figure>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 5.1-1 — Compressor types compared</caption>
+      <thead><tr><th scope="col">Type</th><th scope="col">Principle</th><th scope="col">Flow</th><th scope="col">Ratio per stage</th><th scope="col">Characteristics</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Reciprocating</th><td>Positive displacement, piston in cylinder</td><td>Low to moderate</td><td class="num">2 – 4</td><td>Highest pressures. Pulsating flow. High maintenance. Efficient at high ratio.</td></tr>
+        <tr><th scope="row">Screw — oil flooded</th><td>Positive displacement, meshing rotors</td><td>Low to moderate</td><td class="num">up to ~20</td><td>Tolerant of liquid. Oil separation needed. Compact.</td></tr>
+        <tr><th scope="row">Screw — dry</th><td>Positive displacement, timing gears</td><td>Low to moderate</td><td class="num">3 – 4</td><td>Oil-free gas. Higher speed and noise.</td></tr>
+        <tr><th scope="row">Centrifugal</th><td>Dynamic, radial impeller</td><td>Moderate to high</td><td class="num">1.2 – 3 per impeller</td><td>Smooth flow, high reliability, low maintenance. Surge limits turndown.</td></tr>
+        <tr><th scope="row">Axial</th><td>Dynamic, bladed rotor and stator</td><td>Very high</td><td class="num">1.05 – 1.2 per stage</td><td>Highest efficiency and flow, narrow operating range.</td></tr>
+        <tr><th scope="row">Fan / blower</th><td>Dynamic</td><td>Very high</td><td class="num">&lt; 1.2</td><td>Low pressure rise; density change usually neglected</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>The deciding questions, in order.</strong>
+    (1) What inlet volume flow? That sets the family. (2) What pressure ratio and discharge pressure? That decides within the family and sets the stage count. (3) What molecular weight? Low MW gases — hydrogen, helium — need very high tip speeds or many stages in a centrifugal, and often push the selection to reciprocating. (4) Is oil-free gas required? (5) Does the gas carry liquid or solids?
+  </div>
+
+  <div class="warn">
+    <strong>Molecular weight dominates centrifugal selection.</strong>
+    Head developed per impeller is proportional to tip speed squared and inversely proportional to molecular weight. A compressor that makes a 3:1 ratio in propane (MW 44) may need three times the stages for the same ratio in hydrogen-rich gas (MW 4). Changes to feed composition after the compressor is bought are a classic source of shortfall.
+  </div>
+
+  <h2 id="s5-2"><span class="sec-no">5.2</span>Fans and blowers</h2>
+
+  <h3>Definitions</h3>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 5.2-1 — Fan, blower and compressor by pressure rise</caption>
+      <thead><tr><th scope="col">Machine</th><th scope="col" class="num">Typical pressure rise</th><th scope="col" class="num">Compression ratio</th><th scope="col">Density change</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Fan</th><td class="num">up to ~ 7 kPa</td><td class="num">&lt; 1.07</td><td>Neglected — treated as incompressible</td></tr>
+        <tr><th scope="row">Blower</th><td class="num">7 kPa to ~ 200 kPa</td><td class="num">1.07 – 3</td><td>Accounted for</td></tr>
+        <tr><th scope="row">Compressor</th><td class="num">above ~ 200 kPa</td><td class="num">&gt; 3</td><td>Full thermodynamic treatment</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>The boundary is a convention, not physics.</strong>
+    Different standards and companies draw the fan/blower line at different pressures. What matters in practice is whether the density change through the machine is large enough to need accounting for. Below about 7 % rise it is not.
+  </div>
+
+  <h3>Fan types</h3>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 5.2-2 — Centrifugal fan blade types</caption>
+      <thead><tr><th scope="col">Blade</th><th scope="col">Efficiency</th><th scope="col">Power curve</th><th scope="col">Application</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Backward curved / airfoil</th><td class="num">80 – 90 %</td><td><strong>Non-overloading</strong> — power peaks then falls</td><td>Clean air, high efficiency duty. The default industrial choice.</td></tr>
+        <tr><th scope="row">Radial / paddle</th><td class="num">60 – 70 %</td><td>Rises continuously</td><td>Dust, particulate, material handling. Rugged, easy to clean.</td></tr>
+        <tr><th scope="row">Forward curved</th><td class="num">55 – 70 %</td><td>Rises steeply — overloading</td><td>Low pressure, high volume, compact. HVAC.</td></tr>
+        <tr><th scope="row">Axial — propeller</th><td class="num">50 – 60 %</td><td>Peaks at shutoff</td><td>High flow, very low pressure. Ventilation.</td></tr>
+        <tr><th scope="row">Axial — vane axial</th><td class="num">65 – 80 %</td><td>Peaks at shutoff</td><td>Air-cooled exchangers, ducted ventilation</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>Forward-curved fans overload.</strong>
+    Power rises continuously with flow, so a fan selected for a dirty-filter condition will overload the motor once the filter is cleaned and resistance falls. Backward-curved and airfoil blades reach a power maximum and then decline — this is the meaning of "non-overloading", and it is a reliability argument as much as an efficiency one.
+  </div>
+
+  <h3>Fan laws and power</h3>
+
+  <p>The fan laws are the affinity laws of §4.3, with one addition: pressure and power also scale directly with gas density.</p>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mfrac><msub><mi>Q</mi><mn>2</mn></msub><msub><mi>Q</mi><mn>1</mn></msub></mfrac>
+      <mo>=</mo><mfrac><msub><mi>N</mi><mn>2</mn></msub><msub><mi>N</mi><mn>1</mn></msub></mfrac>
+      <mspace width="1.5em"/>
+      <mfrac><msub><mi>p</mi><mn>2</mn></msub><msub><mi>p</mi><mn>1</mn></msub></mfrac>
+      <mo>=</mo>
+      <msup><mrow><mo>(</mo><mfrac><msub><mi>N</mi><mn>2</mn></msub><msub><mi>N</mi><mn>1</mn></msub></mfrac><mo>)</mo></mrow><mn>2</mn></msup>
+      <mfrac><msub><mi>ρ</mi><mn>2</mn></msub><msub><mi>ρ</mi><mn>1</mn></msub></mfrac>
+      <mspace width="1.5em"/>
+      <mfrac><msub><mi>P</mi><mn>2</mn></msub><msub><mi>P</mi><mn>1</mn></msub></mfrac>
+      <mo>=</mo>
+      <msup><mrow><mo>(</mo><mfrac><msub><mi>N</mi><mn>2</mn></msub><msub><mi>N</mi><mn>1</mn></msub></mfrac><mo>)</mo></mrow><mn>3</mn></msup>
+      <mfrac><msub><mi>ρ</mi><mn>2</mn></msub><msub><mi>ρ</mi><mn>1</mn></msub></mfrac>
+    </mrow></math>
+  </div>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <msub><mi>P</mi><mtext>shaft</mtext></msub><mo>[</mo><mtext>kW</mtext><mo>]</mo>
+      <mo>=</mo>
+      <mfrac>
+        <mrow><mi>Q</mi><mo>[</mo><msup><mtext>m</mtext><mn>3</mn></msup><mtext>/s</mtext><mo>]</mo><mo>⁢</mo><mi>Δ</mi><mi>p</mi><mo>[</mo><mtext>Pa</mtext><mo>]</mo></mrow>
+        <mrow><mn>1000</mn><mo>⁢</mo><mi>η</mi></mrow>
+      </mfrac>
+    </mrow></math>
+  </div>
+
+  <div class="warn">
+    <strong>Density is where fan calculations go wrong.</strong>
+    Fan curves are published at standard air density, 1.2 kg/m³. A forced-draught fan on hot gas, or any fan at altitude, moves the same <em>volume</em> but develops proportionally less <em>pressure</em> and absorbs proportionally less power. Correct both before selecting the motor — and check the cold start case, where dense ambient air can overload a motor sized for hot operation.
+  </div>
+
+  <h2 id="s5-3"><span class="sec-no">5.3</span>Compression thermodynamics</h2>
+
+  <h3>Specific heat ratio and the polytropic exponent</h3>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mi>k</mi><mo>=</mo><mfrac><msub><mi>c</mi><mi>p</mi></msub><msub><mi>c</mi><mi>v</mi></msub></mfrac>
+      <mspace width="2.5em"/>
+      <mfrac><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><mi>n</mi></mfrac>
+      <mo>=</mo>
+      <mfrac>
+        <mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow>
+        <mrow><mi>k</mi><mo>⁢</mo><msub><mi>η</mi><mi>p</mi></msub></mrow>
+      </mfrac>
+    </mrow></math>
+  </div>
+
+  <div class="where">
+    <dl>
+      <dt>k</dt><dd>ratio of specific heats (isentropic exponent)</dd>
+      <dt>n</dt><dd>polytropic exponent</dd>
+      <dt>η<sub>p</sub></dt><dd>polytropic efficiency, as a fraction</dd>
+    </dl>
+  </div>
+
+  <h3>Polytropic head</h3>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <msub><mi>H</mi><mi>p</mi></msub><mo>=</mo>
+      <msub><mi>Z</mi><mtext>avg</mtext></msub>
+      <mfrac><mi>R</mi><mi>M</mi></mfrac>
+      <msub><mi>T</mi><mn>1</mn></msub>
+      <mfrac><mi>n</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></mfrac>
+      <mrow><mo>[</mo>
+        <msup>
+          <mrow><mo>(</mo><mfrac><msub><mi>p</mi><mn>2</mn></msub><msub><mi>p</mi><mn>1</mn></msub></mfrac><mo>)</mo></mrow>
+          <mfrac><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><mi>n</mi></mfrac>
+        </msup>
+        <mo>−</mo><mn>1</mn>
+      <mo>]</mo></mrow>
+    </mrow></math>
+  </div>
+
+  <div class="where">
+    <dl>
+      <dt>H<sub>p</sub></dt><dd>polytropic head, J/kg</dd>
+      <dt>Z<sub>avg</sub></dt><dd>average compressibility between suction and discharge</dd>
+      <dt>R</dt><dd>8314 J/(kmol·K) — universal gas constant</dd>
+      <dt>M</dt><dd>molecular weight, kg/kmol</dd>
+      <dt>T<sub>1</sub></dt><dd>suction temperature, K (absolute)</dd>
+      <dt>p<sub>1</sub>, p<sub>2</sub></dt><dd>suction and discharge pressure, absolute (any consistent unit)</dd>
+    </dl>
+  </div>
+
+  <h3>Discharge temperature</h3>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <msub><mi>T</mi><mn>2</mn></msub><mo>=</mo>
+      <msub><mi>T</mi><mn>1</mn></msub>
+      <msup>
+        <mrow><mo>(</mo><mfrac><msub><mi>p</mi><mn>2</mn></msub><msub><mi>p</mi><mn>1</mn></msub></mfrac><mo>)</mo></mrow>
+        <mfrac><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><mi>n</mi></mfrac>
+      </msup>
+    </mrow></math>
+  </div>
+
+  <div class="warn">
+    <strong>Discharge temperature usually sets the stage count, not head.</strong>
+    Typical limits: 150 °C for most hydrocarbon service, lower where polymerisation or fouling is a risk, and often 135 °C where oxygen is present. When the calculated <em>T</em>₂ exceeds the limit, an intercooler and another stage are required regardless of whether a single stage could make the head.
+  </div>
+
+  <h3>Gas power</h3>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <msub><mi>P</mi><mtext>gas</mtext></msub><mo>[</mo><mtext>kW</mtext><mo>]</mo>
+      <mo>=</mo>
+      <mfrac>
+        <mrow><mover><mi>m</mi><mo>˙</mo></mover><mo>⁢</mo><msub><mi>H</mi><mi>p</mi></msub></mrow>
+        <mrow><mn>1000</mn><mo>⁢</mo><msub><mi>η</mi><mi>p</mi></msub></mrow>
+      </mfrac>
+    </mrow></math>
+  </div>
+
+  <div class="where">
+    <dl>
+      <dt>ṁ</dt><dd>mass flow, kg/s</dd>
+      <dt>H<sub>p</sub></dt><dd>polytropic head, J/kg</dd>
+      <dt>η<sub>p</sub></dt><dd>polytropic efficiency, fraction</dd>
+    </dl>
+  </div>
+
+  <p>Shaft power adds mechanical losses — bearings, seals, gearbox — typically 1 to 3 % of gas power for a directly coupled machine.</p>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 5.3-1 — Specific heat ratio for common gases, near ambient</caption>
+      <thead><tr><th scope="col">Gas</th><th scope="col" class="num">M (kg/kmol)</th><th scope="col" class="num">k ≈ c<sub>p</sub>/c<sub>v</sub></th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Hydrogen</th><td class="num">2.016</td><td class="num">1.41</td></tr>
+        <tr><th scope="row">Helium</th><td class="num">4.003</td><td class="num">1.67</td></tr>
+        <tr><th scope="row">Methane</th><td class="num">16.04</td><td class="num">1.31</td></tr>
+        <tr><th scope="row">Ammonia</th><td class="num">17.03</td><td class="num">1.31</td></tr>
+        <tr><th scope="row">Nitrogen</th><td class="num">28.01</td><td class="num">1.40</td></tr>
+        <tr><th scope="row">Air</th><td class="num">28.96</td><td class="num">1.40</td></tr>
+        <tr><th scope="row">Oxygen</th><td class="num">32.00</td><td class="num">1.40</td></tr>
+        <tr><th scope="row">Ethylene</th><td class="num">28.05</td><td class="num">1.24</td></tr>
+        <tr><th scope="row">Ethane</th><td class="num">30.07</td><td class="num">1.19</td></tr>
+        <tr><th scope="row">Carbon dioxide</th><td class="num">44.01</td><td class="num">1.29</td></tr>
+        <tr><th scope="row">Propane</th><td class="num">44.10</td><td class="num">1.13</td></tr>
+        <tr><th scope="row">n-Butane</th><td class="num">58.12</td><td class="num">1.09</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Use an equation of state for anything real.</strong>
+    The table is for sanity checks and hand estimates. Real process gas is a mixture, <em>k</em> and <em>Z</em> vary through the machine, and heavier hydrocarbons depart substantially from ideal behaviour. Production calculations use a process simulator with a suitable EOS — Peng-Robinson or SRK for hydrocarbons.
+  </div>
+
+  <h2 id="s5-4"><span class="sec-no">5.4</span>Centrifugal compressors</h2>
+
+  <h3>Configurations</h3>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 5.4-1 — Centrifugal compressor casing arrangements</caption>
+      <thead><tr><th scope="col">Arrangement</th><th scope="col">Description</th><th scope="col">Application</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Horizontally split</th><td>Casing splits on the centreline; rotor lifted out vertically</td><td>Lower pressure service. Simple maintenance access.</td></tr>
+        <tr><th scope="row">Vertically split (barrel)</th><td>Cylindrical outer casing with removable inner bundle</td><td>High pressure, and mandatory for hydrogen-rich gas above defined partial pressure</td></tr>
+        <tr><th scope="row">Integrally geared</th><td>Multiple pinions on a bull gear, each with one or two impellers</td><td>Air separation, plant air, process service with intercooling between every stage. High efficiency.</td></tr>
+        <tr><th scope="row">Overhung single stage</th><td>Impeller cantilevered</td><td>Low ratio, high flow — pipeline booster, blower duty</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Why hydrogen forces a barrel casing.</strong>
+    A horizontally split casing seals along a bolted joint the full length of the machine. Hydrogen's small molecule leaks through that joint. API 617 requires a barrel design above a specified hydrogen partial pressure, where the only static seal is a circumferential head joint.
+  </div>
+
+  <h3>Surge</h3>
+
+  <p>Below a minimum flow, the impeller can no longer sustain the pressure imposed on it. Flow reverses, pressure collapses, flow re-establishes, and the cycle repeats several times per second.</p>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 5.4-2 — Operating limits of a centrifugal compressor</caption>
+      <thead><tr><th scope="col">Limit</th><th scope="col">Cause</th><th scope="col">Effect</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Surge (left-hand limit)</th><td>Flow too low for the head being developed</td><td>Violent flow reversal. Axial thrust reversal, seal and bearing damage, blade failure. <strong>Damaging within seconds.</strong></td></tr>
+        <tr><th scope="row">Stonewall / choke (right-hand limit)</th><td>Sonic velocity reached at an internal throat</td><td>Head falls vertically; no further flow possible. Inefficient but not immediately destructive.</td></tr>
+        <tr><th scope="row">Maximum continuous speed</th><td>Mechanical and rotordynamic limits</td><td>API 617: MCS is 105 % of rated speed</td></tr>
+        <tr><th scope="row">Minimum speed</th><td>Rotordynamics and lube system</td><td>Vendor-defined</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>Anti-surge protection is a control system, not a setting.</strong>
+    A surge control line is drawn with margin to the left of the surge limit line — typically 10 % in flow. The anti-surge valve must be fast-opening, sized for full recycle, and must fail open. Hot-gas recycle needs a cooler, or successive recycles walk the suction temperature up and move the surge line with it.
+  </div>
+
+  <h3>Capacity control</h3>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 5.4-3 — Capacity control methods compared</caption>
+      <thead><tr><th scope="col">Method</th><th scope="col">Efficiency</th><th scope="col">Turndown</th><th scope="col">Notes</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Variable speed</th><td>Best</td><td>Wide</td><td>Steam turbine or VFD drive. Moves the whole curve.</td></tr>
+        <tr><th scope="row">Inlet guide vanes</th><td>Good</td><td>Moderate</td><td>Pre-swirl reduces head and flow together. Common on integrally geared machines.</td></tr>
+        <tr><th scope="row">Suction throttling</th><td>Moderate</td><td>Moderate</td><td>Simple; wastes energy and reduces inlet density</td></tr>
+        <tr><th scope="row">Discharge throttling</th><td>Poor</td><td>Limited</td><td>Pushes the operating point toward surge</td></tr>
+        <tr><th scope="row">Recycle (spillback)</th><td>Worst</td><td>Unlimited</td><td>Always present for surge protection; wasteful as a control method</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="s5-5"><span class="sec-no">5.5</span>Reciprocating compressors</h2>
+
+  <h3>Volumetric efficiency</h3>
+
+  <p>Gas trapped in the clearance volume re-expands before the suction valve can open, so the cylinder never fills completely.</p>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mtext>VE</mtext><mo>=</mo><mn>100</mn><mo>−</mo><mi>L</mi><mo>−</mo>
+      <mi>C</mi><mrow><mo>[</mo>
+        <mfrac><msub><mi>Z</mi><mn>1</mn></msub><msub><mi>Z</mi><mn>2</mn></msub></mfrac>
+        <msup><mi>r</mi><mfrac><mn>1</mn><mi>k</mi></mfrac></msup>
+        <mo>−</mo><mn>1</mn>
+      <mo>]</mo></mrow>
+    </mrow></math>
+  </div>
+
+  <div class="where">
+    <dl>
+      <dt>VE</dt><dd>volumetric efficiency, %</dd>
+      <dt>L</dt><dd>allowance for valve and ring leakage, typically 3–5 %</dd>
+      <dt>C</dt><dd>clearance volume as a percentage of swept volume</dd>
+      <dt>r</dt><dd>pressure ratio p₂/p₁, absolute</dd>
+      <dt>k</dt><dd>specific heat ratio</dd>
+      <dt>Z₁, Z₂</dt><dd>compressibility at suction and discharge</dd>
+    </dl>
+  </div>
+
+  <div class="note">
+    <strong>Clearance is also the capacity control.</strong>
+    Because VE falls as clearance rises, adding clearance deliberately — fixed pockets, variable-volume clearance pockets — reduces capacity with far less energy waste than recycling. Combined with valve unloaders this gives step and continuous turndown. It is the main reason a reciprocating compressor turns down efficiently.
+  </div>
+
+  <h3>Piston displacement</h3>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mtext>PD</mtext><mo>=</mo>
+      <mfrac><mrow><mi>π</mi><mo>⁢</mo><msup><mi>D</mi><mn>2</mn></msup></mrow><mn>4</mn></mfrac>
+      <mo>⁢</mo><mi>S</mi><mo>⁢</mo><mi>N</mi>
+      <mspace width="1.5em"/>
+      <mtext>(single acting)</mtext>
+    </mrow></math>
+  </div>
+
+  <p>For a double-acting cylinder the crank-end displacement is reduced by the piston rod area:</p>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mtext>PD</mtext><mo>=</mo>
+      <mrow><mo>[</mo>
+        <mn>2</mn><mo>⁢</mo><mfrac><mrow><mi>π</mi><mo>⁢</mo><msup><mi>D</mi><mn>2</mn></msup></mrow><mn>4</mn></mfrac>
+        <mo>−</mo>
+        <mfrac><mrow><mi>π</mi><mo>⁢</mo><msup><mi>d</mi><mn>2</mn></msup></mrow><mn>4</mn></mfrac>
+      <mo>]</mo></mrow>
+      <mo>⁢</mo><mi>S</mi><mo>⁢</mo><mi>N</mi>
+    </mrow></math>
+  </div>
+
+  <div class="where">
+    <dl>
+      <dt>D</dt><dd>cylinder bore</dd>
+      <dt>d</dt><dd>piston rod diameter</dd>
+      <dt>S</dt><dd>stroke</dd>
+      <dt>N</dt><dd>rotational speed</dd>
+    </dl>
+  </div>
+
+  <p>Actual inlet capacity is then PD × VE / 100.</p>
+
+  <h3>Rod load</h3>
+
+  <div class="warn">
+    <strong>Rod load is the limiting mechanical parameter, and it has two forms.</strong>
+    <em>Gas rod load</em> is the pressure differential across the piston times its area. <em>Combined rod load</em> adds inertial forces from the reciprocating mass. Both have vendor limits that must not be exceeded at any operating case, including start-up, settle-out and upset. <strong>Rod reversal</strong> matters just as much: the load must change sign each revolution for long enough to let lubricant into the crosshead pin bearing. A non-reversing rod load destroys the bearing even when the magnitude is within limit.
+  </div>
+
+  <h3>Pulsation and foundation</h3>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 5.5-1 — API 618 pulsation study approaches</caption>
+      <thead><tr><th scope="col">Approach</th><th scope="col">Method</th><th scope="col">When</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">1</th><td>Empirical sizing of pulsation dampeners</td><td>Small, low-power, non-critical machines</td></tr>
+        <tr><th scope="row">2</th><td>Acoustic simulation of the piping system</td><td>Most process machines — the common requirement</td></tr>
+        <tr><th scope="row">3</th><td>Acoustic simulation plus mechanical response analysis of the piping and supports</td><td>Large, high-power or critical machines</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Foundation.</strong>
+    Reciprocating compressors transmit unbalanced primary and secondary forces and couples into the foundation. The foundation block is normally mass-designed so its natural frequencies are well clear of running speed and its harmonics, with a mass ratio to the machine commonly in the range of 3 to 5 for a block foundation. Measured foundation vibration limits are set by the vendor and the project; ISO 10816-6 covers reciprocating machine vibration evaluation.
+  </div>
+
+  <h2 id="s5-6"><span class="sec-no">5.6</span>Screw compressors</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 5.6-1 — Oil-flooded versus dry screw</caption>
+      <thead><tr><th scope="col"></th><th scope="col">Oil flooded</th><th scope="col">Dry (oil free)</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Rotor contact</th><td>Female rotor driven by the male through the oil film</td><td>No contact — timing gears maintain clearance</td></tr>
+        <tr><th scope="row">Timing gears</th><td>Not required</td><td>Required</td></tr>
+        <tr><th scope="row">Tip speed</th><td>Lower</td><td>Higher — compensates for internal leakage</td></tr>
+        <tr><th scope="row">Pressure ratio per casing</th><td>Up to ~ 20</td><td>3 – 4</td></tr>
+        <tr><th scope="row">Discharge temperature</th><td>Low — oil absorbs heat of compression</td><td>High — limits ratio per stage</td></tr>
+        <tr><th scope="row">Downstream equipment</th><td>Oil separator, cooler, filter</td><td>Intercooler, no oil removal</td></tr>
+        <tr><th scope="row">Liquid tolerance</th><td>Good</td><td>Limited</td></tr>
+        <tr><th scope="row">Typical use</th><td>Refrigeration, fuel gas boosting, vapour recovery</td><td>Process air, instrument air, oil-free process gas</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Built-in volume ratio</h3>
+
+  <p>A screw compressor has a fixed geometric volume ratio <em>V<sub>i</sub></em> — the port opens at a predetermined point in the compression regardless of the system pressure.</p>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <msub><mi>p</mi><mtext>internal</mtext></msub><mo>=</mo>
+      <msub><mi>p</mi><mn>1</mn></msub><mo>⁢</mo>
+      <msup><msub><mi>V</mi><mi>i</mi></msub><mi>k</mi></msup>
+    </mrow></math>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th scope="col">Condition</th><th scope="col">Name</th><th scope="col">Consequence</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">p<sub>internal</sub> = p<sub>discharge</sub></th><td>Matched</td><td>Optimum efficiency</td></tr>
+        <tr><th scope="row">p<sub>internal</sub> &lt; p<sub>discharge</sub></th><td>Under-compression</td><td>Back-flow at port opening; lost work</td></tr>
+        <tr><th scope="row">p<sub>internal</sub> &gt; p<sub>discharge</sub></th><td>Over-compression</td><td>Gas compressed beyond need, then blown down; lost work</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>V<sub>i</sub> must match the duty.</strong>
+    A screw compressor is most efficient at one pressure ratio. Operating far from it carries a real energy penalty even though the machine runs happily. Where the ratio varies widely, specify a variable <em>V<sub>i</sub></em> slide valve. Capacity control is normally by slide valve (continuous, roughly 100 % down to 10–25 %) or variable speed.
+  </div>
+
+  <h2 id="s5-7"><span class="sec-no">5.7</span>Sources</h2>
+
+  <ul>
+    <li>API Standard 617, <em>Axial and Centrifugal Compressors and Expander-compressors</em> — including Part 3 integrally geared and Part 4 expander-compressors.</li>
+    <li>API Standard 618, <em>Reciprocating Compressors for Petroleum, Chemical and Gas Industry Services</em> — pulsation design approaches, rod load.</li>
+    <li>API Standard 619, <em>Rotary-Type Positive-Displacement Compressors</em>.</li>
+    <li>API Standard 672, <em>Packaged, Integrally Geared Centrifugal Air Compressors</em>.</li>
+    <li>API Standard 673, <em>Centrifugal Fans for Petroleum, Chemical and Gas Industry Services</em>.</li>
+    <li>ASME PTC 10, <em>Performance Test Code on Compressors and Exhausters</em>.</li>
+    <li>ASME PTC 11, <em>Fans</em>.</li>
+    <li>AMCA 210 / ASHRAE 51, <em>Laboratory Methods of Testing Fans for Certified Aerodynamic Performance Rating</em>.</li>
+    <li>ISO 10816-6 / ISO 20816, vibration evaluation of reciprocating machines.</li>
+    <li>ISO 13631, <em>Packaged reciprocating gas compressors</em>.</li>
+  </ul>
+
+  <p>Figure 5.1-1 is an original schematic showing approximate application territory; it is not vendor selection data. Specific heat ratios in Table 5.3-1 are typical near-ambient values for hand calculation.</p>
+
+  <nav class="prev-next">
+    <span><a href="ch04-pumps.html">← Ch 4 · Pump Selection</a></span>
+    <span><a href="ch06-expanders.html">Ch 6 · Expander Selection →</a></span>
+  </nav>
+
+</main>
+
+<footer class="foot">
+  <p><strong>Rotating Equipment General Reference</strong> — Chapter 5, Compressor Selection.</p>
+  <p>Independently written from public standards &mdash; see <a href="index.html#provenance">provenance</a> and <a href="NOTICE.md">NOTICE.md</a>.<br>Copyright &copy; 2026 Zachry Philippines. All rights reserved.</p>
+</footer>
+
+<script src="assets/search-index.js"></script>
+<script src="assets/reference.js"></script>
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Standards — Rotating Equipment General Reference</title>
+<meta name="description" content="The standards families governing rotating equipment, what each one covers, and how API, ISO, ASME, IEC and NEMA map onto one another.">
+<link rel="stylesheet" href="assets/reference.css">
+</head>
+<body data-base="">
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="brand" href="index.html">Rotating Equipment <span>General Reference</span></a>
+    <span class="chapter-badge">Chapter 2</span>
+    <span class="spacer"></span>
+    <div class="search-wrap">
+      <input type="search" id="site-search" placeholder="Search sections…  (press /)" autocomplete="off" aria-label="Search the reference">
+      <div class="search-results" id="search-results" role="listbox"></div>
+    </div>
+  </div>
+</header>
+
+<main class="layout">
+
+  <h1 class="page-title">2 &nbsp;Standards</h1>
+  <p class="page-sub">Which standard governs what, how the families relate, and how to read a citation correctly.</p>
+
+  <nav class="toc" aria-label="Chapter contents">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#s2-1"><span class="t-no">2.1</span> How the families fit together</a></li>
+      <li><a href="#s2-2"><span class="t-no">2.2</span> API standards for rotating equipment</a></li>
+      <li><a href="#s2-3"><span class="t-no">2.3</span> ISO equivalents and dual numbering</a></li>
+      <li><a href="#s2-4"><span class="t-no">2.4</span> ASME standards</a></li>
+      <li><a href="#s2-5"><span class="t-no">2.5</span> Electrical standards</a></li>
+      <li><a href="#s2-6"><span class="t-no">2.6</span> IEC and NEMA motor practice compared</a></li>
+      <li><a href="#s2-7"><span class="t-no">2.7</span> Materials standards</a></li>
+      <li><a href="#s2-8"><span class="t-no">2.8</span> Reading a citation</a></li>
+      <li><a href="#s2-9"><span class="t-no">2.9</span> Sources</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="s2-1"><span class="sec-no">2.1</span>How the families fit together</h2>
+
+  <p>Five bodies produce almost everything that governs a rotating equipment package. They overlap, and knowing which one leads in a given area saves a great deal of argument.</p>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 2.1-1 — Standards bodies and their territory</caption>
+      <thead><tr><th scope="col">Body</th><th scope="col">Territory</th><th scope="col">Character</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">API<br><span style="font-weight:400;color:var(--text-muted);font-size:.85em">American Petroleum Institute</span></th><td>Machine-level requirements for oil, gas and petrochemical service — pumps, compressors, turbines, gears, couplings, lube systems</td><td>Purchaser-oriented. Written as requirements on a vendor, with datasheets and a bullet list of decisions the purchaser must make.</td></tr>
+        <tr><th scope="row">ISO</th><td>International equivalents of many API standards, plus vibration, balancing and reference conditions</td><td>Often a direct adoption of the API text under a dual number.</td></tr>
+        <tr><th scope="row">ASME</th><td>Pressure boundary, flanges, bolting, materials, performance test codes</td><td>Governs the <em>pressure-containing</em> parts that API standards then reference.</td></tr>
+        <tr><th scope="row">IEC</th><td>Electrical machines, hazardous area equipment, ingress protection — international practice</td><td>Zone-based hazardous area philosophy.</td></tr>
+        <tr><th scope="row">NEMA / NFPA</th><td>Electrical machines and hazardous area — North American practice</td><td>Division-based hazardous area philosophy. NFPA 70 (NEC) is law in the US.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>The usual hierarchy on a project.</strong>
+    Project specification → client's own engineering standard → the API/ISO standard it invokes → the ASME/IEC standards that one references. Each layer may add requirements but should not relax the one below it. Where a project specification is silent, the API standard governs; where it conflicts, the project specification normally wins — but conflicts are worth raising rather than silently resolving.
+  </div>
+
+  <h2 id="s2-2"><span class="sec-no">2.2</span>API standards for rotating equipment</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 2.2-1 — API standards by machine type</caption>
+      <thead><tr><th scope="col">Standard</th><th scope="col">Title / scope</th><th scope="col">ISO equivalent</th></tr></thead>
+      <tbody>
+        <tr><th scope="row" colspan="3" style="background:var(--bg-accent)">Pumps</th></tr>
+        <tr><th scope="row">API 610</th><td>Centrifugal pumps for petroleum, petrochemical and natural gas industries</td><td>ISO 13709</td></tr>
+        <tr><th scope="row">API 674</th><td>Positive displacement pumps — reciprocating</td><td>—</td></tr>
+        <tr><th scope="row">API 675</th><td>Positive displacement pumps — controlled volume (metering)</td><td>—</td></tr>
+        <tr><th scope="row">API 676</th><td>Positive displacement pumps — rotary</td><td>—</td></tr>
+        <tr><th scope="row">API 685</th><td>Sealless centrifugal pumps</td><td>—</td></tr>
+        <tr><th scope="row">ASME B73.1 / B73.2</th><td>Horizontal / vertical in-line chemical process pumps (non-API)</td><td>ISO 2858, ISO 5199</td></tr>
+
+        <tr><th scope="row" colspan="3" style="background:var(--bg-accent)">Compressors and expanders</th></tr>
+        <tr><th scope="row">API 617</th><td>Axial and centrifugal compressors and expander-compressors</td><td>ISO 10439 (parts)</td></tr>
+        <tr><th scope="row">API 618</th><td>Reciprocating compressors</td><td>ISO 13707</td></tr>
+        <tr><th scope="row">API 619</th><td>Rotary-type positive displacement compressors (screw)</td><td>ISO 10440-1</td></tr>
+        <tr><th scope="row">API 672</th><td>Packaged, integrally geared centrifugal air compressors</td><td>—</td></tr>
+        <tr><th scope="row">API 673</th><td>Centrifugal fans</td><td>—</td></tr>
+
+        <tr><th scope="row" colspan="3" style="background:var(--bg-accent)">Drivers</th></tr>
+        <tr><th scope="row">API 611</th><td>General-purpose steam turbines</td><td>—</td></tr>
+        <tr><th scope="row">API 612</th><td>Special-purpose steam turbines</td><td>ISO 10437</td></tr>
+        <tr><th scope="row">API 616</th><td>Gas turbines</td><td>—</td></tr>
+        <tr><th scope="row">API 541</th><td>Form-wound squirrel cage induction motors, 375 kW and larger</td><td>—</td></tr>
+        <tr><th scope="row">API 546</th><td>Brushless synchronous machines, 500 kVA and larger</td><td>—</td></tr>
+        <tr><th scope="row">API 547</th><td>General-purpose form-wound induction motors, 250 kW to 2500 kW</td><td>—</td></tr>
+
+        <tr><th scope="row" colspan="3" style="background:var(--bg-accent)">Supporting equipment</th></tr>
+        <tr><th scope="row">API 613</th><td>Special-purpose gear units</td><td>—</td></tr>
+        <tr><th scope="row">API 614</th><td>Lubrication, shaft sealing and oil control systems</td><td>ISO 10438</td></tr>
+        <tr><th scope="row">API 670</th><td>Machinery protection systems — vibration, position, temperature monitoring</td><td>—</td></tr>
+        <tr><th scope="row">API 671</th><td>Special-purpose couplings</td><td>ISO 10441</td></tr>
+        <tr><th scope="row">API 677</th><td>General-purpose gear units</td><td>ISO 13691</td></tr>
+        <tr><th scope="row">API 682</th><td>Pumps — shaft sealing systems for centrifugal and rotary pumps</td><td>ISO 21049</td></tr>
+        <tr><th scope="row">API 686</th><td>Machinery installation and installation design</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>General purpose versus special purpose</h3>
+
+  <p>API draws a distinction that drives cost more than almost any other single decision:</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th scope="col"></th><th scope="col">General purpose</th><th scope="col">Special purpose</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Typical service</th><td>Spared, non-critical, moderate duty</td><td>Unspared, critical to production, severe duty</td></tr>
+        <tr><th scope="row">Expected run length</th><td>Shutdown-to-shutdown with maintenance</td><td>Continuous, three or more years uninterrupted</td></tr>
+        <tr><th scope="row">Steam turbine</th><td>API 611</td><td>API 612</td></tr>
+        <tr><th scope="row">Gear unit</th><td>API 677</td><td>API 613</td></tr>
+        <tr><th scope="row">Coupling</th><td>AGMA 9000 series</td><td>API 671</td></tr>
+        <tr><th scope="row">Rotordynamics</th><td>Not normally required</td><td>Lateral and torsional analysis required</td></tr>
+        <tr><th scope="row">Testing</th><td>Performance test, often unwitnessed</td><td>Mechanical running test, often with spare rotor</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="s2-3"><span class="sec-no">2.3</span>ISO equivalents and dual numbering</h2>
+
+  <p>Several API standards are adopted verbatim by ISO under a second number. API 610 and ISO 13709 are the same document; a vendor offering “ISO 13709 compliance” is offering API 610 compliance.</p>
+
+  <div class="warn">
+    <strong>Editions diverge even when text does not.</strong>
+    The ISO adoption usually lags the API edition. API 610 12th edition and ISO 13709 2nd edition are not automatically the same revision. If an edition matters — and for pump nozzle loads and NPSH margin it does — cite the API number and edition explicitly on the requisition.
+  </div>
+
+  <h2 id="s2-4"><span class="sec-no">2.4</span>ASME standards</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 2.4-1 — ASME standards encountered on rotating equipment packages</caption>
+      <thead><tr><th scope="col">Standard</th><th scope="col">Covers</th><th scope="col">Where it bites</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">B16.5</th><td>Pipe flanges and flanged fittings, NPS ½ to 24</td><td>Pump and compressor nozzle ratings; pressure–temperature ratings (see §3.6)</td></tr>
+        <tr><th scope="row">B16.47</th><td>Large diameter steel flanges, NPS 26 to 60</td><td>Large fan, blower and cooling water nozzles. Series A and B are <em>not</em> interchangeable.</td></tr>
+        <tr><th scope="row">B16.34</th><td>Valves — flanged, threaded and welding end</td><td>Pressure class definitions referenced by machine standards</td></tr>
+        <tr><th scope="row">B16.11</th><td>Forged fittings, socket-welding and threaded</td><td>Auxiliary piping — seal flush plans, lube oil lines</td></tr>
+        <tr><th scope="row">BPVC Section II</th><td>Materials — properties and allowable stresses</td><td>The source of allowable stress behind every P–T rating</td></tr>
+        <tr><th scope="row">BPVC Section VIII</th><td>Pressure vessels</td><td>Seal pots, lube oil reservoirs, pulsation dampeners, air receivers</td></tr>
+        <tr><th scope="row">BPVC Section IX</th><td>Welding and brazing qualification</td><td>Baseplate and pressure-boundary weld procedures</td></tr>
+        <tr><th scope="row">PTC 6</th><td>Performance test code — steam turbines</td><td>Acceptance testing</td></tr>
+        <tr><th scope="row">PTC 10</th><td>Performance test code — compressors and exhausters</td><td>Type 1 and Type 2 compressor testing</td></tr>
+        <tr><th scope="row">PCC-1</th><td>Guidelines for pressure boundary bolted flange joint assembly</td><td>Flange bolt-up patterns and torque — see Chapter 13</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="s2-5"><span class="sec-no">2.5</span>Electrical standards</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 2.5-1 — Electrical standards, international and North American</caption>
+      <thead><tr><th scope="col">Subject</th><th scope="col">IEC / international</th><th scope="col">North American</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Rotating machines — general</th><td>IEC 60034-1</td><td>NEMA MG 1</td></tr>
+        <tr><th scope="row">Efficiency classes</th><td>IEC 60034-30-1 (IE1–IE5)</td><td>NEMA MG 1 Table 12-12 (Premium)</td></tr>
+        <tr><th scope="row">Cooling methods</th><td>IEC 60034-6 (IC code)</td><td>NEMA MG 1 (TEFC, ODP, TEWAC…)</td></tr>
+        <tr><th scope="row">Enclosure / ingress protection</th><td>IEC 60034-5, IEC 60529 (IP code)</td><td>NEMA 250 (Type 1, 3R, 4X…)</td></tr>
+        <tr><th scope="row">Mounting arrangements</th><td>IEC 60034-7 (IM code)</td><td>NEMA MG 1 (F-1, F-2…)</td></tr>
+        <tr><th scope="row">Vibration</th><td>IEC 60034-14</td><td>NEMA MG 1 Part 7</td></tr>
+        <tr><th scope="row">Noise</th><td>IEC 60034-9</td><td>NEMA MG 1 Part 9</td></tr>
+        <tr><th scope="row">Hazardous area — general</th><td>IEC 60079-0</td><td>NFPA 70 (NEC) Articles 500–506</td></tr>
+        <tr><th scope="row">Hazardous area — classification</th><td>IEC 60079-10-1 (gas), -10-2 (dust)</td><td>NFPA 497, NFPA 499</td></tr>
+        <tr><th scope="row">Explosion protection — flameproof</th><td>IEC 60079-1 (Ex d)</td><td>UL 1203 explosionproof</td></tr>
+        <tr><th scope="row">Explosion protection — increased safety</th><td>IEC 60079-7 (Ex e)</td><td>— (no direct NEC equivalent)</td></tr>
+        <tr><th scope="row">Explosion protection — pressurisation</th><td>IEC 60079-2 (Ex p)</td><td>NFPA 496</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>Chapter 11 treats hazardous area classification, protection concepts, marking and IP/NEMA ratings in full.</p>
+
+  <h2 id="s2-6"><span class="sec-no">2.6</span>IEC and NEMA motor practice compared</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 2.6-1 — Practical differences that affect interchangeability</caption>
+      <thead><tr><th scope="col">Aspect</th><th scope="col">IEC practice</th><th scope="col">NEMA practice</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Supply frequency</th><td>50 Hz typical</td><td>60 Hz typical</td></tr>
+        <tr><th scope="row">Synchronous speed, 4-pole</th><td>1500 rpm</td><td>1800 rpm</td></tr>
+        <tr><th scope="row">Rated output</th><td>kW</td><td>hp</td></tr>
+        <tr><th scope="row">Frame designation</th><td>Shaft height in mm (e.g. 160M)</td><td>Frame number (e.g. 254T)</td></tr>
+        <tr><th scope="row">Service factor</th><td>1.0 normally; duty defined by S1–S10</td><td>1.0 or 1.15 commonly offered</td></tr>
+        <tr><th scope="row">Insulation / rise</th><td>Class F insulation, Class B rise common</td><td>Same practice, same classes</td></tr>
+        <tr><th scope="row">Starting characteristic</th><td>Design N (IEC 60034-12)</td><td>Design A, B, C, D (MG 1)</td></tr>
+        <tr><th scope="row">Hazardous area concept</th><td>Zone 0 / 1 / 2</td><td>Division 1 / 2</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>Philippines supply.</strong>
+    The Philippines distributes at 60 Hz, 230 V single phase and 230 / 400 / 480 V three phase, which places it with North American frequency practice while much installed plant equipment is IEC-framed. Expect mixed IEC-frame, 60 Hz motors. A 50 Hz IEC motor run at 60 Hz turns 20 % faster and, on a centrifugal load, absorbs roughly 1.73 times the power — see the affinity laws in §4.3.
+  </div>
+
+  <h2 id="s2-7"><span class="sec-no">2.7</span>Materials standards</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 2.7-1 — Materials and corrosion standards</caption>
+      <thead><tr><th scope="col">Standard</th><th scope="col">Covers</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">ASTM A / B series</th><td>Product specifications — A105 forgings, A216 castings, A182 alloy forgings, B series non-ferrous</td></tr>
+        <tr><th scope="row">ASME BPVC Section II Part D</th><td>Allowable stresses at temperature — the basis of pressure–temperature ratings</td></tr>
+        <tr><th scope="row">NACE MR0175 / ISO 15156</th><td>Materials for H₂S-containing environments in oil and gas production</td></tr>
+        <tr><th scope="row">NACE MR0103 / ISO 17945</th><td>Materials resistant to sulfide stress cracking in refinery environments</td></tr>
+        <tr><th scope="row">ASTM A923</th><td>Detecting detrimental intermetallic phase in duplex stainless steels</td></tr>
+        <tr><th scope="row">ASTM G48</th><td>Pitting and crevice corrosion resistance — the duplex / super duplex acceptance test</td></tr>
+        <tr><th scope="row">ISO 15156-3</th><td>Cracking-resistant CRAs and other alloys for sour service</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>MR0175 and MR0103 are not interchangeable.</strong>
+    MR0175/ISO 15156 governs <em>upstream production</em> environments. MR0103 governs <em>refining</em> environments. They set different limits and a material qualified to one is not automatically acceptable under the other. Chapter 3 §3.5 covers sour service selection.
+  </div>
+
+  <h2 id="s2-8"><span class="sec-no">2.8</span>Reading a citation</h2>
+
+  <p>A complete citation carries four pieces of information. Datasheets routinely omit two of them and create ambiguity:</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th scope="col">Element</th><th scope="col">Example</th><th scope="col">Why it matters</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Body and number</th><td>API 610</td><td>Identifies the document</td></tr>
+        <tr><th scope="row">Edition</th><td>12th edition</td><td>Requirements change between editions — nozzle load tables and NPSH margin have both moved</td></tr>
+        <tr><th scope="row">Year</th><td>2021</td><td>Disambiguates where edition numbering is unclear</td></tr>
+        <tr><th scope="row">Clause</th><td>§6.1.2</td><td>Points at the actual requirement instead of the whole document</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>Written in full: <strong>API Standard 610, 12th edition (2021), §6.1.2</strong>.</p>
+
+  <div class="note">
+    <strong>Bullets and decisions.</strong>
+    API machine standards mark purchaser decisions with a bullet (●) in the margin. Every bulleted item is something the purchaser must specify; leaving it blank means the vendor decides, and the vendor will decide in its own favour. Working through the bullet list is the single most valuable hour spent on an API requisition.
+  </div>
+
+  <h2 id="s2-9"><span class="sec-no">2.9</span>Sources</h2>
+
+  <ul>
+    <li>American Petroleum Institute — standards catalogue, Downstream Segment (standards 541 to 692).</li>
+    <li>ISO/TC 115 (Pumps) and ISO/TC 118 (Compressors and pneumatic tools) work programmes.</li>
+    <li>ASME B16 series and Boiler and Pressure Vessel Code, Sections II, VIII and IX.</li>
+    <li>IEC 60034 series, <em>Rotating electrical machines</em>; IEC 60079 series, <em>Explosive atmospheres</em>.</li>
+    <li>NEMA MG 1, <em>Motors and Generators</em>; NEMA 250, <em>Enclosures for Electrical Equipment</em>.</li>
+    <li>NFPA 70, <em>National Electrical Code</em>, Articles 500–506.</li>
+    <li>NACE MR0175 / ISO 15156 and NACE MR0103 / ISO 17945.</li>
+  </ul>
+
+  <p>Standard numbers and scopes are stated as published. Edition numbers move; confirm the governing edition against the project specification before relying on any requirement.</p>
+
+  <nav class="prev-next">
+    <span><a href="ch01-units-formulas.html">← Ch 1 · Units, Conversions &amp; Formulas</a></span>
+    <span><a href="ch03-materials.html">Ch 3 · Materials →</a></span>
+  </nav>
+
+</main>
+
+<footer class="foot">
+  <p><strong>Rotating Equipment General Reference</strong> — Chapter 2, Standards.</p>
+  <p>Independently written from public standards &mdash; see <a href="index.html#provenance">provenance</a> and <a href="NOTICE.md">NOTICE.md</a>.<br>Copyright &copy; 2026 Zachry Philippines. All rights reserved.</p>
+</footer>
+
+<script src="assets/search-index.js"></script>
+<script src="assets/reference.js"></script>
+</body>
+</html>

@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Materials — Rotating Equipment General Reference</title>
+<meta name="description" content="Material classes, temperature limits, properties, elastomer selection, corrosion service selection and pressure-temperature ratings for rotating equipment.">
+<link rel="stylesheet" href="assets/reference.css">
+</head>
+<body data-base="">
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="brand" href="index.html">Rotating Equipment <span>General Reference</span></a>
+    <span class="chapter-badge">Chapter 3</span>
+    <span class="spacer"></span>
+    <div class="search-wrap">
+      <input type="search" id="site-search" placeholder="Search sections…  (press /)" autocomplete="off" aria-label="Search the reference">
+      <div class="search-results" id="search-results" role="listbox"></div>
+    </div>
+  </div>
+</header>
+
+<main class="layout">
+
+  <h1 class="page-title">3 &nbsp;Materials</h1>
+  <p class="page-sub">Selecting and checking materials for pressure casings, rotating elements, seals and fasteners.</p>
+
+  <nav class="toc" aria-label="Chapter contents">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#s3-1"><span class="t-no">3.1</span> Material classes in general</a></li>
+      <li><a href="#s3-2"><span class="t-no">3.2</span> Temperature limits</a></li>
+      <li><a href="#s3-3"><span class="t-no">3.3</span> Physical and mechanical properties</a></li>
+      <li><a href="#s3-4"><span class="t-no">3.4</span> Hardness and heat treatment</a></li>
+      <li><a href="#s3-5"><span class="t-no">3.5</span> Corrosion service selection</a>
+        <ol>
+          <li><a href="#s3-5-1"><span class="t-no">3.5.1</span> Seawater</a></li>
+          <li><a href="#s3-5-2"><span class="t-no">3.5.2</span> Chloride-bearing service</a></li>
+          <li><a href="#s3-5-3"><span class="t-no">3.5.3</span> Wet H₂S / sour service</a></li>
+        </ol>
+      </li>
+      <li><a href="#s3-6"><span class="t-no">3.6</span> Seal elastomer selection</a></li>
+      <li><a href="#s3-7"><span class="t-no">3.7</span> Pressure–temperature ratings</a></li>
+      <li><a href="#s3-8"><span class="t-no">3.8</span> Sources</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="s3-1"><span class="sec-no">3.1</span>Material classes in general</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 3.1-1 — Material classes used in rotating equipment, with typical product specifications</caption>
+      <thead><tr><th scope="col">Class</th><th scope="col">Typical grades</th><th scope="col">Applications</th><th scope="col">Watch for</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Cast iron</th><td>ASTM A48 (grey), A536 (ductile)</td><td>Non-hazardous water, general service casings</td><td>Brittle. Prohibited by API 610 for flammable or toxic service.</td></tr>
+        <tr><th scope="row">Carbon steel</th><td>A216 WCB (cast), A105 (forged), A106 (pipe)</td><td>Default pressure casing for hydrocarbon service</td><td>Loses toughness below about −29 °C. General corrosion in wet service.</td></tr>
+        <tr><th scope="row">Low-temperature carbon steel (LTCS)</th><td>A352 LCB / LCC (cast), A350 LF2 (forged)</td><td>Service to −46 °C</td><td>Impact testing is the whole point — verify it was done at the right temperature.</td></tr>
+        <tr><th scope="row">Low-alloy steel</th><td>A217 WC6 / WC9, A182 F11 / F22 (1¼Cr, 2¼Cr)</td><td>Elevated temperature, steam turbine casings</td><td>Requires PWHT. Temper embrittlement in long high-temperature service.</td></tr>
+        <tr><th scope="row">12 Cr martensitic stainless</th><td>A743 CA6NM, AISI 410 / 420</td><td>Pump shafts, impellers, wear rings, turbine blades</td><td>Hardness limits in sour service. Not a general corrosion solution.</td></tr>
+        <tr><th scope="row">Austenitic stainless</th><td>A351 CF8M (cast 316), A182 F316 / F316L</td><td>Corrosive process, cryogenic service</td><td><strong>Chloride stress corrosion cracking above ~60 °C.</strong> Low strength.</td></tr>
+        <tr><th scope="row">Duplex stainless</th><td>A890 Gr 4A / 1B, UNS S31803 / S32205</td><td>Seawater, produced water, chloride service</td><td>Intermetallic phases if heat treatment is wrong — ASTM A923 testing.</td></tr>
+        <tr><th scope="row">Super duplex</th><td>A890 Gr 5A / 6A, UNS S32750 / S32760</td><td>Severe seawater, high-chloride service</td><td>PREN ≥ 40. Expensive. Welding is unforgiving.</td></tr>
+        <tr><th scope="row">Nickel alloys</th><td>Alloy 625 (N06625), Alloy 825, Monel 400</td><td>Severe sour, acid, high-chloride service</td><td>Cost. Usually applied as cladding or overlay rather than solid.</td></tr>
+        <tr><th scope="row">Bronze / copper alloys</th><td>Ni-Al bronze (C95800), tin bronze</td><td>Seawater impellers, wear parts, bearing shells</td><td>Not for sour service. Erosion limits in high-velocity seawater.</td></tr>
+        <tr><th scope="row">Titanium</th><td>Grade 2, Grade 5</td><td>Seawater heat exchangers, severe chloride</td><td>Galvanic coupling. Hydrogen pickup at low pH.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Pitting resistance equivalent number (PREN)</h3>
+
+  <p>The standard first-pass comparator for chloride pitting resistance in stainless steels:</p>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mtext>PREN</mtext><mo>=</mo>
+      <mtext>%Cr</mtext><mo>+</mo>
+      <mn>3.3</mn><mo>⁢</mo><mo stretchy="false">(</mo><mtext>%Mo</mtext><mo>+</mo><mn>0.5</mn><mo>⁢</mo><mtext>%W</mtext><mo stretchy="false">)</mo>
+      <mo>+</mo><mn>16</mn><mo>⁢</mo><mtext>%N</mtext>
+    </mrow></math>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 3.1-2 — Indicative PREN by alloy</caption>
+      <thead><tr><th scope="col">Alloy</th><th scope="col">UNS</th><th scope="col" class="num">PREN (typical)</th><th scope="col">Class</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">304 / 304L</th><td>S30400</td><td class="num">18 – 20</td><td>Austenitic</td></tr>
+        <tr><th scope="row">316 / 316L</th><td>S31600</td><td class="num">24 – 26</td><td>Austenitic</td></tr>
+        <tr><th scope="row">904L</th><td>N08904</td><td class="num">34 – 36</td><td>Super austenitic</td></tr>
+        <tr><th scope="row">2205 duplex</th><td>S31803 / S32205</td><td class="num">34 – 36</td><td>Duplex</td></tr>
+        <tr><th scope="row">6 Mo austenitic</th><td>S31254</td><td class="num">42 – 44</td><td>Super austenitic</td></tr>
+        <tr><th scope="row">2507 super duplex</th><td>S32750</td><td class="num">≥ 41</td><td>Super duplex</td></tr>
+        <tr><th scope="row">Zeron 100</th><td>S32760</td><td class="num">≥ 40</td><td>Super duplex</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>PREN is a screening tool, not an acceptance criterion.</strong>
+    It ranks alloys; it does not qualify one for a service. Actual performance depends on temperature, chloride concentration, pH, oxidising species, crevice geometry and — above all — whether the weld and heat treatment were done correctly. Qualify with ASTM G48 testing, not arithmetic.
+  </div>
+
+  <h2 id="s3-2"><span class="sec-no">3.2</span>Temperature limits</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 3.2-1 — Indicative service temperature ranges for pressure-retaining materials</caption>
+      <thead><tr><th scope="col">Material</th><th scope="col" class="num">Minimum</th><th scope="col" class="num">Maximum</th><th scope="col">Governing limit at the top end</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Grey cast iron</th><td class="num">0 °C</td><td class="num">200 °C</td><td>Strength; brittleness governs the bottom</td></tr>
+        <tr><th scope="row">Ductile iron</th><td class="num">−20 °C</td><td class="num">350 °C</td><td>Strength</td></tr>
+        <tr><th scope="row">Carbon steel (A216 WCB)</th><td class="num">−29 °C</td><td class="num">425 °C</td><td>Graphitisation above ~427 °C</td></tr>
+        <tr><th scope="row">LTCS (A352 LCC)</th><td class="num">−46 °C</td><td class="num">340 °C</td><td>Impact-tested grade</td></tr>
+        <tr><th scope="row">1¼ Cr – ½ Mo (WC6)</th><td class="num">−29 °C</td><td class="num">540 °C</td><td>Creep</td></tr>
+        <tr><th scope="row">2¼ Cr – 1 Mo (WC9)</th><td class="num">−29 °C</td><td class="num">570 °C</td><td>Creep</td></tr>
+        <tr><th scope="row">12 Cr (CA6NM / 410)</th><td class="num">−29 °C</td><td class="num">540 °C</td><td>Temper range must be avoided</td></tr>
+        <tr><th scope="row">316 / CF8M austenitic</th><td class="num">−196 °C</td><td class="num">650 °C</td><td>Creep; sensitisation 425–815 °C</td></tr>
+        <tr><th scope="row">304L / 316L (low carbon)</th><td class="num">−254 °C</td><td class="num">425 °C</td><td>Lower allowable stress than the parent grade</td></tr>
+        <tr><th scope="row">22 Cr duplex</th><td class="num">−50 °C</td><td class="num">300 °C</td><td><strong>475 °C embrittlement</strong> — hard upper limit near 300 °C</td></tr>
+        <tr><th scope="row">25 Cr super duplex</th><td class="num">−50 °C</td><td class="num">270 °C</td><td>Sigma phase formation</td></tr>
+        <tr><th scope="row">Alloy 625</th><td class="num">−196 °C</td><td class="num">850 °C</td><td>Oxidation</td></tr>
+        <tr><th scope="row">Ni-Al bronze</th><td class="num">−100 °C</td><td class="num">250 °C</td><td>Dealloying accelerates with temperature</td></tr>
+        <tr><th scope="row">Titanium Gr 2</th><td class="num">−60 °C</td><td class="num">300 °C</td><td>Oxygen pickup</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>Duplex has a ceiling that surprises people.</strong>
+    Duplex and super duplex are excellent at ambient and moderate temperature but suffer 475 °C embrittlement — a loss of toughness from prolonged exposure well below that figure. Keep continuous service below about 300 °C for 22 Cr and 270 °C for 25 Cr. This rules duplex out of many hot services where its corrosion resistance would otherwise be attractive.
+  </div>
+
+  <div class="warn">
+    <strong>Minimum design metal temperature is not the process minimum.</strong>
+    MDMT must account for auto-refrigeration on depressuring, start-up and upset conditions, and ambient. A propane service operating at +20 °C may see −42 °C during a blowdown. Specify the material for the MDMT, not the normal operating temperature.
+  </div>
+
+  <h2 id="s3-3"><span class="sec-no">3.3</span>Physical and mechanical properties</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 3.3-1 — Room-temperature physical properties</caption>
+      <thead>
+        <tr><th scope="col">Material</th><th scope="col" class="num">Density<br>kg/m³</th><th scope="col" class="num">E<br>GPa</th><th scope="col" class="num">Thermal expansion<br>10⁻⁶/K</th><th scope="col" class="num">Conductivity<br>W/(m·K)</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Carbon steel</th><td class="num">7850</td><td class="num">207</td><td class="num">11.7</td><td class="num">50</td></tr>
+        <tr><th scope="row">Low-alloy steel (2¼Cr)</th><td class="num">7850</td><td class="num">207</td><td class="num">12.5</td><td class="num">38</td></tr>
+        <tr><th scope="row">12 Cr martensitic</th><td class="num">7700</td><td class="num">200</td><td class="num">10.5</td><td class="num">25</td></tr>
+        <tr><th scope="row">316 austenitic</th><td class="num">8000</td><td class="num">193</td><td class="num">16.0</td><td class="num">16</td></tr>
+        <tr><th scope="row">22 Cr duplex</th><td class="num">7800</td><td class="num">200</td><td class="num">13.0</td><td class="num">19</td></tr>
+        <tr><th scope="row">Alloy 625</th><td class="num">8440</td><td class="num">208</td><td class="num">12.8</td><td class="num">10</td></tr>
+        <tr><th scope="row">Ni-Al bronze</th><td class="num">7600</td><td class="num">120</td><td class="num">16.2</td><td class="num">42</td></tr>
+        <tr><th scope="row">Titanium Gr 2</th><td class="num">4510</td><td class="num">105</td><td class="num">8.6</td><td class="num">17</td></tr>
+        <tr><th scope="row">Grey cast iron</th><td class="num">7200</td><td class="num">100</td><td class="num">10.8</td><td class="num">50</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Why the expansion column matters.</strong>
+    An austenitic stainless shaft in a carbon steel casing grows about 37 % more per degree than the casing around it. Over a long machine at high temperature this drives clearance changes, and it is a routine cause of rubbing during heat-up. Differential growth is the reason API standards require the vendor's thermal growth calculations.
+  </div>
+
+  <h3>Thermal growth</h3>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mi>Δ</mi><mi>L</mi><mo>=</mo>
+      <mi>α</mi><mo>⁢</mo><mi>L</mi><mo>⁢</mo><mi>Δ</mi><mi>T</mi>
+    </mrow></math>
+  </div>
+
+  <div class="where">
+    <dl>
+      <dt>ΔL</dt><dd>change in length, mm</dd>
+      <dt>α</dt><dd>coefficient of thermal expansion, 10⁻⁶/K (from Table 3.3-1)</dd>
+      <dt>L</dt><dd>original length, mm</dd>
+      <dt>ΔT</dt><dd>temperature change, K</dd>
+    </dl>
+  </div>
+
+  <p>Applied to alignment: a pump with a 600 mm centreline height in carbon steel, heating from 20 °C ambient to 180 °C, grows
+  600 × 11.7 × 10⁻⁶ × 160 ≈ <strong>1.12 mm</strong> vertically. That is the cold offset the driver must be set to — see §13.3.</p>
+
+  <h2 id="s3-4"><span class="sec-no">3.4</span>Hardness and heat treatment</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 3.4-1 — Heat treatment processes applied to rotating components</caption>
+      <thead><tr><th scope="col">Process</th><th scope="col">Effect</th><th scope="col">Typical application</th><th scope="col">Caution</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Annealing</th><td>Softens, relieves stress, refines grain</td><td>After forming or welding</td><td>Reduces strength</td></tr>
+        <tr><th scope="row">Normalising</th><td>Refines grain, uniform structure</td><td>Carbon and low-alloy castings and forgings</td><td>—</td></tr>
+        <tr><th scope="row">Quench and temper</th><td>High strength with retained toughness</td><td>Shafts, high-strength fasteners, CA6NM impellers</td><td>Tempering temperature controls hardness — critical for sour service</td></tr>
+        <tr><th scope="row">Solution annealing</th><td>Dissolves carbides and intermetallics</td><td>Austenitic, duplex and super duplex stainless</td><td>Must be followed by rapid quench or phases re-form</td></tr>
+        <tr><th scope="row">PWHT (stress relief)</th><td>Relieves residual welding stress</td><td>Low-alloy casings, thick carbon steel welds, sour service</td><td>Mandatory for most sour-service welds</td></tr>
+        <tr><th scope="row">Nitriding</th><td>Very hard thin case, low distortion</td><td>Shaft journals, sleeves, screw compressor rotors</td><td>Case is thin — not repairable by grinding</td></tr>
+        <tr><th scope="row">Induction hardening</th><td>Localised hard case</td><td>Shaft seal areas, journal surfaces</td><td>Distortion on slender parts</td></tr>
+        <tr><th scope="row">Carburising</th><td>Hard case on low-carbon steel</td><td>Gear teeth</td><td>Case depth must be specified on the drawing</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Hardness test methods</h3>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 3.4-2 — Hardness tests and where each belongs</caption>
+      <thead><tr><th scope="col">Method</th><th scope="col">Standard</th><th scope="col">Best for</th><th scope="col">Not suitable for</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Brinell (HB / HBW)</th><td>ASTM E10, ISO 6506</td><td>Castings, forgings, coarse or uneven material. The sour-service acceptance measure.</td><td>Thin sections, small parts — the indent is large</td></tr>
+        <tr><th scope="row">Rockwell (HRB, HRC)</th><td>ASTM E18, ISO 6508</td><td>Quick shop checks on hardened and tempered parts</td><td>Narrow pins, thin sheet; scale must be stated</td></tr>
+        <tr><th scope="row">Vickers (HV)</th><td>ASTM E384, ISO 6507</td><td>Thin cases, weld HAZ surveys, any hardness range</td><td>Slow; needs a prepared surface</td></tr>
+        <tr><th scope="row">Shore / Leeb (portable)</th><td>ASTM A956</td><td>Large installed parts, field verification</td><td>Low accuracy; not an acceptance test on its own</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>Sour service hardness is an acceptance criterion, not a property.</strong>
+    NACE MR0175 / ISO 15156 caps carbon and low-alloy steel at <strong>22 HRC</strong> (approximately 237 HBW), with separate and often lower limits for welds, HAZ and CRAs. Hardness must be verified on the finished component after final heat treatment — not inferred from the material grade.
+  </div>
+
+  <h2 id="s3-5"><span class="sec-no">3.5</span>Corrosion service selection</h2>
+
+  <h3 id="s3-5-1"><span class="sec-no">3.5.1</span>Seawater</h3>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 3.5-1 — Seawater pump material selection by duty</caption>
+      <thead><tr><th scope="col">Duty</th><th scope="col">Casing</th><th scope="col">Impeller / shaft</th><th scope="col">Notes</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Intermittent, low velocity</th><td>Ni-Al bronze</td><td>Ni-Al bronze / Monel shaft</td><td>Economical. Velocity limit around 4 m/s.</td></tr>
+        <tr><th scope="row">Continuous firewater</th><td>Ni-Al bronze or super duplex</td><td>Ni-Al bronze / duplex</td><td>Stagnant periods favour super duplex</td></tr>
+        <tr><th scope="row">Continuous cooling water</th><td>Super duplex (S32750 / S32760)</td><td>Super duplex</td><td>Standard modern choice</td></tr>
+        <tr><th scope="row">High velocity / sandy</th><td>Super duplex</td><td>Super duplex, hard-faced wear parts</td><td>Erosion–corrosion governs</td></tr>
+        <tr><th scope="row">Hypochlorite-dosed</th><td>Super duplex or 6 Mo</td><td>Super duplex</td><td>Residual chlorine raises the pitting risk sharply</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Galvanic pairing in seawater.</strong>
+    Seawater is an efficient electrolyte. Coupling super duplex (noble) to carbon steel or bronze (active) drives rapid attack on the less noble metal. Keep the galvanic series in mind for bolting, wear rings and small internal parts, and isolate dissimilar metals where area ratios are unfavourable — a small anode feeding a large cathode is the worst case.
+  </div>
+
+  <h3 id="s3-5-2"><span class="sec-no">3.5.2</span>Chloride-bearing service</h3>
+
+  <p>Chloride stress corrosion cracking (CSCC) is the dominant failure mode for austenitic stainless steels. Three conditions must coexist: a susceptible material, tensile stress, and chlorides with temperature.</p>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 3.5-2 — Relative CSCC resistance</caption>
+      <thead><tr><th scope="col">Material</th><th scope="col">CSCC resistance</th><th scope="col">Practical guidance</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">304 / 316 austenitic</th><td>Poor</td><td>Avoid above ~60 °C where chlorides are present and the part is stressed</td></tr>
+        <tr><th scope="row">904L / 6 Mo austenitic</th><td>Moderate</td><td>Higher nickel improves resistance substantially</td></tr>
+        <tr><th scope="row">22 Cr duplex</th><td>Good</td><td>Usable well above the austenitic limit</td></tr>
+        <tr><th scope="row">25 Cr super duplex</th><td>Very good</td><td>Standard for severe chloride service</td></tr>
+        <tr><th scope="row">Alloy 625 / 825</th><td>Excellent</td><td>Where duplex is ruled out by temperature</td></tr>
+        <tr><th scope="row">Titanium</th><td>Excellent</td><td>Immune to CSCC in neutral chlorides</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>External CSCC under insulation is a real failure mode.</strong>
+    Austenitic stainless under wet insulation, with chlorides leached from the insulation itself and the metal running at 50–150 °C, cracks from the outside. It accounts for a substantial share of stainless failures in coastal plant. Coating under insulation, not material upgrade, is normally the fix.
+  </div>
+
+  <h3 id="s3-5-3"><span class="sec-no">3.5.3</span>Wet H₂S / sour service</h3>
+
+  <p>Sour service applies where water is present <em>as a liquid phase</em> together with H₂S above threshold partial pressure. Both conditions are required — dry H₂S is not sour service.</p>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <msub><mi>p</mi><mrow><msub><mtext>H</mtext><mn>2</mn></msub><mtext>S</mtext></mrow></msub>
+      <mo>=</mo>
+      <msub><mi>p</mi><mtext>total,abs</mtext></msub>
+      <mo>×</mo>
+      <msub><mi>y</mi><mrow><msub><mtext>H</mtext><mn>2</mn></msub><mtext>S</mtext></mrow></msub>
+    </mrow></math>
+  </div>
+
+  <div class="where">
+    <dl>
+      <dt>p<sub>H₂S</sub></dt><dd>partial pressure of H₂S</dd>
+      <dt>p<sub>total,abs</sub></dt><dd>total absolute system pressure</dd>
+      <dt>y<sub>H₂S</sub></dt><dd>mole fraction of H₂S in the gas phase</dd>
+    </dl>
+  </div>
+
+  <p>ISO 15156-2 sets the threshold for sour service in oil and gas production at an H₂S partial pressure of <strong>0.3 kPa (0.05 psi) absolute</strong> with liquid water present. Above that, the standard's material restrictions apply.</p>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 3.5-3 — Damage mechanisms in wet H₂S</caption>
+      <thead><tr><th scope="col">Mechanism</th><th scope="col">What happens</th><th scope="col">Principal control</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">SSC — sulfide stress cracking</th><td>Hydrogen embrittlement of hard microstructures under tensile stress</td><td>Hardness limit (22 HRC); PWHT</td></tr>
+        <tr><th scope="row">HIC — hydrogen induced cracking</th><td>Hydrogen accumulates at inclusions, forming internal blisters</td><td>HIC-tested clean steel, low sulfur, Ca treatment</td></tr>
+        <tr><th scope="row">SOHIC — stress oriented HIC</th><td>HIC stacked by residual stress near welds</td><td>PWHT plus HIC-resistant steel</td></tr>
+        <tr><th scope="row">SCC of CRAs</th><td>Chloride plus H₂S cracking of corrosion-resistant alloys</td><td>Select per ISO 15156-3 envelope</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 3.5-4 — Sour service requirements summary</caption>
+      <thead><tr><th scope="col">Component</th><th scope="col">Requirement</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Carbon / low-alloy steel</th><td>≤ 22 HRC; normalised or Q&amp;T; PWHT of welds; HIC testing for plate where specified</td></tr>
+        <tr><th scope="row">Welds and HAZ</th><td>Hardness surveys required; often a lower cap than the parent metal</td></tr>
+        <tr><th scope="row">Bolting (exposed)</th><td>ASTM A193 B7M / A194 2HM — the "M" grades are the sour-service, hardness-controlled versions</td></tr>
+        <tr><th scope="row">12 Cr martensitic</th><td>Restricted; permitted only within specific envelopes in ISO 15156-3</td></tr>
+        <tr><th scope="row">Duplex / super duplex</th><td>Permitted within defined limits of p<sub>H₂S</sub>, chloride, temperature and pH</td></tr>
+        <tr><th scope="row">Springs, bellows, small parts</th><td>Frequently overlooked. Hardness limits apply to these too.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>B7 and B7M are not the same bolt.</strong>
+    A193 Gr B7 is the standard high-strength stud. B7M is quenched, tempered and hardness-controlled to 22 HRC for sour service, with lower allowable stress as a consequence. Substituting B7 for B7M on a sour application is a genuine safety issue, and the two look identical in a bin.
+  </div>
+
+  <h2 id="s3-6"><span class="sec-no">3.6</span>Seal elastomer selection</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 3.6-1 — Elastomer selection for mechanical seal secondary elements and O-rings</caption>
+      <thead>
+        <tr><th scope="col">Elastomer</th><th scope="col">Common name</th><th scope="col" class="num">Temp. range</th><th scope="col">Good in</th><th scope="col">Attacked by</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">NBR</th><td>Nitrile, Buna-N</td><td class="num">−30 to 100 °C</td><td>Mineral oil, water, LPG, aliphatic hydrocarbons</td><td>Ketones, strong acids, ozone, aromatics</td></tr>
+        <tr><th scope="row">HNBR</th><td>Hydrogenated nitrile</td><td class="num">−30 to 150 °C</td><td>As NBR but better heat and H₂S resistance</td><td>Ketones, esters</td></tr>
+        <tr><th scope="row">EPDM</th><td>Ethylene propylene</td><td class="num">−50 to 150 °C</td><td>Hot water, steam, glycol, acids, bases, brake fluid</td><td><strong>Any petroleum oil</strong> — swells badly</td></tr>
+        <tr><th scope="row">FKM</th><td>Viton®, fluoroelastomer</td><td class="num">−20 to 200 °C</td><td>Hydrocarbons, aromatics, most chemicals. The default process choice.</td><td>Hot water/steam, amines, ketones, low-MW esters</td></tr>
+        <tr><th scope="row">FFKM</th><td>Perfluoroelastomer, Kalrez®</td><td class="num">−15 to 320 °C</td><td>Almost everything</td><td>Cost — order of magnitude above FKM</td></tr>
+        <tr><th scope="row">FVMQ</th><td>Fluorosilicone</td><td class="num">−60 to 175 °C</td><td>Low-temperature fuel service</td><td>Poor mechanical strength; not for dynamic duty</td></tr>
+        <tr><th scope="row">PTFE</th><td>Teflon® (not an elastomer)</td><td class="num">−200 to 260 °C</td><td>Universal chemical resistance, cryogenic</td><td>Cold flow / creep; no elastic recovery</td></tr>
+        <tr><th scope="row">FEPM</th><td>Aflas®</td><td class="num">−10 to 230 °C</td><td>Amines, steam, sour gas, high pH</td><td>Poor low-temperature sealing</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>Explosive decompression.</strong>
+    In high-pressure gas service, gas dissolves into the elastomer. A rapid depressurisation leaves it with nowhere to go and the O-ring blisters or splits from the inside. Specify an ED-resistant compound (tested to NORSOK M-710 or ISO 23936-2) for gas service above roughly 40 bar with any prospect of rapid blowdown. The base polymer alone does not tell you whether a compound is ED-resistant.
+  </div>
+
+  <div class="note">
+    <strong>EPDM and oil.</strong>
+    The most common elastomer error in the field is fitting EPDM where mineral oil is present. EPDM is excellent in hot water and steam and is destroyed by petroleum oil. A seal flush plan carrying oil, or a lube oil system, must not see EPDM.
+  </div>
+
+  <h2 id="s3-7"><span class="sec-no">3.7</span>Pressure–temperature ratings</h2>
+
+  <p>A flange "Class" is not a pressure. It is an index into a table whose entries depend on <em>material group</em> and <em>temperature</em>. The same Class 300 flange is rated differently in carbon steel and in 316 stainless.</p>
+
+  <h3>How a rating is derived</h3>
+
+  <ol>
+    <li>The material is assigned to a <strong>material group</strong> in ASME B16.5 Table 1A (for example, A105 forged carbon steel is Group 1.1).</li>
+    <li>That group has a pressure–temperature table (Table 2-1.1 for Group 1.1) listing allowable working pressure at temperature for each Class.</li>
+    <li>Allowable pressure falls as temperature rises, because the allowable stress of the material falls.</li>
+    <li>Below the lowest tabulated temperature, the rating is capped at the value for that temperature — it does not continue to rise.</li>
+  </ol>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 3.7-1 — Common material group assignments, ASME B16.5</caption>
+      <thead><tr><th scope="col">Group</th><th scope="col">Representative materials</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">1.1</th><td>A105 forgings, A216 WCB castings, A515/A516 Gr 70 plate — carbon steel</td></tr>
+        <tr><th scope="row">1.9</th><td>A182 F11, A217 WC6 — 1¼ Cr ½ Mo</td></tr>
+        <tr><th scope="row">1.10</th><td>A182 F22, A217 WC9 — 2¼ Cr 1 Mo</td></tr>
+        <tr><th scope="row">2.1</th><td>A182 F304, A351 CF8 — 18Cr-8Ni austenitic</td></tr>
+        <tr><th scope="row">2.2</th><td>A182 F316, A351 CF8M — 16Cr-12Ni-2Mo austenitic</td></tr>
+        <tr><th scope="row">2.3</th><td>A182 F304L, F316L — low-carbon austenitic (lower ratings than 2.1 / 2.2)</td></tr>
+        <tr><th scope="row">3.x</th><td>Nickel alloys — Monel, Alloy 625, Alloy 800</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 3.7-2 — Illustrative shape of the Group 1.1 (carbon steel) rating curve, bar gauge</caption>
+      <thead><tr><th scope="col" class="num">Temperature</th><th scope="col" class="num">Class 150</th><th scope="col" class="num">Class 300</th><th scope="col">Trend</th></tr></thead>
+      <tbody>
+        <tr><td class="num">−29 to 38 °C</td><td class="num">19.6</td><td class="num">51.1</td><td>Maximum — capped, does not rise further when colder</td></tr>
+        <tr><td class="num">100 °C</td><td class="num">17.7</td><td class="num">46.6</td><td>Falling</td></tr>
+        <tr><td class="num">200 °C</td><td class="num">13.8</td><td class="num">43.8</td><td>Falling</td></tr>
+        <tr><td class="num">300 °C</td><td class="num">10.2</td><td class="num">39.8</td><td>Falling</td></tr>
+        <tr><td class="num">400 °C</td><td class="num">6.5</td><td class="num">34.7</td><td>Falling steeply</td></tr>
+        <tr><td class="num">500 °C</td><td class="num">2.8</td><td class="num">23.0</td><td>Creep range</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>Verify these against the standard before use.</strong>
+    Table 3.7-2 is given to show the <em>shape</em> of the derating curve and the size of the effect — Class 150 carbon steel loses two-thirds of its rating between ambient and 400 °C. It is not a substitute for ASME B16.5. Read the actual value for your material group, Class and temperature out of the current edition, and note that B16.5 covers NPS ½ to 24 only; above that, B16.47 Series A or B applies and the ratings differ.
+  </div>
+
+  <div class="note">
+    <strong>Class 150 is the trap.</strong>
+    A Class 150 carbon steel flange is often assumed to be good for "150 psi". At ambient it is good for 285 psi (19.6 bar); at 400 °C it is good for 94 psi (6.5 bar). Hot Class 150 service is where flange rating errors concentrate — and pump discharge nozzles on hot service are exactly that case.
+  </div>
+
+  <h2 id="s3-8"><span class="sec-no">3.8</span>Sources</h2>
+
+  <ul>
+    <li>ASME B16.5, <em>Pipe Flanges and Flanged Fittings</em> — material groups and pressure–temperature ratings.</li>
+    <li>ASME B16.47, <em>Large Diameter Steel Flanges</em>, Series A and B.</li>
+    <li>ASME Boiler and Pressure Vessel Code, Section II Part D — allowable stresses.</li>
+    <li>NACE MR0175 / ISO 15156, Parts 1–3, <em>Materials for use in H₂S-containing environments in oil and gas production</em>.</li>
+    <li>NACE MR0103 / ISO 17945, <em>Petroleum, petrochemical and natural gas industries — Metallic materials resistant to sulfide stress cracking in corrosive petroleum refining environments</em>.</li>
+    <li>NACE TM0284, <em>Evaluation of Pipeline and Pressure Vessel Steels for Resistance to HIC</em>.</li>
+    <li>ASTM G48, <em>Pitting and Crevice Corrosion Resistance of Stainless Steels and Related Alloys by Use of Ferric Chloride Solution</em>.</li>
+    <li>ASTM A923, <em>Detecting Detrimental Intermetallic Phase in Duplex Austenitic/Ferritic Stainless Steels</em>.</li>
+    <li>ASTM E10 (Brinell), E18 (Rockwell), E384 (Vickers), A956 (Leeb) hardness test methods.</li>
+    <li>API Standard 610 / ISO 13709 — material class tables (S-1 through D-2) and prohibited materials.</li>
+    <li>API Standard 682 / ISO 21049 — seal secondary element materials.</li>
+    <li>ISO 23936-2 and NORSOK M-710 — elastomer qualification including rapid gas decompression.</li>
+  </ul>
+
+  <p>Property values are typical room-temperature figures for comparison and preliminary calculation. Design values must be taken from the governing material specification and ASME BPVC Section II Part D.</p>
+
+  <nav class="prev-next">
+    <span><a href="ch02-standards.html">← Ch 2 · Standards</a></span>
+    <span><a href="ch04-pumps.html">Ch 4 · Pump Selection →</a></span>
+  </nav>
+
+</main>
+
+<footer class="foot">
+  <p><strong>Rotating Equipment General Reference</strong> — Chapter 3, Materials.</p>
+  <p>Independently written from public standards &mdash; see <a href="index.html#provenance">provenance</a> and <a href="NOTICE.md">NOTICE.md</a>.<br>Copyright &copy; 2026 Zachry Philippines. All rights reserved.</p>
+</footer>
+
+<script src="assets/search-index.js"></script>
+<script src="assets/reference.js"></script>
+</body>
+</html>

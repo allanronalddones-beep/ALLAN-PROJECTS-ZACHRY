@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Steam Turbine Selection — Rotating Equipment General Reference</title>
+<meta name="description" content="Steam turbine classification, stage types, steam rate and efficiency, the Mollier diagram, governing classes and exhaust arrangements.">
+<link rel="stylesheet" href="assets/reference.css">
+</head>
+<body data-base="">
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="brand" href="index.html">Rotating Equipment <span>General Reference</span></a>
+    <span class="chapter-badge">Chapter 7</span>
+    <span class="spacer"></span>
+    <div class="search-wrap">
+      <input type="search" id="site-search" placeholder="Search sections…  (press /)" autocomplete="off" aria-label="Search the reference">
+      <div class="search-results" id="search-results" role="listbox"></div>
+    </div>
+  </div>
+</header>
+
+<main class="layout">
+
+  <h1 class="page-title">7 &nbsp;Steam Turbine Selection</h1>
+  <p class="page-sub">Classification, steam consumption, efficiency and governing.</p>
+
+  <nav class="toc" aria-label="Chapter contents">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#s7-1"><span class="t-no">7.1</span> Classification</a></li>
+      <li><a href="#s7-2"><span class="t-no">7.2</span> Exhaust and extraction arrangements</a></li>
+      <li><a href="#s7-3"><span class="t-no">7.3</span> Stage types</a></li>
+      <li><a href="#s7-4"><span class="t-no">7.4</span> Steam rate and efficiency</a></li>
+      <li><a href="#s7-5"><span class="t-no">7.5</span> The Mollier diagram</a></li>
+      <li><a href="#s7-6"><span class="t-no">7.6</span> Governing and overspeed protection</a></li>
+      <li><a href="#s7-7"><span class="t-no">7.7</span> Sources</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="s7-1"><span class="sec-no">7.1</span>Classification</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 7.1-1 — API classification</caption>
+      <thead><tr><th scope="col"></th><th scope="col">API 611 — general purpose</th><th scope="col">API 612 / ISO 10437 — special purpose</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Service</th><td>Spared, non-critical</td><td>Unspared, critical to production</td></tr>
+        <tr><th scope="row">Expected run</th><td>Shutdown to shutdown</td><td>Three years or more continuous</td></tr>
+        <tr><th scope="row">Typical size</th><td>Below roughly 2 MW</td><td>No upper limit</td></tr>
+        <tr><th scope="row">Stages</th><td>Usually single stage</td><td>Multistage</td></tr>
+        <tr><th scope="row">Bearings</th><td>Rolling element or sleeve</td><td>Hydrodynamic sleeve and tilting pad thrust</td></tr>
+        <tr><th scope="row">Rotordynamic analysis</th><td>Not normally required</td><td>Lateral and torsional required</td></tr>
+        <tr><th scope="row">Governor</th><td>Mechanical or electronic, NEMA Class A or B typical</td><td>Electronic, NEMA Class C or D</td></tr>
+        <tr><th scope="row">Testing</th><td>Hydrostatic, mechanical run</td><td>Mechanical run with recorded vibration, often spare rotor test</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="s7-2"><span class="sec-no">7.2</span>Exhaust and extraction arrangements</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 7.2-1 — Classification by steam usage</caption>
+      <thead><tr><th scope="col">Type</th><th scope="col">Exhaust condition</th><th scope="col">Where it fits</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Back pressure</th><td>Above atmospheric — exhausts into an LP steam header</td><td>Steam is needed by the process. The turbine is effectively a pressure-reducing valve that produces work. Highest overall efficiency in a balanced steam network.</td></tr>
+        <tr><th scope="row">Condensing</th><td>Below atmospheric, into a surface condenser, typically 0.05 – 0.15 bar a</td><td>Maximum work per kg of steam. Needs cooling water, a condenser, air ejectors and a vacuum system.</td></tr>
+        <tr><th scope="row">Extraction (controlled)</th><td>Steam is taken off at an intermediate pressure, held by a control valve</td><td>Supplies a process header while generating power. Two degrees of freedom — power and extraction flow.</td></tr>
+        <tr><th scope="row">Bleed (uncontrolled extraction)</th><td>Steam taken off at whatever pressure that stage happens to be at</td><td>Feedwater heating. Pressure floats with load.</td></tr>
+        <tr><th scope="row">Induction (mixed pressure)</th><td>Steam admitted at an intermediate stage</td><td>Uses surplus LP steam that would otherwise be vented</td></tr>
+        <tr><th scope="row">Extraction-condensing</th><td>Both</td><td>Large cogeneration sets</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>The back pressure turbine is nearly free work.</strong>
+    If the process needs LP steam and a pressure-reducing valve is letting HP steam down to make it, replacing that valve with a back pressure turbine extracts shaft work from a pressure drop that was being wasted. The steam still arrives at the process, slightly cooler. The economics are usually compelling where a suitable driven machine exists.
+  </div>
+
+  <div class="warn">
+    <strong>Condensing turbines fail on vacuum, not on steam.</strong>
+    Loss of condenser vacuum raises exhaust pressure and temperature fast; last-stage blades overheat and the machine trips. Air in-leakage, cooling water loss and ejector failure are the usual causes. Exhaust temperature and condenser pressure are protection points, not just indications.
+  </div>
+
+  <h2 id="s7-3"><span class="sec-no">7.3</span>Stage types</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 7.3-1 — Impulse and reaction staging</caption>
+      <thead><tr><th scope="col"></th><th scope="col">Impulse</th><th scope="col">Reaction</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Pressure drop</th><td>Entirely across the fixed nozzle</td><td>Split roughly 50/50 between fixed and moving blades</td></tr>
+        <tr><th scope="row">Rotor blade</th><td>Changes flow direction only</td><td>Acts as a nozzle — flow accelerates through it</td></tr>
+        <tr><th scope="row">Pressure across rotor</th><td>None in the ideal case</td><td>Yes — produces axial thrust</td></tr>
+        <tr><th scope="row">Axial thrust</th><td>Low</td><td>High — needs a balance piston</td></tr>
+        <tr><th scope="row">Work per stage</th><td>High — fewer stages</td><td>Lower — more stages</td></tr>
+        <tr><th scope="row">Efficiency</th><td>Slightly lower per stage</td><td>Slightly higher per stage</td></tr>
+        <tr><th scope="row">Construction</th><td>Diaphragms, wheels on a shaft</td><td>Drum rotor with blading</td></tr>
+        <tr><th scope="row">Partial admission possible</th><td>Yes — governs well at part load</td><td>No</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>A Curtis (velocity-compounded) stage is an impulse stage with two rows of moving blades and an intermediate fixed row. It absorbs a large pressure drop in one stage and is commonly used as the first stage of a multistage machine to drop the steam condition quickly and shorten the casing.</p>
+
+  <div class="note">
+    <strong>Most real machines are mixed.</strong>
+    A Curtis or Rateau impulse first stage followed by reaction staging is a common arrangement. The classification matters less for selection than for understanding thrust, which drives the thrust bearing and balance piston design.
+  </div>
+
+  <h2 id="s7-4"><span class="sec-no">7.4</span>Steam rate and efficiency</h2>
+
+  <h3>Theoretical steam rate</h3>
+
+  <p>The steam flow an ideal, loss-free turbine would need per unit of work:</p>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mtext>TSR</mtext><mo>=</mo>
+      <mfrac><mn>3600</mn><mrow><mi>Δ</mi><msub><mi>h</mi><mi>s</mi></msub></mrow></mfrac>
+    </mrow></math>
+  </div>
+
+  <div class="where">
+    <dl>
+      <dt>TSR</dt><dd>theoretical steam rate, kg/kWh</dd>
+      <dt>Δh<sub>s</sub></dt><dd>isentropic enthalpy drop from inlet condition to exhaust pressure, kJ/kg — read from a Mollier chart or steam tables</dd>
+    </dl>
+  </div>
+
+  <h3>Actual steam rate</h3>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mtext>ASR</mtext><mo>=</mo>
+      <mfrac><mtext>TSR</mtext><msub><mi>η</mi><mtext>overall</mtext></msub></mfrac>
+      <mo>=</mo>
+      <mfrac>
+        <mn>3600</mn>
+        <mrow><mi>Δ</mi><msub><mi>h</mi><mi>s</mi></msub><mo>⁢</mo><msub><mi>η</mi><mtext>overall</mtext></msub></mrow>
+      </mfrac>
+    </mrow></math>
+  </div>
+
+  <h3>Power output</h3>
+
+  <div class="eq">
+    <math display="block"><mrow>
+      <mi>P</mi><mo>[</mo><mtext>kW</mtext><mo>]</mo><mo>=</mo>
+      <mfrac>
+        <mrow><mover><mi>m</mi><mo>˙</mo></mover><mo>[</mo><mtext>kg/h</mtext><mo>]</mo></mrow>
+        <mtext>ASR</mtext>
+      </mfrac>
+      <mo>=</mo>
+      <mover><mi>m</mi><mo>˙</mo></mover><mo>[</mo><mtext>kg/s</mtext><mo>]</mo>
+      <mo>⁢</mo><mi>Δ</mi><msub><mi>h</mi><mi>s</mi></msub>
+      <mo>⁢</mo><msub><mi>η</mi><mtext>overall</mtext></msub>
+    </mrow></math>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 7.4-1 — Indicative overall efficiency</caption>
+      <thead><tr><th scope="col">Machine</th><th scope="col" class="num">Overall efficiency</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Single stage, small, general purpose</th><td class="num">35 – 55 %</td></tr>
+        <tr><th scope="row">Single stage, larger, well matched</th><td class="num">50 – 65 %</td></tr>
+        <tr><th scope="row">Multistage back pressure</th><td class="num">65 – 78 %</td></tr>
+        <tr><th scope="row">Multistage condensing</th><td class="num">70 – 85 %</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <p style="margin-top:0"><strong>Worked example.</strong></p>
+    <p>Back pressure turbine: inlet 42 bar a / 400 °C, exhaust 4.5 bar a. From steam tables the isentropic drop is about 430 kJ/kg. Overall efficiency 68 %. Required shaft power 1500 kW.</p>
+    <p>TSR = 3600 / 430 = 8.37 kg/kWh</p>
+    <p>ASR = 8.37 / 0.68 = 12.3 kg/kWh</p>
+    <p style="margin-bottom:0">Steam flow = 1500 × 12.3 ≈ <strong>18 500 kg/h</strong></p>
+  </div>
+
+  <div class="warn">
+    <strong>Rate the turbine for the worst steam condition, not the normal one.</strong>
+    Steam headers sag. A turbine sized at normal inlet pressure and temperature will not make rated power when the header drops during an upset — which is exactly when the driven machine is most needed. API 611 and 612 require the turbine to deliver rated power at the specified <em>minimum</em> inlet and <em>maximum</em> exhaust conditions. Specify that envelope on the datasheet.
+  </div>
+
+  <h2 id="s7-5"><span class="sec-no">7.5</span>The Mollier diagram</h2>
+
+  <figure style="margin:1.5rem 0;">
+    <svg viewBox="0 0 700 440" role="img" aria-labelledby="moll-title moll-desc" style="width:100%;height:auto;background:var(--bg-sunken);border:1px solid var(--border);border-radius:var(--radius);">
+      <title id="moll-title">Schematic enthalpy–entropy (Mollier) diagram for steam</title>
+      <desc id="moll-desc">Enthalpy on the vertical axis against entropy on the horizontal. Constant pressure lines rise to the right. The saturation line separates superheated steam above from the wet region below. An ideal expansion is vertical at constant entropy; the real expansion slants to the right, ending at a higher enthalpy and a drier condition. The vertical distance between the two is the lost work.</desc>
+
+      <g stroke="var(--border-strong)" stroke-width="1.5" fill="none">
+        <path d="M70 390 L650 390"/><path d="M70 40 L70 390"/>
+      </g>
+
+      <!-- constant pressure lines -->
+      <g stroke="var(--text-faint)" stroke-width="1" fill="none" opacity="0.65">
+        <path d="M100 150 Q 300 110 620 60"/>
+        <path d="M100 235 Q 300 190 620 135"/>
+        <path d="M100 318 Q 300 268 620 208"/>
+        <path d="M100 370 Q 300 330 620 268"/>
+      </g>
+      <g font-size="10" fill="var(--text-muted)" font-family="system-ui, sans-serif">
+        <text x="624" y="58">p₁ high</text>
+        <text x="624" y="133">p₂</text>
+        <text x="624" y="206">p₃</text>
+        <text x="624" y="266">p₄ low</text>
+      </g>
+
+      <!-- saturation line -->
+      <path d="M120 390 Q 330 300 640 180" stroke="#b14b7a" stroke-width="2.5" fill="none"/>
+      <text x="300" y="330" font-size="11" fill="#b14b7a" font-family="system-ui, sans-serif" font-weight="600" transform="rotate(-17 300 330)">saturation line  x = 1</text>
+
+      <g font-size="11" fill="var(--text-muted)" font-family="system-ui, sans-serif">
+        <text x="420" y="130">superheated</text>
+        <text x="250" y="375">wet region</text>
+      </g>
+
+      <!-- expansion -->
+      <circle cx="215" cy="130" r="5" fill="var(--accent)"/>
+      <text x="196" y="118" font-size="12" fill="var(--accent)" font-family="system-ui, sans-serif" font-weight="650">1</text>
+
+      <line x1="215" y1="130" x2="215" y2="330" stroke="var(--accent)" stroke-width="2" stroke-dasharray="5 4"/>
+      <circle cx="215" cy="330" r="5" fill="none" stroke="var(--accent)" stroke-width="2"/>
+      <text x="178" y="348" font-size="12" fill="var(--accent)" font-family="system-ui, sans-serif" font-weight="650">2s</text>
+
+      <line x1="215" y1="130" x2="320" y2="288" stroke="#2e9e6b" stroke-width="2.5"/>
+      <circle cx="320" cy="288" r="5" fill="#2e9e6b"/>
+      <text x="330" y="292" font-size="12" fill="#2e9e6b" font-family="system-ui, sans-serif" font-weight="650">2 actual</text>
+
+      <!-- loss bracket -->
+      <path d="M248 288 L248 330" stroke="#c9771f" stroke-width="1.5"/>
+      <path d="M243 288 L253 288 M243 330 L253 330" stroke="#c9771f" stroke-width="1.5"/>
+      <text x="258" y="316" font-size="10" fill="#c9771f" font-family="system-ui, sans-serif">losses</text>
+
+      <text x="112" y="230" font-size="10" fill="var(--text-muted)" font-family="system-ui, sans-serif" text-anchor="middle" transform="rotate(-90 112 230)">Δh available</text>
+
+      <text x="360" y="420" font-size="12" fill="var(--text)" font-family="system-ui, sans-serif" text-anchor="middle">Entropy  s  →</text>
+      <text x="26" y="215" font-size="12" fill="var(--text)" font-family="system-ui, sans-serif" transform="rotate(-90 26 215)" text-anchor="middle">Enthalpy  h  →</text>
+    </svg>
+    <figcaption style="font-size:.85rem;color:var(--text-muted);margin-top:.5rem;">Figure 7.5-1 — Schematic Mollier (h–s) diagram showing ideal and actual expansion. Not to scale; use steam tables or a real chart for numbers.</figcaption>
+  </figure>
+
+  <p>How it is used:</p>
+
+  <ol>
+    <li>Locate the inlet state from inlet pressure and temperature — point 1, in the superheated region.</li>
+    <li>Drop vertically (constant entropy) to the exhaust pressure line — point 2s.</li>
+    <li>The vertical distance 1 → 2s is Δ<em>h<sub>s</sub></em>, the isentropic enthalpy drop.</li>
+    <li>Multiply by the isentropic efficiency to get the actual drop; the real end state 2 lies to the right at higher entropy.</li>
+  </ol>
+
+  <div class="warn">
+    <strong>Exhaust wetness limits the expansion.</strong>
+    If point 2 falls below the saturation line, the steam is wet and water droplets erode the last-stage blades. Steam quality at exhaust is normally kept above about 0.88 (12 % moisture). Where the expansion would go wetter, the answer is more inlet superheat, reheat, or a higher exhaust pressure. Note that the real expansion ends <em>drier</em> than the ideal one — the losses reheat the steam.
+  </div>
+
+  <h2 id="s7-6"><span class="sec-no">7.6</span>Governing and overspeed protection</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 7.6-1 — NEMA SM 23 governor classes</caption>
+      <thead>
+        <tr><th scope="col">Class</th><th scope="col" class="num">Speed regulation</th><th scope="col" class="num">Speed variation</th><th scope="col">Typical use</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">A</th><td class="num">10 %</td><td class="num">± 0.75 %</td><td>Simple mechanical governor, non-critical drives</td></tr>
+        <tr><th scope="row">B</th><td class="num">6 %</td><td class="num">± 0.50 %</td><td>General process drives</td></tr>
+        <tr><th scope="row">C</th><td class="num">4 %</td><td class="num">± 0.25 %</td><td>Compressor drives requiring closer control</td></tr>
+        <tr><th scope="row">D</th><td class="num">0.50 %</td><td class="num">± 0.25 %</td><td>Generator drives, critical speed holding</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Regulation and variation are different things.</strong>
+    <em>Speed regulation</em> is the steady-state droop from no load to full load. <em>Speed variation</em> is the band the governor holds at a fixed load. A generator drive needs tight variation (frequency); a compressor drive usually needs predictable droop for load sharing.
+  </div>
+
+  <h3>Overspeed protection</h3>
+
+  <div class="warn">
+    <strong>A steam turbine that loses its load accelerates very fast.</strong>
+    Protection is layered and each layer must be independent: the governor valve controls speed in normal operation; a separate <strong>trip and throttle valve</strong> shuts off steam on a trip signal; and an independent <strong>overspeed trip device</strong>, mechanical or electronic, initiates that trip. API practice sets the overspeed trip at approximately 110 % of maximum continuous speed, with the machine designed to withstand at least 115 %. The trip and throttle valve must be exercised on a defined schedule — a valve that has not moved in two years is not a protective device.
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Table 7.6-2 — Standard speed definitions</caption>
+      <thead><tr><th scope="col">Term</th><th scope="col">Definition</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Rated speed</th><td>Speed at the rated operating point</td></tr>
+        <tr><th scope="row">Maximum continuous speed (MCS)</th><td>105 % of rated speed, or the highest speed for continuous operation</td></tr>
+        <tr><th scope="row">Trip speed</th><td>Approximately 110 % of MCS</td></tr>
+        <tr><th scope="row">Overspeed test speed</th><td>Typically 115 % of MCS — demonstrated, not an operating condition</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="s7-7"><span class="sec-no">7.7</span>Sources</h2>
+
+  <ul>
+    <li>API Standard 611, <em>General-Purpose Steam Turbines for Petroleum, Chemical, and Gas Industry Services</em>.</li>
+    <li>API Standard 612 / ISO 10437, <em>Petroleum, Petrochemical and Natural Gas Industries — Steam Turbines — Special-Purpose Applications</em>.</li>
+    <li>NEMA SM 23, <em>Steam Turbines for Mechanical Drive Service</em> — governor classes and speed definitions.</li>
+    <li>ASME PTC 6, <em>Steam Turbines</em> — performance testing.</li>
+    <li>IAPWS-IF97 industrial formulation for the thermodynamic properties of water and steam — the basis of modern steam tables.</li>
+    <li>API Standard 670, <em>Machinery Protection Systems</em> — overspeed detection requirements.</li>
+    <li>API Standard 614 / ISO 10438 — lubrication and control oil systems.</li>
+  </ul>
+
+  <p>Figure 7.5-1 is an original schematic. Enthalpy values for any real calculation must be taken from steam tables or IAPWS-IF97 property software, not read from a schematic.</p>
+
+  <nav class="prev-next">
+    <span><a href="ch06-expanders.html">← Ch 6 · Expander Selection</a></span>
+    <span><a href="ch08-gas-turbines.html">Ch 8 · Gas Turbine Selection →</a></span>
+  </nav>
+
+</main>
+
+<footer class="foot">
+  <p><strong>Rotating Equipment General Reference</strong> — Chapter 7, Steam Turbine Selection.</p>
+  <p>Independently written from public standards &mdash; see <a href="index.html#provenance">provenance</a> and <a href="NOTICE.md">NOTICE.md</a>.<br>Copyright &copy; 2026 Zachry Philippines. All rights reserved.</p>
+</footer>
+
+<script src="assets/search-index.js"></script>
+<script src="assets/reference.js"></script>
+</body>
+</html>
